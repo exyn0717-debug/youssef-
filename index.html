@@ -492,7 +492,555 @@ function renderAll(){
 document.getElementById('langToggle').addEventListener('click',()=>{
   LANG = LANG==='ar' ? 'en' : 'ar';
   cur = 0; qi = 0; score = 0; atmosActive = 0;
-  renderAll();
+  renderAll();<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>موادي الدراسية | ENG YOUSSEF - KSIU</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#151a3d; --navy-2:#1f2657; --navy-3:#2a3475;
+  --gold:#c9a227; --gold-light:#e6c85a; --gold-bg:#fdf8e0;
+  --teal:#2f8f88; --teal-light:#e0f2f0;
+  --paper:#f6f3ea; --card:#ffffff; --border:#e4ddc9; --ink:#1a1a2e; --muted:#6b6f86;
+  --shadow:0 10px 30px rgba(21,26,61,.08);
+  --radius:16px;
+}
+html.dark{
+  --paper:#0b0f25; --card:#161b3d; --border:#2a2f5e; --ink:#e8eaf6; --muted:#9aa0c2;
+  --gold-bg:#1e1a0a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Cairo',sans-serif;background:var(--paper);color:var(--ink);
+  background-image:radial-gradient(circle at 90% 0%, rgba(201,162,39,.10), transparent 35%),
+                   radial-gradient(circle at 0% 85%, rgba(47,143,136,.08), transparent 40%);
+  transition:background .3s,color .3s;}
+html.dark body{background-image:radial-gradient(circle at 90% 0%, rgba(201,162,39,.07), transparent 35%), radial-gradient(circle at 0% 85%, rgba(47,143,136,.06), transparent 40%);}
+a{text-decoration:none}
+img{max-width:100%}
+
+/* Header */
+header.site{position:sticky;top:0;z-index:50;background:var(--navy);border-bottom:3px solid var(--gold);}
+html.dark header.site{background:#0d1130}
+.navbar{max-width:1180px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px}
+.crest{width:48px;height:48px;border-radius:50%;background:radial-gradient(circle at 35% 30%, var(--gold-light), var(--gold) 70%);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--navy);font-size:13px;border:2px solid var(--gold-light);flex:none}
+.brand-text .eng{color:#fff;font-weight:900;font-size:1.15rem;line-height:1}
+.brand-text .uni{color:var(--gold-light);font-size:.72rem;margin-top:3px;letter-spacing:.8px}
+.navlinks{display:flex;gap:6px;flex-wrap:wrap}
+.navlinks a{color:#e9e6d8;font-size:.88rem;padding:8px 12px;border-radius:8px;transition:.2s}
+.navlinks a:hover,.navlinks a.active{background:rgba(255,255,255,.10);color:#fff}
+.actions{display:flex;align-items:center;gap:8px}
+.btn-ghost{background:transparent;border:1.5px solid var(--gold);color:var(--gold-light);padding:7px 14px;border-radius:22px;font-family:'Cairo',sans-serif;font-weight:700;cursor:pointer;font-size:.82rem;display:inline-flex;align-items:center;gap:6px}
+.btn-ghost:hover{background:rgba(201,162,39,.15)}
+.btn-icon{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--gold);background:transparent;color:var(--gold-light);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px}
+.btn-icon:hover{background:rgba(201,162,39,.15)}
+
+/* Hero - WELCOME */
+.hero{background:linear-gradient(155deg,var(--navy) 0%, var(--navy-2) 60%, #24306e 100%);color:#fff;padding:52px 0 56px;position:relative;overflow:hidden}
+html.dark .hero{background:linear-gradient(155deg,#0d1130 0%, #151a3d 60%, #1c2560 100%)}
+.hero::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg, rgba(201,162,39,.05) 0 2px, transparent 2px 28px);pointer-events:none}
+.hero .wrap{max-width:1180px;margin:0 auto;padding:0 20px;position:relative}
+.welcome-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,162,39,.15);border:1px solid rgba(201,162,39,.35);color:var(--gold-light);padding:6px 14px;border-radius:22px;font-size:.80rem;font-weight:700;margin-bottom:16px}
+.welcome-badge .dot{width:7px;height:7px;background:#4ade80;border-radius:50%;box-shadow:0 0 8px #4ade80;animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{margin:0 0 14px;font-size:clamp(1.8rem,4.5vw,2.85rem);font-weight:900;line-height:1.35}
+.hero h1 .gold{color:var(--gold-light)}
+.hero h1 .white{color:#fff}
+.hero p.welcome{color:#e0e4ff;font-size:1.05rem;line-height:2;max-width:760px;margin:0 0 10px}
+.hero p.welcome2{color:#a9b0e0;font-size:.92rem;line-height:1.9;max-width:760px;margin:0 0 22px}
+.hero p.welcome2 strong{color:var(--gold-light)}
+.hero-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.btn-hero{padding:11px 22px;border-radius:22px;font-family:'Cairo',sans-serif;font-weight:800;font-size:.88rem;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+.btn-hero.gold{background:var(--gold);color:var(--navy)}
+.btn-hero.gold:hover{background:var(--gold-light)}
+.btn-hero.outline{background:rgba(255,255,255,.08);color:#fff;border:1.5px solid rgba(255,255,255,.22);backdrop-filter:blur(6px)}
+.btn-hero.outline:hover{background:rgba(255,255,255,.14)}
+.hero-stats{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+.hero-stat{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(6px);padding:12px 18px;border-radius:12px;min-width:120px;text-align:center}
+.hero-stat .num{font-weight:900;font-size:1.35rem;color:var(--gold-light)}
+.hero-stat .lbl{font-size:.75rem;color:#a9addb;margin-top:2px}
+
+/* Filter bar */
+.filter-bar{max-width:1180px;margin:-18px auto 0;padding:0 20px;position:relative;z-index:2}
+.filter-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;box-shadow:var(--shadow)}
+.filter-card .left{color:var(--muted);font-size:.85rem}
+.filter-card .left strong{color:var(--ink)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{padding:7px 14px;border-radius:22px;border:1.5px solid var(--border);background:var(--card);font-family:'Cairo',sans-serif;font-size:.82rem;font-weight:700;cursor:pointer;color:var(--muted)}
+.chip.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+html.dark .chip.active{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+.chip:hover{border-color:var(--teal);color:var(--teal)}
+
+/* Grid */
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+section.grid-section{padding:28px 0 24px}
+.subjects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;margin-top:22px}
+.sub-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .18s, box-shadow .18s, border-color .18s}
+.sub-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(21,26,61,.14);border-color:var(--gold)}
+.card-top{height:6px}
+.card-head{padding:18px 18px 0;display:flex;align-items:flex-start;gap:14px}
+.icon-box{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;flex:none;border:1.5px solid rgba(0,0,0,.06)}
+html.dark .icon-box{border-color:rgba(255,255,255,.08)}
+.card-head .titles{flex:1;min-width:0}
+.card-head .code{font-size:.72rem;font-weight:800;letter-spacing:.6px;padding:3px 8px;border-radius:20px;display:inline-block;margin-bottom:6px}
+.card-head h3{margin:0;font-size:1.05rem;font-weight:900;color:var(--ink);line-height:1.4}
+.card-head .en{font-size:.78rem;color:var(--muted);margin-top:3px;line-height:1.4}
+.card-body{padding:14px 18px 16px;flex:1;display:flex;flex-direction:column;gap:14px}
+.desc{font-size:.86rem;color:var(--muted);line-height:1.8;margin:0;min-height:44px}
+.meta-row{display:flex;gap:8px;flex-wrap:wrap}
+.meta-pill{background:var(--paper);border:1px solid var(--border);padding:6px 10px;border-radius:20px;font-size:.75rem;color:var(--muted);display:flex;align-items:center;gap:6px;font-weight:600}
+html.dark .meta-pill{background:#1e2450}
+.meta-pill b{color:var(--ink)}
+.progress-wrap{margin-top:2px}
+.progress-head{display:flex;justify-content:space-between;font-size:.75rem;color:var(--muted);margin-bottom:6px}
+.progress-track{height:7px;background:#eee8cc;border-radius:20px;overflow:hidden}
+html.dark .progress-track{background:#2a2f5e}
+.progress-fill{height:100%;border-radius:20px;transition:width .6s ease}
+.card-actions{display:flex;gap:8px;margin-top:auto;padding-top:4px}
+.btn-card{flex:1;padding:10px 10px;border-radius:10px;font-family:'Cairo',sans-serif;font-weight:800;font-size:.82rem;cursor:pointer;text-align:center;border:1.5px solid var(--border);background:var(--card);color:var(--ink);transition:.15s}
+.btn-card.primary{background:var(--navy);color:#fff;border-color:var(--navy)}
+html.dark .btn-card.primary{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+.btn-card.primary:hover{filter:brightness(1.1)}
+.btn-card:hover{border-color:var(--gold);color:var(--ink)}
+.status-badge{font-size:.70rem;font-weight:800;padding:4px 9px;border-radius:20px;display:inline-flex;align-items:center;gap:5px}
+.status-badge.dot::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+
+/* Detail View */
+.detail-overlay{display:none;position:fixed;inset:0;z-index:60;background:rgba(15,18,40,.55);backdrop-filter:blur(4px);padding:20px;overflow:auto}
+.detail-overlay.open{display:flex;align-items:flex-start;justify-content:center;padding-top:30px}
+.detail-panel{background:var(--card);border-radius:18px;max-width:860px;width:100%;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.25);border:1px solid var(--border);max-height:90vh;display:flex;flex-direction:column}
+.detail-head{padding:22px 22px 18px;background:linear-gradient(135deg,var(--navy), var(--navy-2));color:#fff;position:relative}
+.detail-head h2{margin:6px 0 4px;font-size:1.35rem}
+.detail-head .sub{color:#cfd3ea;font-size:.85rem}
+.detail-head .code-badge{background:rgba(201,162,39,.18);border:1px solid rgba(201,162,39,.35);color:var(--gold-light);padding:4px 10px;border-radius:20px;font-size:.75rem;font-weight:800}
+.close-btn{position:absolute;left:18px;top:18px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center}
+.detail-body{padding:22px;overflow:auto}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:700px){.detail-grid{grid-template-columns:1fr}}
+.detail-box{background:var(--paper);border:1px solid var(--border);border-radius:12px;padding:16px}
+.detail-box h4{margin:0 0 8px;font-size:.95rem;color:var(--ink)}
+.detail-box p, .detail-box li{font-size:.85rem;color:var(--muted);line-height:1.8}
+.detail-box ul{margin:8px 0 0;padding-right:18px}
+.action-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.btn-detail{padding:10px 18px;border-radius:22px;font-family:'Cairo',sans-serif;font-weight:800;font-size:.85rem;cursor:pointer;border:none}
+.btn-detail.dark{background:var(--navy);color:#fff}
+html.dark .btn-detail.dark{background:var(--gold);color:var(--navy)}
+.btn-detail.gold{background:var(--gold);color:var(--navy)}
+.btn-detail.outline{background:var(--card);border:1.5px solid var(--border);color:var(--ink)}
+
+/* Support Section */
+.support-section{padding:40px 0 20px}
+.support-head{text-align:center;margin-bottom:26px}
+.support-head .k{color:var(--teal);font-size:.82rem;font-weight:700;margin-bottom:6px}
+.support-head h2{margin:0;font-size:clamp(1.5rem,3vw,2.1rem);color:var(--ink);font-weight:900}
+.support-head p{color:var(--muted);margin-top:10px;font-size:.95rem;line-height:1.8;max-width:620px;margin-left:auto;margin-right:auto}
+.support-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:10px}
+.support-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;text-align:center;box-shadow:var(--shadow);transition:transform .18s, border-color .18s}
+.support-card:hover{transform:translateY(-3px);border-color:var(--gold)}
+.support-card .s-icon{width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;margin:0 auto 14px;border:1.5px solid rgba(0,0,0,.06)}
+html.dark .support-card .s-icon{border-color:rgba(255,255,255,.08)}
+.support-card h3{margin:0 0 6px;font-size:1.02rem;color:var(--ink)}
+.support-card .handle{font-size:.85rem;color:var(--muted);margin-bottom:12px;word-break:break-all}
+.support-card .handle a{color:inherit}
+.support-card p.desc2{font-size:.82rem;color:var(--muted);line-height:1.7;margin:0 0 14px}
+.btn-support{width:100%;padding:10px 14px;border-radius:22px;font-family:'Cairo',sans-serif;font-weight:800;font-size:.85rem;cursor:pointer;border:none;display:inline-flex;align-items:center;justify-content:center;gap:7px;text-decoration:none}
+.btn-support.insta{background:linear-gradient(135deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);color:#fff}
+.btn-support.whats{background:#25D366;color:#fff}
+.btn-support.mail{background:var(--navy);color:#fff}
+html.dark .btn-support.mail{background:var(--gold);color:var(--navy)}
+.btn-support:hover{filter:brightness(1.05);transform:translateY(-1px)}
+
+/* AI Widget */
+.ai-fab{position:fixed;bottom:22px;left:22px;z-index:55;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--navy), #2a3475);border:2px solid var(--gold);box-shadow:0 8px 24px rgba(21,26,61,.25);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;transition:transform .18s}
+.ai-fab:hover{transform:scale(1.06)}
+.ai-fab .notif{position:absolute;top:-4px;right:-4px;width:14px;height:14px;background:#22c55e;border-radius:50%;border:2px solid #fff;box-shadow:0 0 8px #22c55e}
+html[dir="ltr"] .ai-fab{left:auto;right:22px}
+.ai-panel{position:fixed;bottom:90px;left:22px;z-index:55;width:360px;max-width:calc(100vw - 24px);background:var(--card);border:1px solid var(--border);border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.18);overflow:hidden;display:none;flex-direction:column;max-height:520px}
+html[dir="ltr"] .ai-panel{left:auto;right:22px}
+.ai-panel.open{display:flex}
+.ai-header{padding:14px 16px;background:linear-gradient(135deg,var(--navy), #24306e);color:#fff;display:flex;align-items:center;gap:12px;position:relative}
+.ai-header .ai-av{width:42px;height:42px;border-radius:50%;background:radial-gradient(circle at 30% 30%, var(--gold-light), var(--gold));display:flex;align-items:center;justify-content:center;font-size:18px;border:2px solid var(--gold-light);flex:none}
+.ai-header h4{margin:0;font-size:.95rem;font-weight:800}
+.ai-header .ai-sub{font-size:.72rem;color:#cfd3ea}
+.ai-close{position:absolute;left:12px;top:12px;background:rgba(255,255,255,.12);border:none;color:#fff;width:30px;height:30px;border-radius:50%;cursor:pointer}
+html[dir="ltr"] .ai-close{left:auto;right:12px}
+.ai-body{flex:1;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:10px;background:var(--paper)}
+.msg{max-width:84%;padding:10px 12px;border-radius:14px;font-size:.84rem;line-height:1.7}
+.msg.bot{background:var(--card);border:1px solid var(--border);color:var(--ink);align-self:flex-start;border-start-start-radius:4px}
+.msg.user{background:var(--navy);color:#fff;align-self:flex-end;border-end-end-radius:4px}
+html.dark .msg.user{background:var(--gold);color:var(--navy)}
+.msg .time{font-size:.68rem;color:var(--muted);margin-top:4px}
+.ai-quick{padding:8px 10px;border-top:1px solid var(--border);background:var(--card);display:flex;gap:6px;flex-wrap:wrap}
+.qbtn{padding:6px 10px;border-radius:20px;border:1px solid var(--border);background:var(--paper);font-family:'Cairo',sans-serif;font-size:.75rem;font-weight:700;cursor:pointer;color:var(--ink)}
+.qbtn:hover{border-color:var(--gold);background:var(--gold-bg)}
+.ai-inputbar{padding:10px;display:flex;gap:8px;border-top:1px solid var(--border);background:var(--card)}
+.ai-inputbar input{flex:1;padding:10px 12px;border-radius:22px;border:1.5px solid var(--border);background:var(--paper);font-family:'Cairo',sans-serif;font-size:.85rem;color:var(--ink);outline:none}
+.ai-inputbar input:focus{border-color:var(--gold)}
+.ai-send{width:40px;height:40px;border-radius:50%;border:none;background:var(--navy);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px}
+html.dark .ai-send{background:var(--gold);color:var(--navy)}
+.ai-contact-row{display:flex;gap:8px;margin-top:6px}
+.ai-contact-btn{flex:1;padding:8px 6px;border-radius:10px;font-family:'Cairo',sans-serif;font-weight:800;font-size:.75rem;cursor:pointer;border:none;display:flex;align-items:center;justify-content:center;gap:5px;text-decoration:none}
+.ai-contact-btn.wa{background:#25D366;color:#fff}
+.ai-contact-btn.ig{background:linear-gradient(135deg,#feda75,#d62976);color:#fff}
+.ai-contact-btn.mail{background:var(--navy);color:#fff}
+
+/* Footer */
+footer{background:var(--navy);color:#a9addb;text-align:center;padding:28px 20px;font-size:.82rem;margin-top:20px}
+html.dark footer{background:#070a1f}
+footer .gold{color:var(--gold-light)}
+footer a{color:var(--gold-light)}
+
+@media(max-width:640px){
+  .navlinks{display:none}
+  .hero-stats{justify-content:space-between}
+  .hero-stat{min-width:calc(50% - 7px)}
+  .filter-card{flex-direction:column;align-items:stretch}
+  .ai-panel{width:calc(100vw - 16px);left:8px;right:8px}
+}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="navbar">
+    <div class="brand">
+      <div class="crest">KSIU</div>
+      <div class="brand-text">
+        <div class="eng">ENG YOUSSEF</div>
+        <div class="uni" id="uniName">جامعة الملك سلمان الدولية</div>
+      </div>
+    </div>
+    <nav class="navlinks">
+      <a href="#" class="active" id="navHome">الرئيسية</a>
+      <a href="#grid" id="navBoxes">المواد</a>
+      <a href="#support" id="navSupport">الدعم</a>
+    </nav>
+    <div class="actions">
+      <button class="btn-icon" id="darkToggle" title="Dark Mode">🌙</button>
+      <button class="btn-ghost" id="langToggle">English</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO - ترحيبي -->
+<section class="hero">
+  <div class="wrap">
+    <div class="welcome-badge"><span class="dot"></span> <span id="badgeText">أهلاً بزملائي — دفعة هندسة KSIU</span></div>
+    <h1 id="heroH1">أهلاً وسهلاً بكم <span class="gold">يا مهندسي المستقبل! 👋</span></h1>
+    <div class="hero-cta">
+      <a href="#grid" class="btn-hero gold" id="ctaPrimary">🚀 استكشف المواد الآن</a>
+      <a href="#support" class="btn-hero outline" id="ctaSecondary">💬 تواصل معي</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">8</div><div class="lbl" id="lblMaterials">مادة دراسية</div></div>
+      <div class="hero-stat"><div class="num">1</div><div class="lbl" id="lblReady">مادة جاهزة</div></div>
+      <div class="hero-stat"><div class="num">7</div><div class="lbl" id="lblPending">قيد التجهيز</div></div>
+      <div class="hero-stat"><div class="num" style="color:#fff">KSIU</div><div class="lbl" id="lblUni">جامعة الملك سلمان</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="filter-bar">
+  <div class="filter-card">
+    <div class="left"><strong id="filterTitle">عرض: كل المواد</strong> <span id="filterSub">— 8 خانات</span></div>
+    <div class="chips">
+      <button class="chip active" data-filter="all" id="chipAll">الكل (8)</button>
+      <button class="chip" data-filter="ready" id="chipReady">جاهز (1)</button>
+      <button class="chip" data-filter="pending" id="chipPending">قيد التجهيز (7)</button>
+    </div>
+  </div>
+</div>
+
+<section class="grid-section" id="grid">
+  <div class="wrap">
+    <div class="subjects-grid" id="subjectsGrid"></div>
+  </div>
+</section>
+
+<!-- Support Section -->
+<section class="support-section" id="support">
+  <div class="wrap">
+    <div class="support-head">
+      <div class="k" id="supK">الدعم والتواصل</div>
+      <h2 id="supH2">محتاج مساعدة؟ أنا معاك 💛</h2>
+      <p id="supP">لو عندك سؤال في أي مادة، أو عايز ملزمة تضاف، أو حتى حابب تقترح فكرة للموقع — تواصل معي مباشرة على أي منصة، وبرد عليك في أقرب وقت.</p>
+    </div>
+    <div class="support-grid">
+      <div class="support-card">
+        <div class="s-icon" style="background:linear-gradient(135deg,#feda75,#fa7e1e,#d62976);color:#fff">📸</div>
+        <h3 id="supInstaTitle">انستجرام</h3>
+        <div class="handle"><a href="https://www.instagram.com/youssef.khatap/" target="_blank">@youssef.khatap</a></div>
+        <p class="desc2" id="supInstaDesc">تابع يوميات الدراسة والتلخيصات والستوريز</p>
+        <a class="btn-support insta" href="https://www.instagram.com/youssef.khatap/" target="_blank" id="btnInsta">فتح الانستجرام ↗</a>
+      </div>
+      <div class="support-card">
+        <div class="s-icon" style="background:#e0f5ec;color:#25D366">💬</div>
+        <h3 id="supWaTitle">واتساب</h3>
+        <div class="handle" style="direction:ltr">01556659934</div>
+        <p class="desc2" id="supWaDesc">أسرع طريقة للرد — اضغط وادخل المحادثة مباشرة</p>
+        <a class="btn-support whats" href="https://wa.me/201556659934?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20%D9%8A%D8%A7%20%D8%A8%D8%B4%D9%85%D9%87%D9%86%D8%AF%D8%B3%20%D9%8A%D9%88%D8%B3%D9%81%20%F0%9F%91%8B%20%D8%B9%D9%86%D8%AF%D9%8A%20%D8%B3%D8%A4%D8%A7%D9%84%20%D8%B9%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%A7%D8%AF" target="_blank" id="btnWa">مراسلة واتساب ↗</a>
+      </div>
+      <div class="support-card">
+        <div class="s-icon" style="background:#e3efff;color:var(--navy)">✉️</div>
+        <h3 id="supMailTitle">البريد الإلكتروني</h3>
+        <div class="handle"><a href="mailto:exyn0717@gmail.com">exyn0717@gmail.com</a></div>
+        <p class="desc2" id="supMailDesc">للملفات الكبيرة والاقتراحات الرسمية</p>
+        <a class="btn-support mail" href="mailto:exyn0717@gmail.com" id="btnMail">إرسال بريد ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Detail Overlay -->
+<div class="detail-overlay" id="overlay" onclick="if(event.target===this) closeDetail()">
+  <div class="detail-panel" id="detailPanel"></div>
+</div>
+
+<!-- AI Assistant -->
+<button class="ai-fab" id="aiFab" title="مساعد يوسف الذكي">🤖<span class="notif"></span></button>
+<div class="ai-panel" id="aiPanel">
+  <div class="ai-header">
+    <div class="ai-av">🤖</div>
+    <div>
+      <h4 id="aiTitle">مساعد ENG YOUSSEF الذكي</h4>
+      <div class="ai-sub" id="aiSub">يرد فوراً • مرتبط بواتساب وبريد يوسف</div>
+    </div>
+    <button class="ai-close" id="aiClose">×</button>
+  </div>
+  <div class="ai-body" id="aiBody">
+    <div class="msg bot" id="aiWelcome">أهلاً بيك يا بشمهندس! 👋<br>أنا مساعد يوسف الذكي — أقدر أساعدك في:<br>• شرح أي مادة من الـ 8<br>• تلخيص محاضرة ESD217<br>• توجيهك لخانة المادة<br>جرب تكتب: "ما هي طبقات الغلاف الجوي؟" أو اضغط على الأزرار السريعة تحت 👇
+      <div class="ai-contact-row">
+        <a class="ai-contact-btn wa" href="https://wa.me/201556659934" target="_blank">💬 واتساب</a>
+        <a class="ai-contact-btn ig" href="https://www.instagram.com/youssef.khatap/" target="_blank">📸 انستا</a>
+        <a class="ai-contact-btn mail" href="mailto:exyn0717@gmail.com">✉️ بريد</a>
+      </div>
+      <div class="time">الآن</div>
+    </div>
+  </div>
+  <div class="ai-quick" id="aiQuick">
+    <button class="qbtn" data-q="ما هي مواد الفصل؟">📚 مواد الفصل</button>
+    <button class="qbtn" data-q="اشرح طبقات الغلاف الجوي">🌍 الغلاف الجوي</button>
+    <button class="qbtn" data-q="كيف أتواصل مع يوسف؟">💬 تواصل</button>
+    <button class="qbtn" data-q="ما هي ESD217؟">📖 ESD217</button>
+  </div>
+  <div class="ai-inputbar">
+    <input id="aiInput" placeholder="اكتب سؤالك هنا..." />
+    <button class="ai-send" id="aiSend">➤</button>
+  </div>
+</div>
+
+<footer>
+  <div>ENG YOUSSEF <span class="gold">|</span> King Salman International University — <span class="gold">KSIU</span></div>
+  <div style="margin-top:6px;" id="foot">صُنع بكل حب لزملائي الطلاب — بالتوفيق يا مهندسين المستقبل 💛</div>
+  <div style="margin-top:10px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;font-size:.80rem">
+    <a href="https://www.instagram.com/youssef.khatap/" target="_blank">📸 @youssef.khatap</a>
+    <a href="https://wa.me/201556659934" target="_blank">💬 01556659934</a>
+    <a href="mailto:exyn0717@gmail.com">✉️ exyn0717@gmail.com</a>
+  </div>
+</footer>
+
+<script>
+const LANG_AR='ar', LANG_EN='en';
+let LANG='ar';
+const UI={
+  ar:{
+    uniName:"جامعة الملك سلمان الدولية",
+    badgeText:"أهلاً بزملائي — دفعة هندسة KSIU",
+    heroH1:'أهلاً وسهلاً بكم <span class="gold">يا مهندسي المستقبل! 👋</span>',
+    heroLead:"معكم أخوكم يوسف خطاب من جامعة الملك سلمان الدولية — صممت لكم هذا الموقع ليكون بيتكم الدراسي، جمعت فيه كل مواد الفصل الأول في مكان واحد مرتب، عشان نذاكر مع بعض خطوة بخطوة ونعدي الترم بأعلى تقدير بإذن الله.",
+    heroLead2:'هنا هتلاقي لكل مادة <strong>خانة خاصة</strong> فيها الملخصات، الشرح التفاعلي، والاختبارات. مادة <strong>تغير المناخ ESD217</strong> جاهزة بالكامل الآن، وباقي المواد بتتجهز معاكم أول بأول — أنتم بس ركزوا على حلمكم، والباقي علينا 💛',
+    ctaPrimary:"🚀 استكشف المواد الآن", ctaSecondary:"💬 تواصل معي",
+    navHome:"الرئيسية", navBoxes:"المواد", navSupport:"الدعم",
+    lblMaterials:"مادة دراسية", lblReady:"مادة جاهزة", lblPending:"قيد التجهيز", lblUni:"جامعة الملك سلمان",
+    filterTitle:"عرض: كل المواد", filterSub:"— 8 خانات",
+    chipAll:"الكل (8)", chipReady:"جاهز (1)", chipPending:"قيد التجهيز (7)",
+    supK:"الدعم والتواصل", supH2:"محتاج مساعدة؟ أنا معاك 💛", supP:"لو عندك سؤال في أي مادة، أو عايز ملزمة تضاف، أو حتى حابب تقترح فكرة للموقع — تواصل معي مباشرة على أي منصة، وبرد عليك في أقرب وقت.",
+    supInstaTitle:"انستجرام", supInstaDesc:"تابع يوميات الدراسة والتلخيصات والستوريز", btnInsta:"فتح الانستجرام ↗",
+    supWaTitle:"واتساب", supWaDesc:"أسرع طريقة للرد — اضغط وادخل المحادثة مباشرة", btnWa:"مراسلة واتساب ↗",
+    supMailTitle:"البريد الإلكتروني", supMailDesc:"للملفات الكبيرة والاقتراحات الرسمية", btnMail:"إرسال بريد ↗",
+    foot:"صُنع بكل حب لزملائي الطلاب — بالتوفيق يا مهندسين المستقبل 💛",
+    langBtn:"English", enter:"دخول للمادة", summary:"ملخص", quiz:"اختبار", progress:"التقدم", ready:"جاهز", pending:"قيد التجهيز", lectures:"محاضرات", hours:"ساعات", close:"إغلاق",
+    aiTitle:"مساعد ENG YOUSSEF الذكي", aiSub:"يرد فوراً • مرتبط بواتساب وبريد يوسف", aiPlaceholder:"اكتب سؤالك هنا...",
+    aiWelcome:`أهلاً بيك يا بشمهندس! 👋<br>أنا مساعد يوسف الذكي — أقدر أساعدك في:<br>• شرح أي مادة من الـ 8<br>• تلخيص محاضرة ESD217<br>• توجيهك لخانة المادة<br>جرب تكتب: "ما هي طبقات الغلاف الجوي؟" أو اضغط على الأزرار السريعة تحت 👇`
+  },
+  en:{
+    uniName:"King Salman International University",
+    badgeText:"Welcome colleagues — KSIU Engineering Batch",
+    heroH1:'Welcome <span class="gold">Future Engineers! 👋</span>',
+    heroLead:"I'm your colleague Youssef Khattab from King Salman International University — I built this site to be your study home, gathering all first-semester courses in one organized place so we can study together step by step and ace the semester.",
+    heroLead2:'Here you will find a <strong>dedicated box</strong> for each course with summaries, interactive explanations and quizzes. <strong>ESD217 Climate Change</strong> is fully ready now, and the rest are being prepared with you — just focus on your dream! 💛',
+    ctaPrimary:"🚀 Explore Courses", ctaSecondary:"💬 Contact Me",
+    navHome:"Home", navBoxes:"Courses", navSupport:"Support",
+    lblMaterials:"Courses", lblReady:"Ready", lblPending:"Pending", lblUni:"KSIU",
+    filterTitle:"Showing: All Courses", filterSub:"— 8 boxes",
+    chipAll:"All (8)", chipReady:"Ready (1)", chipPending:"Pending (7)",
+    supK:"Support & Contact", supH2:"Need help? I'm here 💛", supP:"If you have a question about any course, want notes added, or have an idea for the site — reach me directly on any platform and I'll reply ASAP.",
+    supInstaTitle:"Instagram", supInstaDesc:"Follow study diaries and summaries", btnInsta:"Open Instagram ↗",
+    supWaTitle:"WhatsApp", supWaDesc:"Fastest reply — tap to chat directly", btnWa:"Chat on WhatsApp ↗",
+    supMailTitle:"Email", supMailDesc:"For large files & formal suggestions", btnMail:"Send Email ↗",
+    foot:"Made with love for my fellow students — Good luck future engineers 💛",
+    langBtn:"العربية", enter:"Open Course", summary:"Summary", quiz:"Quiz", progress:"Progress", ready:"Ready", pending:"Pending", lectures:"Lectures", hours:"Hours", close:"Close",
+    aiTitle:"ENG YOUSSEF AI Assistant", aiSub:"Instant replies • Linked to Youssef's WhatsApp & Email", aiPlaceholder:"Type your question...",
+    aiWelcome:`Hello engineer! 👋<br>I'm Youssef's AI assistant — I can help with:<br>• Explaining any of the 8 courses<br>• Summarizing ESD217<br>• Directing you to a course box<br>Try: "What are the atmosphere layers?"`
+  }
+};
+
+const SUBJECTS=[
+  {code:"ESD217", arName:"تغير المناخ والاستدامة", enName:"Climate Change and Sustainability", icon:"🌍", color:"#2f8f88", light:"#e0f2f0", top:"#2f8f88", descAr:"متطلب جامعي - يغطي مفهوم المناخ والطقس، طبقات الغلاف الجوي، والتغير المناخي البشري بأمثلة من مصر والعالم.", descEn:"University requirement — covers climate vs weather, atmosphere layers, and anthropogenic climate change.", lectures:5, hours:12, progress:100, status:"ready", link:"esd217.html", detailAr:{about:"مقرر ESD217 جاهز بالكامل ويحتوي على 5 طبقات غلاف جوي، شرح تفاعلي 5 خطوات، واختبار 10 أسئلة.", includes:["ملخص 7 بطاقات تفاعلية","رسم توضيحي لطبقات الغلاف الجوي","شرح تفاعلي 5 مراحل","اختبار قصير 10 أسئلة + نتيجة فورية"], next:"يمكنك الدخول الآن لعرض المحاضرة الأولى كاملة."}, detailEn:{about:"ESD217 is fully ready with 5 layers, 5-step explainer, and 10-question quiz.", includes:["7 interactive cards","Atmosphere SVG","5-step walkthrough","10-question quiz"], next:"Open Lecture 1 now."}},
+  {code:"ARB112", arName:"مهارات اللغة العربية", enName:"Arabic Language Skills", icon:"📖", color:"#7a3b2e", light:"#fbe9e6", top:"#b4533a", descAr:"تنمية مهارات الاتصال اللغوي قراءة وكتابة واستماع ومحادثة، مع قواعد النحو والصرف والبلاغة.", descEn:"Arabic communication: reading, writing, listening & speaking, with grammar and rhetoric.", lectures:0, hours:10, progress:10, status:"pending", detailAr:{about:"خانة مخصصة لمادة اللغة العربية. ارفع ملزمة المقرر وسيتم تحويلها لخانة تفاعلية.", includes:["قواعد النحو والصرف","مهارات الكتابة والتحليل","نصوص بلاغية","تدريبات واختبارات"], next:"أرسل ملفات ARB112 لإنشائها بنفس التصميم."}, detailEn:{about:"Dedicated box for Arabic Skills. Upload the course book.", includes:["Grammar","Writing","Rhetorical texts","Quizzes"], next:"Send ARB112 files."}},
+  {code:"ENG022", arName:"اللغة الإنجليزية 1", enName:"English 1", icon:"🔤", color:"#1a5091", light:"#e3efff", top:"#1a5091", descAr:"تأسيس في اللغة الإنجليزية العامة: قواعد، مفردات، محادثة وكتابة أكاديمية للمستوى الأول.", descEn:"Foundation in general English: grammar, vocabulary, conversation and academic writing.", lectures:0, hours:12, progress:10, status:"pending", detailAr:{about:"خانة ENG022 - وحدات القواعد والمفردات والمحادثة.", includes:["Grammar foundations","Vocabulary themes","Listening & Speaking","Writing basics"], next:"أرسل كتاب أو ملازم ENG022."}, detailEn:{about:"ENG022 box - grammar, vocabulary and conversation.", includes:["Grammar","Vocabulary","Listening & Speaking","Writing"], next:"Send ENG022 book."}},
+  {code:"MAT121", arName:"الاستاتيكا", enName:"Statics", icon:"⚖️", color:"#4a3f8a", light:"#ede8ff", top:"#5b4db3", descAr:"أساسيات الميكانيكا الهندسية: اتزان القوى، العزوم، الجمالونات والإطارات والاحتكاك.", descEn:"Force equilibrium, moments, trusses, frames & friction.", lectures:0, hours:14, progress:10, status:"pending", detailAr:{about:"مادة الاستاتيكا - رسومات قوى ومسائل محلولة.", includes:["تحليل القوى والعزوم","اتزان الجسيم والجسم الجامد","الجمالونات","الاحتكاك"], next:"أرسل شيتات أو كتاب الاستاتيكا."}, detailEn:{about:"Statics - force diagrams and solved problems.", includes:["Force & moment","Equilibrium","Trusses","Friction"], next:"Send statics sheets."}},
+  {code:"CSE013", arName:"مقدمة في نظم المعلومات والتكنولوجيا", enName:"Intro to Information Systems & Technology", icon:"💻", color:"#0e7a5a", light:"#e0f5ec", top:"#0e7a5a", descAr:"مفاهيم نظم المعلومات، مكونات الحاسب، الشبكات، قواعد البيانات والأمن السيبراني.", descEn:"IS concepts, computer components, networks, databases and cybersecurity.", lectures:0, hours:12, progress:10, status:"pending", detailAr:{about:"خانة CSE013 - أساسيات الحاسب والنظم.", includes:["مكونات الحاسب","الشبكات والإنترنت","قواعد البيانات","الأمن السيبراني"], next:"أرسل سلايدات CSE013."}, detailEn:{about:"CSE013 - CS & IS basics.", includes:["Hardware","Networks","Databases","Cybersecurity"], next:"Send slides."}},
+  {code:"MEC011", arName:"الرسم الهندسي 1", enName:"Engineering Drawing (1)", icon:"📐", color:"#8a6d00", light:"#fdf6d8", top:"#c9a227", descAr:"أساسيات الرسم الهندسي: الإسقاطات، القطاعات، الأبعاد والرسم ببرامج CAD.", descEn:"Projections, sections, dimensioning and CAD.", lectures:0, hours:14, progress:10, status:"pending", detailAr:{about:"خانة الرسم الهندسي - لوحات وأمثلة إسقاطات.", includes:["الإسقاط العمودي","القطاعات","الأبعاد","AutoCAD"], next:"أرسل لوحات MEC011."}, detailEn:{about:"Drawing box - plates & projections.", includes:["Orthographic","Sections","Dimensioning","AutoCAD"], next:"Send plates."}},
+  {code:"MAT111", arName:"الرياضيات 1", enName:"Mathematics I", icon:"∫", color:"#b42318", light:"#fdecea", top:"#c0392b", descAr:"تفاضل وتكامل: النهايات، الاشتقاق، التكامل وتطبيقاته والدوال.", descEn:"Calculus: limits, differentiation, integration & applications.", lectures:0, hours:14, progress:10, status:"pending", detailAr:{about:"خانة الرياضيات 1 - تفاضل وتكامل مع مسائل محلولة.", includes:["النهايات","الاشتقاق","التكامل","التطبيقات"], next:"أرسل شيتات MAT111."}, detailEn:{about:"Mathematics 1 - calculus.", includes:["Limits","Differentiation","Integrals","Applications"], next:"Send sheets."}},
+  {code:"PHY212", arName:"مقدمة في الفيزياء الهندسية", enName:"Intro to Engineering Physics", icon:"⚛️", color:"#0f4c75", light:"#e0eef8", top:"#1a6daa", descAr:"ميكانيكا، حرارة، كهرباء ومغناطيسية وأساسيات فيزيائية للتخصصات الهندسية.", descEn:"Mechanics, heat, electricity & magnetism basics.", lectures:0, hours:12, progress:10, status:"pending", detailAr:{about:"خانة الفيزياء الهندسية - قوانين وتجارب.", includes:["الميكانيكا","الحرارة","الكهرباء","الموجات"], next:"أرسل كتاب PHY212."}, detailEn:{about:"Physics box - laws & experiments.", includes:["Mechanics","Heat","Electricity","Waves"], next:"Send book."}}
+];
+
+function t(k){ return UI[LANG][k]; }
+
+function applyLang(){
+  document.documentElement.lang=LANG;
+  document.documentElement.dir=LANG==='ar'?'rtl':'ltr';
+  document.getElementById('uniName').textContent=UI[LANG].uniName;
+  document.getElementById('badgeText').textContent=UI[LANG].badgeText;
+  document.getElementById('heroH1').innerHTML=UI[LANG].heroH1;
+  const hl=document.getElementById('heroLead'); if(hl) hl.innerHTML=UI[LANG].heroLead;
+  const hl2=document.getElementById('heroLead2'); if(hl2) hl2.innerHTML=UI[LANG].heroLead2;
+  document.getElementById('ctaPrimary').textContent=UI[LANG].ctaPrimary;
+  document.getElementById('ctaSecondary').textContent=UI[LANG].ctaSecondary;
+  document.getElementById('navHome').textContent=UI[LANG].navHome;
+  document.getElementById('navBoxes').textContent=UI[LANG].navBoxes;
+  document.getElementById('navSupport').textContent=UI[LANG].navSupport;
+  document.getElementById('lblMaterials').textContent=UI[LANG].lblMaterials;
+  document.getElementById('lblReady').textContent=UI[LANG].lblReady;
+  document.getElementById('lblPending').textContent=UI[LANG].lblPending;
+  document.getElementById('lblUni').textContent=UI[LANG].lblUni;
+  document.getElementById('filterTitle').textContent=UI[LANG].filterTitle;
+  document.getElementById('filterSub').textContent=UI[LANG].filterSub;
+  document.getElementById('chipAll').textContent=UI[LANG].chipAll;
+  document.getElementById('chipReady').textContent=UI[LANG].chipReady;
+  document.getElementById('chipPending').textContent=UI[LANG].chipPending;
+  document.getElementById('supK').textContent=UI[LANG].supK;
+  document.getElementById('supH2').textContent=UI[LANG].supH2;
+  document.getElementById('supP').textContent=UI[LANG].supP;
+  document.getElementById('supInstaTitle').textContent=UI[LANG].supInstaTitle;
+  document.getElementById('supInstaDesc').textContent=UI[LANG].supInstaDesc;
+  document.getElementById('btnInsta').textContent=UI[LANG].btnInsta;
+  document.getElementById('supWaTitle').textContent=UI[LANG].supWaTitle;
+  document.getElementById('supWaDesc').textContent=UI[LANG].supWaDesc;
+  document.getElementById('btnWa').textContent=UI[LANG].btnWa;
+  document.getElementById('supMailTitle').textContent=UI[LANG].supMailTitle;
+  document.getElementById('supMailDesc').textContent=UI[LANG].supMailDesc;
+  document.getElementById('btnMail').textContent=UI[LANG].btnMail;
+  document.getElementById('foot').textContent=UI[LANG].foot;
+  document.getElementById('langToggle').textContent=UI[LANG].langBtn;
+  document.getElementById('aiTitle').textContent=UI[LANG].aiTitle;
+  document.getElementById('aiSub').textContent=UI[LANG].aiSub;
+  document.getElementById('aiInput').placeholder=UI[LANG].aiPlaceholder;
+  renderGrid(currentFilter);
+}
+
+let currentFilter='all';
+function renderGrid(filter='all'){
+  currentFilter=filter;
+  const grid=document.getElementById('subjectsGrid');
+  let list=SUBJECTS;
+  if(filter==='ready') list=SUBJECTS.filter(s=>s.status==='ready');
+  if(filter==='pending') list=SUBJECTS.filter(s=>s.status==='pending');
+  grid.innerHTML=list.map(s=>{
+    const name=LANG==='ar'?s.arName:s.enName;
+    const desc=LANG==='ar'?s.descAr:s.descEn;
+    const statusLabel=s.status==='ready'?t('ready'):t('pending');
+    const statusColor=s.status==='ready'?'#0e7a5a':'#b4533a';
+    const statusBg=s.status==='ready'?'#e0f5ec':'#fdf0e0';
+    return `<div class="sub-card"><div class="card-top" style="background:${s.top}"></div><div class="card-head"><div class="icon-box" style="background:${s.light};color:${s.color}">${s.icon}</div><div class="titles"><span class="code" style="background:${s.light};color:${s.color};border:1px solid ${s.color}22">${s.code}</span><h3>${name}</h3><div class="en">${s.enName} · ${s.code}</div></div></div><div class="card-body"><p class="desc">${desc}</p><div class="meta-row"><span class="meta-pill">📚 <b>${s.lectures}</b> ${t('lectures')}</span><span class="meta-pill">⏱ <b>${s.hours}</b> ${t('hours')}</span><span class="status-badge dot" style="background:${statusBg};color:${statusColor}">${statusLabel}</span></div><div class="progress-wrap"><div class="progress-head"><span>${t('progress')}</span><span style="font-weight:800;color:${s.color}">${s.progress}%</span></div><div class="progress-track"><div class="progress-fill" style="width:${s.progress}%;background:${s.color}"></div></div></div><div class="card-actions"><button class="btn-card primary" onclick="openDetail('${s.code}')">${t('enter')}</button><button class="btn-card" onclick="openDetail('${s.code}')">${t('summary')}</button><button class="btn-card" onclick="openDetail('${s.code}')">${t('quiz')}</button></div></div></div>`;
+  }).join('');
+}
+
+function openDetail(code){
+  const s=SUBJECTS.find(x=>x.code===code);
+  const detail=LANG==='ar'?s.detailAr:s.detailEn;
+  const name=LANG==='ar'?s.arName:s.enName;
+  const desc=LANG==='ar'?s.descAr:s.descEn;
+  const isReady=s.status==='ready';
+  document.getElementById('detailPanel').innerHTML=`<div class="detail-head" style="background:linear-gradient(135deg, ${s.color}, ${s.top})"><button class="close-btn" onclick="closeDetail()">×</button><div class="code-badge">${s.code}</div><h2>${s.icon} ${name}</h2><div class="sub">${s.enName} · ${isReady?t('ready'):t('pending')} · ${s.progress}%</div></div><div class="detail-body"><p style="color:var(--muted);line-height:1.9;font-size:.92rem;margin:0 0 16px">${desc}</p><p style="color:var(--ink);font-weight:700;margin:0 0 6px">${detail.about}</p><div class="detail-grid"><div class="detail-box"><h4>📦 ${LANG==='ar'?'محتويات الخانة':'Box Contents'}</h4><ul>${detail.includes.map(i=>`<li>${i}</li>`).join('')}</ul></div><div class="detail-box" style="background:${s.light};border-color:${s.color}22"><h4 style="color:${s.color}">🎯 ${LANG==='ar'?'الخطوة التالية':'Next Step'}</h4><p>${detail.next}</p><div class="action-row">${isReady?`<a href="${s.link}" class="btn-detail dark" style="text-decoration:none;display:inline-block">${LANG==='ar'?'فتح المحتوى الجاهز →':'Open Ready Content →'}</a>`:`<span class="btn-detail outline" style="opacity:.7">${LANG==='ar'?'بانتظار ملفات المادة':'Awaiting files'}</span>`}</div></div></div><div class="detail-box" style="margin-top:14px"><h4>📊 ${LANG==='ar'?'تفاصيل سريعة':'Quick Details'}</h4><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px"><span class="meta-pill">📚 <b>${s.lectures}</b> ${t('lectures')}</span><span class="meta-pill">⏱ <b>${s.hours}</b> ${t('hours')}</span><span class="meta-pill">📈 <b>${s.progress}%</b> ${t('progress')}</span><span class="status-badge dot" style="background:${isReady?'#e0f5ec':'#fdf0e0'};color:${isReady?'#0e7a5a':'#b4533a'}">${isReady?t('ready'):t('pending')}</span></div></div>${!isReady?`<div style="background:#fffbe6;border:1px dashed #e6c85a;padding:12px 14px;border-radius:10px;margin-top:14px;font-size:.85rem;color:#7a5a00;line-height:1.8">${LANG==='ar'?`💡 <b>كيف نجهز هذه الخانة؟</b> أرسل لي ملزمة <b>${s.code}</b> وسأحولها فوراً لنفس تصميم ESD217.`:`💡 Send <b>${s.code}</b> files to build it like ESD217.`}</div>`:''}<div style="display:flex;justify-content:flex-end;margin-top:18px"><button class="btn-detail outline" onclick="closeDetail()">${t('close')}</button></div></div>`;
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeDetail(){document.getElementById('overlay').classList.remove('open');document.body.style.overflow='';}
+
+// Dark Mode
+const darkToggle=document.getElementById('darkToggle');
+function setDark(on){
+  document.documentElement.classList.toggle('dark',on);
+  darkToggle.textContent=on?'☀️':'🌙';
+  localStorage.setItem('dark',on?'1':'0');
+}
+setDark(localStorage.getItem('dark')==='1');
+darkToggle.addEventListener('click',()=> setDark(!document.documentElement.classList.contains('dark')));
+
+// Lang
+document.getElementById('langToggle').addEventListener('click',()=>{LANG=LANG===LANG_AR?LANG_EN:LANG_AR; applyLang();});
+document.querySelectorAll('.chip').forEach(ch=>{ch.addEventListener('click',()=>{document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active')); ch.classList.add('active'); renderGrid(ch.dataset.filter);});});
+
+// AI Assistant
+const aiFab=document.getElementById('aiFab'), aiPanel=document.getElementById('aiPanel'), aiBody=document.getElementById('aiBody'), aiInput=document.getElementById('aiInput');
+function toggleAI(){aiPanel.classList.toggle('open'); if(aiPanel.classList.contains('open')) aiInput.focus();}
+aiFab.addEventListener('click',toggleAI);
+document.getElementById('aiClose').addEventListener('click',toggleAI);
+
+function addMsg(text, who='bot'){
+  const d=document.createElement('div'); d.className='msg '+who;
+  d.innerHTML=text+`<div class="time">${new Date().toLocaleTimeString('ar-EG',{hour:'2-digit',minute:'2-digit'})}</div>`;
+  aiBody.appendChild(d); aiBody.scrollTop=aiBody.scrollHeight;
+}
+function aiReply(q){
+  q=q.toLowerCase();
+  // contact
+  if(q.includes('تواصل')||q.includes('واتس')||q.includes('رقم')||q.includes('انستا')||q.includes('بريد')||q.includes('contact')||q.includes('whatsapp')||q.includes('instagram')){
+    return `تقدر تتواصل مع يوسف مباشرة:<br>
+    📸 انستجرام: <a href="https://www.instagram.com/youssef.khatap/" target="_blank" style="color:var(--navy);font-weight:800">@youssef.khatap</a><br>
+    💬 واتساب: <a href="https://wa.me/201556659934" target="_blank" style="color:#25D366;font-weight:800">01556659934 (اضغط للدردشة)</a><br>
+    ✉️ بريد: <a href="mailto:exyn0717@gmail.com" style="color:var(--navy);font-weight:800">exyn0717@gmail.com</a><br><br>
+    <div class="ai-contact-row"><a class="ai-contact-btn wa" href="https://wa.me/201556659934?text=مرحبا%20يا%20بشمهندس%20يوسف" target="_blank">💬 واتساب</a><a class="ai-contact-btn ig" href="https://www.instagram.com/youssef.khatap/" target="_blank">📸 انستا</a><a class="ai-contact-btn mail" href="mailto:exyn0717@gmail.com">✉️ بريد</a></div>`;
+  }
+  if(q.includes('غلاف')||q.includes('atmosphere')||q.includes('تروبوسفير')||q.includes('ستراتو')){
+    return `🌍 <b>طبقات الغلاف الجوي (5 طبقات):</b><br>1. التروبوسفير (0-10كم) — فيها الطقس ومعظم الحياة<br>2. الستراتوسفير (10-50كم) — فيها طبقة الأوزون<br>3. الميزوسفير (50-80كم) — أبرد طبقة، تحترق فيها الشهب<br>4. الثيرموسفير (80-700كم) — فيها الأيونوسفير للاتصالات<br>5. الإكزوسفير (700-10000كم) — مكان الأقمار الصناعية<br><br>التفاصيل الكاملة في خانة <b>ESD217</b> → اضغط "دخول للمادة".`;
+  }
+  if(q.includes('esd')||q.includes('مناخ')||q.includes('استدامة')||q.includes('climate')){
+    return `📖 <b>ESD217 - تغير المناخ والاستدامة</b> جاهز 100%!<br>فيه: ملخص 7 بطاقات + رسم تفاعلي للغلاف الجوي + شرح 5 خطوات + اختبار 10 أسئلة.<br><a href="esd217.html" style="color:var(--navy);font-weight:800">→ افتح ESD217 الآن</a>`;
+  }
+  if(q.includes('مواد')||q.includes('courses')||q.includes('مادة')||q.includes('خانة')){
+    return `📚 <b>مواد الفصل الـ 8:</b><br>🌍 ESD217 مناخ (جاهز)<br>📖 ARB112 عربي<br>🔤 ENG022 إنجليزي<br>⚖️ MAT121 استاتيكا<br>💻 CSE013 نظم معلومات<br>📐 MEC011 رسم هندسي<br>∫ MAT111 رياضيات 1<br>⚛️ PHY212 فيزياء هندسية<br><br>اضغط على أي خانة للدخول لتفاصيلها.`;
+  }
+  if(q.includes('مرحبا')||q.includes('سلام')||q.includes('hello')||q.includes('هلا')){
+    return `هلا والله يا بشمهندس! 😍<br>أنا هنا أساعدك في أي مادة — اسألني عن أي خانة أو قل لي "اشرح ESD217"`;
+  }
+  return `حلو سؤالك! 👌<br>أقدر أساعدك في:<br>• تفاصيل كل مادة (اكتب اسم المادة)<br>• شرح ESD217 وطبقات الغلاف الجوي<br>• التواصل مع يوسف<br><br>جرب الأزرار السريعة فوق، أو راسل يوسف مباشرة:<br><div class="ai-contact-row"><a class="ai-contact-btn wa" href="https://wa.me/201556659934" target="_blank">💬 واتساب 01556659934</a><a class="ai-contact-btn mail" href="mailto:exyn0717@gmail.com">✉️ exyn0717@gmail.com</a></div>`;
+}
+function sendAI(){
+  const val=aiInput.value.trim(); if(!val) return;
+  addMsg(val,'user'); aiInput.value='';
+  setTimeout(()=> addMsg(aiReply(val),'bot'), 500);
+}
+document.getElementById('aiSend').addEventListener('click',sendAI);
+aiInput.addEventListener('keydown',e=>{if(e.key==='Enter') sendAI();});
+document.querySelectorAll('.qbtn').forEach(b=> b.addEventListener('click',()=>{
+  const q=b.dataset.q; addMsg(q,'user'); setTimeout(()=> addMsg(aiReply(q),'bot'), 400);
+}));
+
+// Init
+renderGrid('all');
+</script>
+</body>
+</html>
+
 });
 
 renderAll();
