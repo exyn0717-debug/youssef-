@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ENG YOUSSEF | ESD217 - Climate Change & Sustainability</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Amiri:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#151a3d; --navy-2:#1f2657; --gold:#c9a227; --gold-light:#e6c85a;
+  --teal:#2f8f88; --paper:#f6f3ea; --ink:#1a1a2e; --ink-soft:#4a4d63;
+  --card:#ffffff; --border:#e4ddc9;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box;}
+html{scroll-padding-top:env(safe-area-inset-top,0px); scroll-behavior:smooth;}
+html,body{height:100%;}
+body{margin:0;font-family:'Cairo',sans-serif;background:var(--paper);color:var(--ink);
+  background-image:radial-gradient(circle at 90% 8%, rgba(201,162,39,0.10), transparent 40%),
+    radial-gradient(circle at 5% 90%, rgba(47,143,136,0.10), transparent 40%);}
+html[dir="ltr"] body{font-family:'Cairo',system-ui,sans-serif;}
+img{max-width:100%;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--navy);border-bottom:3px solid var(--gold);}
+.navbar{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1080px;margin:0 auto;gap:14px;flex-wrap:wrap;}
+.brand{display:flex;align-items:center;gap:12px;}
+.crest{width:46px;height:46px;border-radius:50%;background:radial-gradient(circle at 35% 30%, var(--gold-light), var(--gold) 70%);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--navy);font-size:13px;border:2px solid var(--gold-light);flex:none;}
+.brand-text .eng{color:#fff;font-weight:900;font-size:1.15rem;line-height:1;letter-spacing:.5px;}
+.brand-text .uni{color:var(--gold-light);font-size:.72rem;margin-top:3px;letter-spacing:1px;}
+.navright{display:flex;align-items:center;gap:14px;}
+nav.links{display:flex;gap:6px;flex-wrap:wrap;}
+nav.links a{color:#e9e6d8;text-decoration:none;font-size:.9rem;padding:8px 12px;border-radius:8px;transition:background .2s;}
+nav.links a:hover{background:rgba(255,255,255,.08);}
+#langToggle{background:transparent;border:1.5px solid var(--gold);color:var(--gold-light);padding:7px 16px;border-radius:22px;font-family:'Cairo',sans-serif;font-weight:700;cursor:pointer;font-size:.82rem;white-space:nowrap;}
+#langToggle:hover{background:rgba(201,162,39,.15);}
+.hero{background:linear-gradient(160deg,var(--navy) 0%, var(--navy-2) 65%, #24306e 100%);color:#fff;padding:56px 0 64px;position:relative;overflow:hidden;}
+.hero::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg, rgba(201,162,39,0.05) 0 2px, transparent 2px 26px);pointer-events:none;}
+.hero .wrap{position:relative;}
+.eyebrow-row{display:flex;align-items:center;gap:10px;margin-bottom:18px;color:var(--gold-light);font-size:.85rem;}
+.eyebrow-row .dot{width:6px;height:6px;background:var(--gold-light);border-radius:50%;}
+.hero h1{font-size:clamp(1.9rem,4.5vw,2.9rem);margin:0 0 14px;font-weight:900;line-height:1.25;}
+.hero p.lead{max-width:640px;color:#cfd3ea;font-size:1.05rem;line-height:1.9;margin-bottom:28px;}
+.hero-meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:8px;}
+.hero-meta div{border-right:2px solid rgba(201,162,39,.4);padding-right:16px;}
+html[dir="ltr"] .hero-meta div{border-right:none;border-left:2px solid rgba(201,162,39,.4);padding-right:0;padding-left:16px;}
+.hero-meta div:last-child{border:none;}
+.hero-meta .num{color:var(--gold-light);font-weight:900;font-size:1.3rem;}
+.hero-meta .lbl{color:#a9addb;font-size:.78rem;margin-top:2px;}
+section{padding:56px 0;}
+section.alt{background:#fbf9f2;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.section-head{margin-bottom:32px;}
+.section-head .k{color:var(--teal);font-size:.82rem;font-weight:700;margin-bottom:6px;}
+.section-head h2{font-family:'Amiri',serif;font-size:clamp(1.5rem,3vw,2.1rem);margin:0;color:var(--navy);font-weight:700;}
+html[dir="ltr"] .section-head h2{font-family:'Playfair Display',serif;}
+.section-head p{color:var(--ink-soft);margin-top:10px;max-width:640px;line-height:1.9;}
+.grid-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;}
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:22px;position:relative;}
+.card .tag{display:inline-block;font-size:.72rem;color:var(--navy);background:#eee6c4;padding:3px 10px;border-radius:20px;margin-bottom:12px;font-weight:700;}
+.card h3{margin:0 0 10px;font-size:1.05rem;color:var(--navy);}
+.card p{margin:0;color:var(--ink-soft);font-size:.92rem;line-height:1.85;}
+.card.highlight{border-color:var(--gold);background:linear-gradient(180deg,#fffef8,#fbf6e2);}
+.atmos-wrap{display:flex;gap:36px;flex-wrap:wrap;align-items:flex-start;}
+.atmos-svg{flex:1 1 320px;min-width:280px;}
+.atmos-list{flex:1 1 360px;display:flex;flex-direction:column;gap:10px;}
+.atmos-item{border:1px solid var(--border);background:var(--card);border-radius:8px;padding:12px 16px;cursor:pointer;transition:border-color .2s;}
+.atmos-item:hover{border-color:var(--teal);}
+.atmos-item.active{border-color:var(--gold);background:#fffdf3;}
+.atmos-item .row{display:flex;justify-content:space-between;align-items:center;}
+.atmos-item h4{margin:0;font-size:.98rem;color:var(--navy);}
+.atmos-item .alt{font-size:.75rem;color:var(--teal);font-weight:700;}
+.atmos-item .detail{display:none;margin-top:8px;font-size:.87rem;color:var(--ink-soft);line-height:1.8;}
+.atmos-item.active .detail{display:block;}
+.explainer{background:var(--navy);border-radius:14px;overflow:hidden;border:1px solid #2b3170;}
+.explainer-top{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid #2b3170;}
+.explainer-top .title{color:#fff;font-weight:700;font-size:.95rem;}
+.explainer-top .step-count{color:var(--gold-light);font-size:.8rem;}
+.explainer-stage{min-height:280px;padding:30px 26px;color:#e6e8f7;}
+.explainer-stage h3{color:var(--gold-light);font-family:'Amiri',serif;font-size:1.35rem;margin:0 0 14px;}
+html[dir="ltr"] .explainer-stage h3{font-family:'Playfair Display',serif;}
+.explainer-stage p{line-height:2;font-size:.98rem;color:#d3d6ee;margin:0 0 10px;}
+.explainer-stage .example{background:rgba(47,143,136,.15);border-right:3px solid var(--teal);padding:10px 14px;border-radius:6px;margin-top:14px;font-size:.9rem;color:#cfe9e6;}
+html[dir="ltr"] .explainer-stage .example{border-right:none;border-left:3px solid var(--teal);}
+.explainer-nav{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-top:1px solid #2b3170;}
+.explainer-nav .dots{display:flex;gap:7px;}
+.explainer-nav .dots span{width:8px;height:8px;border-radius:50%;background:#3b4180;}
+.explainer-nav .dots span.on{background:var(--gold);}
+.explainer-nav button{background:transparent;border:1.5px solid var(--gold);color:var(--gold-light);padding:8px 18px;border-radius:24px;font-family:'Cairo',sans-serif;font-weight:700;cursor:pointer;font-size:.85rem;}
+.explainer-nav button:disabled{opacity:.3;cursor:default;}
+.explainer-nav button:hover:not(:disabled){background:rgba(201,162,39,.12);}
+.quiz-card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;}
+.quiz-head{background:var(--navy);color:#fff;padding:18px 24px;display:flex;justify-content:space-between;align-items:center;}
+.quiz-head .qn{font-size:.85rem;color:var(--gold-light);}
+.quiz-body{padding:26px 24px;}
+.quiz-body h3{margin:0 0 20px;font-size:1.1rem;color:var(--navy);line-height:1.7;}
+.opt{display:block;width:100%;text-align:inherit;background:#fbf9f2;border:1.5px solid var(--border);padding:13px 16px;border-radius:9px;margin-bottom:10px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:.95rem;color:var(--ink);transition:.15s;}
+.opt:hover{border-color:var(--teal);}
+.opt.correct{border-color:#2f8f52;background:#eaf7ee;color:#205c34;font-weight:700;}
+.opt.wrong{border-color:#c0392b;background:#fbe9e7;color:#8a2c22;font-weight:700;}
+.opt:disabled{cursor:default;}
+.feedback{margin-top:14px;padding:13px 16px;border-radius:9px;font-size:.88rem;line-height:1.8;display:none;}
+.feedback.show{display:block;}
+.feedback.ok{background:#eaf7ee;color:#205c34;}
+.feedback.bad{background:#fbe9e7;color:#8a2c22;}
+.quiz-foot{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;border-top:1px solid var(--border);background:#fbf9f2;}
+.quiz-foot button{background:var(--navy);color:#fff;border:none;padding:10px 24px;border-radius:24px;font-family:'Cairo',sans-serif;font-weight:700;cursor:pointer;font-size:.88rem;}
+.quiz-foot button:disabled{opacity:.35;cursor:default;}
+.score-view{padding:50px 24px;text-align:center;}
+.score-view .big{font-size:3rem;font-weight:900;color:var(--gold);}
+.score-view p{color:var(--ink-soft);margin-top:8px;}
+.score-view button{margin-top:20px;background:var(--teal);color:#fff;border:none;padding:11px 26px;border-radius:24px;font-family:'Cairo',sans-serif;font-weight:700;cursor:pointer;}
+footer{background:var(--navy);color:#a9addb;text-align:center;padding:30px 20px;font-size:.85rem;}
+footer .gold{color:var(--gold-light);}
+@media (max-width:640px){ nav.links{display:none;} .hero-meta div{border:none;padding:0;} }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="navbar">
+    <div class="brand">
+      <div class="crest">KSIU</div>
+      <div class="brand-text">
+        <div class="eng">ENG YOUSSEF</div>
+        <div class="uni" data-t="uniName">King Salman International University</div>
+      </div>
+    </div>
+    <nav class="links">
+      <a href="#summary" data-t="navSummary">الملخص</a>
+      <a href="#atmosphere" data-t="navAtmos">طبقات الغلاف الجوي</a>
+      <a href="#explainer" data-t="navExplain">الشرح</a>
+      <a href="#quiz" data-t="navQuiz">الاختبار</a>
+    </nav>
+    <div class="navright">
+      <button id="langToggle">English</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow-row"><span class="dot"></span> <span data-t="eyebrow">متطلب جامعي - جميع البرامج · ESD 217</span></div>
+    <h1 data-t="heroH1">التغير المناخي والاستدامة</h1>
+    <p class="lead" data-t="heroLead">ملخص شامل وتفاعلي للمحاضرة الأولى من مقرر Climate Change and Sustainability، مُجهز بأسلوب واضح يغطي مفهوم المناخ، الفرق بينه وبين الطقس، طبقات الغلاف الجوي، وأمثلة على التغير المناخي البشري المنشأ في مصر والعالم.</p>
+    <div class="hero-meta">
+      <div><div class="num">5</div><div class="lbl" data-t="metaLayers">طبقات غلاف جوي</div></div>
+      <div><div class="num">2</div><div class="lbl" data-t="metaConcepts">مفهومان أساسيان: مناخ / طقس</div></div>
+      <div><div class="num">10</div><div class="lbl" data-t="metaQuiz">أسئلة اختبار قصير</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="summary">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="k" data-t="sumK">الملخص</div>
+      <h2 data-t="sumH2">أهم أفكار المحاضرة</h2>
+      <p data-t="sumP">المحاضرة جزء من مقدمة الوحدة الأولى، وتؤسس للمفاهيم الأساسية قبل الانتقال لموضوعات التكيف، التمويل المناخي، والتنمية المستدامة في المحاضرات القادمة.</p>
+    </div>
+    <div class="grid-cards" id="cardsGrid"></div>
+  </div>
+</section>
+
+<section id="atmosphere" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="k" data-t="atmK">طبقات الغلاف الجوي</div>
+      <h2 data-t="atmH2">من سطح الأرض حتى الفضاء الخارجي</h2>
+      <p data-t="atmP">اضغط على أي طبقة لعرض تفاصيلها. الطبقات مرتبة من الأقرب للأرض إلى الأبعد.</p>
+    </div>
+    <div class="atmos-wrap">
+      <svg class="atmos-svg" viewBox="0 0 340 380" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="skyGrad" x1="0" y1="1" x2="0" y2="0">
+          <stop offset="0%" stop-color="#bfe6e2"/><stop offset="100%" stop-color="#0d1240"/>
+        </linearGradient></defs>
+        <rect x="0" y="0" width="340" height="380" rx="14" fill="url(#skyGrad)"/>
+        <circle cx="170" cy="345" r="34" fill="#2f8f52"/>
+        <text x="170" y="350" text-anchor="middle" fill="#fff" font-size="10" font-family="Cairo" id="earthLbl">الأرض</text>
+        <g font-family="Cairo" font-size="11" fill="#0d1240">
+          <rect x="20" y="300" width="300" height="34" fill="#dff5ee" opacity=".85" rx="4"/>
+          <text x="170" y="320" text-anchor="middle">Troposphere (0-10 km)</text>
+          <rect x="20" y="255" width="300" height="38" fill="#b9e8de" opacity=".85" rx="4"/>
+          <text x="170" y="278" text-anchor="middle">Stratosphere (10-50 km)</text>
+          <rect x="20" y="205" width="300" height="43" fill="#8fd6cd" opacity=".85" rx="4"/>
+          <text x="170" y="230" text-anchor="middle" fill="#0d1240">Mesosphere (50-80 km)</text>
+          <rect x="20" y="140" width="300" height="58" fill="#5fb9c4" opacity=".85" rx="4"/>
+          <text x="170" y="172" text-anchor="middle" fill="#fff">Thermosphere (80-700 km)</text>
+          <rect x="20" y="30" width="300" height="103" fill="#274a9e" opacity=".8" rx="4"/>
+          <text x="170" y="85" text-anchor="middle" fill="#fff">Exosphere (700-10000 km)</text>
+        </g>
+      </svg>
+      <div class="atmos-list" id="atmosList"></div>
+    </div>
+  </div>
+</section>
+
+<section id="explainer">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="k" data-t="expK">شرح تفاعلي بديل عن الفيديو</div>
+      <h2 data-t="expH2">خطوة بخطوة: من المناخ إلى التغير المناخي</h2>
+      <p data-t="expP">عرض تفاعلي مبسط يشرح تسلسل أفكار المحاضرة (بدلًا من فيديو مباشر، تقدر تتنقل بين الخطوات بالأزرار).</p>
+    </div>
+    <div class="explainer">
+      <div class="explainer-top">
+        <div class="title" data-t="expTitle">ESD217 · محاضرة 1</div>
+        <div class="step-count" id="stepCount">1 / 5</div>
+      </div>
+      <div class="explainer-stage" id="stage"></div>
+      <div class="explainer-nav">
+        <button id="prevBtn" data-t="prevBtn">السابق</button>
+        <div class="dots" id="dots"></div>
+        <button id="nextBtn" data-t="nextBtn">التالي</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="quiz" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="k" data-t="quizK">اختبار قصير</div>
+      <h2 data-t="quizH2">اختبر فهمك للمحاضرة</h2>
+      <p data-t="quizP">10 أسئلة اختيار من متعدد مبنية مباشرة على محتوى المحاضرة.</p>
+    </div>
+    <div class="quiz-card">
+      <div class="quiz-head">
+        <div id="quizTitle">1 of 10</div>
+        <div class="qn" id="quizScoreTop">Score: 0</div>
+      </div>
+      <div id="quizArea"></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>ENG YOUSSEF <span class="gold">|</span> King Salman International University — <span class="gold">KSIU</span></div>
+  <div style="margin-top:6px;" data-t="footModule">Module: Climate Change and Sustainability (ESD 217) — University Requirement, All Programs</div>
+</footer>
+
+<script>
+/* ======================= TRANSLATIONS: static UI ======================= */
+const UI = {
+  ar:{
+    uniName:"جامعة الملك سلمان الدولية", navSummary:"الملخص", navAtmos:"طبقات الغلاف الجوي", navExplain:"الشرح", navQuiz:"الاختبار",
+    eyebrow:"متطلب جامعي - جميع البرامج · ESD 217",
+    heroH1:"التغير المناخي والاستدامة",
+    heroLead:"ملخص شامل وتفاعلي للمحاضرة الأولى من مقرر Climate Change and Sustainability، مُجهز بأسلوب واضح يغطي مفهوم المناخ، الفرق بينه وبين الطقس، طبقات الغلاف الجوي، وأمثلة على التغير المناخي البشري المنشأ في مصر والعالم.",
+    metaLayers:"طبقات غلاف جوي", metaConcepts:"مفهومان أساسيان: مناخ / طقس", metaQuiz:"أسئلة اختبار قصير",
+    sumK:"الملخص", sumH2:"أهم أفكار المحاضرة",
+    sumP:"المحاضرة جزء من مقدمة الوحدة الأولى، وتؤسس للمفاهيم الأساسية قبل الانتقال لموضوعات التكيف، التمويل المناخي، والتنمية المستدامة في المحاضرات القادمة.",
+    atmK:"طبقات الغلاف الجوي", atmH2:"من سطح الأرض حتى الفضاء الخارجي", atmP:"اضغط على أي طبقة لعرض تفاصيلها. الطبقات مرتبة من الأقرب للأرض إلى الأبعد.",
+    expK:"شرح تفاعلي بديل عن الفيديو", expH2:"خطوة بخطوة: من المناخ إلى التغير المناخي",
+    expP:"عرض تفاعلي مبسط يشرح تسلسل أفكار المحاضرة (بدلًا من فيديو مباشر، تقدر تتنقل بين الخطوات بالأزرار).",
+    expTitle:"ESD217 · محاضرة 1", prevBtn:"السابق", nextBtn:"التالي", nextBtnLast:"انتهى",
+    quizK:"اختبار قصير", quizH2:"اختبر فهمك للمحاضرة", quizP:"10 أسئلة اختيار من متعدد مبنية مباشرة على محتوى المحاضرة.",
+    footModule:"مقرر: التغير المناخي والاستدامة (ESD 217) — متطلب جامعي، جميع البرامج",
+    earthLbl:"الأرض", langBtn:"English",
+    quizOf:(a,b)=>`سؤال ${a} من ${b}`, quizScore:s=>`النتيجة: ${s}`, quizDone:"انتهى الاختبار",
+    quizNextBtn:"السؤال التالي", quizShowResult:"عرض النتيجة", quizRestart:"إعادة الاختبار",
+    quizCorrect:"إجابة صحيحة! ", quizWrong:"إجابة غير صحيحة. ", quizResultDesc:"نتيجتك في الاختبار القصير لمحاضرة التغير المناخي والاستدامة."
+  },
+  en:{
+    uniName:"King Salman International University", navSummary:"Summary", navAtmos:"Atmosphere Layers", navExplain:"Explainer", navQuiz:"Quiz",
+    eyebrow:"University Requirement - All Programs · ESD 217",
+    heroH1:"Climate Change and Sustainability",
+    heroLead:"A complete, interactive summary of Lecture 1 from the Climate Change and Sustainability module, covering the concept of climate, climate vs. weather, atmosphere layers, and examples of anthropogenic climate change in Egypt and worldwide.",
+    metaLayers:"Atmosphere layers", metaConcepts:"2 core concepts: Climate / Weather", metaQuiz:"Short-quiz questions",
+    sumK:"Summary", sumH2:"Key ideas from the lecture",
+    sumP:"This lecture is part of the introduction to Part 1, laying the groundwork before moving to adaptation, climate finance, and sustainable development in upcoming lectures.",
+    atmK:"Atmosphere Layers", atmH2:"From Earth's surface to outer space", atmP:"Click any layer to see its details. Layers are ordered from closest to Earth to farthest.",
+    expK:"Interactive walkthrough (video substitute)", expH2:"Step by step: from climate to climate change",
+    expP:"A simplified interactive walkthrough of the lecture's flow of ideas (instead of a direct video, navigate between steps with the buttons).",
+    expTitle:"ESD217 · Lecture 1", prevBtn:"Previous", nextBtn:"Next", nextBtnLast:"Done",
+    quizK:"Short Quiz", quizH2:"Test your understanding", quizP:"10 multiple-choice questions built directly from the lecture content.",
+    footModule:"Module: Climate Change and Sustainability (ESD 217) — University Requirement, All Programs",
+    earthLbl:"Earth", langBtn:"العربية",
+    quizOf:(a,b)=>`Question ${a} of ${b}`, quizScore:s=>`Score: ${s}`, quizDone:"Quiz complete",
+    quizNextBtn:"Next question", quizShowResult:"Show result", quizRestart:"Restart quiz",
+    quizCorrect:"Correct! ", quizWrong:"Not quite. ", quizResultDesc:"Your score on the Climate Change & Sustainability short quiz."
+  }
+};
+
+/* ======================= Cards, atmosphere, explainer, quiz content ======================= */
+const CARDS = {
+  ar:[
+    {tag:"لماذا هذا المقرر", h:"فهم المواطن لتغير المناخ", p:"كل مواطن في أي دولة يحتاج إلى فهم التغير المناخي ومعناه بالنسبة له وللعالم. يقدّم المقرر إجراءات مناخية أساسية مثل التكيف، التنمية منخفضة الكربون، التمويل المناخي، والمفاوضات المناخية، إضافة إلى مفهوم الاستدامة وأهداف التنمية المستدامة.", hl:true},
+    {tag:"المناخ Climate", h:"متوسط الطقس طويل المدى", p:"يُعرَّف المناخ بأنه 'متوسط الطقس'، أو الوصف الإحصائي لمتوسط وتغير كميات معينة (حرارة، أمطار، رياح، رطوبة) خلال فترة زمنية تمتد من أشهر إلى آلاف أو ملايين السنين. غالبًا يُستخدم متوسط 30 سنة، ويُعرف باسم 'Climate Normal'."},
+    {tag:"الطقس Weather", h:"حالة الجو اليومية المتغيرة", p:"الطقس هو مزيج الأحداث التي تحدث يوميًا في الغلاف الجوي، ويتغير خلال دقائق وساعات وأيام وأسابيع. رغم وجود غلاف جوي واحد للأرض، يختلف الطقس من مكان لآخر. القاعدة المبسطة: 'المناخ يحدد نوع الملابس التي تشتريها، والطقس يحدد ما ترتديه اليوم'."},
+    {tag:"التغير المناخي البشري المنشأ", h:"Anthropogenic Climate Change", p:"يشير 'Anthropogenic' إلى تأثير الإنسان على الطبيعة. ترتفع درجات الحرارة العالمية منذ ما قبل الثورة الصناعية في القرن التاسع عشر، بسبب زيادة تركيز الغازات الدفيئة الناتجة عن الأنشطة البشرية. يُفضَّل مصطلح 'تغير المناخ' على 'الاحترار العالمي' لأن الاحترار لن يكون منتظمًا حول العالم؛ فبعض المناطق كالقطب الشمالي سترتفع حرارتها أكثر من غيرها، مع تغيرات في هطول الأمطار تؤدي لجفاف أكثر في مناطق وعواصف أقوى في أخرى."},
+    {tag:"أمثلة من مصر", h:"النعامة والغزال المصري", p:"من الأمثلة على أثر التغير المناخي البشري المنشأ في مصر: النعامة المصرية والغزال المصري. كما تُظهر تقارير إخبارية (مثل تقرير قناة WION) أن ارتفاع منسوب سطح البحر في مصر يهدد الأراضي الزراعية."},
+    {tag:"أمثلة عالمية", h:"الدب القطبي، الفقمة، طائر Wryneck", p:"على المستوى العالمي، من الكائنات المتأثرة بالتغير المناخي البشري المنشأ: الدب القطبي (Polar bear)، الفقمة (Seal)، وطائر Eurasian Wryneck، وجميعها كائنات مرتبطة ببيئات قطبية أو باردة حساسة لتغير درجات الحرارة."},
+    {tag:"جدول محاضرات الجزء الأول", h:"الموضوعات القادمة", p:"يشمل جدول الجزء الأول أيضًا: تبييض الشعاب المرجانية، تغير المناخ عبر السنين، أسباب تغير المناخ، النظام المناخي، ومؤشرات المناخ - وهي عناوين ستُفصَّل في المحاضرات التالية."}
+  ],
+  en:[
+    {tag:"Why this module", h:"Citizens need to understand climate change", p:"Citizens in every country need to understand climate change and what it means for them and the world. The course introduces key climate actions such as adaptation, low carbon development, climate finance, and climate negotiations, plus the concept of sustainability and sustainable development goals.", hl:true},
+    {tag:"Climate", h:"Long-term average weather", p:"Climate is defined as the 'average weather', or the statistical description in terms of the mean and variability of relevant quantities over a period of time ranging from months to thousands or millions of years. A 30-year average is often used, known as 'Climate Normal'."},
+    {tag:"Weather", h:"Day-to-day changing conditions", p:"Weather is the mix of events that happen each day in our atmosphere, changing over minutes, hours, days, and weeks. Even though there's only one atmosphere on Earth, weather differs from place to place. Simple rule: 'Climate tells you what clothes to buy, weather tells you what clothes to wear.'"},
+    {tag:"Anthropogenic Climate Change", h:"Human-driven climate change", p:"'Anthropogenic' refers to the influence humans have on the natural world. Average global temperatures have been rising since before the 19th-century Industrial Revolution, driven by rising greenhouse gas concentrations from human activities. 'Climate change' is preferred over 'global warming' because warming won't be uniform worldwide; some areas like the Arctic will warm much more than others, with changes in precipitation causing more droughts in some regions and stronger storms in others."},
+    {tag:"Examples from Egypt", h:"Egyptian Ostrich and Egyptian Ghazal", p:"Examples of anthropogenic climate change in Egypt include the Egyptian Ostrich and Egyptian Ghazal. News coverage (such as a WION report) also shows Egypt's rising sea level threatening farmland."},
+    {tag:"Worldwide examples", h:"Polar bear, seal, Eurasian Wryneck", p:"Worldwide, species affected by anthropogenic climate change include the polar bear, the seal, and the Eurasian Wryneck — all linked to polar or cold environments sensitive to temperature change."},
+    {tag:"Part 1 lecture schedule", h:"Topics coming up", p:"The Part 1 schedule also includes: coral reef bleaching, climate change over the years, climate change causes, the climate system, and climate indicators — topics to be covered in upcoming lectures."}
+  ]
+};
+
+const ATMOS = {
+  ar:[
+    {h:"1. التروبوسفير Troposphere", alt:"0 - 10 كم", d:"أقرب طبقة لسطح الأرض وبها تعيش الكائنات الحية، والهواء فيها أكثف من باقي الطبقات. بها تحدث معظم ظواهر الطقس والمناخ. متوسط الحرارة عند السطح نحو 15°م، وتنخفض 6.5°م لكل 1000 متر ارتفاع. تحتوي على الأكسجين، ثاني أكسيد الكربون، وبخار الماء الضرورية للحياة."},
+    {h:"Tropopause (طبقة انتقالية)", alt:"~11 كم", d:"طبقة هواء رقيقة أعلى التروبوسفير، تعمل كحاجز يمنع اختلاط الهواء البارد في التروبوسفير بالهواء الدافئ في الستراتوسفير."},
+    {h:"2. الستراتوسفير Stratosphere", alt:"10 - 50 كم", d:"الطبقة الثانية من سطح الأرض. تظل الحرارة ثابتة حتى ارتفاع 20 كم ثم ترتفع بسبب طبقة الأوزون التي تمتد حتى نحو 40 كم. تحتوي على طبقة الأوزون الحامية، وهي المفضلة لطيران الطائرات لأن حركة الهواء فيها أفقية."},
+    {h:"3. الميزوسفير Mesosphere", alt:"50 - 80 كم", d:"أبرد طبقة في الغلاف الجوي، وقد تصل الحرارة عند قمتها إلى -93°م. معظم الشهب المتساقطة تحترق وتتفكك فيها، ما يجعلها تلعب دورًا حيويًا في حماية الحياة."},
+    {h:"4. الثيرموسفير Thermosphere", alt:"80 - 700 كم", d:"تصل حرارتها لأكثر من 2000°م. الجزء السفلي منها (80-550 كم) يُسمى الأيونوسفير، ويُستخدم في الاتصالات اللاسلكية بعيدة المدى."},
+    {h:"5. الإكزوسفير Exosphere", alt:"700 - 10000 كم", d:"أعلى طبقات الغلاف الجوي. المنطقة المثالية لوضع الأقمار الصناعية ومركبات الفضاء نظرًا لانخفاض كثافة الهواء الشديد فيها."}
+  ],
+  en:[
+    {h:"1. Troposphere", alt:"0 - 10 km", d:"The closest layer to Earth's surface, where living organisms live; the air is denser here than other layers. Most weather and climate phenomena occur here. Average surface temperature is about 15°C, decreasing 6.5°C per 1000 m of elevation. Contains oxygen, CO2, and water vapor essential for life."},
+    {h:"Tropopause layer", alt:"~11 km", d:"A thin air layer atop the troposphere, acting as a barrier preventing cold tropospheric air from mixing with warm stratospheric air."},
+    {h:"2. Stratosphere", alt:"10 - 50 km", d:"The second layer from Earth's surface. Temperature stays constant to 20 km then rises due to the ozone layer (up to ~40 km). Contains the protective ozone layer; preferred for aircraft flying since air currents move horizontally."},
+    {h:"3. Mesosphere", alt:"50 - 80 km", d:"The coldest atmospheric layer, reaching -93°C at its top. Most meteors burn up and disintegrate here, playing a vital role in protecting life on Earth."},
+    {h:"4. Thermosphere", alt:"80 - 700 km", d:"Temperatures exceed 2000°C. Its lower part (80-550 km), the Ionosphere, is used for long-distance radio communications."},
+    {h:"5. Exosphere", alt:"700 - 10000 km", d:"The highest atmospheric layer. The ideal region for satellites and spacecraft due to the extremely low air density."}
+  ]
+};
+
+const STEPS = {
+  ar:[
+    {h:"1. لماذا ندرس تغير المناخ؟", p:["كل مواطن يحتاج أن يفهم تغير المناخ ومعناه له وللعالم من حوله.","المقرر يقدّم إجراءات مناخية أساسية: التكيف، التنمية منخفضة الكربون، التمويل المناخي، والمفاوضات المناخية، إلى جانب مفهوم الاستدامة وأهداف التنمية المستدامة."], ex:"الفكرة المحورية: فهم المناخ مسؤولية مجتمعية قبل أن تكون علمية بحتة."},
+    {h:"2. المناخ مقابل الطقس", p:["المناخ = متوسط الطقس على مدى طويل، ويُقاس غالبًا بمتوسط 30 عامًا يُسمى Climate Normal.","الطقس = حالة الجو اللحظية المتغيرة خلال دقائق أو ساعات أو أيام."], ex:"مثال: 'المناخ يحدد نوع الملابس التي تشتريها، والطقس يحدد ما ترتديه اليوم'."},
+    {h:"3. طبقات الغلاف الجوي", p:["الغلاف الجوي مقسم إلى 5 طبقات رئيسية: التروبوسفير، الستراتوسفير، الميزوسفير، الثيرموسفير، والإكزوسفير.","معظم ظواهر الطقس تحدث في التروبوسفير، بينما تحمي طبقة الأوزون في الستراتوسفير الحياة من الأشعة فوق البنفسجية."], ex:"راجع قسم 'طبقات الغلاف الجوي' أعلاه للتفاصيل الكاملة."},
+    {h:"4. التغير المناخي البشري المنشأ", p:["Anthropogenic climate change يشير إلى تغير مناخ الأرض بفعل الأنشطة البشرية، وخاصة زيادة الغازات الدفيئة منذ الثورة الصناعية.","يُفضَّل 'تغير المناخ' على 'الاحترار العالمي' لأن الاحترار لن يكون منتظمًا حول العالم."], ex:"مثال من مصر: النعامة والغزال المصري، وتهديد ارتفاع منسوب البحر للأراضي الزراعية."},
+    {h:"5. أثر عالمي متصاعد", p:["على المستوى العالمي، تتأثر كائنات مرتبطة بالبيئات الباردة، مثل الدب القطبي والفقمة وطائر Eurasian Wryneck.","تجهّز هذه الأمثلة للانتقال إلى الموضوعات القادمة: أسباب تغير المناخ، النظام المناخي، ومؤشرات المناخ."], ex:"الخطوة التالية في المقرر: الغوص في أسباب تغير المناخ والنظام المناخي بالتفصيل."}
+  ],
+  en:[
+    {h:"1. Why study climate change?", p:["Citizens in every country need to understand climate change and what it means for them and the world.","The course introduces key climate actions: adaptation, low carbon development, climate finance, and climate negotiations, plus sustainability and sustainable development goals."], ex:"Core idea: understanding climate is a societal responsibility, not just a scientific one."},
+    {h:"2. Climate vs. Weather", p:["Climate = long-term average weather, often measured as a 30-year average called Climate Normal.","Weather = the moment-to-moment state of the atmosphere, changing over minutes, hours, or days."], ex:"Example: 'Climate tells you what clothes to buy, weather tells you what clothes to wear.'"},
+    {h:"3. Atmosphere layers", p:["The atmosphere is divided into 5 main layers: Troposphere, Stratosphere, Mesosphere, Thermosphere, and Exosphere.","Most weather occurs in the Troposphere, while the ozone layer in the Stratosphere protects life from UV radiation."], ex:"See the 'Atmosphere Layers' section above for full details."},
+    {h:"4. Anthropogenic climate change", p:["Anthropogenic climate change refers to Earth's climate changing due to human activities, especially rising greenhouse gases since the Industrial Revolution.","'Climate change' is preferred over 'global warming' since warming won't be uniform worldwide."], ex:"Example from Egypt: the Egyptian Ostrich and Ghazal, and rising sea levels threatening farmland."},
+    {h:"5. A growing worldwide impact", p:["Worldwide, species linked to cold environments are affected, such as the polar bear, seal, and Eurasian Wryneck.","These examples set up upcoming topics: causes of climate change, the climate system, and climate indicators."], ex:"Next in the module: a deep dive into climate change causes and the climate system."}
+  ]
+};
+
+const QUIZ = {
+  ar:[
+    {q:"يُعرَّف المناخ بأنه:", opts:["حالة الجو خلال ساعة واحدة","متوسط الطقس على مدى طويل من الزمن","اتجاه الرياح فقط","درجة حرارة اليوم الحالي"], correct:1, fb:"المناخ هو الوصف الإحصائي لمتوسط وتغير كميات الطقس على مدى فترة طويلة، من أشهر إلى ملايين السنين."},
+    {q:"ماذا يُسمى متوسط ملاحظات الطقس على مدى 30 عامًا؟", opts:["Weather Report","Climate Normal","Storm Index","Seasonal Average"], correct:1, fb:"يُطلق على متوسطات الثلاثين عامًا لملاحظات الطقس اسم 'Climate Normal'."},
+    {q:"وفق المثال الوارد في المحاضرة، ماذا يحدد الطقس؟", opts:["نوع الملابس التي نرتديها اليوم","لون البيت","نوع السيارة","موعد الإجازة السنوية"], correct:0, fb:"'المناخ يحدد نوع الملابس التي تشتريها، والطقس يحدد ما ترتديه اليوم'."},
+    {q:"أي الطبقات هي الأقرب لسطح الأرض وتحدث بها معظم ظواهر الطقس؟", opts:["الستراتوسفير","الإكزوسفير","التروبوسفير","الثيرموسفير"], correct:2, fb:"التروبوسفير هي أقرب طبقة لسطح الأرض، وبها تحدث معظم ظواهر الطقس."},
+    {q:"ما الذي يحمي الكائنات الحية من الأشعة فوق البنفسجية في الستراتوسفير؟", opts:["طبقة الأيونوسفير","طبقة الأوزون","الغلاف المغناطيسي","طبقة التروبوبوز"], correct:1, fb:"تحتوي الستراتوسفير على طبقة الأوزون التي تمتص الأشعة فوق البنفسجية."},
+    {q:"لماذا تُعد الميزوسفير مهمة لحماية الحياة على الأرض؟", opts:["لأنها تحتوي على الأكسجين اللازم للتنفس","لأن معظم الشهب تحترق وتتفكك فيها","لأنها تحتوي على الأيونوسفير","لأنها أقرب طبقة للأرض"], correct:1, fb:"معظم الشهب المتساقطة تحترق وتتفكك عند مرورها بالميزوسفير."},
+    {q:"ما هو الجزء السفلي من الثيرموسفير المستخدم في الاتصالات اللاسلكية بعيدة المدى؟", opts:["الأوزون","التروبوبوز","الأيونوسفير Ionosphere","الإكزوسفير"], correct:2, fb:"الأيونوسفير (80-550 كم) يُستخدم في الاتصالات اللاسلكية بعيدة المدى."},
+    {q:"مصطلح 'Anthropogenic' يشير إلى:", opts:["تأثير الشمس على المناخ","تأثير الإنسان على الطبيعة","دورة المياه الطبيعية","حركة الصفائح التكتونية"], correct:1, fb:"Anthropogenic يعني التأثير الذي يُحدثه الإنسان في الطبيعة."},
+    {q:"لماذا يُفضَّل مصطلح 'تغير المناخ' على 'الاحترار العالمي'؟", opts:["لأن الاحترار سيكون متساويًا في كل مكان","لأن الاحترار لن يكون منتظمًا حول العالم","لأن الطقس لا علاقة له بالمناخ","لأن المصطلح أقصر"], correct:1, fb:"الاحترار لن يكون منتظمًا حول العالم؛ فبعض المناطق ستسخن أكثر من غيرها."},
+    {q:"من أمثلة التغير المناخي البشري المنشأ في مصر:", opts:["الدب القطبي والفقمة","النعامة المصرية والغزال المصري","طائر البطريق","الحوت الأزرق"], correct:1, fb:"من الأمثلة المذكورة: النعامة المصرية والغزال المصري، وتهديد ارتفاع منسوب البحر للأراضي الزراعية."}
+  ],
+  en:[
+    {q:"Climate is defined as:", opts:["The atmosphere's state for one hour","Average weather over a long period of time","Wind direction only","Today's temperature"], correct:1, fb:"Climate is the statistical description of the mean and variability of weather quantities over a long period, from months to millions of years."},
+    {q:"What is a 30-year average of weather observations called?", opts:["Weather Report","Climate Normal","Storm Index","Seasonal Average"], correct:1, fb:"Three-decade averages of weather observations are referred to as 'Climate Normal'."},
+    {q:"Per the lecture's example, what does weather determine?", opts:["What clothes you wear today","The color of your house","What car you drive","Your annual vacation date"], correct:0, fb:"'Climate tells you what clothes to buy, weather tells you what clothes to wear.'"},
+    {q:"Which layer is closest to Earth's surface, where most weather occurs?", opts:["Stratosphere","Exosphere","Troposphere","Thermosphere"], correct:2, fb:"The Troposphere is closest to Earth's surface and is where most weather phenomena occur."},
+    {q:"What protects living organisms from UV radiation in the Stratosphere?", opts:["The Ionosphere","The ozone layer","The magnetosphere","The Tropopause"], correct:1, fb:"The Stratosphere contains the ozone layer, which absorbs ultraviolet radiation."},
+    {q:"Why is the Mesosphere important for protecting life on Earth?", opts:["It contains oxygen needed for breathing","Most meteors burn up and disintegrate there","It contains the Ionosphere","It's the closest layer to Earth"], correct:1, fb:"Most meteors falling from space burn up and disintegrate after entering the Mesosphere."},
+    {q:"What is the lower part of the Thermosphere, used for long-distance radio communication?", opts:["Ozone","Tropopause","Ionosphere","Exosphere"], correct:2, fb:"The Ionosphere (80-550 km) is used for long-distance radio communications."},
+    {q:"'Anthropogenic' refers to:", opts:["The sun's effect on climate","The influence humans have on the natural world","The natural water cycle","Tectonic plate movement"], correct:1, fb:"Anthropogenic refers to the influence that humans can have on the natural world."},
+    {q:"Why is 'climate change' preferred over 'global warming'?", opts:["Because warming will be equal everywhere","Because warming won't be uniform worldwide","Because weather is unrelated to climate","Because it's a shorter term"], correct:1, fb:"Warming won't be uniform worldwide; some areas will warm much more than others, while a few might even get cooler."},
+    {q:"Which is an example of anthropogenic climate change in Egypt?", opts:["Polar bear and seal","Egyptian Ostrich and Egyptian Ghazal","Penguin","Blue whale"], correct:1, fb:"Examples mentioned include the Egyptian Ostrich and Egyptian Ghazal, plus rising sea levels threatening farmland."}
+  ]
+};
+
+let LANG = 'ar';
+
+function applyStaticTranslations(){
+  const t = UI[LANG];
+  document.querySelectorAll('[data-t]').forEach(el=>{
+    const key = el.getAttribute('data-t');
+    if(t[key] !== undefined) el.textContent = t[key];
+  });
+  document.getElementById('earthLbl').textContent = t.earthLbl;
+  document.getElementById('langToggle').textContent = t.langBtn;
+  document.documentElement.setAttribute('dir', LANG==='ar' ? 'rtl' : 'ltr');
+  document.documentElement.setAttribute('lang', LANG);
+}
+
+function renderCards(){
+  const grid = document.getElementById('cardsGrid');
+  grid.innerHTML = CARDS[LANG].map(c=>`
+    <div class="card ${c.hl?'highlight':''}">
+      <span class="tag">${c.tag}</span>
+      <h3>${c.h}</h3>
+      <p>${c.p}</p>
+    </div>`).join('');
+}
+
+let atmosActive = 0;
+function renderAtmos(){
+  const list = document.getElementById('atmosList');
+  list.innerHTML = ATMOS[LANG].map((a,i)=>`
+    <div class="atmos-item ${i===atmosActive?'active':''}" data-i="${i}">
+      <div class="row"><h4>${a.h}</h4><span class="alt">${a.alt}</span></div>
+      <div class="detail">${a.d}</div>
+    </div>`).join('');
+  list.querySelectorAll('.atmos-item').forEach(item=>{
+    item.addEventListener('click',()=>{
+      atmosActive = parseInt(item.getAttribute('data-i'));
+      renderAtmos();
+    });
+  });
+}
+
+let cur = 0;
+function renderStep(){
+  const t = UI[LANG];
+  const s = STEPS[LANG][cur];
+  const stage = document.getElementById('stage');
+  stage.innerHTML = `<h3>${s.h}</h3>` + s.p.map(p=>`<p>${p}</p>`).join('') + `<div class="example">${s.ex}</div>`;
+  document.getElementById('stepCount').textContent = `${cur+1} / ${STEPS[LANG].length}`;
+  document.getElementById('dots').innerHTML = STEPS[LANG].map((_,i)=>`<span class="${i===cur?'on':''}"></span>`).join('');
+  document.getElementById('prevBtn').disabled = cur===0;
+  const nextBtn = document.getElementById('nextBtn');
+  nextBtn.disabled = cur===STEPS[LANG].length-1;
+  nextBtn.textContent = cur===STEPS[LANG].length-1 ? t.nextBtnLast : t.nextBtn;
+}
+document.getElementById('prevBtn').addEventListener('click',()=>{ if(cur>0){cur--; renderStep();} });
+document.getElementById('nextBtn').addEventListener('click',()=>{ if(cur<STEPS[LANG].length-1){cur++; renderStep();} });
+
+let qi = 0, score = 0, answered = false;
+function renderQuiz(){
+  const t = UI[LANG];
+  const quizTitle = document.getElementById('quizTitle');
+  const quizScoreTop = document.getElementById('quizScoreTop');
+  const quizArea = document.getElementById('quizArea');
+  const data = QUIZ[LANG];
+  if(qi >= data.length){
+    quizArea.innerHTML = `<div class="score-view">
+      <div class="big">${score} / ${data.length}</div>
+      <p>${t.quizResultDesc}</p>
+      <button id="restartBtn">${t.quizRestart}</button>
+    </div>`;
+    quizTitle.textContent = t.quizDone;
+    document.getElementById('restartBtn').addEventListener('click',()=>{ qi=0; score=0; renderQuiz(); });
+    return;
+  }
+  const item = data[qi];
+  answered = false;
+  quizTitle.textContent = t.quizOf(qi+1, data.length);
+  quizScoreTop.textContent = t.quizScore(score);
+  quizArea.innerHTML = `
+    <div class="quiz-body">
+      <h3>${item.q}</h3>
+      <div id="optsBox"></div>
+      <div class="feedback" id="fb"></div>
+    </div>
+    <div class="quiz-foot">
+      <span style="color:#4a4d63;font-size:.85rem;">${qi+1} / ${data.length}</span>
+      <button id="nextQBtn" disabled>${qi===data.length-1 ? t.quizShowResult : t.quizNextBtn}</button>
+    </div>`;
+  const optsBox = document.getElementById('optsBox');
+  item.opts.forEach((opt,i)=>{
+    const b = document.createElement('button');
+    b.className='opt'; b.textContent=opt;
+    b.addEventListener('click',()=>{
+      if(answered) return;
+      answered = true;
+      document.querySelectorAll('.opt').forEach(o=>o.disabled=true);
+      const fb = document.getElementById('fb');
+      if(i===item.correct){
+        b.classList.add('correct'); score++;
+        fb.textContent = t.quizCorrect + item.fb;
+        fb.className = 'feedback show ok';
+      } else {
+        b.classList.add('wrong');
+        document.querySelectorAll('.opt')[item.correct].classList.add('correct');
+        fb.textContent = t.quizWrong + item.fb;
+        fb.className = 'feedback show bad';
+      }
+      quizScoreTop.textContent = t.quizScore(score);
+      document.getElementById('nextQBtn').disabled = false;
+    });
+    optsBox.appendChild(b);
+  });
+  document.getElementById('nextQBtn').addEventListener('click',()=>{ qi++; renderQuiz(); });
+}
+
+function renderAll(){
+  applyStaticTranslations();
+  renderCards();
+  renderAtmos();
+  renderStep();
+  renderQuiz();
+}
+
+document.getElementById('langToggle').addEventListener('click',()=>{
+  LANG = LANG==='ar' ? 'en' : 'ar';
+  cur = 0; qi = 0; score = 0; atmosActive = 0;
+  renderAll();
+});
+
+renderAll();
+</script>
+</body>
+</html>
