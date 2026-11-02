@@ -1,0 +1,85 @@
+{
+  "new_files": [
+    "Assignment_1.pdf",
+    "Assignment_1 model answer..pdf",
+    "Assignment 2.pdf",
+    "Assignment 2 model answer.pdf",
+    "Assignment 3.pdf",
+    "Hook's Law Experiment.pdf",
+    "lec4 Math1.pdf",
+    "lec5 Math1.pdf"
+  ],
+  "new_lectures": [
+    "mat121-assignment-1",
+    "mat121-assignment-2-6",
+    "mat121-assignment-3-5",
+    "phy111-hookes-law",
+    "mat111-limits-continuity",
+    "mat111-derivatives-basic"
+  ],
+  "exact_duplicates": [
+    {
+      "name": "Assignment 2 model answer 1.pdf",
+      "same_as": "Assignment 2 model answer.pdf"
+    },
+    {
+      "name": "Assignment 2 model answer 2.pdf",
+      "same_as": "Assignment 2 model answer.pdf"
+    },
+    {
+      "name": "Assignment 5.pdf",
+      "same_as": "Assignment 3.pdf"
+    },
+    {
+      "name": "Assignment 6.pdf",
+      "same_as": "Assignment 2.pdf"
+    },
+    {
+      "name": "Assignment_1 1.pdf",
+      "same_as": "Assignment_1.pdf"
+    },
+    {
+      "name": "Assignment_1 2.pdf",
+      "same_as": "Assignment_1.pdf"
+    },
+    {
+      "name": "Assignment_1 3.pdf",
+      "same_as": "Assignment_1.pdf"
+    },
+    {
+      "name": "Assignment_1 model answer. 1.pdf",
+      "same_as": "Assignment_1 model answer..pdf"
+    }
+  ],
+  "content_duplicates": [
+    {
+      "name": "EXP.2 Simple Pendulum.pdf",
+      "same_content_as": "EXP_2_Simple_Pendulum.pdf",
+      "action": "skipped_public_duplicate"
+    },
+    {
+      "name": "lec1 Math1.pdf",
+      "same_content_as": "lec1_Math1.pdf",
+      "action": "skipped_public_duplicate"
+    },
+    {
+      "name": "lec2 Math1.pdf",
+      "same_content_as": "lec2_Math1.pdf",
+      "action": "skipped_public_duplicate"
+    }
+  ],
+  "private": [
+    {
+      "name": "Coursera O2W2SHRMX2K3.pdf",
+      "reason": "contains full name; not published by default",
+      "stored": "private/certificates/Coursera O2W2SHRMX2K3.pdf"
+    }
+  ],
+  "summary": {
+    "received": 20,
+    "new_public_files": 8,
+    "exact_duplicates_skipped": 8,
+    "same_content_duplicates_skipped": 3,
+    "private_files": 1
+  }
+}

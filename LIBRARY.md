@@ -1,0 +1,54 @@
+# تنظيم الملفات المرفوعة
+
+كل الملفات العامة محفوظة بصيغتها الأصلية داخل `content/library/` وتُنسخ إلى مساحة الملفات عند التشغيل. لا توجد إعادة كتابة أو OCR للملفات الممسوحة ضوئيًا. الشهادات أو الملفات ذات البيانات الشخصية تُحفظ في `private/` ولا تُنشر افتراضيًا.
+
+## MAT121 الاستاتيكا
+| المكان | الملفات |
+|---|---|
+| المحاضرة 1 | Lecture_1-_Vectors_for_mechanics.pdf |
+| المحاضرة 2 — التمثيل التحليلي | Lecture_2_-_Cont__Vector_for_mechanics.pdf |
+| المحاضرة 3 — ثلاثة أبعاد | Lecture_3_-_Cont__Vector_for_mechanics_3D.pdf |
+| المحاضرة 4 — عزم القوة | Lecture_4_-_Moment_of_a_force_2D.pdf |
+| المحاضرة 5 — اتزان الجسيم | Lecture_5_-_Equilbrium_of_Particle.pdf |
+| تكليف Assignment 1 | Assignment_1.pdf + Assignment_1 model answer..pdf |
+| تكليف Assignment 2 / 6 | Assignment 2.pdf + Assignment 2 model answer.pdf |
+| تكليف Assignment 3 / 5 | Assignment 3.pdf |
+
+## MAT111 الرياضيات 1
+| المكان | الملفات |
+|---|---|
+| المحاضرة 1 | lec1_Math1.pdf |
+| المحاضرة 2 — الدوال | lec2_Math1.pdf |
+| ملاحظات مباشرة — الدوال | Lecture_1_direct.pdf |
+| المحاضرة 4 — النهايات والاتصال | lec4 Math1.pdf |
+| ملاحظات مباشرة — النهايات | Lecture_4___Limits___Direct.pdf |
+| المحاضرة 5 — المشتقات الأساسية | lec5 Math1.pdf |
+
+## PHY111 الفيزياء
+| المكان | الملفات |
+|---|---|
+| حركة بتسارع ثابت | Lect__3.pdf |
+| تجربة 1 — قانون هوك | Hook's Law Experiment.pdf |
+| تجربة 2 — البندول البسيط | EXP_2_Simple_Pendulum.pdf |
+
+## CSE013 مقدمة IT
+| المكان | الملفات |
+|---|---|
+| المحاضرة 1 | IT_lecture_1_2026.pdf |
+| المحاضرة 2 — المكونات والبرمجيات | IT_lecture_2_2026.pdf |
+| المحاضرة 3 — إدارة موارد البيانات | IT_lecture_3_2026.pdf |
+| أنظمة العد وASCII | IT_Number_Systems.pdf |
+
+## ESD217 تغيّر المناخ
+| المكان | الملفات |
+|---|---|
+| المحاضرة 1 | Lec_1_-ESD217_Climate_Change___Sustainability.pdf |
+| ملف الجزء الأول كاملًا | Climate_ChangePart_1_2026.pdf + Climate_Change_Part_1_2027.pdf |
+| بنك نوفمبر — مراجعة وتدريب | Question_Bank_November_LMS.pdf |
+
+## ملاحظات منع التكرار
+- نسختا المناخ 2026 و2027 لهما نفس النص المستخرج، لكن ملفيهما مختلفان؛ لذلك حُفظتا معًا كإصدارين.
+- بنك نوفمبر يحتوي فعليًا على 130 سؤالًا مرقّمًا مع الإجابات. لم تُخترع أسئلة ناقصة.
+- `EXP.2 Simple Pendulum.pdf` و`lec1 Math1.pdf` و`lec2 Math1.pdf` في الدفعة الثانية لها نفس المحتوى المستخرج لنسخ موجودة؛ لم تُضف كملفات عامة مكررة.
+- التكليفات المكررة تمامًا بأسماء مختلفة حُفظت مرة واحدة مع تسجيل الأسماء البديلة في تقرير الاستيراد.
+- شهادة Coursera الخاصة بالاسم الكامل غير منشورة.
