@@ -49,3 +49,11 @@ dialog{width:min(560px,calc(100vw - 32px));max-height:88vh;padding:0;border:1px 
 @media(max-width:390px){.stats-grid{grid-template-columns:1fr}.hero-quick{padding:16px}.top-actions{gap:5px}.lang-btn{padding:6px 8px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 @media print{.sidebar,.topbar,.assistant-fab,.reader-aside,.btn,.icon-btn,.footer,.tabs,.offline-strip,#toasts{display:none!important}.workspace{margin:0}.page{max-width:none;padding:0}.card{box-shadow:none;break-inside:avoid}.hero{display:none}.summary-grid{display:block}.summary-card{margin-bottom:14px}body{background:#fff;color:#000;font-size:12px}}
+/* v3.5 — coverage table (scrolls inside its card on phones) */
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:14px;border:1px solid var(--line);border-radius:12px}
+.data-table{width:100%;border-collapse:collapse;font-size:.82rem;min-width:720px}
+.data-table th,.data-table td{padding:10px 12px;text-align:start;border-bottom:1px solid var(--line);vertical-align:top}
+.data-table th{background:var(--surface-2);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);white-space:nowrap}
+.data-table tbody tr:last-child td{border-bottom:0}
+.data-table td a{color:var(--brand);text-decoration:none;font-weight:800}
+.data-table td.tiny{font-size:.74rem;max-width:260px}

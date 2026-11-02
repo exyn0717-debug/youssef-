@@ -1,4 +1,4 @@
-# ENG YOUSSEF — نسخة الويب 3.4
+# ENG YOUSSEF — نسخة الويب 3.5
 
 نسخة ويب ثابتة تعمل مباشرة على Vercel أو GitHub Pages بدون خادم Python.
 
@@ -11,7 +11,12 @@
 - حسابات الطلاب الحقيقية والمزامنة بين الأجهزة.
 - مساعد Claude الحقيقي.
 
-لتشغيل نسخة الخادم كاملة استخدم `ENG-YOUSSEF-3.4-Project.zip` على استضافة تدعم Python/FastAPI، واضبط متغيرات البيئة الموضحة في `.env.example` داخل ذلك المشروع. لا تضع مفاتيح API في ملفات هذه النسخة الثابتة.
+لتشغيل نسخة الخادم كاملة استخدم `ENG-YOUSSEF-3.5-Project.zip` على استضافة تدعم Python/FastAPI، واضبط متغيرات البيئة الموضحة في `.env.example` داخل ذلك المشروع. لا تضع مفاتيح API في ملفات هذه النسخة الثابتة.
+
+## ما الذي يتغيّر في المستودع عند هذا الرفع
+- **جديد (1):** `content/library/mat121-tutorial-3-chapter1.pdf` — ورقة مسائل Tutorial 3 لمادة MAT121.
+- **محدَّث (4):** `index.html` و`app.js` و`app.css` و`.gitignore`.
+- **بدون تغيير (38):** بقية ملفات الموقع و27 ملف PDF المنشورة سابقًا — لا حاجة لإعادة رفعها.
 
 ## الرفع على GitHub من المتصفح
 1. فك ضغط `ENG-YOUSSEF-GitHub-Update.zip` على جهازك.
@@ -20,7 +25,7 @@
 4. اسحب **محتويات** مجلد `upload-to-github` إلى صفحة الرفع، وليس المجلد نفسه ولا ملف ZIP.
 5. يجب أن يظهر `index.html` و`app.js` و`app.css` ومجلدات `assets` و`content` و`vendor` في جذر المستودع.
 6. إذا طلب GitHub استبدال `index.html` الموجود فوافق؛ هذا هو التحديث المطلوب.
-7. اكتب رسالة commit مثل: `Update ENG YOUSSEF to v3.4` ثم اختر **Commit changes** إلى `main` مباشرة.
+7. اكتب رسالة commit مثل: `Content audit and coverage page (v3.5)` ثم اختر **Commit changes** إلى `main` مباشرة.
 
 إذا كان المستودع مرتبطًا بـ Vercel فسيبدأ النشر تلقائيًا بعد الـ commit. افتح https://youssef-indol.vercel.app بعد اكتمال النشر وحدّث الصفحة.
 
