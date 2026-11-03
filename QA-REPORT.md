@@ -20,3 +20,18 @@
 - Assignment model answers are preserved as uploaded; open-ended assignment questions were not converted into invented multiple-choice questions.
 - Coursera certificate containing a full name is private and excluded from public GitHub/static packages.
 - Docker build not executed in this environment.
+
+## 2026-11-03 — واجهة المحاضرة + مراجعة ARB112 (ويب ثابت)
+
+تحقّق في بيئة jsdom + خادم محلي (بدون متصفح حقيقي):
+
+- `node --check app.js` و`node --check` لسكربت `lecture.html`: ناجح.
+- 37 محاضرة × شكل واحد: الأقسام الخمسة موجودة في كل محاضرة، صفر أخطاء تشغيل.
+- تبديل اللغة: نصوص الواجهة تتغيّر واتجاه الصفحة يتبدّل، **وعناوين المواد وبطاقات
+  الملخص والأسئلة وأسماء الملفات تبقى بلغتها الأصلية** في `lecture.html` و`app.js`.
+- الاستيراد: 17 مادة / 37 محاضرة / 253 سؤالًا / 33 ملفًا. بنك ARB112 يعرض 55 سؤالًا،
+  أولها وآخرها مطابقان للملف المرفق، وفهارس الإجابات الصحيحة كلها داخل نطاق الخيارات.
+- `content/library/arb112-review.html` مطابق بايت-ببايت للمرفق (SHA-256 مطابق)، وروابطه
+  تعمل عبر HTTP (200)، وكذلك `lecture.html?lecture=arb112-review`.
+- صفر أخطاء JS، صفر رسائل `console.error`، وحفظ اللغة/الملاحظات في `method.v2.local` يعمل.
+- غير متحقق منه بصريًا: لا يوجد متصفح/Playwright في البيئة؛ التنسيق مُختبَر عبر DOM و`app.css` فقط.

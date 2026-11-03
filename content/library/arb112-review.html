@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مراجعة مهارات اللغة العربية ARB112</title>
+<style>
+:root{--bg:#eceeef;--card:#fff;--ink:#1c2333;--mute:#667;--navy:#232a4d;--gold:#d9a93f;--ok:#1f8a4c;--okbg:#e3f5ea;--bad:#c0392b;--badbg:#fbe6e3;--line:#d8dbe0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12162b;--card:#1b2140;--ink:#eef0f6;--mute:#9aa2bd;--navy:#0d1024;--line:#323a63;--okbg:#14382a;--badbg:#442019}}
+:root[data-theme="dark"]{--bg:#12162b;--card:#1b2140;--ink:#eef0f6;--mute:#9aa2bd;--navy:#0d1024;--line:#323a63;--okbg:#14382a;--badbg:#442019}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Segoe UI",Tahoma,"Noto Naskh Arabic",Arial,sans-serif;line-height:1.8}
+header{background:var(--navy);color:var(--gold);padding:22px 16px 16px;text-align:center;border-bottom:4px solid var(--gold)}
+header h1{margin:0;font-size:22px}
+header p{margin:4px 0 0;color:#dfe3f2;font-size:13px}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--card);border-bottom:1px solid var(--line);padding:8px 16px}
+.bar::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--card);z-index:-1}
+.row{display:flex;justify-content:space-between;font-size:13px;color:var(--mute);max-width:760px;margin:0 auto 4px}
+.track{height:8px;background:var(--line);border-radius:6px;max-width:760px;margin:0 auto;overflow:hidden}
+.fill{height:100%;width:0;background:var(--gold);transition:width .3s}
+main{max-width:760px;margin:0 auto;padding:14px 14px 40px}
+.q{background:var(--card);border:1px solid var(--line);border-right:5px solid var(--gold);border-radius:10px;padding:14px 16px;margin-bottom:12px}
+.q h3{margin:0 0 8px;font-size:16px;font-weight:600}
+.n{color:var(--gold);margin-left:6px}
+.opt{display:flex;gap:10px;width:100%;text-align:right;background:transparent;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:9px 12px;margin-top:7px;font:inherit;font-size:15px;cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--gold)}
+.opt b{color:var(--gold);min-width:18px}
+.opt:disabled{cursor:default}
+.opt.ok{background:var(--okbg);border-color:var(--ok)}
+.opt.bad{background:var(--badbg);border-color:var(--bad)}
+.msg{margin-top:8px;font-size:14px}
+.msg.ok{color:var(--ok)}.msg.bad{color:var(--bad)}
+#res{display:none;background:var(--navy);color:#fff;border-radius:12px;padding:20px;text-align:center;margin-bottom:14px}
+#res .big{font-size:34px;color:var(--gold)}
+button.act{background:var(--gold);color:#232a4d;border:0;border-radius:8px;padding:10px 20px;font:inherit;font-size:15px;margin-top:10px;cursor:pointer}
+footer{text-align:center;color:var(--mute);font-size:12px;padding:0 16px 30px}
+</style>
+</head>
+<body>
+<header><h1>أسئلة للمراجعة — ARB112</h1><p>مهارات اللغة العربية · جامعة الملك سلمان الدولية</p></header>
+<div class="bar"><div class="row"><span id="prog">0 / 0</span><span id="sc">الدرجة: 0</span></div><div class="track"><div class="fill" id="fill"></div></div></div>
+<main>
+<div id="res"><div>نتيجتك</div><div class="big" id="rt"></div><div id="rm"></div><button class="act" onclick="reset()">إعادة الاختبار</button></div>
+<div id="list"></div>
+</main>
+<footer>الأسئلة والإجابات حسب أسئلة المراجعة المقدمة من الدكتورة</footer>
+<script>
+var T="صح",F="خطأ";
+var Q=[
+["(……) بكل ما أعطاني الله من مواهب، فأنا شخص طموح.",["إستمتع","أستمتع","استمتع"],1],
+["مهارات اللغة ثلاثة:",[T,F],1],
+["من الأصوات الرخوية:",["الباء","التاء","السين"],2],
+["الكلمة التي همزتها همزة وصل هي:",["انترنت","احمد","امرأتان"],2],
+["(……) العمل أساس النجاح.",["أتقان","إتقان","اتقان"],1],
+["تعتبر التربية من العناصر (……) في بناء الشخصية.",["المؤثرة","المأثرة","الموثرة"],0],
+["المقارنة من وسائل الإقناع المنطقية:",[T,"غلط"],0],
+["الكتابة الصحيحة لكلمة «رجاء» بتنوين الفتح تكتب هكذا «رجاءا»:",[T,"غلط"],1],
+["التحليل الصوتي لكلمة «كاتِبْ»:",["ص ح ح ـ ص ح","ص ح ح ـ ص ح ص","ص ح ح ـ ص ح ح"],1],
+["كلمة «مَنَحَ» بها:",["مقطعان","مقطع واحد","ثلاثة مقاطع"],2],
+["النظام الرقمي يختصر الوقت والجهد وغير مكلف، أما النظام الورقي فهو مكلف. وسيلة الإقناع في هذه الجملة:",["التأكيد","المقارنة","أسلوب القصر"],1],
+["الصوت المجهور (……) أثناء إصداره الأحبال الصوتية:",["تتحرك","لا تتحرك"],0],
+["عند تحليل كلمة «أَكَلَ» إلى مقاطع صوتية نجد أنها تتكون من:",["مقطع واحد: (ص ح ص)","مقطع واحد: (ص ح)","مقطعين: (ص ح ـ ص ح)","ثلاثة مقاطع: (ص ح ـ ص ح ـ ص ح)"],3],
+["ما المقصود بالتحدث أمام الناس؟",["قراءة الكتب في وقت الفراغ.","تقديم الأفكار والمعلومات إلى مجموعة من المستمعين بطريقة واضحة ومنظمة.","الاستماع إلى المحاضرات فقط.","كتابة الموضوعات دون مناقشتها."],1],
+["ما الخطوة الأولى لإعداد حديث ناجح؟",["اختيار الموضوع وتحديد الهدف منه.","التحدث بسرعة كبيرة.","حفظ النص دون فهمه.","إنهاء الحديث قبل تقديم المعلومات."],0],
+["ما المقصود بالتواصل البصري أثناء الحديث؟",["النظر إلى الأرض طوال الوقت.","قراءة النص المكتوب فقط.","إغلاق العينين أثناء الكلام.","النظر إلى المستمعين بصورة طبيعية أثناء الحديث."],3],
+["أيّ مما يلي يُعدّ خطأ شائعًا عند التحدث أمام الناس؟",["استخدام أمثلة توضيحية.","تنظيم الأفكار قبل الحديث.","قراءة النص كاملًا دون التواصل مع الجمهور.","الالتزام بالوقت المحدد."],2],
+["ما أفضل وسيلة لتطوير مهارة التحدث أمام الناس؟",["تجنب المواقف التي تتطلب الحديث.","الاعتماد على الموهبة وحدها.","حفظ نص واحد وتكراره في كل مناسبة.","الممارسة المستمرة والاستفادة من الملاحظات والتجارب السابقة."],3],
+["أين تكتب الهمزة المتوسطة إذا كانت مفتوحة وما قبلها ساكن؟",["على السطر","على واو","على ألف","على نبرة"],2],
+["كلمة «اسم» تكتب بهمزة:",["وصل","قطع","مفتوحة","مضمومة"],0],
+["لماذا كتبت الهمزة في كلمة «تفاؤل» على واو؟",["لأنها مكسورة وما قبلها مكسور","لأنها مفتوحة وما قبلها مضموم","لأنها مضمومة وما قبلها ساكن","لأنها مضمومة وما قبلها مضموم"],2],
+["ما نوع الهمزة في كلمة «إبراهيم»؟",["همزة وصل","همزة قطع","همزة متوسطة","همزة متطرفة"],1],
+["ما الفرق بين الصوت والحرف في اللغة العربية؟",["الصوت هو حرف مكتوب","الصوت هو حرف منطوق","الصوت والحرف متساويان","الصوت هو كلمة مكتوبة"],1],
+["المهارة نامية، أي يمكن تعلمها وإتقانها بالتدريب:",[T,F],0],
+["الكتابة المصرية القديمة هي الكتابة:",["المسمارية","الهيروغليفية","الأبجدية"],1],
+["مادة للكتابة صنعها المصريون من نبات كان ينمو بكثرة في مصر:",["الحجر","البردي","الرق"],1],
+["الرق هو:",["جلد معالج يصلح للكتابة","ألواح من الطين","نبات يصنع منه الورق"],0],
+["من أنواع الخط العربي:",["الكوفي","الهيروغليفي","المسماري"],0],
+["الصوت منطوق أما الحرف فهو مكتوب:",[T,F],0],
+["مخرج صوت الراء:",["الشفتان","أقصى اللسان من جهة الحلق","طرف اللسان مع لثة الأسنان العليا"],2],
+["من الأصوات الانفجارية:",["الباء","السين","الصاد"],0],
+["من الأصوات المهموسة (لا تهتز معها الأوتار الصوتية):",["الدال","التاء","الذال"],1],
+["الصامت هو كل الأصوات في اللغة العربية ماعدا:",["الباء والتاء","الألف والواو والياء المدّية","السين والشين"],1],
+["يرمز للحركة الطويلة بالرمز:",["ح","ح ح","ص"],1],
+["المقطع لا يتكون من حرف ساكن بمفرده أو حرف مد بمفرده:",[T,F],0],
+["الأحبال الصوتية توجد في:",["الحنجرة","الفم","الشفتين"],0],
+["كلمة «لَكْ» تتكون من:",["مقطع واحد: (ص ح ص)","مقطعين: (ص ح ـ ص)","مقطع واحد: (ص ح)"],0],
+["الهمزة في كلمة «انقطع» همزة:",["وصل","قطع"],0],
+["الهمزة في حرف الجر «إلى» همزة:",["وصل","قطع"],1],
+["الهمزة في كلمة «استنتج» همزة:",["وصل","قطع","متوسطة","متطرفة"],0,1],
+["الكتابة الصحيحة لكلمة «شتاء» بتنوين الفتح:",["شتاءً","شتاءًا","شتائًا"],0],
+["تكتب الهمزة في كلمة «سأل» على:",["ألف","واو","نبرة"],0],
+["تكتب الهمزة في كلمة «فِئة» على نبرة لأن:",["ما قبلها مكسور","ما قبلها مفتوح","الهمزة مضمومة"],0],
+["تكتب الهمزة في كلمة «رءوف» على السطر لأنها:",["مضمومة وما قبلها حرف منفصل","مفتوحة وما قبلها ساكن","قبلها ياء ساكنة"],0],
+["تكتب الهمزة في آخر كلمة «لؤلؤ» على:",["ألف","واو","نبرة","السطر"],1],
+["الهمزة في «إكرام» (مصدر الفعل الرباعي) همزة:",["وصل","قطع","تحذف","نبرة"],1,1],
+["من عناصر التحدث الناجح:",["الإعداد الجيد","الحديث بسرعة شديدة","الجمود في الوقوف"],0],
+["يتكون الحديث الجيد عادة من:",["مقدمة وعرض وخاتمة","عرض فقط","خاتمة فقط"],0],
+["الصوت المنخفض جدًا أو الحديث السريع قد يجعل فهم الكلام صعبًا:",[T,F],0],
+["من الكلمات الحشوية التي ينبغي تجنبها:",["يعني","رؤية سديدة","زخم"],0],
+["يمكن استبدال كلمة «نريد» ببديل خطابي مثل:",["نصبو إلى","نكتب","نقرأ"],0],
+["العبارة «نتاجًا لهذا» تستخدم لإظهار:",["النتيجة","الانتقال لفكرة جديدة","التأكيد"],0],
+["الخوف من التحدث أمام الناس يعني أن الشخص غير قادر على التحدث بنجاح:",[T,F],1],
+["استخدام التشبيه «التربية هي الدواء الوحيد لأمراض المجتمع» من وسائل الإقناع:",["المنطقية","اللغوية"],0],
+["أسلوب الشرط من وسائل الإقناع:",["المنطقية","اللغوية"],1]
+];
+var answered=0,score=0;
+function letters(i){return (Q[i][3]||(i>=18&&i<23))?"أبجد":"ABCD"}
+function render(){
+  var L=document.getElementById("list");L.innerHTML="";
+  Q.forEach(function(q,i){
+    var c=document.createElement("div");c.className="q";c.id="q"+i;
+    var h=document.createElement("h3");
+    h.innerHTML='<span class="n">'+(i+1)+'.</span>';h.appendChild(document.createTextNode(q[0]));c.appendChild(h);
+    q[1].forEach(function(o,j){
+      var b=document.createElement("button");b.className="opt";
+      b.innerHTML="<b>"+letters(i)[j]+(i<18?")":")")+"</b>";b.appendChild(document.createTextNode(o));
+      b.onclick=function(){pick(i,j)};c.appendChild(b);
+    });
+    var m=document.createElement("div");m.className="msg";c.appendChild(m);
+    L.appendChild(c);
+  });
+}
+function pick(i,j){
+  var c=document.getElementById("q"+i),btns=c.querySelectorAll(".opt"),a=Q[i][2],m=c.querySelector(".msg");
+  btns.forEach(function(b){b.disabled=true});
+  btns[a].classList.add("ok");
+  if(j===a){score++;m.className="msg ok";m.textContent="إجابة صحيحة ✓"}
+  else{btns[j].classList.add("bad");m.className="msg bad";m.textContent="إجابة خاطئة — الصحيحة: "+letters(i)[a]}
+  answered++;upd();
+  if(answered===Q.length){
+    var r=document.getElementById("res");r.style.display="block";
+    document.getElementById("rt").textContent=score+" / "+Q.length;
+    var p=score/Q.length;
+    document.getElementById("rm").textContent=p>=.85?"ممتاز! أنت جاهز للامتحان":p>=.6?"جيد، راجع الأسئلة الخاطئة":"محتاج مراجعة أكثر للمحاضرات";
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+}
+function upd(){
+  document.getElementById("prog").textContent=answered+" / "+Q.length;
+  document.getElementById("sc").textContent="الدرجة: "+score;
+  document.getElementById("fill").style.width=(answered/Q.length*100)+"%";
+}
+function reset(){answered=0;score=0;document.getElementById("res").style.display="none";render();upd();window.scrollTo(0,0)}
+render();upd();
+</script>
+</body>
+</html>
