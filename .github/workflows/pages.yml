@@ -1,0 +1,65 @@
+name: Deploy static site to GitHub Pages
+
+on:
+  push:
+    branches: [arena/e1f085f7-youssef]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  # No `environment:` block: the github-pages environment's default branch
+  # policy allows only `main`, and an integration token cannot edit it. Pages
+  # deployments are created directly by actions/deploy-pages with pages: write.
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Creating a Pages site needs repository ADMIN rights. Neither this token
+      # nor the Arena integration token has them, so enablement: true can never
+      # work. A repo admin enables Pages ONCE in Settings > Pages; from then on
+      # this workflow deploys on every push with no manual steps.
+      - name: Check Pages configuration
+        id: pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if build_type=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.build_type' 2>/dev/null); then
+            echo "build_type=$build_type" >> "$GITHUB_OUTPUT"
+          else
+            echo "build_type=none" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: One-time setup required
+        if: steps.pages.outputs.build_type != 'workflow'
+        run: |
+          echo "::warning::Enable GitHub Pages once: Settings > Pages > Build and deployment > Source: GitHub Actions, then re-run this workflow."
+          {
+            echo "## GitHub Pages needs a one-time setup"
+            echo "Open https://github.com/$GITHUB_REPOSITORY/settings/pages and set **Source** to **GitHub Actions**."
+            echo "Then re-run this workflow (or push again). The site will be published at https://exyn0717-debug.github.io/youssef-/"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Configure Pages
+        if: steps.pages.outputs.build_type == 'workflow'
+        uses: actions/configure-pages@v5
+
+      - name: Upload static site
+        if: steps.pages.outputs.build_type == 'workflow'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy
+        if: steps.pages.outputs.build_type == 'workflow'
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="ar" dir="rtl" class="dark" data-theme="dark" data-appearance="modern">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#09090b">
+<meta name="description" content="ENG YOUSSEF — واجهة موحّدة لأي محاضرة: ملخص، طبقات/محتويات، شرح خطوة بخطوة، اختبار قصير، وملفات أصلية.">
+<title>ENG YOUSSEF | واجهة المحاضرة</title>
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="stylesheet" href="app.css?v=3.5.0">
+<script src="vendor/purify.min.js" defer></script>
+<style>
+/* ------------------------------------------------------------------
+   lecture.html — نفس واجهة الملف المرفق، لكن بمتغيّرات ثيم المنصة الجديد
+   (app.css). الوضع الليلي/النهاري + ثيم أكاديمي كلاسيكي اختياري.
+------------------------------------------------------------------- */
+:root{
+  --lp-accent:var(--brand);
+  --lp-header-bg:color-mix(in srgb,var(--surface) 92%,transparent);
+  --lp-header-ink:var(--ink);
+  --lp-hero-bg:linear-gradient(145deg,color-mix(in srgb,var(--brand) 17%,var(--surface)) 0%,var(--bg) 72%);
+  --lp-hero-ink:var(--ink);
+  --lp-hero-muted:var(--muted);
+  --lp-alt:color-mix(in srgb,var(--surface-2) 62%,var(--bg));
+  --lp-radius:16px;
+}
+/* «الثيم الأكاديمي» = تنسيق الملف المرفق (كحلي / ذهبي / ورقي) */
+html[data-appearance="classic"],html[data-appearance="classic"].light{
+  --bg:#f6f3ea;--surface:#fff;--surface-2:#fbf9f2;--surface-3:#f1ecdb;
+  --ink:#1a1a2e;--muted:#4a4d63;--line:#e4ddc9;--line-strong:#cdbf9b;
+  --brand:#2f8f88;--brand-strong:#22746f;--brand-tint:#e0f2f0;--brand-ink:#fff;
+  --success:#2f8f52;--success-tint:#eaf7ee;--warning:#b45309;--warning-tint:#fffbeb;
+  --danger:#c0392b;--danger-tint:#fbe9e7;--gold:#c9a227;--navy:#151a3d;--mint:#e0f2f0;
+  --shadow:0 10px 28px rgba(21,26,61,.10);--shadow-sm:0 2px 8px rgba(21,26,61,.08);
+  --lp-accent:#c9a227;
+  --lp-header-bg:#151a3d;--lp-header-ink:#fff;
+  --lp-hero-bg:linear-gradient(160deg,#151a3d 0%,#1f2657 65%,#24306e 100%);
+  --lp-hero-ink:#fff;--lp-hero-muted:#cfd3ea;
+  --lp-alt:#fbf9f2;
+  color-scheme:light;
+}
+html,body{margin:0;height:auto}
+body{background:var(--bg);color:var(--ink);font-family:Cairo,system-ui,sans-serif;font-size:14px;line-height:1.7;-webkit-font-smoothing:antialiased}
+section[id]{scroll-margin-top:96px}
+.lp-wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* ---------- header ---------- */
+.lp-header{position:sticky;top:0;z-index:40;background:var(--lp-header-bg);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);box-shadow:0 3px 0 color-mix(in srgb,var(--lp-accent) 55%,transparent)}
+.lp-nav{max-width:1180px;margin:0 auto;padding:11px 22px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.lp-brand{display:flex;align-items:center;gap:11px;color:var(--lp-header-ink);flex:none}
+.lp-crest{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:12px;letter-spacing:.3px;color:#fff;background:radial-gradient(circle at 35% 30%,var(--brand-strong),var(--brand) 72%);border:2px solid color-mix(in srgb,var(--lp-accent) 55%,#fff);flex:none}
+html[data-appearance="classic"] .lp-crest{background:radial-gradient(circle at 35% 30%,#e6c85a,#c9a227 70%);color:#151a3d;border-color:#e6c85a}
+.lp-brand b{display:block;font-size:1.08rem;line-height:1.1;letter-spacing:.4px}
+.lp-brand small{display:block;font-size:.68rem;margin-top:3px;color:var(--lp-accent);letter-spacing:.6px}
+.lp-links{display:flex;gap:4px;flex-wrap:wrap;flex:1;min-width:220px}
+.lp-links a{color:var(--lp-header-ink);opacity:.82;font-size:.84rem;font-weight:700;padding:7px 11px;border-radius:9px;white-space:nowrap}
+.lp-links a:hover{opacity:1;background:color-mix(in srgb,var(--lp-accent) 15%,transparent)}
+.lp-tools{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.lp-select{background:var(--surface);color:var(--ink);border:1px solid var(--line-strong);border-radius:10px;padding:7px 10px;font-family:inherit;font-size:.78rem;font-weight:700;max-width:230px}
+.lp-tool{border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);border-radius:10px;padding:7px 11px;font-family:inherit;font-size:.76rem;font-weight:800;white-space:nowrap}
+.lp-tool:hover{border-color:var(--lp-accent);color:var(--lp-accent)}
+.lp-tool.icon-only{min-width:38px;text-align:center}
+
+/* ---------- hero ---------- */
+.lp-hero{background:var(--lp-hero-bg);color:var(--lp-hero-ink);padding:54px 0 60px;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.lp-hero::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,color-mix(in srgb,var(--lp-accent) 9%,transparent) 0 2px,transparent 2px 26px);pointer-events:none}
+.lp-hero .lp-wrap{position:relative}
+.lp-eyebrow{display:flex;align-items:center;gap:9px;color:var(--lp-accent);font-size:.83rem;font-weight:800;margin-bottom:16px}
+.lp-eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--lp-accent);flex:none}
+.lp-hero h1{font-size:clamp(1.9rem,4.5vw,2.9rem);line-height:1.25;font-weight:900;margin:0 0 14px;color:var(--lp-hero-ink)}
+.lp-hero p.lp-lead{max-width:700px;color:var(--lp-hero-muted);font-size:1.02rem;line-height:1.95;margin:0 0 26px}
+.lp-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}
+.lp-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:9px 19px;border-radius:10px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);font-family:inherit;font-weight:800;font-size:.84rem;white-space:nowrap}
+.lp-btn:hover{border-color:var(--lp-accent);color:var(--lp-accent)}
+.lp-btn.primary{background:var(--lp-accent);border-color:var(--lp-accent);color:#fff}
+.lp-btn.primary:hover{background:var(--brand-strong);border-color:var(--brand-strong);color:#fff}
+html[data-appearance="classic"] .lp-btn.primary{background:var(--navy);border-color:var(--navy);color:#fff}
+.lp-btn.ghost{background:transparent;border-color:color-mix(in srgb,var(--lp-hero-ink) 35%,transparent);color:var(--lp-hero-ink)}
+.lp-btn.ghost:hover{color:var(--lp-accent);border-color:var(--lp-accent)}
+.lp-btn.sm{min-height:34px;padding:6px 14px;font-size:.78rem}
+.lp-meta{display:flex;gap:26px;flex-wrap:wrap}
+.lp-meta > div{border-inline-start:2px solid color-mix(in srgb,var(--lp-accent) 45%,transparent);padding-inline-start:14px}
+.lp-meta .num{font-size:1.35rem;font-weight:900;color:var(--lp-accent);line-height:1.2}
+.lp-meta .lbl{font-size:.76rem;color:var(--lp-hero-muted)}
+
+/* ---------- sections ---------- */
+.lp-section{padding:52px 0}
+.lp-section.lp-alt{background:var(--lp-alt);border-block:1px solid var(--line)}
+.lp-head{margin-bottom:28px}
+.lp-head .k{color:var(--lp-accent);font-weight:800;font-size:.8rem;letter-spacing:.4px}
+.lp-head h2{font-size:clamp(1.4rem,3vw,2rem);margin:6px 0 8px;color:var(--ink);font-weight:900}
+.lp-head p{color:var(--muted);max-width:700px;line-height:1.9;margin:0;font-size:.92rem}
+.lp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.lp-card{padding:22px;min-width:0}
+.lp-card.highlight{border-color:color-mix(in srgb,var(--lp-accent) 50%,var(--line));background:linear-gradient(150deg,var(--surface),color-mix(in srgb,var(--lp-accent) 9%,var(--surface)))}
+.lp-tag{display:inline-block;padding:3px 11px;border-radius:999px;background:color-mix(in srgb,var(--lp-accent) 15%,var(--surface));color:var(--lp-accent);font-size:.72rem;font-weight:800;margin-bottom:11px}
+.lp-card h3{margin:0 0 10px;font-size:1.04rem;color:var(--ink)}
+.lp-card p,.lp-card li{color:var(--muted);font-size:.92rem;line-height:1.9;margin:0}
+.lp-card ul,.lp-card ol{margin:0;padding-inline-start:20px}
+.lp-card figure{margin:14px 0 0;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.lp-card figure img{display:block;width:100%;max-height:330px;object-fit:contain}
+.lp-card figcaption{padding:8px 12px;font-size:.72rem;color:var(--muted);border-top:1px solid var(--line)}
+.lp-empty{padding:20px;color:var(--muted);font-size:.9rem}
+.lp-hero-note{display:inline-flex;align-items:center;gap:8px;max-width:760px;margin:-8px 0 24px;padding:8px 15px;border-radius:999px;background:color-mix(in srgb,var(--lp-accent) 12%,transparent);border:1px solid color-mix(in srgb,var(--lp-accent) 30%,transparent);color:var(--lp-hero-muted);font-size:.8rem;font-weight:700;line-height:1.7}
+.lp-info{display:flex;align-items:flex-start;gap:10px;padding:11px 15px;margin:0 0 14px;border:1px solid var(--line);border-inline-start:3px solid var(--lp-accent);border-radius:10px;background:var(--surface);color:var(--muted);font-size:.82rem;line-height:1.8}
+
+/* ---------- atmosphere / contents ---------- */
+.lp-atmos-wrap{display:grid;grid-template-columns:minmax(240px,320px) minmax(0,1fr);gap:26px;align-items:start}
+.lp-atmos-figure{margin:0;padding:14px}
+.lp-atmos-figure img,.lp-atmos-figure svg{display:block;width:100%;height:auto;border-radius:10px;background:#fff}
+.lp-svg-layer{cursor:pointer}
+.lp-svg-layer rect{stroke:rgba(255,255,255,.45);stroke-width:1}
+.lp-svg-layer.on rect{stroke:var(--lp-accent);stroke-width:3}
+.lp-svg-layer text{font-family:Cairo,sans-serif;font-size:11px;text-anchor:middle;pointer-events:none}
+.lp-layer-list{display:grid;gap:10px}
+.lp-layer{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:12px 16px;cursor:pointer;transition:border-color .15s}
+.lp-layer:hover{border-color:var(--lp-accent)}
+.lp-layer.active{border-color:var(--lp-accent);background:color-mix(in srgb,var(--lp-accent) 7%,var(--surface))}
+.lp-layer .row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.lp-layer h4{margin:0;font-size:.96rem;color:var(--ink)}
+.lp-layer .alt{font-size:.74rem;font-weight:800;color:var(--lp-accent);white-space:nowrap;direction:ltr}
+.lp-layer .detail{display:none;margin-top:9px;font-size:.87rem;color:var(--muted);line-height:1.85}
+.lp-layer.active .detail{display:block}
+.lp-contents{columns:2;column-gap:34px;margin:0;padding:20px 26px}
+.lp-contents li{color:var(--muted);font-size:.88rem;padding:5px 0;break-inside:avoid}
+.lp-contents ul{padding-inline-start:18px;margin:4px 0}
+.lp-contents ul li{font-size:.8rem;padding:2px 0}
+
+/* ---------- explainer ---------- */
+.lp-explainer{border:1px solid var(--line);border-radius:var(--lp-radius);overflow:hidden;background:var(--surface)}
+.lp-explainer-top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:15px 20px;border-bottom:1px solid var(--line);background:var(--surface-2)}
+.lp-explainer-top .title{font-weight:800;font-size:.9rem;color:var(--ink)}
+.lp-explainer-top .count{font-size:.8rem;font-weight:800;color:var(--lp-accent)}
+.lp-stage{min-height:230px;padding:28px 24px;color:var(--ink)}
+.lp-stage h3{color:var(--lp-accent);font-size:1.3rem;margin:0 0 14px;font-weight:900}
+.lp-stage p{font-size:.95rem;line-height:2;color:var(--muted);margin:0 0 10px}
+.lp-example{margin-top:16px;padding:12px 16px;border-radius:9px;border-inline-start:3px solid var(--lp-accent);background:var(--surface-2);font-size:.88rem;line-height:1.9;color:var(--ink);white-space:pre-line;direction:ltr;text-align:left}
+.lp-explainer-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 20px;border-top:1px solid var(--line);background:var(--surface-2)}
+.lp-dots{display:flex;gap:6px}
+.lp-dots span{width:7px;height:7px;border-radius:50%;background:var(--line-strong)}
+.lp-dots span.on{width:20px;border-radius:6px;background:var(--lp-accent)}
+
+/* ---------- quiz ---------- */
+.lp-quiz{border:1px solid var(--line);border-radius:var(--lp-radius);overflow:hidden;background:var(--surface)}
+.lp-quiz-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 22px;background:var(--surface-2);border-bottom:1px solid var(--line);font-weight:800;font-size:.88rem;color:var(--ink)}
+.lp-quiz-head .qn{color:var(--lp-accent);font-size:.82rem}
+.lp-quiz-body{padding:24px 22px}
+.lp-quiz-body h3{margin:0 0 18px;font-size:1.08rem;line-height:1.8;color:var(--ink)}
+.lp-opt{display:block;width:100%;text-align:inherit;background:var(--surface-2);border:1.5px solid var(--line);padding:12px 16px;border-radius:9px;margin-bottom:10px;font-family:inherit;font-size:.93rem;color:var(--ink)}
+.lp-opt:hover:not(:disabled){border-color:var(--lp-accent)}
+.lp-opt.correct{border-color:var(--success);background:var(--success-tint);color:var(--success);font-weight:800}
+.lp-opt.wrong{border-color:var(--danger);background:var(--danger-tint);color:var(--danger);font-weight:800}
+.lp-feedback{margin-top:12px;padding:12px 16px;border-radius:9px;font-size:.86rem;line-height:1.8}
+.lp-feedback.ok{background:var(--success-tint);color:var(--success)}
+.lp-feedback.bad{background:var(--danger-tint);color:var(--danger)}
+.lp-quiz-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:15px 22px;border-top:1px solid var(--line);background:var(--surface-2)}
+.lp-score-view{padding:46px 22px;text-align:center}
+.lp-score-view .big{font-size:3rem;font-weight:900;color:var(--lp-accent);line-height:1.2}
+.lp-score-view p{color:var(--muted);margin:8px 0 0}
+.lp-score-view .lp-btn{margin-top:20px}
+.lp-quiz-note{font-size:.76rem;color:var(--muted);margin:0 0 14px}
+
+/* ---------- files / resources / notes ---------- */
+.lp-stack{display:grid;gap:14px}
+.lp-file-row{display:flex;align-items:center;gap:14px;padding:15px 18px;flex-wrap:wrap}
+.lp-file-icon{width:42px;height:44px;border-radius:10px;display:grid;place-items:center;background:var(--brand-tint);color:var(--brand);font-size:1.2rem;flex:none}
+.lp-file-row h3{margin:0 0 3px;font-size:.9rem;color:var(--ink);overflow-wrap:anywhere}
+.lp-file-row p{margin:0;font-size:.74rem;color:var(--muted)}
+.lp-file-row .lp-file-actions{display:flex;gap:8px;margin-inline-start:auto;flex-wrap:wrap}
+.lp-notes{width:100%;min-height:150px;padding:16px;border:1px solid var(--line-strong);border-radius:12px;background:var(--surface);color:var(--ink);font-family:inherit;line-height:1.9;resize:vertical}
+.lp-note-status{display:flex;justify-content:space-between;gap:10px;margin-top:8px;color:var(--muted);font-size:.72rem}
+.lp-bottom-nav{display:flex;justify-content:space-between;gap:12px;margin-top:30px;flex-wrap:wrap}
+
+/* ---------- footer / boot ---------- */
+.lp-footer{background:var(--surface-2);border-top:1px solid var(--line);color:var(--muted);text-align:center;padding:28px 20px;font-size:.83rem;line-height:2}
+.lp-footer .accent{color:var(--lp-accent);font-weight:800}
+.lp-boot{max-width:620px;margin:80px auto;padding:28px;text-align:center}
+.lp-boot h1{font-size:1.3rem;margin:0 0 8px}
+.lp-boot p{color:var(--muted);margin:0;line-height:1.9}
+.lp-boot code{direction:ltr;display:inline-block;background:var(--surface-2);padding:2px 8px;border-radius:6px}
+
+@media(max-width:780px){
+  .lp-links{order:3;min-width:100%;overflow-x:auto;flex-wrap:nowrap}
+  .lp-nav{gap:10px;padding:10px 14px}
+  .lp-select{max-width:170px}
+  .lp-hero{padding:38px 0 44px}
+  .lp-section{padding:38px 0}
+  .lp-atmos-wrap{grid-template-columns:1fr}
+  .lp-atmos-figure{max-width:320px;margin-inline:auto}
+  .lp-contents{columns:1}
+  .lp-meta{gap:18px}
+  .lp-file-row .lp-file-actions{margin-inline-start:0;width:100%}
+}
+@media(max-width:480px){.lp-tools .lp-tool span{display:none}.lp-brand small{display:none}}
+
+/* المحتوى الدراسي يبقى بلغته الأصلية (RTL) حتى لو كانت الواجهة بالإنجليزية */
+.lp-select,.lp-hero h1,.lp-hero p.lp-lead,.lp-tag,.lp-card h3,.lp-card p,.lp-card li,
+.lp-card figcaption,.lp-contents,.lp-layer h4,.lp-layer .detail,.lp-stage h3,.lp-stage p,.lp-example,
+.lp-quiz-body h3,.lp-opt,.lp-feedback,.lp-file-row h3,.lp-file-row p,.lp-score-view p{direction:rtl;text-align:right}
+</style>
+
+</head>
+<body>
+
+<header class="lp-header">
+  <div class="lp-nav">
+    <a class="lp-brand" href="index.html">
+      <div class="lp-crest">KSIU</div>
+      <div><b>ENG YOUSSEF</b><small id="brandSub">جامعة الملك سلمان الدولية</small></div>
+    </a>
+    <nav class="lp-links" id="lpLinks" aria-label="أقسام المحاضرة"></nav>
+    <div class="lp-tools">
+      <select class="lp-select" id="lectureSelect" aria-label="اختر المحاضرة"></select>
+      <button class="lp-tool" id="langBtn" type="button">English</button>
+      <button class="lp-tool icon-only" id="modeBtn" type="button" title="الوضع الليلي / النهاري" aria-label="الوضع الليلي / النهاري">☀</button>
+      <button class="lp-tool" id="appearanceBtn" type="button">الثيم الأكاديمي</button>
+    </div>
+  </div>
+</header>
+
+<main id="lpMain">
+  <div class="lp-boot card" id="lpBoot"><h1>نجهّز واجهة المحاضرة…</h1><p>نقرأ بيانات الموقع الأصلية كما هي، بدون ترجمة للمحتوى.</p></div>
+</main>
+
+<footer class="lp-footer" id="lpFooter">
+  <div>ENG YOUSSEF <span class="accent">|</span> <span id="footerLine">مساحة دراسية مستقلة</span></div>
+</footer>
+
+<script>
+(function(){
+'use strict';
+/* واجهة موحّدة لأي محاضرة — نفس شكل الملف المرفق، بتنسيق الثيم الجديد.
+   الواجهة مترجمة عربي/إنجليزي، أمّا محتوى المواد فمعروض بلغته الأصلية بدون أي ترجمة. */
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const h=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const rich=v=>window.DOMPurify?DOMPurify.sanitize(String(v||''),{ALLOWED_TAGS:['b','strong','em','i','sup','sub','span','br','p','ul','ol','li','code','small'],ALLOWED_ATTR:[],ALLOW_DATA_ATTR:false}):h(v);
+const safeImage=v=>typeof v==='string'&&v.length<3000000&&/^data:image\/(webp|png|jpeg);base64,[A-Za-z0-9+/=\r\n]+$/.test(v)?v:'';
+const safeFileUrl=u=>typeof u==='string'&&/^content\/library\/[A-Za-z0-9._\-/]+\.(pdf|html)$/.test(u)?u:'';
+const safeHttp=u=>{try{const x=new URL(u);return (x.protocol==='http:'||x.protocol==='https:')?x.href:'';}catch{return '';}};
+
+/* ------------------------- نصوص الواجهة فقط (عربي / إنجليزي) ------------------------- */
+const UI={
+ ar:{
+  docTitle:'واجهة المحاضرة', uni:'جامعة الملك سلمان الدولية', langBtn:'English',
+  navSummary:'الملخص', navAtmos:'طبقات الغلاف الجوي', navContents:'محتويات المحاضرة',
+  navExplain:'الشرح', navQuiz:'الاختبار', navFiles:'الملفات والملاحظات',
+  pickLabel:'اختر محاضرة', noData:'لا توجد محاضرات منشورة.',
+  openPlatform:'افتح في المنصة', start:'ابدأ الملخص',
+  note:'واجهة الصفحة مترجمة عربي/إنجليزي — محتوى المواد معروض بلغته الأصلية بدون ترجمة',
+  statCards:'بطاقة ملخص', statSteps:'خطوة شرح', statQuestions:'سؤال تدريب', statFiles:'ملف أصلي',
+  kindLecture:'محاضرة', kindAssignment:'تكليف', kindLab:'تجربة', kindTutorial:'ورقة مسائل',
+  sumK:'الملخص', sumH2:'أهم أفكار المحاضرة', sumP:'بطاقات مأخوذة مباشرة من محتوى المحاضرة المنشور في المنصة.',
+  sumEmpty:'لا توجد بطاقات ملخص مكتوبة لهذه المحاضرة في المنصة. المحتوى الكامل متاح في الملف الأصلي بالأسفل.',
+  atmK:'طبقات الغلاف الجوي', atmH2:'من سطح الأرض حتى الفضاء الخارجي', atmP:'اضغط على أي طبقة لعرض تفاصيلها. الطبقات مرتبة من الأقرب للأرض إلى الأبعد.',
+  conK:'خريطة المحاضرة', conH2:'محتويات المحاضرة', conP:'عناوين المحاضرة كما وردت في فهرس الملف الأصلي.',
+  conEmpty:'لا توجد محتويات مكتوبة لهذه المحاضرة في المنصة؛ ارجع للملف الأصلي بالأسفل.',
+  expK:'شرح تفاعلي', expH2:'خطوة بخطوة', expP:'تنقّل بين خطوات الشرح بالأزرار، بدلًا من فيديو مباشر.',
+  expTitle:'شرح المحاضرة', expEmpty:'لا يوجد شرح تفاعلي مكتوب لهذه المحاضرة؛ الشرح الكامل داخل الملف الأصلي بالأسفل.',
+  prev:'السابق', next:'التالي', done:'انتهى',
+  quizK:'اختبار قصير', quizH2:'اختبر فهمك للمحاضرة', quizP:'أسئلة مرتبطة بهذه المحاضرة، مع التصحيح والشرح من المحتوى الأصلي.',
+  quizEmpty:'لا توجد أسئلة منشورة لهذه المحاضرة في بنك الأسئلة.',
+  quizOf:(a,b)=>`سؤال ${a} من ${b}`, quizScore:s=>`النتيجة: ${s}`, quizDone:'انتهى الاختبار',
+  quizNext:'السؤال التالي', quizResult:'عرض النتيجة', quizRestart:'إعادة الاختبار',
+  quizCorrect:'إجابة صحيحة! ', quizWrong:'إجابة غير صحيحة. ', quizResultDesc:'نتيجتك في الاختبار القصير لهذه المحاضرة.',
+  quizNote:(shown,total)=>`يعرض ${shown} من ${total} سؤال مرتبط بهذه المحاضرة.`,
+  quizAll:'عرض كل الأسئلة', quizNoFeedback:'لا يوجد شرح مرفق بهذا السؤال.',
+  filesK:'الملفات والملاحظات', filesH2:'الملفات الأصلية لهذه المحاضرة',
+  filesP:'الملفات كما رُفعت، بدون تحويل أو إعادة كتابة.', filesEmpty:'لا توجد ملفات مرتبطة بهذه المحاضرة.',
+  fullFileNote:'لا يوجد ملف PDF منفصل لهذه المحاضرة؛ محتواها داخل ملف الجزء الأول كاملًا.',
+  openFile:'معاينة', download:'تنزيل',
+  resourcesH2:'مصادر إضافية من المحتوى الأصلي', visit:'زيارة المصدر',
+  notesH2:'ملاحظاتي على المحاضرة', notesPlaceholder:'اكتب فكرتك، أو قانونًا تريد تذكره، أو سؤالًا للمراجعة…',
+  notesSaved:'تُحفظ تلقائيًا على هذا المتصفح فقط (نفس ملاحظات المنصة).',
+  prevLecture:'المحاضرة السابقة', nextLecture:'المحاضرة التالية', backToSubject:'العودة للمادة',
+  footer:'مساحة دراسية مستقلة · إعداد وتنظيم ENG YOUSSEF',
+  loadErrTitle:'تعذّر قراءة بيانات الموقع',
+  loadErrBody:'هذه الصفحة تقرأ بيانات المحاضرات من ملف المنصة، لذلك يجب فتحها عبر الموقع أو خادم محلي (وليس بفتح الملف مباشرة من القرص).',
+  bootHint:'مثال: python3 -m http.server 8000 ثم افتح lecture.html',
+  fileSize:size=>`${(size/1024).toFixed(0)} كيلوبايت`,
+  modeDark:'☾', modeLight:'☀', appearanceBtn:'الثيم الأكاديمي', appearanceBack:'الثيم الجديد'
+ },
+ en:{
+  docTitle:'Lecture page', uni:'King Salman International University', langBtn:'العربية',
+  navSummary:'Summary', navAtmos:'Atmosphere layers', navContents:'Lecture contents',
+  navExplain:'Walkthrough', navQuiz:'Quiz', navFiles:'Files & notes',
+  pickLabel:'Choose a lecture', noData:'No published lectures.',
+  openPlatform:'Open in platform', start:'Start summary',
+  note:'The interface is available in Arabic and English — course content stays in its original language, with no translation',
+  statCards:'summary cards', statSteps:'walkthrough steps', statQuestions:'practice questions', statFiles:'original files',
+  kindLecture:'Lecture', kindAssignment:'Assignment', kindLab:'Experiment', kindTutorial:'Problem sheet',
+  sumK:'SUMMARY', sumH2:'Key ideas from the lecture', sumP:'Cards taken directly from the lecture content published on the platform.',
+  sumEmpty:'No summary cards have been written for this lecture. The full content is in the original file below.',
+  atmK:'ATMOSPHERE LAYERS', atmH2:'From Earth’s surface to outer space', atmP:'Click a layer to see its details. Layers are ordered from closest to Earth to farthest.',
+  conK:'LECTURE MAP', conH2:'Lecture contents', conP:'Headings as they appear in the original file index.',
+  conEmpty:'No contents are listed for this lecture; see the original file below.',
+  expK:'INTERACTIVE WALKTHROUGH', expH2:'Step by step', expP:'Move between steps with the buttons instead of a direct video.',
+  expTitle:'Lecture walkthrough', expEmpty:'No interactive walkthrough has been written for this lecture; the full explanation is in the original file below.',
+  prev:'Previous', next:'Next', done:'Done',
+  quizK:'SHORT QUIZ', quizH2:'Test your understanding', quizP:'Questions linked to this lecture, with grading and feedback from the original content.',
+  quizEmpty:'No published questions are linked to this lecture yet.',
+  quizOf:(a,b)=>`Question ${a} of ${b}`, quizScore:s=>`Score: ${s}`, quizDone:'Quiz complete',
+  quizNext:'Next question', quizResult:'Show result', quizRestart:'Restart quiz',
+  quizCorrect:'Correct! ', quizWrong:'Not quite. ', quizResultDesc:'Your score on this lecture’s short quiz.',
+  quizNote:(shown,total)=>`Showing ${shown} of ${total} questions linked to this lecture.`,
+  quizAll:'Show all questions', quizNoFeedback:'No explanation is attached to this question.',
+  filesK:'FILES & NOTES', filesH2:'Original files for this lecture',
+  filesP:'Files exactly as uploaded, with no conversion or rewriting.', filesEmpty:'No files are linked to this lecture.',
+  fullFileNote:'No separate PDF exists for this lecture; its content is inside the complete Part 1 file.',
+  openFile:'Preview', download:'Download',
+  resourcesH2:'More from the original content', visit:'Visit resource',
+  notesH2:'My lecture notes', notesPlaceholder:'Write an idea, a formula to remember, or a question to review…',
+  notesSaved:'Autosaved in this browser only (shared with the platform notes).',
+  prevLecture:'Previous lecture', nextLecture:'Next lecture', backToSubject:'Back to subject',
+  footer:'An independent study space · Created and organised by ENG YOUSSEF',
+  loadErrTitle:'Could not read the site data',
+  loadErrBody:'This page reads lecture data from the platform’s file, so it must be opened through the site or a local server (not directly from disk).',
+  bootHint:'Example: python3 -m http.server 8000 then open lecture.html',
+  fileSize:size=>`${(size/1024).toFixed(0)} KB`,
+  modeDark:'☾', modeLight:'☀', appearanceBtn:'Academic theme', appearanceBack:'New theme'
+ }
+};
+
+/* طبقات الغلاف الجوي: نفس بيانات المنصة الأصلية، بدون ترجمة أو محتوى مختلق */
+const LAYERS=[
+ {s:'التروبوسفير',h:'التروبوسفير Troposphere',alt:'0–10 km',d:'فيها تحدث معظم ظواهر الطقس، وتوجد معظم كتلة الغلاف الجوي.'},
+ {s:'الستراتوسفير',h:'الستراتوسفير Stratosphere',alt:'10–50 km',d:'تحتوي على طبقة الأوزون التي تمتص جزءًا كبيرًا من الأشعة فوق البنفسجية.'},
+ {s:'الميزوسفير',h:'الميزوسفير Mesosphere',alt:'50–80 km',d:'تحترق فيها معظم الشهب، وهي أبرد طبقات الغلاف الجوي.'},
+ {s:'الثيرموسفير',h:'الثيرموسفير Thermosphere',alt:'80–700 km',d:'ترتفع فيها درجات الحرارة كثيرًا، ويوجد بها الأيونوسفير.'},
+ {s:'الإكزوسفير',h:'الإكزوسفير Exosphere',alt:'700–10,000 km',d:'الطبقة الخارجية التي تتدرج إلى الفضاء، وتوجد بها أقمار صناعية عديدة.'}
+];
+
+/* ------------------------------- الحالة ------------------------------- */
+let DATA=null, lang='ar', theme='dark', appearance='modern', activeId='';
+let layerIdx=0, stepIdx=0, qi=0, score=0, answered=false, quizAll=false;
+const QUIZ_LIMIT=10;
+const STORE='method.v2.local', THEME_KEY='eng-youssef.theme.v1', APPEARANCE_KEY='lp.appearance.v1';
+function readLocal(){try{const x=JSON.parse(localStorage.getItem(STORE)||'{}');return x&&typeof x==='object'?x:{};}catch{return {};}}
+function writeLocal(x){try{localStorage.setItem(STORE,JSON.stringify(x));}catch{}}
+try{const st=readLocal();if(st.lang==='en')lang='en';}catch{}
+try{if(localStorage.getItem(THEME_KEY)==='light')theme='light';}catch{}
+try{if(localStorage.getItem(APPEARANCE_KEY)==='classic')appearance='classic';}catch{}
+const u=k=>UI[lang][k];
+const fmt=n=>new Intl.NumberFormat(lang==='ar'?'ar':'en').format(n||0);
+
+function applyChrome(){
+ const root=document.documentElement;
+ root.lang=lang;root.dir=lang==='ar'?'rtl':'ltr';
+ root.classList.toggle('dark',theme==='dark');root.classList.toggle('light',theme==='light');
+ root.dataset.theme=theme;root.dataset.appearance=appearance;
+ const meta=$('meta[name=theme-color]');if(meta)meta.content=appearance==='classic'?'#151a3d':(theme==='light'?'#c8102e':'#09090b');
+ document.title='ENG YOUSSEF | '+u('docTitle');
+ $('#brandSub').textContent=u('uni');
+ $('#footerLine').textContent=u('footer');
+ $('#langBtn').textContent=u('langBtn');
+ $('#modeBtn').textContent=theme==='dark'?u('modeLight'):u('modeDark');
+ $('#modeBtn').title=lang==='ar'?'الوضع الليلي / النهاري':'Light / dark mode';
+ $('#appearanceBtn').textContent=appearance==='classic'?u('appearanceBack'):u('appearanceBtn');
+ $('#lectureSelect').setAttribute('aria-label',u('pickLabel'));
+ $('#modeBtn').setAttribute('aria-label',lang==='ar'?'الوضع الليلي / النهاري':'Light / dark mode');
+ try{localStorage.setItem(THEME_KEY,theme);localStorage.setItem(APPEARANCE_KEY,appearance);}catch{}
+}
+
+/* --------------------------- قراءة بيانات المنصة --------------------------- */
+async function loadData(){
+ const res=await fetch('index.html',{cache:'force-cache'});
+ if(!res.ok)throw new Error('HTTP '+res.status);
+ const text=await res.text();
+ const m=text.match(/<script id="method-data" type="application\/json">([\s\S]*?)<\/script>/);
+ if(!m)throw new Error('method-data not found');
+ const d=JSON.parse(m[1]);
+ if(!d||!Array.isArray(d.lectures))throw new Error('bad data');
+ return d;
+}
+
+/* كل المحتوى من النسخة الأصلية كما رُفعت — لا ترجمة ولا تبديل لغة للمواد */
+function subjectOf(l){return DATA.subjects.find(s=>s.id===l.subject_id)||{};}
+function field(o,base){return o[base+'_ar']||o[base]||'';}
+function origArr(v){return Array.isArray(v)?(v[0]||[]):[];}
+function contentsData(){const c=activeLecture().content?.contents;return Array.isArray(c)&&c[0]&&typeof c[0]==='object'&&Array.isArray(c[0].items)&&c[0].items.length?c[0]:null;}
+function activeLecture(){return DATA.lectures.find(l=>l.id===activeId)||DATA.lectures[0];}
+function lectureQuestions(){return DATA.questions.filter(q=>q.lecture_id===activeId&&q.published!==false);}
+function qText(q,base){return q[base]||'';}
+function qOptions(q){return Array.isArray(q.options)?q.options:[];}
+function lectureFiles(){
+ const l=activeLecture(),seen=new Set(),out=[];
+ for(const f of DATA.files.filter(f=>f.lecture_id===l.id)){if(!seen.has(f.id)){seen.add(f.id);out.push({f,related:false});}}
+ for(const id of (l.related_file_ids||[])){const f=DATA.files.find(x=>x.id===id);if(f&&!seen.has(f.id)){seen.add(f.id);out.push({f,related:true});}}
+ return out;
+}
+function siblingLectures(){const l=activeLecture();return DATA.lectures.filter(x=>x.subject_id===l.subject_id&&x.published!==false).sort((a,b)=>(a.order||0)-(b.order||0));}
+function hasAtmos(){return activeLecture().content?.atmosphere===true;}
+function hasContents(){return !!contentsData();}
+
+/* ------------------------------ الشريط والقائمة ------------------------------ */
+function buildSelect(){
+ const sel=$('#lectureSelect');
+ const groups=DATA.subjects.slice().sort((a,b)=>(a.order||0)-(b.order||0)).map(s=>({s,ls:DATA.lectures.filter(l=>l.subject_id===s.id&&l.published!==false).sort((a,b)=>(a.order||0)-(b.order||0))})).filter(g=>g.ls.length);
+ sel.innerHTML=groups.map(g=>`<optgroup label="${h(field(g.s,'name')||g.s.code)} (${h(g.s.code)})">${g.ls.map(l=>`<option value="${h(l.id)}"${l.id===activeId?' selected':''}>${h(field(l,'title'))}</option>`).join('')}</optgroup>`).join('')||`<option>${h(u('noData'))}</option>`;
+}
+function renderNav(){
+ const links=[['summary',u('navSummary')],['explore',hasAtmos()?u('navAtmos'):u('navContents')],['explainer',u('navExplain')],['quiz',u('navQuiz')],['resources',u('navFiles')]];
+ $('#lpLinks').innerHTML=links.map(([id,label])=>`<a href="#${id}">${h(label)}</a>`).join('');
+}
+function atmosSvg(){
+ const bars=[[300,34,'#dff5ee','#0d1240'],[255,38,'#b9e8de','#0d1240'],[205,43,'#8fd6cd','#0d1240'],[140,58,'#5fb9c4','#fff'],[30,103,'#274a9e','#fff']];
+ return `<svg viewBox="0 0 340 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${h(lang==='ar'?'رسم طبقات الغلاف الجوي الخمس':'The five atmospheric layers')}">
+   <defs><linearGradient id="lpSky" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#bfe6e2"/><stop offset="100%" stop-color="#0d1240"/></linearGradient></defs>
+   <rect x="0" y="0" width="340" height="380" rx="14" fill="url(#lpSky)"/>
+   <circle cx="170" cy="345" r="34" fill="#2f8f52"/>
+   <text x="170" y="350" text-anchor="middle" fill="#fff" font-size="10" font-family="Cairo">الأرض</text>
+   ${bars.map((b,i)=>`<g class="lp-svg-layer ${i===layerIdx?'on':''}" data-action="layer" data-i="${i}"><rect x="20" y="${b[0]}" width="300" height="${b[1]}" rx="4" fill="${b[2]}" opacity=".85"/><text x="170" y="${b[0]+b[1]/2+4}" fill="${b[3]}">${h(LAYERS[i].s)} (${h(LAYERS[i].alt)})</text></g>`).join('')}
+ </svg>`;
+}
+
+/* ------------------------------ الأقسام (كلها تظهر دائمًا) ------------------------------ */
+function renderHero(){
+ const l=activeLecture(),s=subjectOf(l),c=l.content||{},kind=c.kind||'lecture';
+ const cards=origArr(c.cards),steps=origArr(c.steps),qs=lectureQuestions(),files=lectureFiles();
+ const kindLabel=u(kind==='assignment'?'kindAssignment':kind==='lab'?'kindLab':kind==='tutorial'?'kindTutorial':'kindLecture');
+ return `<section class="lp-hero" id="top"><div class="lp-wrap">
+   <div class="lp-eyebrow"><span class="dot"></span><span>${h(s.code||'')} · <span dir="rtl">${h(field(s,'name'))}</span> · ${h(kindLabel)}</span></div>
+   <h1>${h(field(l,'title'))}</h1>
+   <p class="lp-lead">${h(field(l,'description')||field(s,'description'))}</p>
+   <div class="lp-hero-note"><span>◈</span><span>${h(u('note'))}</span></div>
+   <div class="lp-actions">
+     <a class="lp-btn primary" href="#summary">${h(u('start'))}</a>
+     <a class="lp-btn ghost" href="index.html#/lecture/${h(l.id)}">${h(u('openPlatform'))}</a>
+   </div>
+   <div class="lp-meta">
+     <div><div class="num">${fmt(cards.length)}</div><div class="lbl">${h(u('statCards'))}</div></div>
+     <div><div class="num">${fmt(steps.length)}</div><div class="lbl">${h(u('statSteps'))}</div></div>
+     <div><div class="num">${fmt(qs.length)}</div><div class="lbl">${h(u('statQuestions'))}</div></div>
+     <div><div class="num">${fmt(files.length)}</div><div class="lbl">${h(u('statFiles'))}</div></div>
+   </div>
+ </div></section>`;
+}
+function renderSummary(){
+ const cards=origArr(activeLecture().content?.cards);
+ const body=cards.length?`<div class="lp-grid">${cards.map(c=>{
+   const img=safeImage(c.img);
+   return `<article class="card lp-card ${c.hl?'highlight':''}">
+     ${c.tag?`<span class="lp-tag">${h(c.tag)}</span>`:''}
+     <h3>${h(c.h||c.title||'')}</h3>
+     ${Array.isArray(c.list)?`<ul>${c.list.map(v=>`<li>${h(v)}</li>`).join('')}</ul>`:`<p>${h(c.p||c.body||'')}</p>`}
+     ${img?`<figure><img src="${h(img)}" alt="${h(c.cap||c.h||'')}" loading="lazy"><figcaption>${h(c.cap||'من محتوى المحاضرة الأصلي')}</figcaption></figure>`:''}
+   </article>`;}).join('')}</div>`:`<div class="lp-grid"><div class="card lp-card lp-empty">${h(u('sumEmpty'))}</div></div>`;
+ return `<section class="lp-section" id="summary"><div class="lp-wrap">
+   <div class="lp-head"><div class="k">${h(u('sumK'))}</div><h2>${h(u('sumH2'))}</h2><p>${h(u('sumP'))}</p></div>
+   ${body}
+ </div></section>`;
+}
+function renderExplore(){
+ if(hasAtmos()){
+  return `<section class="lp-section lp-alt" id="explore"><div class="lp-wrap">
+    <div class="lp-head"><div class="k">${h(u('atmK'))}</div><h2>${h(u('atmH2'))}</h2><p>${h(u('atmP'))}</p></div>
+    <div class="lp-atmos-wrap">
+      <figure class="card lp-atmos-figure">${atmosSvg()}</figure>
+      <div class="lp-layer-list" id="layerList">${LAYERS.map((x,i)=>`<div class="lp-layer ${i===layerIdx?'active':''}" data-action="layer" data-i="${i}" role="button" tabindex="0">
+        <div class="row"><h4>${h(x.h)}</h4><span class="alt">${h(x.alt)}</span></div><div class="detail">${h(x.d)}</div>
+      </div>`).join('')}</div>
+    </div>
+  </div></section>`;
+ }
+ const b=contentsData();
+ const body=b?`<div class="card"><ol class="lp-contents">${(b.items||[]).map((v,i)=>`<li>${h(v)}${(Array.isArray(b.sub?.[i])&&b.sub[i].length)?`<ul>${b.sub[i].map(x=>`<li>${h(x)}</li>`).join('')}</ul>`:''}</li>`).join('')}</ol></div>`:`<div class="card lp-empty">${h(u('conEmpty'))}</div>`;
+ return `<section class="lp-section lp-alt" id="explore"><div class="lp-wrap">
+   <div class="lp-head"><div class="k">${h(u('conK'))}</div><h2>${h(u('conH2'))}</h2><p>${h(u('conP'))}</p></div>
+   ${body}
+ </div></section>`;
+}
+function renderExplainer(){
+ const steps=origArr(activeLecture().content?.steps);
+ if(!steps.length){
+  return `<section class="lp-section" id="explainer"><div class="lp-wrap">
+    <div class="lp-head"><div class="k">${h(u('expK'))}</div><h2>${h(u('expH2'))}</h2><p>${h(u('expP'))}</p></div>
+    <div class="lp-explainer"><div class="lp-explainer-top"><span class="title">${h(u('expTitle'))} · ${h(subjectOf(activeLecture()).code||'')}</span><span class="count">— / —</span></div>
+      <div class="lp-stage"><p>${h(u('expEmpty'))}</p></div>
+      <div class="lp-explainer-nav"><button class="lp-btn sm" type="button" disabled>${h(u('prev'))}</button><div class="lp-dots"><span class="on"></span></div><button class="lp-btn sm" type="button" disabled>${h(u('next'))}</button></div>
+    </div>
+  </div></section>`;
+ }
+ stepIdx=Math.min(stepIdx,steps.length-1);
+ const st=steps[stepIdx];
+ return `<section class="lp-section" id="explainer"><div class="lp-wrap">
+   <div class="lp-head"><div class="k">${h(u('expK'))}</div><h2>${h(u('expH2'))}</h2><p>${h(u('expP'))}</p></div>
+   <div class="lp-explainer">
+     <div class="lp-explainer-top"><span class="title">${h(u('expTitle'))} · ${h(subjectOf(activeLecture()).code||'')}</span><span class="count">${fmt(stepIdx+1)} / ${fmt(steps.length)}</span></div>
+     <div class="lp-stage"><h3>${h(st.h||'')}</h3>${(st.p||[]).map(p=>`<p>${rich(p)}</p>`).join('')}${st.ex?`<div class="lp-example">${rich(st.ex)}</div>`:''}</div>
+     <div class="lp-explainer-nav">
+       <button class="lp-btn sm" type="button" data-action="step" data-dir="-1" ${stepIdx===0?'disabled':''}>${h(u('prev'))}</button>
+       <div class="lp-dots">${steps.map((_,i)=>`<span class="${i===stepIdx?'on':''}"></span>`).join('')}</div>
+       <button class="lp-btn sm" type="button" data-action="step" data-dir="1" ${stepIdx===steps.length-1?'disabled':''}>${h(stepIdx===steps.length-1?u('done'):u('next'))}</button>
+     </div>
+   </div>
+ </div></section>`;
+}
+function currentQuiz(){const qs=lectureQuestions();return quizAll?qs:qs.slice(0,QUIZ_LIMIT);}
+function renderQuiz(){
+ const qs=currentQuiz(),all=lectureQuestions().length;
+ if(!all){
+  return `<section class="lp-section lp-alt" id="quiz"><div class="lp-wrap">
+    <div class="lp-head"><div class="k">${h(u('quizK'))}</div><h2>${h(u('quizH2'))}</h2><p>${h(u('quizP'))}</p></div>
+    <div class="lp-quiz"><div class="lp-quiz-head"><span>—</span><span class="qn">${h(u('quizScore')(0))}</span></div><div class="lp-quiz-body"><div class="lp-empty">${h(u('quizEmpty'))}</div></div></div>
+  </div></section>`;
+ }
+ const note=`<p class="lp-quiz-note">${h(u('quizNote')(qs.length,all))}${all>qs.length?` <button class="lp-btn sm" type="button" data-action="quiz-all" style="margin-inline-start:8px">${h(u('quizAll'))}</button>`:''}</p>`;
+ let inner='';
+ if(qi>=qs.length){
+  inner=`<div class="lp-score-view"><div class="big">${fmt(score)} / ${fmt(qs.length)}</div><p>${h(u('quizResultDesc'))}</p><button class="lp-btn primary" type="button" data-action="quiz-restart">${h(u('quizRestart'))}</button></div>`;
+ }else{
+  const q=qs[qi],opts=qOptions(q);
+  inner=`<div class="lp-quiz-body"><h3>${h(qText(q,'prompt'))}</h3><div id="optsBox">${opts.map((o,i)=>`<button class="lp-opt" type="button" data-action="opt" data-i="${i}">${h(o)}</button>`).join('')}</div><div class="lp-feedback" id="lpFeedback" hidden></div></div>
+   <div class="lp-quiz-foot"><span class="lp-quiz-note" style="margin:0">${fmt(qi+1)} / ${fmt(qs.length)}</span><button class="lp-btn primary" type="button" data-action="quiz-next" id="nextQBtn" disabled>${h(qi===qs.length-1?u('quizResult'):u('quizNext'))}</button></div>`;
+ }
+ return `<section class="lp-section lp-alt" id="quiz"><div class="lp-wrap">
+   <div class="lp-head"><div class="k">${h(u('quizK'))}</div><h2>${h(u('quizH2'))}</h2><p>${h(u('quizP'))}</p></div>
+   ${note}
+   <div class="lp-quiz"><div class="lp-quiz-head"><span>${h(qi>=qs.length?u('quizDone'):u('quizOf')(qi+1,qs.length))}</span><span class="qn">${h(u('quizScore')(score))}</span></div>${inner}</div>
+ </div></section>`;
+}
+function renderResources(){
+ const l=activeLecture(),c=l.content||{},rows=lectureFiles();
+ const files=rows.length?rows.map(({f,related})=>{
+   const url=safeFileUrl(f.url);if(!url)return '';
+   return `<div class="card lp-file-row"><div class="lp-file-icon">📄</div><div><h3>${h(f.title||f.original_name)}</h3><p>${h(f.original_name||'')} · ${h(u('fileSize')(f.size||0))}${related?' · '+h(u('fullFileNote')):''}</p></div>
+   <div class="lp-file-actions"><a class="lp-btn sm" href="${h(url)}" target="_blank" rel="noopener noreferrer">${h(u('openFile'))}</a><a class="lp-btn sm" href="${h(url)}" download>${h(u('download'))}</a></div></div>`;
+ }).join(''):'';
+ const relatedNote=rows.some(x=>x.related)?`<div class="card lp-empty" style="padding:12px 18px">${h(u('fullFileNote'))}</div>`:'';
+ const resources=(Array.isArray(c.resources)?c.resources:[]).map(r=>{
+   const url=safeHttp(r.url);if(!url)return '';
+   const txt=Array.isArray(r.ar)?r.ar:[];
+   return `<div class="card lp-file-row"><div class="lp-file-icon">${h(r.ic||'🔗')}</div><div><h3>${h(txt[0]||'')}</h3><p>${h(txt[1]||'')} · ${h(r.src||'')}</p></div><div class="lp-file-actions"><a class="lp-btn sm" href="${h(url)}" target="_blank" rel="noopener noreferrer">${h(u('visit'))}</a></div></div>`;
+ }).join('');
+ const ls=siblingLectures(),idx=ls.findIndex(x=>x.id===l.id);
+ const prev=ls[idx-1],next=ls[idx+1];
+ const nav=`<div class="lp-bottom-nav">${prev?`<a class="lp-btn" href="?lecture=${h(prev.id)}">${h(u('prevLecture'))} · ${h(field(prev,'title'))}</a>`:'<span></span>'}${next?`<a class="lp-btn" href="?lecture=${h(next.id)}">${h(u('nextLecture'))} · ${h(field(next,'title'))}</a>`:`<a class="lp-btn" href="index.html#/subject/${h(l.subject_id)}">${h(u('backToSubject'))}</a>`}</div>`;
+ return `<section class="lp-section" id="resources"><div class="lp-wrap">
+   <div class="lp-head"><div class="k">${h(u('filesK'))}</div><h2>${h(u('filesH2'))}</h2><p>${h(u('filesP'))}</p></div>
+   <div class="lp-stack">${relatedNote}${files||`<div class="card lp-empty">${h(u('filesEmpty'))}</div>`}
+     ${resources?`<h3 style="margin:18px 0 0;font-size:1rem">${h(u('resourcesH2'))}</h3>${resources}`:''}
+     <div class="card" style="padding:20px"><h3 style="margin:0 0 12px;font-size:1rem">${h(u('notesH2'))}</h3>
+       <textarea class="lp-notes" id="lpNotes" maxlength="50000" placeholder="${h(u('notesPlaceholder'))}"></textarea>
+       <div class="lp-note-status"><span id="lpNoteStatus">${h(u('notesSaved'))}</span></div>
+     </div>
+   </div>${nav}
+ </div></section>`;
+}
+function renderAll(){
+ const l=activeLecture();
+ applyChrome();buildSelect();renderNav();
+ $('#lpMain').innerHTML=renderHero()+renderSummary()+renderExplore()+renderExplainer()+renderQuiz()+renderResources();
+ const ta=$('#lpNotes');if(ta){const st=readLocal();ta.value=(st.notes&&typeof st.notes['lecture:'+l.id]==='string')?st.notes['lecture:'+l.id]:'';}
+ const url=new URL(location.href);if(url.searchParams.get('lecture')!==l.id){url.searchParams.set('lecture',l.id);try{history.replaceState(null,'',url);}catch{}}
+}
+
+/* ------------------------------ التفاعل ------------------------------ */
+function resetInteractive(){layerIdx=0;stepIdx=0;qi=0;score=0;answered=false;quizAll=false;}
+function setLecture(id){
+ if(!DATA.lectures.some(l=>l.id===id))return;
+ activeId=id;resetInteractive();renderAll();window.scrollTo({top:0,behavior:'smooth'});
+}
+function grade(el){
+ if(answered)return;answered=true;
+ const qs=currentQuiz(),q=qs[qi],correct=Number(q.correct)||0,picked=Number(el.dataset.i);
+ $$('.lp-opt').forEach(b=>b.disabled=true);
+ const right=$$('.lp-opt')[correct];
+ if(picked===correct){el.classList.add('correct');score++;}
+ else{el.classList.add('wrong');if(right)right.classList.add('correct');}
+ const fb=$('#lpFeedback');if(fb){fb.hidden=false;fb.className='lp-feedback '+(picked===correct?'ok':'bad');fb.textContent=(picked===correct?u('quizCorrect'):u('quizWrong'))+(qText(q,'explanation')||u('quizNoFeedback'));}
+ const next=$('#nextQBtn');if(next)next.disabled=false;
+ const qn=$('.lp-quiz-head .qn');if(qn)qn.textContent=u('quizScore')(score);
+}
+document.addEventListener('click',e=>{
+ const el=e.target.closest('[data-action]');if(!el)return;
+ const a=el.dataset.action;
+ if(a==='layer'){layerIdx=Number(el.dataset.i)||0;$$('.lp-layer').forEach((x,i)=>x.classList.toggle('active',i===layerIdx));$$('.lp-svg-layer').forEach((x,i)=>x.classList.toggle('on',i===layerIdx));}
+ else if(a==='step'){const steps=origArr(activeLecture().content?.steps);stepIdx=Math.max(0,Math.min(steps.length-1,stepIdx+Number(el.dataset.dir)));$('#explainer').outerHTML=renderExplainer();}
+ else if(a==='opt'){grade(el);}
+ else if(a==='quiz-next'){qi++;$('#quiz').outerHTML=renderQuiz();}
+ else if(a==='quiz-restart'){qi=0;score=0;answered=false;$('#quiz').outerHTML=renderQuiz();}
+ else if(a==='quiz-all'){quizAll=true;qi=0;score=0;answered=false;$('#quiz').outerHTML=renderQuiz();}
+});
+document.addEventListener('keydown',e=>{
+ if((e.key==='Enter'||e.key===' ')&&e.target.matches('.lp-layer')){e.preventDefault();e.target.click();}
+});
+document.addEventListener('input',e=>{
+ if(e.target.id!=='lpNotes')return;
+ clearTimeout(window.__lpNoteTimer);
+ const value=e.target.value;
+ window.__lpNoteTimer=setTimeout(()=>{const st=readLocal();st.notes=st.notes&&typeof st.notes==='object'?st.notes:{};st.notes['lecture:'+activeId]=value.slice(0,50000);writeLocal(st);},350);
+});
+$('#lectureSelect').addEventListener('change',e=>setLecture(e.target.value));
+$('#langBtn').addEventListener('click',()=>{lang=lang==='ar'?'en':'ar';const st=readLocal();st.lang=lang;writeLocal(st);renderAll();});
+$('#modeBtn').addEventListener('click',()=>{theme=theme==='dark'?'light':'dark';applyChrome();});
+$('#appearanceBtn').addEventListener('click',()=>{appearance=appearance==='classic'?'modern':'classic';applyChrome();});
+window.addEventListener('popstate',()=>{if(!DATA)return;const id=new URLSearchParams(location.search).get('lecture');if(id&&id!==activeId)setLecture(id);});
+
+/* ------------------------------ الإقلاع ------------------------------ */
+(async function boot(){
+ applyChrome();
+ try{DATA=await loadData();}
+ catch(err){
+  $('#lpMain').innerHTML=`<div class="lp-boot card"><h1>${h(u('loadErrTitle'))}</h1><p>${h(u('loadErrBody'))}</p><p><code>${h(u('bootHint'))}</code></p><p><a class="lp-btn primary" href="index.html">ENG YOUSSEF</a></p></div>`;
+  return;
+ }
+ const wanted=new URLSearchParams(location.search).get('lecture');
+ activeId=DATA.lectures.some(l=>l.id===wanted)?wanted:(DATA.lectures.find(l=>l.id==='esd217-concept')||DATA.lectures[0]).id;
+ renderAll();
+})();
+})();
+</script>
+</body>
+</html>
