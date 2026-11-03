@@ -1,19 +1,25 @@
 # Deployment — ENG YOUSSEF 3.0
 
-## النسخة المنشورة على GitHub Pages (ثابتة، 2026-11-03)
+## النشر على GitHub Pages (جاهز — خطوة واحدة من صاحب المستودع، 2026-11-03)
 
-- الرابط: **https://exyn0717-debug.github.io/youssef-/**
+- الرابط بعد التفعيل: **https://exyn0717-debug.github.io/youssef-/**
 - واجهة المحاضرة: `lecture.html?lecture=esd217-concept`،
   واختبار مراجعة العربية: `lecture.html?lecture=arb112-review`.
-- النشر عبر **GitHub Actions**: `.github/workflows/pages.yml` يعمل عند كل push إلى
-  `arena/e1f085f7-youssef` (أو يدويًا `workflow_dispatch`)، يضبط Pages بصلاحية
-  `pages: write` ثم يرفع مجلد المستودع كاملًا كـ artifact وينشره عبر `deploy-pages`.
-  الملف `.nojekyll` يمنع معالجة Jekyll، فتُقدَّم ملفات `content/` و`vendor/` و`assets/` كما هي.
+- **الخطوة المطلوبة مرة واحدة (تحتاج صلاحية Admin، لا يملكها توكن التكامل ولا `GITHUB_TOKEN`):**
+  افتح https://github.com/exyn0717-debug/youssef-/settings/pages ثم
+  **Build and deployment → Source: `GitHub Actions`**. بعدها أعد تشغيل سير العمل
+  (أو ادفع أي تغيير) وينشر الموقع تلقائيًا.
+- سير العمل `.github/workflows/pages.yml` يعمل عند كل push إلى
+  `arena/e1f085f7-youssef` أو يدويًا (`workflow_dispatch`)، ويرفع مجلد المستودع كاملًا
+  كصفحات ثابتة عبر `upload-pages-artifact` + `deploy-pages`. إن لم يكن Pages مُفعّلًا،
+  يتخطى النشر ويكتب رسالة واضحة بدل أن يفشل.
+- لا تستخدم `enablement: true` في `configure-pages`: إنشاء موقع Pages يحتاج صلاحية
+  إدارة المستودع، ويفشل دائمًا بـ `Resource not accessible by integration` من أي توكن CI.
+- الملف `.nojekyll` يمنع معالجة Jekyll، فتُقدَّم ملفات `content/` و`vendor/` و`assets/` كما هي.
 - كل المسارات نسبية، فالموقع يعمل تحت `/youssef-/` بدون تعديل. النسخة الثابتة لا تحتاج
   خادم Python: الحسابات والمزامنة ومساعد Claude معطّلة تلقائيًا (`__STATIC_WEB__`).
-- عند دمج العمل في `main`، حدّث `branches:` في سير العمل إلى `main` إذا أردت أن يبقى
+- عند دمج العمل في `main`، حدّث `branches:` في سير العمل إلى `main` إن أردت أن يبقى
   النشر تابعًا للفرع الافتراضي.
-- لتحديث النشر: ادفع (push) إلى الفرع نفسه، فـ Actions يبني وينشر تلقائيًا.
 
 ## نسخة الخادم الكاملة (Python)
 
