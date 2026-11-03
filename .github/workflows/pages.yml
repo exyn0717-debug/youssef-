@@ -5,10 +5,7 @@ on:
     branches: [arena/e1f085f7-youssef]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+permissions: write-all
 
 concurrency:
   group: pages
