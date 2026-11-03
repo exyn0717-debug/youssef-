@@ -15,11 +15,11 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # No `environment:` block: the github-pages environment's default branch
+  # policy allows only `main`, and an integration token cannot edit it. Pages
+  # deployments are created directly by actions/deploy-pages with pages: write.
   deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
