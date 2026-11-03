@@ -5,14 +5,15 @@
 - الرابط: **https://exyn0717-debug.github.io/youssef-/**
 - واجهة المحاضرة: `lecture.html?lecture=esd217-concept`،
   واختبار مراجعة العربية: `lecture.html?lecture=arb112-review`.
-- Pages مضبوط على «Deploy from a branch» بمصدر
-  `arena/e1f085f7-youssef` والمجلد `/` (root). الملف `.nojekyll` يمنع معالجة Jekyll
-  حتى تُقدَّم كل ملفات `content/` و`vendor/` و`assets/` كما هي بدون معالجة.
+- النشر عبر **GitHub Actions**: `.github/workflows/pages.yml` يعمل عند كل push إلى
+  `arena/e1f085f7-youssef` (أو يدويًا `workflow_dispatch`)، يضبط Pages بصلاحية
+  `pages: write` ثم يرفع مجلد المستودع كاملًا كـ artifact وينشره عبر `deploy-pages`.
+  الملف `.nojekyll` يمنع معالجة Jekyll، فتُقدَّم ملفات `content/` و`vendor/` و`assets/` كما هي.
 - كل المسارات نسبية، فالموقع يعمل تحت `/youssef-/` بدون تعديل. النسخة الثابتة لا تحتاج
   خادم Python: الحسابات والمزامنة ومساعد Claude معطّلة تلقائيًا (`__STATIC_WEB__`).
-- عند دمج العمل في `main`، بدّل مصدر Pages من إعدادات المستودع إلى `main` إذا أردت
-  أن يبقى النشر تابعًا للفرع الافتراضي.
-- لتحديث النشر: ادفع (push) إلى الفرع نفسه، ثم يبني Pages الموقع تلقائيًا.
+- عند دمج العمل في `main`، حدّث `branches:` في سير العمل إلى `main` إذا أردت أن يبقى
+  النشر تابعًا للفرع الافتراضي.
+- لتحديث النشر: ادفع (push) إلى الفرع نفسه، فـ Actions يبني وينشر تلقائيًا.
 
 ## نسخة الخادم الكاملة (Python)
 
