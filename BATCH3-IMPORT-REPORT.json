@@ -1,0 +1,202 @@
+{
+  "batch": 3,
+  "date": "2026-11-03",
+  "received": 19,
+  "method": [
+    "sha256",
+    "extracted_text_normalized",
+    "page_count"
+  ],
+  "new_public_files": [],
+  "already_published_exact": [
+    {
+      "name": "tutorial 3.pdf",
+      "stored": "content/library/mat121-tutorial-3-chapter1.pdf"
+    },
+    {
+      "name": "Assignment_1.pdf",
+      "stored": "content/library/mat121-assignment-1.pdf"
+    },
+    {
+      "name": "Assignment_1 model answer..pdf",
+      "stored": "content/library/mat121-assignment-1-model-answer.pdf"
+    },
+    {
+      "name": "Assignment 2.pdf",
+      "stored": "content/library/mat121-assignment-2-6.pdf"
+    },
+    {
+      "name": "Assignment 2 model answer.pdf",
+      "stored": "content/library/mat121-assignment-2-model-answer.pdf"
+    },
+    {
+      "name": "Assignment 3.pdf",
+      "stored": "content/library/mat121-assignment-3-5.pdf"
+    },
+    {
+      "name": "Hook's Law Experiment.pdf",
+      "stored": "content/library/phy111-exp-1-hookes-law.pdf"
+    },
+    {
+      "name": "lec4 Math1.pdf",
+      "stored": "content/library/mat111-lecture-4-limits-continuity.pdf"
+    }
+  ],
+  "already_published_same_content": [
+    {
+      "name": "lec1 Math1.pdf",
+      "stored": "content/library/mat111-lecture-1-intro.pdf",
+      "pages": 25,
+      "evidence": "identical normalized text + identical page count + pixel-identical render (max mean diff 0.97/255)"
+    },
+    {
+      "name": "lec2 Math1.pdf",
+      "stored": "content/library/mat111-lecture-2-functions.pdf",
+      "pages": 16,
+      "evidence": "page count 16/16 + pixel-identical render (max mean diff 0.97/255); extracted text is near-empty (scanned), so pixel comparison was the deciding evidence"
+    },
+    {
+      "name": "EXP.2 Simple Pendulum.pdf",
+      "stored": "content/library/phy111-exp-2-pendulum.pdf",
+      "pages": 6,
+      "evidence": "identical normalized text + identical page count + pixel-identical render (max mean diff 0.00)"
+    }
+  ],
+  "exact_duplicates_in_batch": [
+    {
+      "name": "Assignment_1 1.pdf",
+      "same_as": "Assignment_1.pdf"
+    },
+    {
+      "name": "Assignment_1 2.pdf",
+      "same_as": "Assignment_1.pdf"
+    },
+    {
+      "name": "Assignment_1 3.pdf",
+      "same_as": "Assignment_1.pdf"
+    },
+    {
+      "name": "Assignment_1 model answer. 1.pdf",
+      "same_as": "Assignment_1 model answer..pdf"
+    },
+    {
+      "name": "Assignment 2 model answer 1.pdf",
+      "same_as": "Assignment 2 model answer.pdf"
+    },
+    {
+      "name": "Assignment 2 model answer 2.pdf",
+      "same_as": "Assignment 2 model answer.pdf"
+    },
+    {
+      "name": "Assignment 6.pdf",
+      "same_as": "Assignment 2.pdf"
+    },
+    {
+      "name": "Assignment 5.pdf",
+      "same_as": "Assignment 3.pdf"
+    }
+  ],
+  "coverage_fix": {
+    "issue": "7 published ESD217 lectures had no linked PDF",
+    "lectures": [
+      "esd217-weather",
+      "esd217-atmosphere",
+      "esd217-oceans",
+      "esd217-years",
+      "esd217-causes",
+      "esd217-system",
+      "esd217-indicators"
+    ],
+    "linked_file": "lib-climate-2026",
+    "linked_url": "content/library/esd217-part1-2026.pdf",
+    "evidence": "page 2 of esd217-part1-2026.pdf lists all 8 Part 1 lectures",
+    "labelled_as_related": false,
+    "files_added_to_repo": 0,
+    "ui": "separate section: الملف الكامل الذي يحتوي هذه المحاضرة",
+    "splitting_rejected": {
+      "reason": "internal page order of esd217-part1-2026.pdf does not match the lecture order; climate-system content spans pages 24-48 and 92-127, and coral-reef content is inside the proxies block (66-70)",
+      "observed_blocks": [
+        [
+          1,
+          2,
+          "cover + Part 1 index"
+        ],
+        [
+          3,
+          13,
+          "concept + climate vs weather"
+        ],
+        [
+          14,
+          23,
+          "atmosphere layers"
+        ],
+        [
+          24,
+          48,
+          "energy balance / greenhouse / Venus-Earth-Mars"
+        ],
+        [
+          49,
+          73,
+          "climate change over years + proxies (corals 66-70)"
+        ],
+        [
+          74,
+          91,
+          "causes"
+        ],
+        [
+          92,
+          127,
+          "Earth system components"
+        ],
+        [
+          128,
+          153,
+          "climate indicators"
+        ]
+      ]
+    }
+  },
+  "remaining_gaps": {
+    "mat111": [
+      "lecture 3 not uploaded"
+    ],
+    "mat121": [
+      "tutorial 1 not uploaded",
+      "tutorial 2 not uploaded"
+    ],
+    "phy111": [
+      "only Lect__3 plus two experiments uploaded"
+    ],
+    "esd217": [
+      "part 2 not uploaded"
+    ],
+    "cse013": [
+      "lectures 4+ not uploaded"
+    ]
+  },
+  "verification": {
+    "index_json_valid": true,
+    "lectures": 32,
+    "questions": 198,
+    "files": 28,
+    "library_files_on_disk": 28,
+    "lectures_with_zero_files_before": 7,
+    "lectures_with_zero_files_after": 0,
+    "node_check_app_js": "pass",
+    "dom_render_errors": 0,
+    "pixel_comparison": "all pages of the 3 same-content pairs rendered at 72dpi and compared; max mean abs diff 0.97/255",
+    "app_version": "3.5.2"
+  },
+  "summary": {
+    "received": 19,
+    "distinct": 11,
+    "duplicates_in_batch": 8,
+    "already_published_exact": 8,
+    "already_published_same_content": 3,
+    "new_public_files": 0,
+    "site_fix_applied": 1
+  }
+}
