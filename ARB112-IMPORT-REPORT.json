@@ -1,0 +1,56 @@
+{
+  "batch": "ARB112 Arabic Skills",
+  "date": "2026-11-03",
+  "subjects": [
+    "arb112"
+  ],
+  "received": 4,
+  "added": 4,
+  "skipped": 0,
+  "files": [
+    {
+      "original_name": "lecture 1 Arabic skils 2026-2027.pdf",
+      "stored_name": "arb112-lecture-1-intro.pdf",
+      "lecture_id": "arb112-intro",
+      "pages": 36,
+      "bytes": 2077275,
+      "sha256": "6ef71e9bf8e40443676c5c779e2f2771dd8bd032b60ba81232aeeb1bc911f54e"
+    },
+    {
+      "original_name": "lecture 2 Arabic Skills 2025 2026.pdf",
+      "stored_name": "arb112-lecture-2-sounds-syllables.pdf",
+      "lecture_id": "arb112-sounds-syllables",
+      "pages": 33,
+      "bytes": 808990,
+      "sha256": "08c46dd77dd0cda233028052d712952979e70fcf283a29cc7f755e367d8e751e"
+    },
+    {
+      "original_name": "lecture 3.pdf",
+      "stored_name": "arb112-lecture-3-hamza.pdf",
+      "lecture_id": "arb112-hamza",
+      "pages": 25,
+      "bytes": 857858,
+      "sha256": "aa0a1fa7f5c0dbc36d4cdcba961ca8c365a90d9d0b539164220532c974d6c2b0"
+    },
+    {
+      "original_name": "الموضوع الرابع مهارة التحدث للجمهور4.pdf",
+      "stored_name": "arb112-topic-4-public-speaking.pdf",
+      "lecture_id": "arb112-public-speaking",
+      "pages": 27,
+      "bytes": 1950896,
+      "sha256": "dbffe3a28d6d19c3b95bd5c7f9241adeee36882e856c5982fa7b9b33df04fd49"
+    }
+  ],
+  "totals_before": {
+    "subjects": 17,
+    "lectures": 32,
+    "questions": 198,
+    "files": 28
+  },
+  "totals_after": {
+    "subjects": 17,
+    "lectures": 36,
+    "questions": 198,
+    "files": 32
+  }
+}
