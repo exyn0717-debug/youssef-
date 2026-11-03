@@ -2,10 +2,9 @@
 
 نسخة ويب ثابتة تعمل مباشرة على Vercel أو GitHub Pages بدون خادم Python.
 
-**النشر:** سير عمل `.github/workflows/pages.yml` جاهز لنشر الموقع من الفرع
-`arena/e1f085f7-youssef` على https://exyn0717-debug.github.io/youssef-/ .
-يتطلب تفعيل Pages مرة واحدة من إعدادات المستودع (Source: **GitHub Actions**)؛
-التفاصيل في `DEPLOYMENT.md`.
+**منشور الآن:** https://exyn0717-debug.github.io/youssef-/ — عبر GitHub Actions
+من الفرع `arena/e1f085f7-youssef` (Pages → Source: **GitHub Actions**).
+كل push جديد يعيد النشر تلقائيًا؛ التفاصيل في `DEPLOYMENT.md`.
 
 ## الجديد — واجهة المحاضرة الموحّدة (2026-11-03)
 - `lecture.html?lecture=<id>`: نفس شكل واجهة ملف المحاضرة المرفق (هيرو، ملخص، قسم تفاعلي، شرح، اختبار، ملفات، تذييل) لكن **بتنسيق الثيم الجديد**، و**لأي محاضرة منشورة** — كل الأقسام تظهر دائمًا. **الواجهة مترجمة عربي/إنجليزي، ومحتوى المواد يبقى بلغته الأصلية بدون ترجمة.** مع الوضع الليلي/النهاري وزر اختيار المحاضرة. التفاصيل في `LECTURE-PAGE.md`.
