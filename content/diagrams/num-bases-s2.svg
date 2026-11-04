@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" role="img" aria-label="Compare four number systems">
+<rect width="1000" height="360" fill="#ffffff"/>
+<rect x="0" y="0" width="1000" height="6" fill="#c8102e"/>
+<text x="24" y="38" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#18181b">Compare four number systems</text>
+<path d="M252 157 L256 157" stroke="#e4e4e7" stroke-width="2" fill="none"/>
+<path d="M256 152 L264 157 L256 162" fill="#e4e4e7"/>
+<path d="M494 157 L498 157" stroke="#e4e4e7" stroke-width="2" fill="none"/>
+<path d="M498 152 L506 157 L498 162" fill="#e4e4e7"/>
+<path d="M736 157 L740 157" stroke="#e4e4e7" stroke-width="2" fill="none"/>
+<path d="M740 152 L748 157 L740 162" fill="#e4e4e7"/>
+<rect x="24" y="96" width="224" height="122" rx="12" fill="#f1f1f3" stroke="#e4e4e7" stroke-width="1.5"/>
+<circle cx="44" cy="116" r="12" fill="#e4e4e7"/>
+<text x="44" y="120" font-family="Arial,sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#52525b">1</text>
+<text x="136" y="142" font-family="Arial,sans-serif" font-size="15" font-weight="600" text-anchor="middle" fill="#18181b">Decimal: 26₁₀</text>
+<rect x="266" y="96" width="224" height="122" rx="12" fill="#fdecef" stroke="#c8102e" stroke-width="3"/>
+<circle cx="286" cy="116" r="12" fill="#c8102e"/>
+<text x="286" y="120" font-family="Arial,sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#ffffff">2</text>
+<text x="379" y="142" font-family="Arial,sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#18181b">Binary: 11010₂</text>
+<rect x="509" y="96" width="224" height="122" rx="12" fill="#f1f1f3" stroke="#e4e4e7" stroke-width="1.5"/>
+<circle cx="529" cy="116" r="12" fill="#e4e4e7"/>
+<text x="529" y="120" font-family="Arial,sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#52525b">3</text>
+<text x="621" y="142" font-family="Arial,sans-serif" font-size="15" font-weight="600" text-anchor="middle" fill="#18181b">Octal: 32₈</text>
+<rect x="752" y="96" width="224" height="122" rx="12" fill="#f1f1f3" stroke="#e4e4e7" stroke-width="1.5"/>
+<circle cx="772" cy="116" r="12" fill="#e4e4e7"/>
+<text x="772" y="120" font-family="Arial,sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#52525b">4</text>
+<text x="864" y="142" font-family="Arial,sans-serif" font-size="15" font-weight="600" text-anchor="middle" fill="#18181b">Hexadecimal: 1A₁₆</text>
+<text x="24" y="270" font-family="Arial,sans-serif" font-size="16" fill="#52525b">Binary uses only 0 and 1.</text>
+<text x="976" y="344" font-family="Arial,sans-serif" font-size="12" text-anchor="end" fill="#52525b">IT_Number_Systems.pdf, pp. 5–7, 14–15, 19</text>
+</svg>
