@@ -75,3 +75,36 @@ dialog{width:min(560px,calc(100vw - 32px));max-height:88vh;padding:0;border:1px 
 .full-summary-md hr{border:0;border-top:1px solid var(--line);margin:1.6rem 0}
 .full-summary-md a{color:var(--brand)}
 .full-summary-md blockquote{border-inline-start:3px solid var(--brand);padding-inline-start:.8rem;color:var(--muted)}
+
+/* Complete subject summary — v2 reading UI (index rail, tabs, search, chapters) */
+.fs-wrap{margin-top:1rem}
+.fs-toolbar{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.fs-tabs{display:flex;flex-wrap:wrap;gap:.4rem}
+.fs-tab{cursor:pointer}
+.fs-tab.active{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.fs-tools{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.fs-search{display:flex;align-items:center;gap:.45rem;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:.32rem .65rem;min-width:215px}
+.fs-search svg{width:16px;height:16px;color:var(--muted);flex:0 0 auto}
+.fs-search input{border:0;background:transparent;color:var(--ink);outline:none;width:100%;font:inherit;font-size:.88rem}
+.fs-layout{display:grid;grid-template-columns:225px minmax(0,1fr);gap:1rem;align-items:start}
+.fs-rail{position:sticky;top:1rem;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1rem;max-height:calc(100vh - 2rem);overflow:auto}
+.fs-rail-title{font-weight:800;font-size:.85rem;margin-bottom:.5rem}
+.fs-rail-ch{font-size:.7rem;text-transform:uppercase;letter-spacing:.04em;color:var(--brand);font-weight:800;margin:.85rem 0 .3rem;line-height:1.4}
+.fs-rail-link{display:block;width:100%;text-align:start;border:0;background:transparent;color:var(--muted);padding:.3rem .45rem;border-radius:6px;cursor:pointer;font:inherit;font-size:.82rem;line-height:1.4}
+.fs-rail-link:hover,.fs-rail-link:focus-visible{background:var(--surface-2);color:var(--ink)}
+.fs-count{font-size:.75rem;color:var(--muted);margin-top:.8rem;padding-top:.6rem;border-top:1px solid var(--line)}
+.fs-main{display:grid;gap:1rem;min-width:0}
+.fs-intro h1{font-size:1.5rem;margin:0 0 .5rem}
+.fs-intro p{color:var(--muted);margin:.3rem 0}
+.fs-chapter{scroll-margin-top:1rem}
+.fs-chapter[hidden],.fs-sec[hidden]{display:none!important}
+.fs-ch-head{display:flex;gap:.7rem;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:.6rem;margin-bottom:.35rem}
+.fs-ch-head h2{font-size:1.2rem;margin:0}
+.fs-ch-num{font-size:.78rem;font-weight:800;color:var(--brand);background:var(--brand-tint);padding:.16rem .45rem;border-radius:6px}
+.fs-ch-intro{color:var(--muted)}
+.fs-sec{padding:.7rem 0;border-top:1px dashed var(--line);scroll-margin-top:1rem}
+.fs-sec:first-of-type{border-top:0}
+.fs-sec h3{font-size:1rem;margin:0 0 .45rem}
+.fs-flash{animation:fsflash 1.2s ease}
+@keyframes fsflash{0%{background:var(--brand-tint)}100%{background:transparent}}
+@media(max-width:900px){.fs-layout{grid-template-columns:1fr}.fs-rail{position:static;max-height:none}}
