@@ -197,6 +197,36 @@ html[data-appearance="classic"] .lp-btn.primary{background:var(--navy);border-co
 .lp-select,.lp-hero h1,.lp-hero p.lp-lead,.lp-tag,.lp-card h3,.lp-card p,.lp-card li,
 .lp-card figcaption,.lp-contents,.lp-layer h4,.lp-layer .detail,.lp-stage h3,.lp-stage p,.lp-example,
 .lp-quiz-body h3,.lp-opt,.lp-feedback,.lp-file-row h3,.lp-file-row p,.lp-score-view p{direction:rtl;text-align:right}
+
+/* Interactive illustrated explanation */
+.lp-int-mod{border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:1rem;margin-bottom:1rem}
+.lp-int-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:.6rem;justify-content:space-between;margin-bottom:.8rem}
+.lp-int-head h3{margin:0;font-size:1.05rem}
+.lp-int-head span{font-size:.75rem;color:var(--muted);font-style:italic}
+.lp-int-stepper{border:1px solid var(--line);border-radius:12px;padding:.8rem;background:var(--surface-2)}
+.lp-int-tabs{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.8rem}
+.lp-int-tab{border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:8px;padding:.35rem .6rem;font:inherit;font-size:.78rem;cursor:pointer;line-height:1.35}
+.lp-int-tab.active{background:var(--lp-accent);border-color:var(--lp-accent);color:#fff;font-weight:700}
+.lp-int-panel[hidden]{display:none!important}
+.lp-int-figure{margin:0}
+.lp-int-figure img{display:block;width:100%;height:auto;border-radius:10px;border:1px solid var(--line);background:#fff}
+.lp-int-figure figcaption{margin-top:.55rem;font-size:.88rem;line-height:1.7;color:var(--muted)}
+.lp-int-nav{display:flex;align-items:center;justify-content:space-between;gap:.6rem;margin-top:.8rem}
+.lp-int-count{font-size:.8rem;color:var(--muted)}
+.lp-int-k{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--lp-accent);margin:.9rem 0 .45rem}
+.lp-int-details{border:1px solid var(--line);border-radius:10px;margin-bottom:.45rem;background:var(--surface)}
+.lp-int-details summary{cursor:pointer;padding:.6rem .8rem;font-size:.88rem;font-weight:600}
+.lp-int-details[open] summary{border-bottom:1px solid var(--line);color:var(--lp-accent)}
+.lp-int-details div{padding:.7rem .85rem;font-size:.87rem;line-height:1.75;color:var(--muted)}
+.lp-int-q{border:1px solid var(--line);border-radius:10px;padding:.75rem;margin-bottom:.5rem}
+.lp-int-prompt{font-size:.9rem;font-weight:700;margin:0 0 .55rem}
+.lp-int-opts{display:grid;gap:.35rem}
+.lp-int-opt{text-align:start;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);border-radius:8px;padding:.5rem .7rem;font:inherit;font-size:.85rem;cursor:pointer;line-height:1.5}
+.lp-int-opt.right{border-color:#16803c;background:#e8f6ed;color:#0f5c2b}
+.lp-int-opt.wrong{border-color:var(--lp-accent);background:color-mix(in srgb,var(--lp-accent) 10%,var(--surface));color:var(--lp-accent)}
+.lp-int-fb{margin-top:.55rem;font-size:.83rem;line-height:1.7;padding:.5rem .65rem;border-radius:8px}
+.lp-int-fb.good{background:#e8f6ed;color:#0f5c2b}
+.lp-int-fb.bad{background:color-mix(in srgb,var(--lp-accent) 10%,var(--surface));color:var(--lp-accent)}
 </style>
 
 </head>
@@ -244,6 +274,11 @@ const UI={
   docTitle:'واجهة المحاضرة', uni:'جامعة الملك سلمان الدولية', langBtn:'English',
   navSummary:'الملخص', navAtmos:'طبقات الغلاف الجوي', navContents:'محتويات المحاضرة',
   navExplain:'الشرح', navQuiz:'الاختبار', navFiles:'الملفات والملاحظات',
+  navInteractive:'الشرح التفاعلي', intK:'INTERACTIVE', intH2:'شرح تفاعلي بالصور',
+  intP:'خطوات بالصور، بطاقات اضغط للكشف، وأسئلة قصيرة — كل النصوص من ملفات PDF الأصلية بلغتها.',
+  intEmpty:'لا يوجد شرح تفاعلي لهذه المحاضرة بعد.', intPrev:'السابق', intNext:'التالي',
+  intReveal:'اضغط للكشف', intQuiz:'اختبر فهمك', intCorrect:'إجابة صحيحة', intWrong:'ليست الإجابة',
+  intStep:(a,b)=>`الخطوة ${a} من ${b}`,
   pickLabel:'اختر محاضرة', noData:'لا توجد محاضرات منشورة.',
   openPlatform:'افتح في المنصة', start:'ابدأ الملخص', fullSummary:'الملخص الكامل للمادة',
   note:'واجهة الصفحة مترجمة عربي/إنجليزي — محتوى المواد معروض بلغته الأصلية بدون ترجمة',
@@ -298,6 +333,11 @@ const UI={
   prev:'Previous', next:'Next', done:'Done',
   quizK:'SHORT QUIZ', quizH2:'Test your understanding', quizP:'Questions linked to this lecture, with grading and feedback from the original content.',
   quizEmpty:'No published questions are linked to this lecture yet.',
+  navInteractive:'Interactive', intK:'INTERACTIVE', intH2:'Interactive illustrated explanation',
+  intP:'Illustrated steps, tap-to-reveal cards and short questions — all wording from the original PDFs.',
+  intEmpty:'No interactive explanation is available for this lecture yet.', intPrev:'Previous', intNext:'Next',
+  intReveal:'Tap to reveal', intQuiz:'Check yourself', intCorrect:'Correct', intWrong:'Not quite',
+  intStep:(a,b)=>`Step ${a} of ${b}`,
   quizOf:(a,b)=>`Question ${a} of ${b}`, quizScore:s=>`Score: ${s}`, quizDone:'Quiz complete',
   quizNext:'Next question', quizResult:'Show result', quizRestart:'Restart quiz',
   quizCorrect:'Correct! ', quizWrong:'Not quite. ', quizResultDesc:'Your score on this lecture’s short quiz.',
@@ -331,6 +371,7 @@ const LAYERS=[
 
 /* ------------------------------- الحالة ------------------------------- */
 let DATA=null, lang='ar', theme='dark', appearance='modern', activeId='';
+let intStep={},intQuiz={};
 let layerIdx=0, stepIdx=0, qi=0, picks=[], quizAll=false;
 const QUIZ_LIMIT=10;
 const STORE='method.v2.local', THEME_KEY='eng-youssef.theme.v1', APPEARANCE_KEY='lp.appearance.v1';
@@ -362,7 +403,7 @@ function applyChrome(){
 
 /* --------------------------- قراءة بيانات المنصة --------------------------- */
 async function loadData(){
- const res=await fetch('index.html?v=3.6.6',{cache:'force-cache'});
+ const res=await fetch('index.html?v=3.6.7',{cache:'force-cache'});
  if(!res.ok)throw new Error('HTTP '+res.status);
  const text=await res.text();
  const m=text.match(/<script id="method-data" type="application\/json">([\s\S]*?)<\/script>/);
@@ -398,7 +439,7 @@ function buildSelect(){
  sel.innerHTML=groups.map(g=>`<optgroup label="${h(field(g.s,'name')||g.s.code)} (${h(g.s.code)})">${g.ls.map(l=>`<option value="${h(l.id)}"${l.id===activeId?' selected':''}>${h(field(l,'title'))}</option>`).join('')}</optgroup>`).join('')||`<option>${h(u('noData'))}</option>`;
 }
 function renderNav(){
- const links=[['summary',u('navSummary')],['explore',hasAtmos()?u('navAtmos'):u('navContents')],['explainer',u('navExplain')],['quiz',u('navQuiz')],['resources',u('navFiles')]];
+ const links=[['summary',u('navSummary')],['explore',hasAtmos()?u('navAtmos'):u('navContents')],['explainer',u('navExplain')],...(interactiveModules().length?[['interactive',u('navInteractive')]]:[]),['quiz',u('navQuiz')],['resources',u('navFiles')]];
  $('#lpLinks').innerHTML=links.map(([id,label])=>`<a href="#${id}">${h(label)}</a>`).join('');
 }
 function atmosSvg(){
@@ -526,6 +567,50 @@ function renderQuiz(){
    <div class="lp-quiz"><div class="lp-quiz-head"><span>${h(qi>=qs.length?u('quizDone'):u('quizOf')(qi+1,qs.length))}</span><span class="qn">${h(u('quizScore')(score))}</span></div>${inner}</div>
  </div></section>`;
 }
+
+/* ------------- شرح تفاعلي (مبني على نصوص الشرائح الأصلية فقط) ------------- */
+function interactiveModules(){
+ const s=subjectOf(activeLecture());
+ return (s.interactive_modules||[]).filter(m=>m.lecture_id===activeLecture().id);
+}
+function intQuizHtml(m,qid,qi){
+ const q=(DATA.questions||[]).find(x=>x.id===qid);if(!q)return '';
+ const pick=intQuiz[m.id+':'+qi],done=pick!==undefined;
+ const opts=(q.options||[]).map((o,oi)=>`<button type="button" class="lp-int-opt ${done?(oi===q.correct?'right':oi===pick?'wrong':''):''}" data-action="int-quiz" data-value="${h(m.id)}:${qi}:${oi}" ${done?'disabled':''}>${h(o)}</button>`).join('');
+ return `<div class="lp-int-q" id="lpIntQ-${h(m.id)}-${qi}"><p class="lp-int-prompt">${h(q.prompt)}</p><div class="lp-int-opts">${opts}</div>${done?`<div class="lp-int-fb ${pick===q.correct?'good':'bad'}">${h(q.explanation||'')}</div>`:''}</div>`;
+}
+function renderInteractive(){
+ const ms=interactiveModules();
+ if(!ms.length)return '';  // only lectures with source-faithful interactive modules get this section
+ return `<section class="lp-section lp-alt" id="interactive"><div class="lp-wrap">
+   <div class="lp-head"><div class="k">${h(u('intK'))}</div><h2>${h(u('intH2'))}</h2><p>${h(u('intP'))}</p></div>
+   ${ms.map(m=>{const steps=m.steps||[],cur=intStep[m.id]||0;return `<div class="lp-int-mod" data-mod="${h(m.id)}">
+     <div class="lp-int-head"><h3>${h(m.title)}</h3><span>${h(m.source)}</span></div>
+     <div class="lp-int-stepper">
+       <div class="lp-int-tabs">${steps.map((s,i)=>`<button type="button" class="lp-int-tab ${i===cur?'active':''}" data-action="int-step" data-value="${h(m.id)}:${i}">${h(s.label)}</button>`).join('')}</div>
+       ${steps.map((s,i)=>`<div class="lp-int-panel" data-step="${i}" ${i===cur?'':'hidden'}><figure class="lp-int-figure"><img src="${h(s.svg)}" alt="${h(s.label)}" loading="lazy"><figcaption>${h(s.text)}</figcaption></figure></div>`).join('')}
+       <div class="lp-int-nav"><button type="button" class="lp-btn sm" data-action="int-step" data-value="${h(m.id)}:-1" data-dir="-1" ${cur===0?'disabled':''}>${h(u('intPrev'))}</button><span class="lp-int-count">${h(u('intStep')(cur+1,steps.length))}</span><button type="button" class="lp-btn sm" data-action="int-step" data-value="${h(m.id)}:1" data-dir="1" ${cur===steps.length-1?'disabled':''}>${h(u('intNext'))}</button></div>
+     </div>
+     <div class="lp-int-reveal"><div class="lp-int-k">${h(u('intReveal'))}</div>${(m.reveal||[]).map(r=>`<details class="lp-int-details"><summary>${h(r.front)}</summary><div>${h(r.back)}</div></details>`).join('')}</div>
+     <div class="lp-int-quiz"><div class="lp-int-k">${h(u('intQuiz'))}</div>${(m.quiz||[]).map((qid,qi)=>intQuizHtml(m,qid,qi)).join('')}</div>
+   </div>`;}).join('')}
+ </div></section>`;
+}
+function intStepApply(mid,delta){
+ const mod=$('#interactive .lp-int-mod[data-mod="'+mid+'"]');if(!mod)return;
+ const tabs=$$('.lp-int-tab',mod),panels=$$('.lp-int-panel',mod);
+ let i=(intStep[mid]||0)+delta;i=Math.max(0,Math.min(tabs.length-1,i));intStep[mid]=i;
+ tabs.forEach((b,k)=>b.classList.toggle('active',k===i));
+ panels.forEach((p,k)=>p.hidden=k!==i);
+ const prev=$('.lp-int-nav [data-dir="-1"]',mod),next=$('.lp-int-nav [data-dir="1"]',mod);
+ if(prev)prev.disabled=i===0;if(next)next.disabled=i===panels.length-1;
+ const c=$('.lp-int-count',mod);if(c)c.textContent=u('intStep')(i+1,panels.length);
+}
+function intQuizApply(mid,qi){
+ const m=interactiveModules().find(x=>x.id===mid);if(!m)return;
+ const el=$('#lpIntQ-'+mid+'-'+qi);if(el)el.outerHTML=intQuizHtml(m,m.quiz[qi],qi);
+}
+
 function renderResources(){
  const l=activeLecture(),c=l.content||{},rows=lectureFiles();
  const files=rows.length?rows.map(({f,related})=>{
@@ -556,13 +641,13 @@ function renderResources(){
 function renderAll(){
  const l=activeLecture();
  applyChrome();buildSelect();renderNav();
- $('#lpMain').innerHTML=renderHero()+renderSummary()+renderExplore()+renderExplainer()+renderQuiz()+renderResources();
+ $('#lpMain').innerHTML=renderHero()+renderSummary()+renderExplore()+renderExplainer()+renderInteractive()+renderQuiz()+renderResources();
  const ta=$('#lpNotes');if(ta){const st=readLocal();ta.value=(st.notes&&typeof st.notes['lecture:'+l.id]==='string')?st.notes['lecture:'+l.id]:'';}
  const url=new URL(location.href);if(url.searchParams.get('lecture')!==l.id){url.searchParams.set('lecture',l.id);try{history.replaceState(null,'',url);}catch{}}
 }
 
 /* ------------------------------ التفاعل ------------------------------ */
-function resetInteractive(){layerIdx=0;stepIdx=0;qi=0;picks=[];quizAll=false;}
+function resetInteractive(){layerIdx=0;stepIdx=0;qi=0;picks=[];quizAll=false;intStep={};intQuiz={};}
 function setLecture(id){
  if(!DATA.lectures.some(l=>l.id===id))return;
  activeId=id;resetInteractive();renderAll();window.scrollTo({top:0,behavior:'smooth'});
@@ -579,6 +664,8 @@ document.addEventListener('click',e=>{
  if(a==='layer'){layerIdx=Number(el.dataset.i)||0;$$('.lp-layer').forEach((x,i)=>x.classList.toggle('active',i===layerIdx));$$('.lp-svg-layer').forEach((x,i)=>x.classList.toggle('on',i===layerIdx));}
  else if(a==='step'){const steps=origArr(activeLecture().content?.steps);stepIdx=Math.max(0,Math.min(steps.length-1,stepIdx+Number(el.dataset.dir)));$('#explainer').outerHTML=renderExplainer();}
  else if(a==='opt'){grade(el);}
+ else if(a==='int-step'){const p=el.dataset.value.split(':'),mid=p[0],v=p[1];if(v==='-1'||v==='1')intStepApply(mid,Number(v));else{intStep[mid]=Number(v);intStepApply(mid,0);}}
+ else if(a==='int-quiz'){const p=el.dataset.value.split(':'),key=p[0]+':'+p[1];if(intQuiz[key]===undefined){intQuiz[key]=Number(p[2]);intQuizApply(p[0],Number(p[1]));}}
  else if(a==='quiz-next'){qi++;redrawQuiz();}
  else if(a==='quiz-restart'){qi=0;picks=[];redrawQuiz();}
  else if(a==='quiz-all'){quizAll=true;qi=0;picks=[];redrawQuiz();}

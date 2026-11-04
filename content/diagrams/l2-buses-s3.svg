@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" role="img" aria-label="Buses: moving data and signals">
+<rect width="1000" height="360" fill="#ffffff"/>
+<rect x="0" y="0" width="1000" height="6" fill="#c8102e"/>
+<text x="24" y="38" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#18181b">Buses: moving data and signals</text>
+<path d="M332 157 L336 157" stroke="#e4e4e7" stroke-width="2" fill="none"/>
+<path d="M336 152 L344 157 L336 162" fill="#e4e4e7"/>
+<path d="M656 157 L660 157" stroke="#e4e4e7" stroke-width="2" fill="none"/>
+<path d="M660 152 L668 157 L660 162" fill="#e4e4e7"/>
+<rect x="24" y="96" width="305" height="122" rx="12" fill="#f1f1f3" stroke="#e4e4e7" stroke-width="1.5"/>
+<circle cx="44" cy="116" r="12" fill="#e4e4e7"/>
+<text x="44" y="120" font-family="Arial,sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#52525b">1</text>
+<text x="177" y="142" font-family="Arial,sans-serif" font-size="15" font-weight="600" text-anchor="middle" fill="#18181b">DATA BUS</text>
+<rect x="347" y="96" width="305" height="122" rx="12" fill="#f1f1f3" stroke="#e4e4e7" stroke-width="1.5"/>
+<circle cx="367" cy="116" r="12" fill="#e4e4e7"/>
+<text x="367" y="120" font-family="Arial,sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#52525b">2</text>
+<text x="500" y="142" font-family="Arial,sans-serif" font-size="15" font-weight="600" text-anchor="middle" fill="#18181b">ADDRESS BUS</text>
+<rect x="671" y="96" width="305" height="122" rx="12" fill="#fdecef" stroke="#c8102e" stroke-width="3"/>
+<circle cx="691" cy="116" r="12" fill="#c8102e"/>
+<text x="691" y="120" font-family="Arial,sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#ffffff">3</text>
+<text x="823" y="142" font-family="Arial,sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#18181b">CONTROL BUS</text>
+<text x="24" y="270" font-family="Arial,sans-serif" font-size="16" fill="#52525b">Carries signals that coordinate operations.</text>
+<text x="976" y="344" font-family="Arial,sans-serif" font-size="12" text-anchor="end" fill="#52525b">IT_lecture_2_2026.pdf, p. 13</text>
+</svg>

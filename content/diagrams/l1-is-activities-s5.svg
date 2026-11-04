@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" role="img" aria-label="What does an Information System do?">
+<rect width="1000" height="360" fill="#ffffff"/>
+<rect x="0" y="0" width="1000" height="6" fill="#c8102e"/>
+<text x="24" y="38" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#18181b">What does an Information System do?</text>
+<path d="M203 157 L207 157" stroke="#e4e4e7" stroke-width="2" fill="none"/>
+<path d="M207 152 L215 157 L207 162" fill="#e4e4e7"/>
+<path d="M397 157 L401 157" stroke="#e4e4e7" stroke-width="2" fill="none"/>
+<path d="M401 152 L409 157 L401 162" fill="#e4e4e7"/>
+<path d="M591 157 L595 157" stroke="#e4e4e7" stroke-width="2" fill="none"/>
+<path d="M595 152 L603 157 L595 162" fill="#e4e4e7"/>
+<path d="M785 157 L789 157" stroke="#e4e4e7" stroke-width="2" fill="none"/>
+<path d="M789 152 L797 157 L789 162" fill="#e4e4e7"/>
+<rect x="24" y="96" width="176" height="122" rx="12" fill="#f1f1f3" stroke="#e4e4e7" stroke-width="1.5"/>
+<circle cx="44" cy="116" r="12" fill="#e4e4e7"/>
+<text x="44" y="120" font-family="Arial,sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#52525b">1</text>
+<text x="112" y="142" font-family="Arial,sans-serif" font-size="15" font-weight="600" text-anchor="middle" fill="#18181b">INPUT</text>
+<rect x="218" y="96" width="176" height="122" rx="12" fill="#f1f1f3" stroke="#e4e4e7" stroke-width="1.5"/>
+<circle cx="238" cy="116" r="12" fill="#e4e4e7"/>
+<text x="238" y="120" font-family="Arial,sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#52525b">2</text>
+<text x="306" y="142" font-family="Arial,sans-serif" font-size="15" font-weight="600" text-anchor="middle" fill="#18181b">PROCESS</text>
+<rect x="412" y="96" width="176" height="122" rx="12" fill="#f1f1f3" stroke="#e4e4e7" stroke-width="1.5"/>
+<circle cx="432" cy="116" r="12" fill="#e4e4e7"/>
+<text x="432" y="120" font-family="Arial,sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#52525b">3</text>
+<text x="500" y="142" font-family="Arial,sans-serif" font-size="15" font-weight="600" text-anchor="middle" fill="#18181b">OUTPUT</text>
+<rect x="606" y="96" width="176" height="122" rx="12" fill="#f1f1f3" stroke="#e4e4e7" stroke-width="1.5"/>
+<circle cx="626" cy="116" r="12" fill="#e4e4e7"/>
+<text x="626" y="120" font-family="Arial,sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#52525b">4</text>
+<text x="694" y="142" font-family="Arial,sans-serif" font-size="15" font-weight="600" text-anchor="middle" fill="#18181b">STORAGE</text>
+<rect x="800" y="96" width="176" height="122" rx="12" fill="#fdecef" stroke="#c8102e" stroke-width="3"/>
+<circle cx="820" cy="116" r="12" fill="#c8102e"/>
+<text x="820" y="120" font-family="Arial,sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#ffffff">5</text>
+<text x="888" y="142" font-family="Arial,sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#18181b">CONTROL</text>
+<text x="24" y="270" font-family="Arial,sans-serif" font-size="16" fill="#52525b">Feedback and control — monitoring performance and guiding the system</text>
+<text x="976" y="344" font-family="Arial,sans-serif" font-size="12" text-anchor="end" fill="#52525b">IT_lecture_1_2026.pdf, pp. 4, 9</text>
+</svg>

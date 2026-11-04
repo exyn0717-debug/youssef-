@@ -108,3 +108,33 @@ dialog{width:min(560px,calc(100vw - 32px));max-height:88vh;padding:0;border:1px 
 .fs-flash{animation:fsflash 1.2s ease}
 @keyframes fsflash{0%{background:var(--brand-tint)}100%{background:transparent}}
 @media(max-width:900px){.fs-layout{grid-template-columns:1fr}.fs-rail{position:static;max-height:none}}
+
+/* CSE013 interactive study modules (verbatim diagrams, steps, reveals, quizzes) */
+.fs-mod{padding-top:1rem}
+.fs-src{font-size:.78rem;color:var(--muted);margin:0 0 .8rem;font-style:italic}
+.fs-stepper{border:1px solid var(--line);border-radius:12px;padding:.8rem;margin-bottom:1rem;background:var(--surface-2)}
+.fs-step-tabs{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.8rem}
+.fs-step-tab{border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:8px;padding:.35rem .65rem;font:inherit;font-size:.78rem;cursor:pointer;line-height:1.35}
+.fs-step-tab.active{background:var(--brand);border-color:var(--brand);color:var(--brand-ink);font-weight:700}
+.fs-step-panel[hidden]{display:none!important}
+.fs-figure{margin:0}
+.fs-figure img{display:block;width:100%;height:auto;border-radius:10px;border:1px solid var(--line);background:#fff}
+.fs-figure figcaption{margin-top:.55rem;font-size:.88rem;color:var(--ink);line-height:1.7}
+.fs-step-nav{display:flex;align-items:center;justify-content:space-between;gap:.6rem;margin-top:.8rem}
+.fs-step-count{font-size:.8rem;color:var(--muted)}
+.fs-block-k{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--brand);margin:.9rem 0 .45rem}
+.fs-reveal-wrap,.fs-quiz-wrap{margin-bottom:.9rem}
+.fs-reveal{border:1px solid var(--line);border-radius:10px;background:var(--surface);margin-bottom:.45rem}
+.fs-reveal summary{cursor:pointer;padding:.6rem .8rem;font-size:.88rem;font-weight:600;list-style-position:inside}
+.fs-reveal[open] summary{border-bottom:1px solid var(--line);color:var(--brand)}
+.fs-reveal-body{padding:.7rem .85rem;font-size:.87rem;line-height:1.75;color:var(--muted)}
+.fs-q{border:1px solid var(--line);border-radius:10px;padding:.75rem;margin-bottom:.5rem;background:var(--surface)}
+.fs-q-prompt{font-size:.9rem;font-weight:700;margin:0 0 .55rem}
+.fs-opts{display:grid;gap:.35rem}
+.fs-opt{text-align:start;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);border-radius:8px;padding:.5rem .7rem;font:inherit;font-size:.85rem;cursor:pointer;line-height:1.5}
+.fs-opt:hover:not(:disabled){border-color:var(--brand)}
+.fs-opt.right{border-color:#16803c;background:#e8f6ed;color:#0f5c2b}
+.fs-opt.wrong{border-color:var(--brand);background:var(--brand-tint);color:var(--brand)}
+.fs-q-fb{margin-top:.55rem;font-size:.83rem;line-height:1.7;padding:.5rem .65rem;border-radius:8px}
+.fs-q-fb.good{background:#e8f6ed;color:#0f5c2b}
+.fs-q-fb.bad{background:var(--brand-tint);color:var(--brand)}
