@@ -264,14 +264,14 @@ html[dir=rtl] .lang-strip .ls-txt{padding:14px 0 14px 4px}
     <button type="button" id="langBtnAr" data-lang="ar" aria-pressed="true"><span class="flag">🇪🇬</span> عربي</button>
     <button type="button" id="langBtnEn" data-lang="en" aria-pressed="false"><span class="flag">🇬🇧</span> English</button>
   </div>
-  <button class="btn lang-big" id="langBtn2" type="button">🌐 <span>ترجمة المحتوى للعربي</span></button>
+  <button class="btn lang-big" id="langBtn2" type="button" tabindex="-1" aria-hidden="true">🌐 <span>ترجمة المحتوى للعربي</span></button>
 </div>
 
 <div class="hero" id="top">
   <div class="hero-in">
     <span class="eyebrow"><span class="dot"></span>ENG YOUSSEF · CSE013 · الفرز الكامل</span>
     <h1 id="heroTitle">كل ملفات <span>IT</span> — مرتّبة ومفروزة <br>وبترقيم شريحة لكل محاضرة</h1>
-    <p class="sub">فرز كامل للخمسة ملفات اللي رفعتها: 5 محاضرات، <b>227 شريحة</b> مفهرسة بعنوانها ورقمها داخل الملف ورقمها العام، و<b>61 سؤال</b> مع مفتاح الإجابة، و<b>12 نشاط</b> — كل سؤال وكل نشاط معنون بالمحاضرة ورقم الشريحة اللي جاي منها بالظبط. النصوص كلها إنجليزي زي ملفات الـPDF الأصلية، والواجهة عربي.</p>
+    <p class="sub">فرز كامل للخمسة ملفات اللي رفعتها: 5 محاضرات، <b>227 شريحة</b> مفهرسة بعنوانها ورقمها داخل الملف ورقمها العام، و<b>61 سؤال</b> مع مفتاح الإجابة، و<b>12 نشاط</b> — كل سؤال وكل نشاط معنون بالمحاضرة ورقم الشريحة اللي جاي منها بالظبط. المحتوى معروض بالعربي، وتقدر ترجع لنص الـPDF الإنجليزي الأصلي من سويتش اللغة فوق.</p>
     <div class="meta-line">
       <span>المادة: <b>CSE013 · Engineering Information Systems and Digital Skills</b></span>
       <span>المحاضر في الملفات: <b>Dr : Ahmed Refaat</b></span>
@@ -826,8 +826,9 @@ function applyLang(){
   var bk=el('brandSub');
   if(bk)bk.textContent=en?'Standalone index · 5 files':'فرز مستقل · 5 ملفات';
   localizeSummary();
-  if(t2)t2.textContent=en?'Pick «عربي» to read the explanations, questions and activities in Arabic on this same page — numbering and sources stay identical.':
-    'اضغط «العربي» لتحويل الشرح والأسئلة والأنشطة في نفس الصفحة — الترقيم والمصادر تفضل زي ما هي.';
+  if(t2)t2.textContent=en
+    ?'Showing the original English text from the PDFs. Pick «عربي» to read the questions and explanations in Arabic on this same page.'
+    :'المحتوى معروض بالعربي. اضغط «English» للرجوع لنص ملفات الـPDF الأصلي — الترقيم والمصادر تفضل زي ما هي.';
   var pair=document.querySelectorAll('[data-ar][data-en]');
   var phs=document.querySelectorAll('[data-ph-ar]');
   for(var z=0;z<phs.length;z++){phs[z].placeholder=phs[z].dataset[en?'phEn':'phAr'];}
@@ -839,7 +840,7 @@ function applyLang(){
   }
   var sub=document.querySelector('.hero .sub');
   if(sub&&sub.dataset.arOrg===undefined){sub.dataset.arOrg=sub.innerHTML;}
-  if(sub){sub.innerHTML=en?'A full index of the five IT files: 5 lectures, <b>227 slides</b> numbered inside their file and globally, <b>61 questions</b> with the answer key, and <b>12 activities</b> — each one tagged with its lecture and slide. Switch the button to read everything in Arabic.':sub.dataset.arOrg;}
+  if(sub){sub.innerHTML=en?'A full index of the five IT files: 5 lectures, <b>227 slides</b> numbered inside their file and globally, <b>61 questions</b> with the answer key, and <b>12 activities</b> — each one tagged with its lecture and slide.':sub.dataset.arOrg;}
 }
 applyLang();
 
