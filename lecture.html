@@ -245,7 +245,7 @@ const UI={
   navSummary:'الملخص', navAtmos:'طبقات الغلاف الجوي', navContents:'محتويات المحاضرة',
   navExplain:'الشرح', navQuiz:'الاختبار', navFiles:'الملفات والملاحظات',
   pickLabel:'اختر محاضرة', noData:'لا توجد محاضرات منشورة.',
-  openPlatform:'افتح في المنصة', start:'ابدأ الملخص',
+  openPlatform:'افتح في المنصة', start:'ابدأ الملخص', fullSummary:'الملخص الكامل للمادة',
   note:'واجهة الصفحة مترجمة عربي/إنجليزي — محتوى المواد معروض بلغته الأصلية بدون ترجمة',
   statCards:'بطاقة ملخص', statSteps:'خطوة شرح', statQuestions:'سؤال تدريب', statFiles:'ملف أصلي',
   kindLecture:'محاضرة', kindAssignment:'تكليف', kindLab:'تجربة', kindTutorial:'ورقة مسائل',
@@ -284,7 +284,7 @@ const UI={
   navSummary:'Summary', navAtmos:'Atmosphere layers', navContents:'Lecture contents',
   navExplain:'Walkthrough', navQuiz:'Quiz', navFiles:'Files & notes',
   pickLabel:'Choose a lecture', noData:'No published lectures.',
-  openPlatform:'Open in platform', start:'Start summary',
+  openPlatform:'Open in platform', start:'Start summary', fullSummary:'Complete subject summary',
   note:'The interface is available in Arabic and English — course content stays in its original language, with no translation',
   statCards:'summary cards', statSteps:'walkthrough steps', statQuestions:'practice questions', statFiles:'original files',
   kindLecture:'Lecture', kindAssignment:'Assignment', kindLab:'Experiment', kindTutorial:'Problem sheet',
@@ -362,7 +362,7 @@ function applyChrome(){
 
 /* --------------------------- قراءة بيانات المنصة --------------------------- */
 async function loadData(){
- const res=await fetch('index.html?v=3.6.3',{cache:'force-cache'});
+ const res=await fetch('index.html?v=3.6.4',{cache:'force-cache'});
  if(!res.ok)throw new Error('HTTP '+res.status);
  const text=await res.text();
  const m=text.match(/<script id="method-data" type="application\/json">([\s\S]*?)<\/script>/);
@@ -425,6 +425,7 @@ function renderHero(){
    <div class="lp-actions">
      <a class="lp-btn primary" href="#summary">${h(u('start'))}</a>
      <a class="lp-btn ghost" href="index.html#/lecture/${h(l.id)}">${h(u('openPlatform'))}</a>
+     ${subjectOf(l).full_summary_md?`<a class="lp-btn ghost" href="index.html#/subject/${h(l.subject_id)}?tab=fullsummary">${h(u('fullSummary'))}</a>`:''}
    </div>
    <div class="lp-meta">
      <div><div class="num">${fmt(cards.length)}</div><div class="lbl">${h(u('statCards'))}</div></div>
