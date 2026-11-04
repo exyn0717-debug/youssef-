@@ -198,6 +198,17 @@ html[data-appearance="classic"] .lp-btn.primary{background:var(--navy);border-co
 .lp-card figcaption,.lp-contents,.lp-layer h4,.lp-layer .detail,.lp-stage h3,.lp-stage p,.lp-example,
 .lp-quiz-body h3,.lp-opt,.lp-feedback,.lp-file-row h3,.lp-file-row p,.lp-score-view p{direction:rtl;text-align:right}
 
+/* CSE013 material is English even when the interface is Arabic — keep it LTR */
+body.lp-en-mat .lp-select,body.lp-en-mat .lp-hero h1,body.lp-en-mat .lp-hero p.lp-lead,
+body.lp-en-mat .lp-tag,body.lp-en-mat .lp-card h3,body.lp-en-mat .lp-card p,
+body.lp-en-mat .lp-card li,body.lp-en-mat .lp-card figcaption,body.lp-en-mat .lp-contents,
+body.lp-en-mat .lp-stage h3,body.lp-en-mat .lp-stage p,body.lp-en-mat .lp-example,
+body.lp-en-mat .lp-quiz-body h3,body.lp-en-mat .lp-opt,body.lp-en-mat .lp-feedback,
+body.lp-en-mat .lp-file-row h3,body.lp-en-mat .lp-file-row p,body.lp-en-mat .lp-score-view p,
+body.lp-en-mat .lp-int-mod,body.lp-en-mat .lp-int-tab,body.lp-en-mat .lp-int-prompt,
+body.lp-en-mat .lp-int-opt,body.lp-en-mat .lp-int-fb,body.lp-en-mat .lp-int-figure figcaption,
+body.lp-en-mat .lp-int-details{direction:ltr;text-align:left}
+
 /* Interactive illustrated explanation */
 .lp-int-mod{border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:1rem;margin-bottom:1rem}
 .lp-int-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:.6rem;justify-content:space-between;margin-bottom:.8rem}
@@ -389,6 +400,7 @@ function applyChrome(){
  root.classList.toggle('dark',theme==='dark');root.classList.toggle('light',theme==='light');
  root.dataset.theme=theme;root.dataset.appearance=appearance;
  const meta=$('meta[name=theme-color]');if(meta)meta.content=appearance==='classic'?'#151a3d':(theme==='light'?'#c8102e':'#09090b');
+ document.body.classList.toggle('lp-en-mat',!!DATA&&englishMaterial(activeLecture()?.subject_id));
  document.title='ENG YOUSSEF | '+u('docTitle');
  $('#brandSub').textContent=u('uni');
  $('#footerLine').textContent=u('footer');
@@ -403,7 +415,7 @@ function applyChrome(){
 
 /* --------------------------- قراءة بيانات المنصة --------------------------- */
 async function loadData(){
- const res=await fetch('index.html?v=3.6.7',{cache:'force-cache'});
+ const res=await fetch('index.html?v=3.6.8',{cache:'force-cache'});
  if(!res.ok)throw new Error('HTTP '+res.status);
  const text=await res.text();
  const m=text.match(/<script id="method-data" type="application\/json">([\s\S]*?)<\/script>/);
@@ -415,13 +427,18 @@ async function loadData(){
 
 /* كل المحتوى من النسخة الأصلية كما رُفعت — لا ترجمة ولا تبديل لغة للمواد */
 function subjectOf(l){return DATA.subjects.find(s=>s.id===l.subject_id)||{};}
-function field(o,base){return o[base+'_ar']||o[base]||'';}
-function origArr(v){return Array.isArray(v)?(v[0]||[]):[];}
-function contentsData(){const c=activeLecture().content?.contents;return Array.isArray(c)&&c[0]&&typeof c[0]==='object'&&Array.isArray(c[0].items)&&c[0].items.length?c[0]:null;}
+function englishMaterial(sid){return !!sid&&(DATA?.subjects||[]).some(s=>s.id===sid&&s.material_lang==='en');}
+const enAttr=sid=>englishMaterial(sid)?' dir="ltr" lang="en" translate="no"':'';
+function field(o,base){const en=englishMaterial(o?.subject_id||o?.id);return en?(o[base+'_en']||o[base+'_ar']||o[base]||''):(o[base+'_ar']||o[base]||'');}
+function fileTitle(f){const src=(DATA?.sources?.files||{})[f.id];return (englishMaterial(f.subject_id)&&src?.title_en)||f.title||f.original_name||'';}
+const hasAr=v=>/[\u0600-\u06FF]/.test(JSON.stringify(v));
+function englishFlat(v){if(!Array.isArray(v))return [];const out=[],seen=new Set();for(const g of v)if(Array.isArray(g)&&g.length&&g.every(x=>!hasAr(x)))for(const x of g){const k=JSON.stringify(x);if(!seen.has(k)){seen.add(k);out.push(x);}}for(const g of v)if(Array.isArray(g))for(const x of g)if(!hasAr(x)){const k=JSON.stringify(x);if(!seen.has(k)){seen.add(k);out.push(x);}}return out;}
+function origArr(v){const base=Array.isArray(v)?(v[0]||[]):[];return englishMaterial(activeLecture()?.subject_id)?englishFlat(v):base;}
+function contentsData(){const c=activeLecture().content?.contents;if(!Array.isArray(c))return null;const base=(c[0]&&typeof c[0]==='object'&&Array.isArray(c[0].items)&&c[0].items.length)?c[0]:null;if(!englishMaterial(activeLecture().subject_id))return base;const pick=c.find(x=>x&&typeof x==='object'&&Array.isArray(x.items)&&x.items.length&&x.items.every(v=>!hasAr(v)));return pick||base;}
 function activeLecture(){return DATA.lectures.find(l=>l.id===activeId)||DATA.lectures[0];}
 function lectureQuestions(){return DATA.questions.filter(q=>q.lecture_id===activeId&&q.published!==false);}
-function qText(q,base){return q[base]||'';}
-function qOptions(q){return Array.isArray(q.options)?q.options:[];}
+function qText(q,base){return (englishMaterial(q.subject_id)&&q[base+'_en'])||q[base]||'';}
+function qOptions(q){const v=englishMaterial(q.subject_id)&&Array.isArray(q.options_en)&&q.options_en.length?q.options_en:q.options;return Array.isArray(v)?v:[];}
 function lectureFiles(){
  const l=activeLecture(),seen=new Set(),out=[];
  for(const f of DATA.files.filter(f=>f.lecture_id===l.id)){if(!seen.has(f.id)){seen.add(f.id);out.push({f,related:false});}}
@@ -459,9 +476,9 @@ function renderHero(){
  const cards=origArr(c.cards),steps=origArr(c.steps),qs=lectureQuestions(),files=lectureFiles();
  const kindLabel=u(kind==='assignment'?'kindAssignment':kind==='lab'?'kindLab':kind==='tutorial'?'kindTutorial':'kindLecture');
  return `<section class="lp-hero" id="top"><div class="lp-wrap">
-   <div class="lp-eyebrow"><span class="dot"></span><span>${h(s.code||'')} · <span dir="rtl">${h(field(s,'name'))}</span> · ${h(kindLabel)}</span></div>
-   <h1>${h(field(l,'title'))}</h1>
-   <p class="lp-lead">${h(field(l,'description')||field(s,'description'))}</p>
+   <div class="lp-eyebrow"><span class="dot"></span><span>${h(s.code||'')} · <span${enAttr(s.id)}>${h(field(s,'name'))}</span> · ${h(kindLabel)}</span></div>
+   <h1${enAttr(l.subject_id)}>${h(field(l,'title'))}</h1>
+   <p class="lp-lead"${enAttr(l.subject_id)}>${h(field(l,'description')||field(s,'description'))}</p>
    <div class="lp-hero-note"><span>◈</span><span>${h(u('note'))}</span></div>
    <div class="lp-actions">
      <a class="lp-btn primary" href="#summary">${h(u('start'))}</a>
@@ -477,14 +494,14 @@ function renderHero(){
  </div></section>`;
 }
 function renderSummary(){
- const cards=origArr(activeLecture().content?.cards);
+ const cards=origArr(activeLecture().content?.cards),ea=enAttr(activeLecture().subject_id);
  const body=cards.length?`<div class="lp-grid">${cards.map(c=>{
    const img=safeImage(c.img);
    return `<article class="card lp-card ${c.hl?'highlight':''}">
-     ${c.tag?`<span class="lp-tag">${h(c.tag)}</span>`:''}
-     <h3>${h(c.h||c.title||'')}</h3>
-     ${Array.isArray(c.list)?`<ul>${c.list.map(v=>`<li>${h(v)}</li>`).join('')}</ul>`:`<p>${h(c.p||c.body||'')}</p>`}
-     ${img?`<figure><img src="${h(img)}" alt="${h(c.cap||c.h||'')}" loading="lazy"><figcaption>${h(c.cap||'من محتوى المحاضرة الأصلي')}</figcaption></figure>`:''}
+     ${c.tag?`<span class="lp-tag"${ea}>${h(c.tag)}</span>`:''}
+     <h3${ea}>${h(c.h||c.title||'')}</h3>
+     ${Array.isArray(c.list)?`<ul${ea}>${c.list.map(v=>`<li>${h(v)}</li>`).join('')}</ul>`:`<p${ea}>${h(c.p||c.body||'')}</p>`}
+     ${img?`<figure><img src="${h(img)}" alt="${h(c.cap||c.h||'')}" loading="lazy"><figcaption${ea}>${h(c.cap||(englishMaterial(activeLecture().subject_id)?'From the original lecture':'من محتوى المحاضرة الأصلي'))}</figcaption></figure>`:''}
    </article>`;}).join('')}</div>`:`<div class="lp-grid"><div class="card lp-card lp-empty">${h(u('sumEmpty'))}</div></div>`;
  return `<section class="lp-section" id="summary"><div class="lp-wrap">
    <div class="lp-head"><div class="k">${h(u('sumK'))}</div><h2>${h(u('sumH2'))}</h2><p>${h(u('sumP'))}</p></div>
@@ -504,14 +521,14 @@ function renderExplore(){
   </div></section>`;
  }
  const b=contentsData();
- const body=b?`<div class="card"><ol class="lp-contents">${(b.items||[]).map((v,i)=>`<li>${h(v)}${(Array.isArray(b.sub?.[i])&&b.sub[i].length)?`<ul>${b.sub[i].map(x=>`<li>${h(x)}</li>`).join('')}</ul>`:''}</li>`).join('')}</ol></div>`:`<div class="card lp-empty">${h(u('conEmpty'))}</div>`;
+ const body=b?`<div class="card"><ol class="lp-contents"${enAttr(activeLecture().subject_id)}>${(b.items||[]).map((v,i)=>`<li>${h(v)}${(Array.isArray(b.sub?.[i])&&b.sub[i].length)?`<ul>${b.sub[i].map(x=>`<li>${h(x)}</li>`).join('')}</ul>`:''}</li>`).join('')}</ol></div>`:`<div class="card lp-empty">${h(u('conEmpty'))}</div>`;
  return `<section class="lp-section lp-alt" id="explore"><div class="lp-wrap">
    <div class="lp-head"><div class="k">${h(u('conK'))}</div><h2>${h(u('conH2'))}</h2><p>${h(u('conP'))}</p></div>
    ${body}
  </div></section>`;
 }
 function renderExplainer(){
- const steps=origArr(activeLecture().content?.steps);
+ const steps=origArr(activeLecture().content?.steps),ea=enAttr(activeLecture().subject_id);
  if(!steps.length){
   return `<section class="lp-section" id="explainer"><div class="lp-wrap">
     <div class="lp-head"><div class="k">${h(u('expK'))}</div><h2>${h(u('expH2'))}</h2><p>${h(u('expP'))}</p></div>
@@ -527,7 +544,7 @@ function renderExplainer(){
    <div class="lp-head"><div class="k">${h(u('expK'))}</div><h2>${h(u('expH2'))}</h2><p>${h(u('expP'))}</p></div>
    <div class="lp-explainer">
      <div class="lp-explainer-top"><span class="title">${h(u('expTitle'))} · ${h(subjectOf(activeLecture()).code||'')}</span><span class="count">${fmt(stepIdx+1)} / ${fmt(steps.length)}</span></div>
-     <div class="lp-stage"><h3>${h(st.h||'')}</h3>${(st.p||[]).map(p=>`<p>${rich(p)}</p>`).join('')}${st.ex?`<div class="lp-example">${rich(st.ex)}</div>`:''}</div>
+     <div class="lp-stage"><h3${ea}>${h(st.h||'')}</h3>${(st.p||[]).map(p=>`<p${ea}>${rich(p)}</p>`).join('')}${st.ex?`<div class="lp-example"${ea}>${rich(st.ex)}</div>`:''}</div>
      <div class="lp-explainer-nav">
        <button class="lp-btn sm" type="button" data-action="step" data-dir="-1" ${stepIdx===0?'disabled':''}>${h(u('prev'))}</button>
        <div class="lp-dots">${steps.map((_,i)=>`<span class="${i===stepIdx?'on':''}"></span>`).join('')}</div>
@@ -555,10 +572,10 @@ function renderQuiz(){
   const q=qs[qi],opts=qOptions(q),correct=correctOf(q),picked=picks[qi],done=picked!==undefined;
   const optHtml=opts.map((o,i)=>{
    const cls=done?(i===correct?' correct':i===picked?' wrong':''):'';
-   return `<button class="lp-opt${cls}" type="button" data-action="opt" data-i="${i}"${done?' disabled':''}>${h(o)}</button>`;
+   return `<button class="lp-opt${cls}" type="button"${enAttr(q.subject_id)} data-action="opt" data-i="${i}"${done?' disabled':''}>${h(o)}</button>`;
   }).join('');
   const fb=done?`<div class="lp-feedback ${Number(picked)===correct?'ok':'bad'}" id="lpFeedback">${h((Number(picked)===correct?u('quizCorrect'):u('quizWrong'))+(qText(q,'explanation')||u('quizNoFeedback')))}</div>`:`<div class="lp-feedback" id="lpFeedback" hidden></div>`;
-  inner=`<div class="lp-quiz-body"><h3>${h(qText(q,'prompt'))}</h3><div id="optsBox">${optHtml}</div>${fb}</div>
+  inner=`<div class="lp-quiz-body"><h3${enAttr(q.subject_id)}>${h(qText(q,'prompt'))}</h3><div id="optsBox">${optHtml}</div>${fb}</div>
    <div class="lp-quiz-foot"><span class="lp-quiz-note" style="margin:0">${fmt(qi+1)} / ${fmt(qs.length)}</span><button class="lp-btn primary" type="button" data-action="quiz-next" id="nextQBtn">${h(qi===qs.length-1?u('quizResult'):u('quizNext'))}</button></div>`;
  }
  return `<section class="lp-section lp-alt" id="quiz"><div class="lp-wrap">
@@ -576,8 +593,8 @@ function interactiveModules(){
 function intQuizHtml(m,qid,qi){
  const q=(DATA.questions||[]).find(x=>x.id===qid);if(!q)return '';
  const pick=intQuiz[m.id+':'+qi],done=pick!==undefined;
- const opts=(q.options||[]).map((o,oi)=>`<button type="button" class="lp-int-opt ${done?(oi===q.correct?'right':oi===pick?'wrong':''):''}" data-action="int-quiz" data-value="${h(m.id)}:${qi}:${oi}" ${done?'disabled':''}>${h(o)}</button>`).join('');
- return `<div class="lp-int-q" id="lpIntQ-${h(m.id)}-${qi}"><p class="lp-int-prompt">${h(q.prompt)}</p><div class="lp-int-opts">${opts}</div>${done?`<div class="lp-int-fb ${pick===q.correct?'good':'bad'}">${h(q.explanation||'')}</div>`:''}</div>`;
+ const opts=qOptions(q).map((o,oi)=>`<button type="button" class="lp-int-opt ${done?(oi===q.correct?'right':oi===pick?'wrong':''):''}" data-action="int-quiz" data-value="${h(m.id)}:${qi}:${oi}" ${done?'disabled':''}>${h(o)}</button>`).join('');
+ return `<div class="lp-int-q" id="lpIntQ-${h(m.id)}-${qi}"><p class="lp-int-prompt"${enAttr(q.subject_id)}>${h(qText(q))}</p><div class="lp-int-opts">${opts}</div>${done?`<div class="lp-int-fb ${pick===q.correct?'good':'bad'}">${h(qText(q,'explanation'))}</div>`:''}</div>`;
 }
 function renderInteractive(){
  const ms=interactiveModules();
@@ -612,17 +629,17 @@ function intQuizApply(mid,qi){
 }
 
 function renderResources(){
- const l=activeLecture(),c=l.content||{},rows=lectureFiles();
+ const l=activeLecture(),c=l.content||{},rows=lectureFiles(),en=englishMaterial(l.subject_id),ea=enAttr(l.subject_id);
  const files=rows.length?rows.map(({f,related})=>{
    const url=safeFileUrl(f.url);if(!url)return '';
-   return `<div class="card lp-file-row"><div class="lp-file-icon">📄</div><div><h3>${h(f.title||f.original_name)}</h3><p>${h(f.original_name||'')} · ${h(u('fileSize')(f.size||0))}${related?' · '+h(u('fullFileNote')):''}</p></div>
+   return `<div class="card lp-file-row"><div class="lp-file-icon">📄</div><div><h3${ea}>${h(fileTitle(f))}</h3><p>${h(f.original_name||'')} · ${h(u('fileSize')(f.size||0))}${related?' · '+h(u('fullFileNote')):''}</p></div>
    <div class="lp-file-actions"><a class="lp-btn sm" href="${h(url)}" target="_blank" rel="noopener noreferrer">${h(u('openFile'))}</a><a class="lp-btn sm" href="${h(url)}" download>${h(u('download'))}</a></div></div>`;
  }).join(''):'';
  const relatedNote=rows.some(x=>x.related)?`<div class="card lp-empty" style="padding:12px 18px">${h(u('fullFileNote'))}</div>`:'';
  const resources=(Array.isArray(c.resources)?c.resources:[]).map(r=>{
    const url=safeHttp(r.url);if(!url)return '';
-   const txt=Array.isArray(r.ar)?r.ar:[];
-   return `<div class="card lp-file-row"><div class="lp-file-icon">${h(r.ic||'🔗')}</div><div><h3>${h(txt[0]||'')}</h3><p>${h(txt[1]||'')} · ${h(r.src||'')}</p></div><div class="lp-file-actions"><a class="lp-btn sm" href="${h(url)}" target="_blank" rel="noopener noreferrer">${h(u('visit'))}</a></div></div>`;
+   const pick=en?r.en:r.ar,txt=Array.isArray(pick)?pick:(Array.isArray(r.ar)?r.ar:[]);
+   return `<div class="card lp-file-row"><div class="lp-file-icon">${h(r.ic||'🔗')}</div><div><h3${ea}>${h(txt[0]||'')}</h3><p${ea}>${h(txt[1]||'')} · ${h(r.src||'')}</p></div><div class="lp-file-actions"><a class="lp-btn sm" href="${h(url)}" target="_blank" rel="noopener noreferrer">${h(u('visit'))}</a></div></div>`;
  }).join('');
  const ls=siblingLectures(),idx=ls.findIndex(x=>x.id===l.id);
  const prev=ls[idx-1],next=ls[idx+1];
