@@ -40,7 +40,7 @@ Four lectures · 187 slides. **English — the original language of the uploaded
 
 ## Lecture 1 | Introduction to Information Systems
 
-*Source: IT_lecture_1_2026.pdf, pp. 4–23*
+*Source: `IT_lecture_1_2026.pdf`, pp. 4–23*
 
 ### In one line
 
@@ -68,7 +68,7 @@ Four lectures · 187 slides. **English — the original language of the uploaded
 - Output — delivering the results to their destination
 - Feedback and control — monitoring performance and guiding the system
 
-*Source: IT_lecture_1_2026.pdf, p. 4, p. 6*
+*Source: `IT_lecture_1_2026.pdf`, p. 4, p. 6*
 
 ### IS vs IT — the distinction students lose marks on
 
@@ -78,7 +78,7 @@ Four lectures · 187 slides. **English — the original language of the uploaded
 | Contains | Includes people, processes, hardware, software, data, and networks. | Includes hardware, software, networks, and related technologies. |
 | Focus | Focuses on how these elements work together. | IT is a major part of an information system—not the whole system. |
 
-*Source: IT_lecture_1_2026.pdf, p. 7*
+*Source: `IT_lecture_1_2026.pdf`, p. 7*
 
 ### The five major IS resources
 
@@ -94,7 +94,7 @@ Four lectures · 187 slides. **English — the original language of the uploaded
 
 Example: University registration → student data entered → system processes registration → timetable/records produced → data stored → rules and checks control the process.
 
-*Source: IT_lecture_1_2026.pdf, pp. 8–9*
+*Source: `IT_lecture_1_2026.pdf`, pp. 8–9*
 
 ### Types of information systems
 
@@ -109,9 +109,9 @@ Example: University registration → student data entered → system processes r
 
 A Transaction Processing System (TPS) is a software-based information system that collects, stores, modifies, and retrieves routine daily business transactions.
 
-A Process Control System (PCS) is an industrial automation network that monitors and regulates physical variables like temperature, pressure, and flow rates to keep manufacturing and production
+A Process Control System (PCS) is an industrial automation network that monitors and regulates physical variables like temperature, pressure, and flow rates to keep manufacturing and production facilities running safely and efficiently
 
-*Source: IT_lecture_1_2026.pdf, pp. 11–16*
+*Source: `IT_lecture_1_2026.pdf`, pp. 11–16*
 
 ### Why engineers need this
 
@@ -127,7 +127,7 @@ A Process Control System (PCS) is an industrial automation network that monitors
 - Security — how do we protect systems and information from misuse?
 - Responsible use — how should people behave when using organizational technology?
 
-*Source: IT_lecture_1_2026.pdf, pp. 10, 18–19*
+*Source: `IT_lecture_1_2026.pdf`, pp. 10, 18–19*
 
 ### Exam focus
 
@@ -145,11 +145,11 @@ A Process Control System (PCS) is an industrial automation network that monitors
 - 4. Identify one ethical issue related to information technology.
 - 5. In one sentence: Why does an engineer need to understand Information Systems?
 
-*Source: IT_lecture_1_2026.pdf, pp. 20, 23*
+*Source: `IT_lecture_1_2026.pdf`, pp. 20, 23*
 
 ## Lecture 2 | Computer Hardware, Software & Architecture
 
-*Source: IT_lecture_2_2026.pdf, pp. 4–43*
+*Source: `IT_lecture_2_2026.pdf`, pp. 4–43*
 
 ### In one line
 
@@ -175,7 +175,7 @@ A Process Control System (PCS) is an industrial automation network that monitors
 | 4 OUTPUT | Presents results | Monitor • printer • display |
 | CONTROL | CONTROL CPU and system software coordinate system activities. |  |
 
-*Source: IT_lecture_2_2026.pdf, p. 5*
+*Source: `IT_lecture_2_2026.pdf`, p. 5*
 
 ### Inside the CPU — who does what
 
@@ -187,7 +187,7 @@ A Process Control System (PCS) is an industrial automation network that monitors
 | Registers | Very small storage locations inside the CPU. • Hold data, instructions, addresses or intermediate results. • Give the CPU immediate access to information it is using. |
 | Cache | High-speed memory close to the CPU. • Stores frequently used data and instructions. • Reduces CPU waiting time. • Smaller than RAM, but typically faster. |
 
-*Source: IT_lecture_2_2026.pdf, pp. 7–11*
+*Source: `IT_lecture_2_2026.pdf`, pp. 7–11*
 
 ### The instruction cycle
 
@@ -200,7 +200,7 @@ A Process Control System (PCS) is an industrial automation network that monitors
 
 The cycle repeats while a program runs.
 
-*Source: IT_lecture_2_2026.pdf, p. 12*
+*Source: `IT_lecture_2_2026.pdf`, p. 12*
 
 ### Buses
 
@@ -210,7 +210,7 @@ The cycle repeats while a program runs.
 | ADDRESS BUS | Identifies the location being accessed. |
 | CONTROL BUS | Carries signals that coordinate operations. |
 
-*Source: IT_lecture_2_2026.pdf, p. 13*
+*Source: `IT_lecture_2_2026.pdf`, p. 13*
 
 ### Memory vs storage — the classic contrast
 
@@ -231,7 +231,7 @@ The cycle repeats while a program runs.
 
 In general, moving closer to the CPU means faster access and smaller capacity.
 
-*Source: IT_lecture_2_2026.pdf, pp. 14–15*
+*Source: `IT_lecture_2_2026.pdf`, pp. 14–15*
 
 ### Architecture vs organization
 
@@ -240,7 +240,7 @@ In general, moving closer to the CPU means faster access and smaller capacity.
 | Computer architecture | The features visible to a programmer or system designer. | Instruction set |
 | Computer organization | How the hardware is arranged to implement the architecture. | CPU components and internal connections |
 
-*Source: IT_lecture_2_2026.pdf, p. 6*
+*Source: `IT_lecture_2_2026.pdf`, p. 6*
 
 ### Performance and cores
 
@@ -249,7 +249,7 @@ In general, moving closer to the CPU means faster access and smaller capacity.
 - More cores do not automatically make every program faster.
 - Both approaches are used in real processors; performance depends on the complete design.
 
-*Source: IT_lecture_2_2026.pdf, pp. 19–21*
+*Source: `IT_lecture_2_2026.pdf`, pp. 19–21*
 
 ### Software: system vs application
 
@@ -267,7 +267,7 @@ In general, moving closer to the CPU means faster access and smaller capacity.
 - Manages devices.
 - Supports security and access control.
 
-*Source: IT_lecture_2_2026.pdf, pp. 22–24*
+*Source: `IT_lecture_2_2026.pdf`, pp. 22–24*
 
 ### Programming languages and translation tools
 
@@ -284,7 +284,7 @@ In general, moving closer to the CPU means faster access and smaller capacity.
 | C / C++ | Efficient and widely used for embedded systems and hardware- oriented applications. |
 | MATLAB | Useful for numerical computing, matrices, modelling, simulation and data analysis. |
 
-*Source: IT_lecture_2_2026.pdf, pp. 26–29*
+*Source: `IT_lecture_2_2026.pdf`, pp. 26–29*
 
 ### Worked example — temperature-control system
 
@@ -295,7 +295,7 @@ In general, moving closer to the CPU means faster access and smaller capacity.
 
 Hardware collects and acts on signals; software defines the decision logic.
 
-*Source: IT_lecture_2_2026.pdf, p. 32*
+*Source: `IT_lecture_2_2026.pdf`, p. 32*
 
 ### Exam focus
 
@@ -307,11 +307,11 @@ Hardware collects and acts on signals; software defines the decision logic.
 - Programming tools support analysis, simulation, automation and embedded systems.
 - Engineering performance depends on the complete hardware–software system.
 
-*Source: IT_lecture_2_2026.pdf, p. 42*
+*Source: `IT_lecture_2_2026.pdf`, p. 42*
 
 ## Lecture 3 | Data Resource Management
 
-*Source: IT_lecture_3_2026.pdf, pp. 4–80*
+*Source: `IT_lecture_3_2026.pdf`, pp. 4–80*
 
 ### In one line
 
@@ -338,7 +338,7 @@ Hardware collects and acts on signals; software defines the decision logic.
 
 Reliable decisions depend on reliable data.
 
-*Source: IT_lecture_3_2026.pdf, p. 5*
+*Source: `IT_lecture_3_2026.pdf`, p. 5*
 
 ### The data hierarchy — small to large
 
@@ -357,7 +357,7 @@ Reliable decisions depend on reliable data.
 | Attribute | A characteristic of an entity. |
 | Relationship | A student can enrol in several courses, and a course can include many students. |
 
-*Source: IT_lecture_3_2026.pdf, pp. 6, 9–10*
+*Source: `IT_lecture_3_2026.pdf`, pp. 6, 9–10*
 
 ### What a database is
 
@@ -389,7 +389,7 @@ Reliable decisions depend on reliable data.
 
 A DBMS is the software layer between users/applications and the database.
 
-*Source: IT_lecture_3_2026.pdf, pp. 13–21*
+*Source: `IT_lecture_3_2026.pdf`, pp. 13–21*
 
 ### Database types, warehouse, marts and mining
 
@@ -402,7 +402,7 @@ A DBMS is the software layer between users/applications and the database.
 | Data mart | A focused subset of data for a particular department or topic. |
 | Data mining | Analyzing large collections of data to identify patterns or trends. |
 
-*Source: IT_lecture_3_2026.pdf, pp. 22–28*
+*Source: `IT_lecture_3_2026.pdf`, pp. 22–28*
 
 ### Structures and keys
 
@@ -417,7 +417,7 @@ A DBMS is the software layer between users/applications and the database.
 
 Keys help link records while keeping data organized.
 
-*Source: IT_lecture_3_2026.pdf, pp. 30–35*
+*Source: `IT_lecture_3_2026.pdf`, pp. 30–35*
 
 ### Building a database
 
@@ -439,7 +439,7 @@ Keys help link records while keeping data organized.
 | Data quality | A database cannot make poor input data trustworthy by itself. |
 | Responsible access | Give users only the access they need. |
 
-*Source: IT_lecture_3_2026.pdf, pp. 37–41*
+*Source: `IT_lecture_3_2026.pdf`, pp. 37–41*
 
 ### Exam focus
 
@@ -451,11 +451,11 @@ Keys help link records while keeping data organized.
 - Data warehouses support analysis; data mining looks for useful patterns.
 - Database planning, modeling, testing, quality and protection are all important.
 
-*Source: IT_lecture_3_2026.pdf, p. 79*
+*Source: `IT_lecture_3_2026.pdf`, p. 79*
 
 ## Number Systems, Binary & ASCII
 
-*Source: IT_Number_Systems.pdf, pp. 3–37*
+*Source: `IT_Number_Systems.pdf`, pp. 3–37*
 
 ### In one line
 
@@ -476,7 +476,7 @@ Keys help link records while keeping data organized.
 | Word | A word is the natural data size a processor handles as a unit. Word size depends on processor design; common examples are 32-bit and 64-bit architectures. |
 | Two states | ON/OFF; HIGH/LOW voltage; TRUE/FALSE. These states can be represented by 1 and 0. |
 
-*Source: IT_Number_Systems.pdf, pp. 3–4*
+*Source: `IT_Number_Systems.pdf`, pp. 3–4*
 
 ### The four bases at a glance
 
@@ -489,7 +489,7 @@ Keys help link records while keeping data organized.
 
 The value stays the same; only the representation changes. Use a base label when comparing systems.
 
-*Source: IT_Number_Systems.pdf, pp. 5–7, 14–15, 19*
+*Source: `IT_Number_Systems.pdf`, pp. 5–7, 14–15, 19*
 
 ### Equivalent values — memorise this row
 
@@ -511,7 +511,7 @@ The value stays the same; only the representation changes. Use a base label when
 
 Correct: 4 for hex, 3 for octal.
 
-*Source: IT_Number_Systems.pdf, pp. 8–10, 16–18, 30*
+*Source: `IT_Number_Systems.pdf`, pp. 8–10, 16–18, 30*
 
 ### Binary arithmetic and fractions
 
@@ -522,7 +522,7 @@ Correct: 4 for hex, 3 for octal.
 - For 1+1, write 0 and carry 1.
 - 1×2¹ + 0×2⁰ + 1×2⁻¹ = 2.5₁₀. Some decimal fractions repeat in binary.
 
-*Source: IT_Number_Systems.pdf, pp. 12–13*
+*Source: `IT_Number_Systems.pdf`, pp. 12–13*
 
 ### ASCII, Unicode and how text is stored
 
@@ -541,7 +541,7 @@ Correct: 4 for hex, 3 for octal.
 | Stored text | O → ASCII 79 → binary 01001111 |
 | Encoding definition | Character encoding maps characters—letters, digits and punctuation— to numeric code values that can be stored and processed. |
 
-*Source: IT_Number_Systems.pdf, pp. 20–26*
+*Source: `IT_Number_Systems.pdf`, pp. 20–26*
 
 ### Ranges and the mistakes examiners set
 
@@ -552,7 +552,7 @@ Correct: 4 for hex, 3 for octal.
 - Correct: 4 for hex, 3 for octal.
 - Confusing character code with numeric value; assuming standard ASCII includes Arabic or all accented letters; assuming every encoding always uses one byte.
 
-*Source: IT_Number_Systems.pdf, pp. 27–28, 30*
+*Source: `IT_Number_Systems.pdf`, pp. 27–28, 30*
 
 ### Method reminders + exam focus
 
@@ -560,7 +560,7 @@ Correct: 4 for hex, 3 for octal.
 - Computers represent data using bits. ASCII maps a limited character set to codes. Unicode supports many writing systems. The same bits can have different meanings depending on the format.
 - Exit ticket: convert 100101₂ to decimal and explain one difference between ASCII and Unicode.
 
-*Source: IT_Number_Systems.pdf, pp. 32, 37*
+*Source: `IT_Number_Systems.pdf`, pp. 32, 37*
 
 ## Cheat sheet
 
@@ -655,4 +655,4 @@ Where the practice and worked answers live in the original PDFs. The 59 CSE013 q
 - 9. 2⁸ = 256 values (0–255).
 - 10. Examples: sensor readings, embedded controllers, communication or file storage.
 
-*Source: IT_Number_Systems.pdf, pp. 32–33*
+*Source: `IT_Number_Systems.pdf`, pp. 32–33*
