@@ -7,7 +7,7 @@
 <meta name="description" content="ENG YOUSSEF — واجهة موحّدة لأي محاضرة: ملخص، طبقات/محتويات، شرح خطوة بخطوة، اختبار قصير، وملفات أصلية.">
 <title>ENG YOUSSEF | واجهة المحاضرة</title>
 <link rel="icon" href="assets/favicon.png" type="image/png">
-<link rel="stylesheet" href="app.css?v=3.5.0">
+<link rel="stylesheet" href="app.css?v=3.7.0">
 <script src="vendor/purify.min.js" defer></script>
 <style>
 /* ------------------------------------------------------------------
@@ -415,7 +415,7 @@ function applyChrome(){
 
 /* --------------------------- قراءة بيانات المنصة --------------------------- */
 async function loadData(){
- const res=await fetch('index.html?v=3.6.8',{cache:'force-cache'});
+ const res=await fetch('index.html?v=3.7.0',{cache:'force-cache'});
  if(!res.ok)throw new Error('HTTP '+res.status);
  const text=await res.text();
  const m=text.match(/<script id="method-data" type="application\/json">([\s\S]*?)<\/script>/);

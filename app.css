@@ -138,3 +138,16 @@ dialog{width:min(560px,calc(100vw - 32px));max-height:88vh;padding:0;border:1px 
 .fs-q-fb{margin-top:.55rem;font-size:.83rem;line-height:1.7;padding:.5rem .65rem;border-radius:8px}
 .fs-q-fb.good{background:#e8f6ed;color:#0f5c2b}
 .fs-q-fb.bad{background:var(--brand-tint);color:var(--brand)}
+
+/* ---- IT sort entry (CSE013) ---- */
+.it-entry{display:grid;gap:1rem;grid-template-columns:auto 1fr auto;align-items:center;border:1px solid var(--line);
+ padding:1.15rem 1.25rem;border-radius:16px;background:linear-gradient(135deg,var(--brand-tint),transparent 62%),var(--surface);
+ margin-bottom:1.35rem}
+.it-entry .it-ic{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:var(--brand);color:#fff}
+.it-entry .it-ic svg{width:24px;height:24px}
+.it-entry h2{margin:.1rem 0 .25rem;font-size:1.06rem}
+.it-entry p{margin:0;font-size:.85rem;color:var(--muted)}
+.it-entry .it-stats{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.5rem}
+.it-entry .it-stats span{font-size:.72rem;padding:.18rem .5rem;border-radius:999px;background:var(--surface-2,#f3f4f6);color:var(--muted)}
+.it-entry .btn{white-space:nowrap}
+@media(max-width:720px){.it-entry{grid-template-columns:auto 1fr}.it-entry .btn{grid-column:1/-1;justify-content:center}}
