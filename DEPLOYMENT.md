@@ -14,7 +14,7 @@
   Admin ولا يملكها توكن التكامل ولا `GITHUB_TOKEN`، فلا تستخدم `enablement: true`
   في `configure-pages` (يفشل دائمًا بـ `Resource not accessible by integration`).
 - سير العمل `.github/workflows/pages.yml` يعمل عند كل push إلى
-  `arena/e1f085f7-youssef` أو يدويًا (`workflow_dispatch`)، ويرفع مجلد المستودع كاملًا
+  `main` أو يدويًا (`workflow_dispatch`)، ويرفع مجلد المستودع كاملًا
   كصفحات ثابتة عبر `upload-pages-artifact` + `deploy-pages`. إن لم يكن Pages مُفعّلًا،
   يتخطى النشر ويكتب رسالة واضحة بدل أن يفشل.
 - السير لا يصرّح بـ `environment: github-pages`: سياسة الفروع الافتراضية لتلك البيئة تسمح
@@ -25,8 +25,8 @@
   خادم Python: الحسابات والمزامنة ومساعد Claude معطّلة تلقائيًا (`__STATIC_WEB__`).
 - ملاحظة CDN: قد يبقى الرد القديم `There isn't a GitHub Pages site here` مخزّنًا مؤقتًا
   للمسار المجرّد `/youssef-/` لبضع دقائق بعد أول نشر؛ `/?v=1` أو `index.html?v=1` يعمل فورًا.
-- عند دمج العمل في `main`، حدّث `branches:` في سير العمل إلى `main` إن أردت أن يبقى
-  النشر تابعًا للفرع الافتراضي.
+- **تم (2026-11-04):** صار `branches: [main]`، فأي push إلى `main` يعيد النشر تلقائيًا؛
+  و`workflow_dispatch` من `main` يبقى متاحًا للتحديث اليدوي.
 
 ## نسخة الخادم الكاملة (Python)
 
