@@ -731,19 +731,33 @@ function localizeSummary(){
     if(!sp.dataset.en){sp.dataset.en=sp.innerHTML;}
     if(en){sp.innerHTML=sp.dataset.en;sp.setAttribute('dir','ltr');}
     else{
-      var txt=sp.dataset.en.replace(/<[^>]+>/g,'').replace(/&amp;/g,'&').trim();
-      var hit=null;
-      for(var lid in TR.pages){
-        for(var n=0;n<TR.pages[lid].length;n++){
-          if(TR.pages[lid][n][0]===txt){hit=TR.pages[lid][n][0];}
-        }
-      }
-      // try page-title lookup by scanning the page list
-      if(!hit){hit=findPageTitle(txt);}
+      var txt=sp.dataset.en.replace(/<[^>]+>/g,'').replace(/&amp;/g,'&').replace(/&quot;/g,'"').trim();
+      var hit=lookupAr(txt);
       if(hit){sp.innerHTML=esc(hit);sp.removeAttribute('dir');}
       else{sp.innerHTML=sp.dataset.en;}
     }
   }
+}
+function lookupAr(txt){
+  var p=findPageTitle(txt);
+  if(p)return p;
+  for(var i=0;i<QLIST.length;i++){
+    if((QLIST[i].stem||'').trim()===txt){
+      var t=qT(QLIST[i].gid);
+      if(t&&t[0])return t[0];
+    }
+  }
+  for(var l=0;l<ORDER.length;l++){
+    var lid=ORDER[l];
+    var list=ACT.filter(function(x){return x.lecture===lid;});
+    for(var k=0;k<list.length;k++){
+      if((list[k].title||'').trim()===txt){
+        var ta=aT(lid,k);
+        if(ta&&ta[0])return ta[0];
+      }
+    }
+  }
+  return null;
 }
 function findPageTitle(enTitle){
   for(var b=0;b<DATA.pages.length;b++){
