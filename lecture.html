@@ -331,7 +331,7 @@ const LAYERS=[
 
 /* ------------------------------- الحالة ------------------------------- */
 let DATA=null, lang='ar', theme='dark', appearance='modern', activeId='';
-let layerIdx=0, stepIdx=0, qi=0, score=0, answered=false, quizAll=false;
+let layerIdx=0, stepIdx=0, qi=0, picks=[], quizAll=false;
 const QUIZ_LIMIT=10;
 const STORE='method.v2.local', THEME_KEY='eng-youssef.theme.v1', APPEARANCE_KEY='lp.appearance.v1';
 function readLocal(){try{const x=JSON.parse(localStorage.getItem(STORE)||'{}');return x&&typeof x==='object'?x:{};}catch{return {};}}
@@ -495,8 +495,10 @@ function renderExplainer(){
  </div></section>`;
 }
 function currentQuiz(){const qs=lectureQuestions();return quizAll?qs:qs.slice(0,QUIZ_LIMIT);}
+function correctOf(q){return Number(q.correct)||0;}
+function quizScore(qs){return qs.reduce((n,q,i)=>n+(picks[i]!==undefined&&Number(picks[i])===correctOf(q)?1:0),0);}
 function renderQuiz(){
- const qs=currentQuiz(),all=lectureQuestions().length;
+ const qs=currentQuiz(),all=lectureQuestions().length,score=quizScore(qs);
  if(!all){
   return `<section class="lp-section lp-alt" id="quiz"><div class="lp-wrap">
     <div class="lp-head"><div class="k">${h(u('quizK'))}</div><h2>${h(u('quizH2'))}</h2><p>${h(u('quizP'))}</p></div>
@@ -508,9 +510,14 @@ function renderQuiz(){
  if(qi>=qs.length){
   inner=`<div class="lp-score-view"><div class="big">${fmt(score)} / ${fmt(qs.length)}</div><p>${h(u('quizResultDesc'))}</p><button class="lp-btn primary" type="button" data-action="quiz-restart">${h(u('quizRestart'))}</button></div>`;
  }else{
-  const q=qs[qi],opts=qOptions(q);
-  inner=`<div class="lp-quiz-body"><h3>${h(qText(q,'prompt'))}</h3><div id="optsBox">${opts.map((o,i)=>`<button class="lp-opt" type="button" data-action="opt" data-i="${i}">${h(o)}</button>`).join('')}</div><div class="lp-feedback" id="lpFeedback" hidden></div></div>
-   <div class="lp-quiz-foot"><span class="lp-quiz-note" style="margin:0">${fmt(qi+1)} / ${fmt(qs.length)}</span><button class="lp-btn primary" type="button" data-action="quiz-next" id="nextQBtn" disabled>${h(qi===qs.length-1?u('quizResult'):u('quizNext'))}</button></div>`;
+  const q=qs[qi],opts=qOptions(q),correct=correctOf(q),picked=picks[qi],done=picked!==undefined;
+  const optHtml=opts.map((o,i)=>{
+   const cls=done?(i===correct?' correct':i===picked?' wrong':''):'';
+   return `<button class="lp-opt${cls}" type="button" data-action="opt" data-i="${i}"${done?' disabled':''}>${h(o)}</button>`;
+  }).join('');
+  const fb=done?`<div class="lp-feedback ${Number(picked)===correct?'ok':'bad'}" id="lpFeedback">${h((Number(picked)===correct?u('quizCorrect'):u('quizWrong'))+(qText(q,'explanation')||u('quizNoFeedback')))}</div>`:`<div class="lp-feedback" id="lpFeedback" hidden></div>`;
+  inner=`<div class="lp-quiz-body"><h3>${h(qText(q,'prompt'))}</h3><div id="optsBox">${optHtml}</div>${fb}</div>
+   <div class="lp-quiz-foot"><span class="lp-quiz-note" style="margin:0">${fmt(qi+1)} / ${fmt(qs.length)}</span><button class="lp-btn primary" type="button" data-action="quiz-next" id="nextQBtn">${h(qi===qs.length-1?u('quizResult'):u('quizNext'))}</button></div>`;
  }
  return `<section class="lp-section lp-alt" id="quiz"><div class="lp-wrap">
    <div class="lp-head"><div class="k">${h(u('quizK'))}</div><h2>${h(u('quizH2'))}</h2><p>${h(u('quizP'))}</p></div>
@@ -554,31 +561,26 @@ function renderAll(){
 }
 
 /* ------------------------------ التفاعل ------------------------------ */
-function resetInteractive(){layerIdx=0;stepIdx=0;qi=0;score=0;answered=false;quizAll=false;}
+function resetInteractive(){layerIdx=0;stepIdx=0;qi=0;picks=[];quizAll=false;}
 function setLecture(id){
  if(!DATA.lectures.some(l=>l.id===id))return;
  activeId=id;resetInteractive();renderAll();window.scrollTo({top:0,behavior:'smooth'});
 }
 function grade(el){
- if(answered)return;answered=true;
- const qs=currentQuiz(),q=qs[qi],correct=Number(q.correct)||0,picked=Number(el.dataset.i);
- $$('.lp-opt').forEach(b=>b.disabled=true);
- const right=$$('.lp-opt')[correct];
- if(picked===correct){el.classList.add('correct');score++;}
- else{el.classList.add('wrong');if(right)right.classList.add('correct');}
- const fb=$('#lpFeedback');if(fb){fb.hidden=false;fb.className='lp-feedback '+(picked===correct?'ok':'bad');fb.textContent=(picked===correct?u('quizCorrect'):u('quizWrong'))+(qText(q,'explanation')||u('quizNoFeedback'));}
- const next=$('#nextQBtn');if(next)next.disabled=false;
- const qn=$('.lp-quiz-head .qn');if(qn)qn.textContent=u('quizScore')(score);
+ if(picks[qi]!==undefined)return;
+ picks[qi]=Number(el.dataset.i);
+ const quiz=$('#quiz');if(quiz)quiz.outerHTML=renderQuiz();
 }
+function redrawQuiz(){const quiz=$('#quiz');if(quiz)quiz.outerHTML=renderQuiz();}
 document.addEventListener('click',e=>{
  const el=e.target.closest('[data-action]');if(!el)return;
  const a=el.dataset.action;
  if(a==='layer'){layerIdx=Number(el.dataset.i)||0;$$('.lp-layer').forEach((x,i)=>x.classList.toggle('active',i===layerIdx));$$('.lp-svg-layer').forEach((x,i)=>x.classList.toggle('on',i===layerIdx));}
  else if(a==='step'){const steps=origArr(activeLecture().content?.steps);stepIdx=Math.max(0,Math.min(steps.length-1,stepIdx+Number(el.dataset.dir)));$('#explainer').outerHTML=renderExplainer();}
  else if(a==='opt'){grade(el);}
- else if(a==='quiz-next'){qi++;$('#quiz').outerHTML=renderQuiz();}
- else if(a==='quiz-restart'){qi=0;score=0;answered=false;$('#quiz').outerHTML=renderQuiz();}
- else if(a==='quiz-all'){quizAll=true;qi=0;score=0;answered=false;$('#quiz').outerHTML=renderQuiz();}
+ else if(a==='quiz-next'){qi++;redrawQuiz();}
+ else if(a==='quiz-restart'){qi=0;picks=[];redrawQuiz();}
+ else if(a==='quiz-all'){quizAll=true;qi=0;picks=[];redrawQuiz();}
 });
 document.addEventListener('keydown',e=>{
  if((e.key==='Enter'||e.key===' ')&&e.target.matches('.lp-layer')){e.preventDefault();e.target.click();}

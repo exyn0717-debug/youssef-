@@ -89,7 +89,7 @@ S.local=loadLocal();S.lang=S.local.lang;S.theme=initialTheme();S.local.theme=S.t
 function applyTheme(theme){S.theme=theme==='light'?'light':'dark';S.local.theme=S.theme;const root=document.documentElement;root.classList.toggle('dark',S.theme==='dark');root.classList.toggle('light',S.theme==='light');root.dataset.theme=S.theme;const meta=document.querySelector('meta[name=theme-color]');if(meta)meta.content=S.theme==='dark'?'#09090b':'#c8102e';}
 applyTheme(S.theme);
 const t=(ar,en)=>S.lang==='ar'?ar:en;
-const lectureHref=id=>'lecture.html?lecture='+encodeURIComponent(id);
+const lectureHref=id=>'lecture.html?lecture='+encodeURIComponent(id)+'&v=2';
 const field=(obj,base)=>obj?.[base+'_ar']||obj?.[base]||'';
 const qText=(q,base='prompt')=>q[base]||'';
 const qOptions=q=>q.options;
