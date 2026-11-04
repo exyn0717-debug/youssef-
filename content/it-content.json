@@ -1,0 +1,4057 @@
+{
+ "lib_url": "content/library/",
+ "generated_from": "work/extract.py (PDF text layer)",
+ "totals": {
+  "lectures": 5,
+  "pages": 227,
+  "slides": 225,
+  "pdf_questions": 61,
+  "platform_questions": 20,
+  "activities": 12
+ },
+ "lectures": [
+  {
+   "page_id": "l1",
+   "code": "L1",
+   "num": 1,
+   "title": "Introduction to Information Systems",
+   "title_ar": "مقدمة في نظم المعلومات",
+   "file": "cse013-lecture-1-intro.pdf",
+   "original": "IT lecture 1 2026.pdf",
+   "pages": 24,
+   "first_global": 1,
+   "last_global": 24,
+   "author": "",
+   "date": "",
+   "pdf_created": "D:20260929095430+03'00'",
+   "sections": [
+    {
+     "first": 1,
+     "last": 3,
+     "name": "Opening, learning outcomes"
+    },
+    {
+     "first": 4,
+     "last": 5,
+     "name": "What is a System?"
+    },
+    {
+     "first": 6,
+     "last": 9,
+     "name": "What is an Information System?"
+    },
+    {
+     "first": 10,
+     "last": 17,
+     "name": "Why engineers need it, and the types of IS"
+    },
+    {
+     "first": 18,
+     "last": 20,
+     "name": "IS in engineering, ethics, lecture summary"
+    },
+    {
+     "first": 21,
+     "last": 24,
+     "name": "Interaction & practice, exit ticket, next lecture"
+    }
+   ]
+  },
+  {
+   "page_id": "l2",
+   "code": "L2",
+   "num": 2,
+   "title": "Computer Hardware, Software & Architecture",
+   "title_ar": "مكونات الحاسوب والبرمجيات والمعمارية",
+   "file": "cse013-lecture-2-hardware.pdf",
+   "original": "IT lecture 2 2026]].pdf",
+   "pages": 43,
+   "first_global": 25,
+   "last_global": 67,
+   "author": "",
+   "date": "",
+   "pdf_created": "D:20261011185533+03'00'",
+   "sections": [
+    {
+     "first": 1,
+     "last": 2,
+     "name": "Opening, learning outcomes"
+    },
+    {
+     "first": 3,
+     "last": 8,
+     "name": "The computer system and its architecture"
+    },
+    {
+     "first": 9,
+     "last": 15,
+     "name": "Inside the CPU, buses, memory vs. storage"
+    },
+    {
+     "first": 16,
+     "last": 21,
+     "name": "Peripherals, system classes, performance, RISC/CISC"
+    },
+    {
+     "first": 22,
+     "last": 29,
+     "name": "Software, operating systems, programming languages"
+    },
+    {
+     "first": 30,
+     "last": 34,
+     "name": "Engineering applications, worked example, practice"
+    },
+    {
+     "first": 35,
+     "last": 43,
+     "name": "Review, answer key, summary, exit ticket"
+    }
+   ]
+  },
+  {
+   "page_id": "l3",
+   "code": "L3",
+   "num": 3,
+   "title": "Data Resource Management",
+   "title_ar": "إدارة موارد البيانات",
+   "file": "cse013-lecture-3-data.pdf",
+   "original": "IT lecture 3 2026.pdf",
+   "pages": 82,
+   "first_global": 68,
+   "last_global": 149,
+   "author": "Dr : Ahmed Refaat",
+   "date": "19 / 10 / 2026",
+   "pdf_created": "D:20261031060332+02'00'",
+   "sections": [
+    {
+     "first": 1,
+     "last": 5,
+     "name": "Opening, data resource management"
+    },
+    {
+     "first": 6,
+     "last": 11,
+     "name": "Data elements, entities, attributes, relationships"
+    },
+    {
+     "first": 12,
+     "last": 21,
+     "name": "Databases, file processing, DBMS, queries"
+    },
+    {
+     "first": 22,
+     "last": 29,
+     "name": "Database types, warehouse, marts, data mining"
+    },
+    {
+     "first": 30,
+     "last": 42,
+     "name": "Structures, keys, development, quality, protection"
+    },
+    {
+     "first": 43,
+     "last": 53,
+     "name": "Source definitions and data-mining uses"
+    },
+    {
+     "first": 54,
+     "last": 69,
+     "name": "Structures in depth, design process, views"
+    },
+    {
+     "first": 70,
+     "last": 82,
+     "name": "Take-home, practice, review, summary, videos"
+    }
+   ]
+  },
+  {
+   "page_id": "num",
+   "code": "NUM",
+   "num": null,
+   "title": "Binary Representation, ASCII Codes and Number Systems",
+   "title_ar": "التمثيل الثنائي وأكواد ASCII وأنظمة العد",
+   "file": "cse013-number-systems.pdf",
+   "original": "IT Number_Systems.pdf",
+   "pages": 38,
+   "first_global": 150,
+   "last_global": 187,
+   "author": "Dr : Ahmed Refaat",
+   "date": "26 / 10 / 2026",
+   "pdf_created": "D:20261018142431+03'00'",
+   "sections": [
+    {
+     "first": 1,
+     "last": 5,
+     "name": "Opening, why binary, key terms, bases"
+    },
+    {
+     "first": 6,
+     "last": 19,
+     "name": "Number systems and conversions"
+    },
+    {
+     "first": 20,
+     "last": 29,
+     "name": "Character encoding, ASCII, integers, engineering use"
+    },
+    {
+     "first": 30,
+     "last": 33,
+     "name": "Common mistakes, guided practice and answers"
+    },
+    {
+     "first": 34,
+     "last": 36,
+     "name": "Quick quiz and answer key"
+    },
+    {
+     "first": 37,
+     "last": 38,
+     "name": "Lecture summary and exit ticket"
+    }
+   ]
+  },
+  {
+   "page_id": "l10",
+   "code": "L10",
+   "num": 10,
+   "title": "Introduction to Python for Engineers",
+   "title_ar": "مقدمة في Python للمهندسين",
+   "file": "cse013-lecture-10-python.pdf",
+   "original": "IT lecture 10 2026.pdf",
+   "pages": 40,
+   "first_global": 188,
+   "last_global": 227,
+   "author": "",
+   "date": "",
+   "pdf_created": "D:20261011185449+03'00'",
+   "sections": [
+    {
+     "first": 1,
+     "last": 6,
+     "name": "Opening, objectives, where to write Python"
+    },
+    {
+     "first": 7,
+     "last": 15,
+     "name": "First program, syntax, variables, types, arithmetic"
+    },
+    {
+     "first": 16,
+     "last": 21,
+     "name": "Input, worked example, conditions"
+    },
+    {
+     "first": 22,
+     "last": 26,
+     "name": "Loops, lists, functions"
+    },
+    {
+     "first": 27,
+     "last": 31,
+     "name": "Errors, debugging, mini example, practice"
+    },
+    {
+     "first": 32,
+     "last": 40,
+     "name": "Review, answer key, summary, exit ticket"
+    }
+   ]
+  }
+ ],
+ "questions": [
+  {
+   "lecture": "l2",
+   "kind": "mcq",
+   "n": 1,
+   "stem": "Which component performs arithmetic and logical operations?",
+   "options": [
+    "Control Unit",
+    "Cache",
+    "Storage",
+    "ALU"
+   ],
+   "correct": 3,
+   "key": "ALU",
+   "key_letter": "D",
+   "page": 35,
+   "pages": "pp. 35–41",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 1,
+   "global_page": 59
+  },
+  {
+   "lecture": "l2",
+   "kind": "mcq",
+   "n": 2,
+   "stem": "What is the main role of the Control Unit (CU)?",
+   "options": [
+    "Store files permanently",
+    "Display information",
+    "Coordinate CPU activities",
+    "Perform arithmetic calculations"
+   ],
+   "correct": 2,
+   "key": "Coordinate CPU activities",
+   "key_letter": "C",
+   "page": 35,
+   "pages": "pp. 35–41",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 2,
+   "global_page": 59
+  },
+  {
+   "lecture": "l2",
+   "kind": "mcq",
+   "n": 3,
+   "stem": "Which memory is located close to the CPU and stores frequently used data?",
+   "options": [
+    "SSD",
+    "USB drive",
+    "Optical disk",
+    "Cache"
+   ],
+   "correct": 3,
+   "key": "Cache",
+   "key_letter": "D",
+   "page": 36,
+   "pages": "pp. 35–41",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 3,
+   "global_page": 60
+  },
+  {
+   "lecture": "l2",
+   "kind": "mcq",
+   "n": 4,
+   "stem": "Which of the following is an example of system software?",
+   "options": [
+    "Presentation software",
+    "Operating system",
+    "CAD software",
+    "MATLAB"
+   ],
+   "correct": 1,
+   "key": "Operating system",
+   "key_letter": "B",
+   "page": 36,
+   "pages": "pp. 35–41",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 4,
+   "global_page": 60
+  },
+  {
+   "lecture": "l2",
+   "kind": "mcq",
+   "n": 5,
+   "stem": "What is the main purpose of an operating system?",
+   "options": [
+    "Manage hardware resources and provide services",
+    "Design mechanical parts",
+    "Perform only mathematical calculations",
+    "Replace the CPU"
+   ],
+   "correct": 0,
+   "key": "Manage hardware resources",
+   "key_letter": "A",
+   "page": 37,
+   "pages": "pp. 35–41",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 5,
+   "global_page": 61
+  },
+  {
+   "lecture": "l2",
+   "kind": "mcq",
+   "n": 6,
+   "stem": "Which language is especially suitable for embedded systems and hardware-oriented applications?",
+   "options": [
+    "MATLAB",
+    "C/C++",
+    "Spreadsheet formulas",
+    "HTML"
+   ],
+   "correct": 1,
+   "key": "C/C++",
+   "key_letter": "B",
+   "page": 37,
+   "pages": "pp. 35–41",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 6,
+   "global_page": 61
+  },
+  {
+   "lecture": "l2",
+   "kind": "mcq",
+   "n": 7,
+   "stem": "Which language is a good introductory choice for data analysis and automation?",
+   "options": [
+    "Assembly",
+    "HTML",
+    "Python",
+    "Machine language"
+   ],
+   "correct": 2,
+   "key": "Python",
+   "key_letter": "C",
+   "page": 38,
+   "pages": "pp. 35–41",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 7,
+   "global_page": 62
+  },
+  {
+   "lecture": "l2",
+   "kind": "mcq",
+   "n": 8,
+   "stem": "Which tool is widely used for numerical computing, modelling and simulation?",
+   "options": [
+    "MATLAB",
+    "Operating system",
+    "Assembly",
+    "BIOS"
+   ],
+   "correct": 0,
+   "key": "MATLAB",
+   "key_letter": "A",
+   "page": 38,
+   "pages": "pp. 35–41",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 8,
+   "global_page": 62
+  },
+  {
+   "lecture": "l2",
+   "kind": "mcq",
+   "n": 9,
+   "stem": "In a data-acquisition system, what usually collects the physical measurement?",
+   "options": [
+    "Sensor",
+    "Operating system",
+    "Cache",
+    "Compiler"
+   ],
+   "correct": 0,
+   "key": "Sensor",
+   "key_letter": "A",
+   "page": 39,
+   "pages": "pp. 35–41",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 9,
+   "global_page": 63
+  },
+  {
+   "lecture": "l2",
+   "kind": "mcq",
+   "n": 10,
+   "stem": "In industrial automation, which device commonly executes a control program?",
+   "options": [
+    "Keyboard",
+    "Printer",
+    "PLC",
+    "Monitor"
+   ],
+   "correct": 2,
+   "key": "PLC",
+   "key_letter": "C",
+   "page": 39,
+   "pages": "pp. 35–41",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 10,
+   "global_page": 63
+  },
+  {
+   "lecture": "l2",
+   "kind": "mcq",
+   "n": 11,
+   "stem": "Which statement best describes a compiler?",
+   "options": [
+    "It measures temperature",
+    "It controls the display",
+    "It stores data permanently",
+    "It translates a program into a form that can be executed"
+   ],
+   "correct": 3,
+   "key": "Compiler",
+   "key_letter": "D",
+   "page": 40,
+   "pages": "pp. 35–41",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 11,
+   "global_page": 64
+  },
+  {
+   "lecture": "l2",
+   "kind": "mcq",
+   "n": 12,
+   "stem": "Which engineering application uses CAD software?",
+   "options": [
+    "CPU instruction fetching",
+    "2D and 3D engineering design",
+    "Operating-system management",
+    "Network cabling only"
+   ],
+   "correct": 1,
+   "key": "2D and 3D design",
+   "key_letter": "B",
+   "page": 40,
+   "pages": "pp. 35–41",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 12,
+   "global_page": 64
+  },
+  {
+   "lecture": "l3",
+   "kind": "mcq",
+   "n": 1,
+   "stem": "Which sequence correctly moves from a small data element to a larger collection?",
+   "options": [
+    "Database → file → field → character",
+    "Character → field → record → file → database",
+    "Record → character → database → field",
+    "Field → character → file → record"
+   ],
+   "correct": 1,
+   "key": "Data hierarchy",
+   "key_letter": "B",
+   "page": 72,
+   "pages": "pp. 72–78",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 13,
+   "global_page": 139
+  },
+  {
+   "lecture": "l3",
+   "kind": "mcq",
+   "n": 2,
+   "stem": "In a sensor database, what is Sensor_ID most likely to be?",
+   "options": [
+    "A report format",
+    "A data warehouse",
+    "A field that identifies a sensor",
+    "A database application"
+   ],
+   "correct": 2,
+   "key": "Sensor identifier",
+   "key_letter": "C",
+   "page": 72,
+   "pages": "pp. 72–78",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 14,
+   "global_page": 139
+  },
+  {
+   "lecture": "l3",
+   "kind": "mcq",
+   "n": 3,
+   "stem": "What is a major problem with storing the same machine location in several separate files?",
+   "options": [
+    "It guarantees better accuracy",
+    "It removes all duplication",
+    "It makes every query automatic",
+    "Copies may become inconsistent"
+   ],
+   "correct": 3,
+   "key": "Inconsistent copies",
+   "key_letter": "D",
+   "page": 73,
+   "pages": "pp. 72–78",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 15,
+   "global_page": 140
+  },
+  {
+   "lecture": "l3",
+   "kind": "mcq",
+   "n": 4,
+   "stem": "What is the main role of a DBMS?",
+   "options": [
+    "Manage the creation, use and maintenance of databases",
+    "Replace all input devices",
+    "Measure physical values directly",
+    "Design computer processors"
+   ],
+   "correct": 0,
+   "key": "Manage databases",
+   "key_letter": "A",
+   "page": 73,
+   "pages": "pp. 72–78",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 16,
+   "global_page": 140
+  },
+  {
+   "lecture": "l3",
+   "kind": "mcq",
+   "n": 5,
+   "stem": "Which database structure organizes data in rows and columns?",
+   "options": [
+    "Hierarchical only",
+    "Relational",
+    "Network only",
+    "Sequential file"
+   ],
+   "correct": 1,
+   "key": "Relational",
+   "key_letter": "B",
+   "page": 74,
+   "pages": "pp. 72–78",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 17,
+   "global_page": 141
+  },
+  {
+   "lecture": "l3",
+   "kind": "mcq",
+   "n": 6,
+   "stem": "What does a primary key do?",
+   "options": [
+    "Stores a backup copy",
+    "Formats a printed report",
+    "Uniquely identifies a record",
+    "Converts data into an image"
+   ],
+   "correct": 2,
+   "key": "Uniquely identifies a record",
+   "key_letter": "C",
+   "page": 74,
+   "pages": "pp. 72–78",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 18,
+   "global_page": 141
+  },
+  {
+   "lecture": "l3",
+   "kind": "mcq",
+   "n": 7,
+   "stem": "What is a data warehouse mainly used for?",
+   "options": [
+    "Typing individual records only",
+    "Replacing all operational systems",
+    "Controlling a sensor directly",
+    "Bringing together data for analysis"
+   ],
+   "correct": 3,
+   "key": "Analysis across sources",
+   "key_letter": "D",
+   "page": 75,
+   "pages": "pp. 72–78",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 19,
+   "global_page": 142
+  },
+  {
+   "lecture": "l3",
+   "kind": "mcq",
+   "n": 8,
+   "stem": "Which example best describes data mining?",
+   "options": [
+    "Searching for patterns in machine failure records",
+    "Renaming a file",
+    "Adding a keyboard",
+    "Formatting a table heading"
+   ],
+   "correct": 0,
+   "key": "Find patterns",
+   "key_letter": "A",
+   "page": 75,
+   "pages": "pp. 72–78",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 20,
+   "global_page": 142
+  },
+  {
+   "lecture": "l3",
+   "kind": "mcq",
+   "n": 9,
+   "stem": "What is metadata?",
+   "options": [
+    "Duplicate data",
+    "Data about data",
+    "A type of input device",
+    "A computer processor"
+   ],
+   "correct": 1,
+   "key": "Data about data",
+   "key_letter": "B",
+   "page": 76,
+   "pages": "pp. 72–78",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 21,
+   "global_page": 143
+  },
+  {
+   "lecture": "l3",
+   "kind": "mcq",
+   "n": 10,
+   "stem": "Which is an example of a foreign key?",
+   "options": [
+    "A report title",
+    "A unit label only",
+    "Sensor_ID in a measurement table that refers to the SENSOR table",
+    "A database file name"
+   ],
+   "correct": 2,
+   "key": "Links tables",
+   "key_letter": "C",
+   "page": 76,
+   "pages": "pp. 72–78",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 22,
+   "global_page": 143
+  },
+  {
+   "lecture": "l3",
+   "kind": "mcq",
+   "n": 11,
+   "stem": "What does a data dictionary describe?",
+   "options": [
+    "Only the number of computers in a lab",
+    "How to print slides",
+    "The speed of a CPU",
+    "Data fields, meanings, formats and rules"
+   ],
+   "correct": 3,
+   "key": "Describes data definitions",
+   "key_letter": "D",
+   "page": 77,
+   "pages": "pp. 72–78",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 23,
+   "global_page": 144
+  },
+  {
+   "lecture": "l3",
+   "kind": "mcq",
+   "n": 12,
+   "stem": "Why is data quality important in engineering?",
+   "options": [
+    "Incorrect or unclear measurements can lead to poor decisions",
+    "It makes units unnecessary",
+    "It guarantees every prediction is correct",
+    "It removes the need for testing"
+   ],
+   "correct": 0,
+   "key": "Supports reliable decisions",
+   "key_letter": "A",
+   "page": 77,
+   "pages": "pp. 72–78",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 24,
+   "global_page": 144
+  },
+  {
+   "lecture": "num",
+   "kind": "quiz",
+   "n": 1,
+   "stem": "Base of binary?",
+   "options": [
+    "2",
+    "8",
+    "10",
+    "16"
+   ],
+   "correct": 0,
+   "key": "base 2.",
+   "key_letter": "A",
+   "page": 34,
+   "pages": "pp. 34–36",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 25,
+   "global_page": 183
+  },
+  {
+   "lecture": "num",
+   "kind": "quiz",
+   "n": 2,
+   "stem": "Bits in a byte?",
+   "options": [
+    "4",
+    "8",
+    "16",
+    "32"
+   ],
+   "correct": 1,
+   "key": "8 bits per byte.",
+   "key_letter": "B",
+   "page": 34,
+   "pages": "pp. 34–36",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 26,
+   "global_page": 183
+  },
+  {
+   "lecture": "num",
+   "kind": "quiz",
+   "n": 3,
+   "stem": "1010₂ in decimal?",
+   "options": [
+    "8",
+    "9",
+    "10",
+    "12"
+   ],
+   "correct": 2,
+   "key": "8+2=10.",
+   "key_letter": "C",
+   "page": 34,
+   "pages": "pp. 34–36",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 27,
+   "global_page": 183
+  },
+  {
+   "lecture": "num",
+   "kind": "quiz",
+   "n": 4,
+   "stem": "Hex digits after 9?",
+   "options": [
+    "G–L",
+    "A–F",
+    "0–5",
+    "X–Z"
+   ],
+   "correct": 1,
+   "key": "A–F represent 10– 15.",
+   "key_letter": "B",
+   "page": 34,
+   "pages": "pp. 34–36",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 28,
+   "global_page": 183
+  },
+  {
+   "lecture": "num",
+   "kind": "quiz",
+   "n": 5,
+   "stem": "Values with 7 bits?",
+   "options": [
+    "7",
+    "64",
+    "128",
+    "256"
+   ],
+   "correct": 2,
+   "key": "2⁷=128 values.",
+   "key_letter": "C",
+   "page": 34,
+   "pages": "pp. 34–36",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 29,
+   "global_page": 183
+  },
+  {
+   "lecture": "num",
+   "kind": "quiz",
+   "n": 6,
+   "stem": "Standard ASCII bits?",
+   "options": [
+    "4",
+    "7",
+    "8",
+    "16"
+   ],
+   "correct": 1,
+   "key": "standard ASCII is 7-bit.",
+   "key_letter": "B",
+   "page": 34,
+   "pages": "pp. 34–36",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 30,
+   "global_page": 183
+  },
+  {
+   "lecture": "num",
+   "kind": "quiz",
+   "n": 7,
+   "stem": "ASCII 65?",
+   "options": [
+    "a",
+    "A",
+    "0",
+    "Space"
+   ],
+   "correct": 1,
+   "key": "ASCII 65 is A.",
+   "key_letter": "B",
+   "page": 34,
+   "pages": "pp. 34–36",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 31,
+   "global_page": 183
+  },
+  {
+   "lecture": "num",
+   "kind": "quiz",
+   "n": 8,
+   "stem": "Unicode encoding?",
+   "options": [
+    "UTF-8",
+    "GHz",
+    "MIPS",
+    "OCR"
+   ],
+   "correct": 0,
+   "key": "UTF-8 encodes Unicode text.",
+   "key_letter": "A",
+   "page": 34,
+   "pages": "pp. 34–36",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 32,
+   "global_page": 183
+  },
+  {
+   "lecture": "num",
+   "kind": "quiz",
+   "n": 9,
+   "stem": "1111₂ in decimal?",
+   "options": [
+    "7",
+    "8",
+    "14",
+    "15"
+   ],
+   "correct": 3,
+   "key": "8+4+2+1=15.",
+   "key_letter": "D",
+   "page": 34,
+   "pages": "pp. 34–36",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 33,
+   "global_page": 183
+  },
+  {
+   "lecture": "num",
+   "kind": "quiz",
+   "n": 10,
+   "stem": "Binary groups for hex?",
+   "options": [
+    "2",
+    "3",
+    "4",
+    "8"
+   ],
+   "correct": 2,
+   "key": "4 bits per hex digit.",
+   "key_letter": "C",
+   "page": 34,
+   "pages": "pp. 34–36",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 34,
+   "global_page": 183
+  },
+  {
+   "lecture": "num",
+   "kind": "quiz",
+   "n": 11,
+   "stem": "Correct statement?",
+   "options": [
+    "ASCII covers all scripts.",
+    "ASCII maps characters to codes.",
+    "Unicode is CPU speed.",
+    "Bit is 8 bytes."
+   ],
+   "correct": 1,
+   "key": "ASCII maps characters to codes.",
+   "key_letter": "B",
+   "page": 34,
+   "pages": "pp. 34–36",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 35,
+   "global_page": 183
+  },
+  {
+   "lecture": "num",
+   "kind": "quiz",
+   "n": 12,
+   "stem": "25₁₀ in binary?",
+   "options": [
+    "11001",
+    "10101",
+    "11100",
+    "10011"
+   ],
+   "correct": 0,
+   "key": "25=16+8+1=11001₂.",
+   "key_letter": "A",
+   "page": 34,
+   "pages": "pp. 34–36",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 36,
+   "global_page": 183
+  },
+  {
+   "lecture": "num",
+   "kind": "quiz",
+   "n": 13,
+   "stem": "Unsigned values in 8 bits?",
+   "options": [
+    "8",
+    "128",
+    "255",
+    "256"
+   ],
+   "correct": 3,
+   "key": "2⁸=256 values.",
+   "key_letter": "D",
+   "page": 34,
+   "pages": "pp. 34–36",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 37,
+   "global_page": 183
+  },
+  {
+   "lecture": "num",
+   "kind": "quiz",
+   "n": 14,
+   "stem": "Digits 0–7?",
+   "options": [
+    "Binary",
+    "Octal",
+    "Decimal",
+    "Hex"
+   ],
+   "correct": 1,
+   "key": "octal uses 0–7.",
+   "key_letter": "B",
+   "page": 34,
+   "pages": "pp. 34–36",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 38,
+   "global_page": 183
+  },
+  {
+   "lecture": "num",
+   "kind": "quiz",
+   "n": 15,
+   "stem": "Character encoding?",
+   "options": [
+    "maps characters to numeric codes",
+    "increases clock speed",
+    "stores only pictures",
+    "replaces OS"
+   ],
+   "correct": 0,
+   "key": "encoding maps characters to code values.",
+   "key_letter": "A",
+   "page": 34,
+   "pages": "pp. 34–36",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 39,
+   "global_page": 183
+  },
+  {
+   "lecture": "num",
+   "kind": "guided",
+   "n": 1,
+   "stem": "Convert 101101₂ to decimal.",
+   "options": [],
+   "correct": null,
+   "key": "",
+   "key_letter": "",
+   "page": 31,
+   "pages": "pp. 31–33",
+   "part": "A",
+   "answer": "101101₂ = 45₁₀",
+   "letters": [],
+   "method": "Binary→decimal: add active powers of 2. Decimal→binary: repeated division or powers of 2. Hex→decimal: powers of 16. Binary→octal: groups of 3. Binary→hex: groups of 4.",
+   "gid": 40,
+   "global_page": 180
+  },
+  {
+   "lecture": "num",
+   "kind": "guided",
+   "n": 2,
+   "stem": "Convert 37₁₀ to binary.",
+   "options": [],
+   "correct": null,
+   "key": "",
+   "key_letter": "",
+   "page": 31,
+   "pages": "pp. 31–33",
+   "part": "A",
+   "answer": "37₁₀ = 100101₂",
+   "letters": [],
+   "method": "Binary→decimal: add active powers of 2. Decimal→binary: repeated division or powers of 2. Hex→decimal: powers of 16. Binary→octal: groups of 3. Binary→hex: groups of 4.",
+   "gid": 41,
+   "global_page": 180
+  },
+  {
+   "lecture": "num",
+   "kind": "guided",
+   "n": 3,
+   "stem": "Convert 7B₁₆ to decimal.",
+   "options": [],
+   "correct": null,
+   "key": "",
+   "key_letter": "",
+   "page": 31,
+   "pages": "pp. 31–33",
+   "part": "A",
+   "answer": "7B₁₆ = 7×16 + 11 = 123₁₀",
+   "letters": [],
+   "method": "Binary→decimal: add active powers of 2. Decimal→binary: repeated division or powers of 2. Hex→decimal: powers of 16. Binary→octal: groups of 3. Binary→hex: groups of 4.",
+   "gid": 42,
+   "global_page": 180
+  },
+  {
+   "lecture": "num",
+   "kind": "guided",
+   "n": 4,
+   "stem": "Convert 110111₂ to octal.",
+   "options": [],
+   "correct": null,
+   "key": "",
+   "key_letter": "",
+   "page": 31,
+   "pages": "pp. 31–33",
+   "part": "A",
+   "answer": "110111₂ = 67₈",
+   "letters": [],
+   "method": "Binary→decimal: add active powers of 2. Decimal→binary: repeated division or powers of 2. Hex→decimal: powers of 16. Binary→octal: groups of 3. Binary→hex: groups of 4.",
+   "gid": 43,
+   "global_page": 180
+  },
+  {
+   "lecture": "num",
+   "kind": "guided",
+   "n": 5,
+   "stem": "Convert 10101111₂ to hexadecimal.",
+   "options": [],
+   "correct": null,
+   "key": "",
+   "key_letter": "",
+   "page": 31,
+   "pages": "pp. 31–33",
+   "part": "A",
+   "answer": "10101111₂ = AF₁₆",
+   "letters": [],
+   "method": "Binary→decimal: add active powers of 2. Decimal→binary: repeated division or powers of 2. Hex→decimal: powers of 16. Binary→octal: groups of 3. Binary→hex: groups of 4.",
+   "gid": 44,
+   "global_page": 180
+  },
+  {
+   "lecture": "num",
+   "kind": "guided",
+   "n": 6,
+   "stem": "Give decimal ASCII codes for A and a.",
+   "options": [],
+   "correct": null,
+   "key": "",
+   "key_letter": "",
+   "page": 31,
+   "pages": "pp. 31–33",
+   "part": "B",
+   "answer": "A=65; a=97.",
+   "letters": [],
+   "method": "Binary→decimal: add active powers of 2. Decimal→binary: repeated division or powers of 2. Hex→decimal: powers of 16. Binary→octal: groups of 3. Binary→hex: groups of 4.",
+   "gid": 45,
+   "global_page": 180
+  },
+  {
+   "lecture": "num",
+   "kind": "guided",
+   "n": 7,
+   "stem": "Write ASCII A as 8-bit binary.",
+   "options": [],
+   "correct": null,
+   "key": "",
+   "key_letter": "",
+   "page": 31,
+   "pages": "pp. 31–33",
+   "part": "B",
+   "answer": "A = 01000001 (8-bit).",
+   "letters": [],
+   "method": "Binary→decimal: add active powers of 2. Decimal→binary: repeated division or powers of 2. Hex→decimal: powers of 16. Binary→octal: groups of 3. Binary→hex: groups of 4.",
+   "gid": 46,
+   "global_page": 180
+  },
+  {
+   "lecture": "num",
+   "kind": "guided",
+   "n": 8,
+   "stem": "Explain one difference between ASCII and Unicode.",
+   "options": [],
+   "correct": null,
+   "key": "",
+   "key_letter": "",
+   "page": 31,
+   "pages": "pp. 31–33",
+   "part": "B",
+   "answer": "ASCII is a limited 7-bit standard; Unicode covers many writing systems.",
+   "letters": [],
+   "method": "Binary→decimal: add active powers of 2. Decimal→binary: repeated division or powers of 2. Hex→decimal: powers of 16. Binary→octal: groups of 3. Binary→hex: groups of 4.",
+   "gid": 47,
+   "global_page": 180
+  },
+  {
+   "lecture": "num",
+   "kind": "guided",
+   "n": 9,
+   "stem": "How many unsigned values can 8 bits represent?",
+   "options": [],
+   "correct": null,
+   "key": "",
+   "key_letter": "",
+   "page": 31,
+   "pages": "pp. 31–33",
+   "part": "B",
+   "answer": "2⁸ = 256 values (0–255).",
+   "letters": [],
+   "method": "Binary→decimal: add active powers of 2. Decimal→binary: repeated division or powers of 2. Hex→decimal: powers of 16. Binary→octal: groups of 3. Binary→hex: groups of 4.",
+   "gid": 48,
+   "global_page": 180
+  },
+  {
+   "lecture": "num",
+   "kind": "guided",
+   "n": 10,
+   "stem": "Give one engineering use of binary.",
+   "options": [],
+   "correct": null,
+   "key": "",
+   "key_letter": "",
+   "page": 31,
+   "pages": "pp. 31–33",
+   "part": "B",
+   "answer": "Examples: sensor readings, embedded controllers, communication or file storage.",
+   "letters": [],
+   "method": "Binary→decimal: add active powers of 2. Decimal→binary: repeated division or powers of 2. Hex→decimal: powers of 16. Binary→octal: groups of 3. Binary→hex: groups of 4.",
+   "gid": 49,
+   "global_page": 180
+  },
+  {
+   "lecture": "l10",
+   "kind": "mcq",
+   "n": 1,
+   "stem": "What does print() do?",
+   "options": [
+    "Stores a file permanently",
+    "Displays information in the output",
+    "Repeats a loop",
+    "Defines a function"
+   ],
+   "correct": 1,
+   "key": "Displays information",
+   "key_letter": "B",
+   "page": 32,
+   "pages": "pp. 32–38",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 50,
+   "global_page": 219
+  },
+  {
+   "lecture": "l10",
+   "kind": "mcq",
+   "n": 2,
+   "stem": "Which line assigns the value 25 to a variable named temperature?",
+   "options": [
+    "temperature == 25",
+    "25 = temperature",
+    "temperature = 25",
+    "print temperature 25"
+   ],
+   "correct": 2,
+   "key": "temperature = 25",
+   "key_letter": "C",
+   "page": 32,
+   "pages": "pp. 32–38",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 51,
+   "global_page": 219
+  },
+  {
+   "lecture": "l10",
+   "kind": "mcq",
+   "n": 3,
+   "stem": "Which data type is most suitable for the value 18.6?",
+   "options": [
+    "float",
+    "bool",
+    "str only",
+    "int only"
+   ],
+   "correct": 0,
+   "key": "float",
+   "key_letter": "A",
+   "page": 33,
+   "pages": "pp. 32–38",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 52,
+   "global_page": 220
+  },
+  {
+   "lecture": "l10",
+   "kind": "mcq",
+   "n": 4,
+   "stem": "What does input() normally return?",
+   "options": [
+    "A list",
+    "A decimal number automatically",
+    "A Boolean value",
+    "Text (a string)"
+   ],
+   "correct": 3,
+   "key": "input returns text",
+   "key_letter": "D",
+   "page": 33,
+   "pages": "pp. 32–38",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 53,
+   "global_page": 220
+  },
+  {
+   "lecture": "l10",
+   "kind": "mcq",
+   "n": 5,
+   "stem": "What does == test?",
+   "options": [
+    "Assigns a value",
+    "Compares whether values are equal",
+    "Starts a loop",
+    "Converts text to a number"
+   ],
+   "correct": 1,
+   "key": "Compares equality",
+   "key_letter": "B",
+   "page": 34,
+   "pages": "pp. 32–38",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 54,
+   "global_page": 221
+  },
+  {
+   "lecture": "l10",
+   "kind": "mcq",
+   "n": 6,
+   "stem": "Which keyword is used to make a decision based on a condition?",
+   "options": [
+    "for",
+    "def",
+    "if",
+    "return"
+   ],
+   "correct": 2,
+   "key": "if",
+   "key_letter": "C",
+   "page": 34,
+   "pages": "pp. 32–38",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 55,
+   "global_page": 221
+  },
+  {
+   "lecture": "l10",
+   "kind": "mcq",
+   "n": 7,
+   "stem": "What values are produced by range(3) in a simple for loop?",
+   "options": [
+    "1, 2, 3",
+    "0, 1, 2",
+    "0, 1, 2, 3",
+    "3 only"
+   ],
+   "correct": 1,
+   "key": "0, 1, 2",
+   "key_letter": "B",
+   "page": 35,
+   "pages": "pp. 32–38",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 56,
+   "global_page": 222
+  },
+  {
+   "lecture": "l10",
+   "kind": "mcq",
+   "n": 8,
+   "stem": "What is the index of the first item in a Python list?",
+   "options": [
+    "0",
+    "1",
+    "-1 only",
+    "The list length"
+   ],
+   "correct": 0,
+   "key": "Index 0",
+   "key_letter": "A",
+   "page": 35,
+   "pages": "pp. 32–38",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 57,
+   "global_page": 222
+  },
+  {
+   "lecture": "l10",
+   "kind": "mcq",
+   "n": 9,
+   "stem": "Which structure is useful for processing several sensor readings?",
+   "options": [
+    "A comment",
+    "A quotation mark",
+    "A list and a loop",
+    "A single print statement only"
+   ],
+   "correct": 2,
+   "key": "List and loop",
+   "key_letter": "C",
+   "page": 36,
+   "pages": "pp. 32–38",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 58,
+   "global_page": 223
+  },
+  {
+   "lecture": "l10",
+   "kind": "mcq",
+   "n": 10,
+   "stem": "What is a logic error?",
+   "options": [
+    "A missing closing bracket",
+    "A misspelled variable name that stops execution",
+    "An unsupported data type operation",
+    "A program runs but gives the wrong result"
+   ],
+   "correct": 3,
+   "key": "Runs but wrong result",
+   "key_letter": "D",
+   "page": 36,
+   "pages": "pp. 32–38",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 59,
+   "global_page": 223
+  },
+  {
+   "lecture": "l10",
+   "kind": "mcq",
+   "n": 11,
+   "stem": "What does float() do with suitable numeric text such as '3.5'?",
+   "options": [
+    "Converts it to a decimal number",
+    "Prints it without conversion",
+    "Creates a loop",
+    "Converts it to True"
+   ],
+   "correct": 0,
+   "key": "Converts to float",
+   "key_letter": "A",
+   "page": 37,
+   "pages": "pp. 32–38",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 60,
+   "global_page": 224
+  },
+  {
+   "lecture": "l10",
+   "kind": "mcq",
+   "n": 12,
+   "stem": "What does return do in a function?",
+   "options": [
+    "Ends the entire computer session",
+    "Sends a result back to the caller",
+    "Repeats the function forever",
+    "Converts all values to text"
+   ],
+   "correct": 1,
+   "key": "Sends back a result",
+   "key_letter": "B",
+   "page": 37,
+   "pages": "pp. 32–38",
+   "part": null,
+   "answer": "",
+   "letters": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "gid": 61,
+   "global_page": 224
+  }
+ ],
+ "activities": [
+  {
+   "lecture": "l1",
+   "page": 21,
+   "title": "Activity 1 — 10 min",
+   "lines": [
+    "In pairs, identify 3 information systems you use at university.",
+    "For each: people, hardware, software, data, networks.",
+    "What information does each system produce?"
+   ]
+  },
+  {
+   "lecture": "l1",
+   "page": 21,
+   "title": "Activity 2 — 10 min",
+   "lines": [
+    "Choose one engineering system.",
+    "Identify its input, processing, output, storage and control.",
+    "Share one example with the class."
+   ]
+  },
+  {
+   "lecture": "l1",
+   "page": 21,
+   "title": "Activity 3 — 10 min: “IS or IT?” — classify 5 examples and explain your reasoning.",
+   "lines": []
+  },
+  {
+   "lecture": "l2",
+   "page": 33,
+   "title": "Activity A — choose the tool (15 min)",
+   "lines": [
+    "In small groups, choose a suitable programming tool for:",
+    "1. A robot controller.",
+    "2. Engineering data analysis.",
+    "3. Numerical simulation.",
+    "Give one reason for each choice."
+   ]
+  },
+  {
+   "lecture": "l2",
+   "page": 33,
+   "title": "Activity B — follow the system (15 min)",
+   "lines": [
+    "For a temperature-control system, identify:",
+    "• Input device",
+    "• Processing component",
+    "• Memory or storage needed",
+    "• Software involved",
+    "• Output or action",
+    "Explain how the parts work together."
+   ]
+  },
+  {
+   "lecture": "l2",
+   "page": 33,
+   "title": "Key points",
+   "lines": [
+    "• You need to keep a large CAD project when the computer is turned off. What resource?",
+    "• A running simulation needs temporary working space. What resource?",
+    "• A device measures temperature and sends the value to a computer. What hardware role?",
+    "• What software manages files, memory, devices and applications?",
+    "• Which is an application: Windows, RAM, MATLAB or CPU?"
+   ]
+  },
+  {
+   "lecture": "l3",
+   "page": 70,
+   "title": "Activity A — model the data (15 min)",
+   "lines": [
+    "In small groups, design a simple database for a university engineering laboratory.",
+    "Identify 3 entities, 3–5 attributes for each, and at least one relationship."
+   ]
+  },
+  {
+   "lecture": "l3",
+   "page": 70,
+   "title": "Activity B — spot the file problem (15 min)",
+   "lines": [
+    "A machine’s location is copied into four separate files. The machine moves, but only two files are updated.",
+    "Explain the problem and propose a database-based solution."
+   ]
+  },
+  {
+   "lecture": "l3",
+   "page": 70,
+   "title": "Key points",
+   "lines": [
+    "• Put these in order from smallest to largest: database, character, file, field, record.",
+    "• Give one example of an entity and two attributes.",
+    "• Name two problems caused by keeping separate files.",
+    "• What does a DBMS do?",
+    "• Explain the difference between a data warehouse and a data mart.",
+    "• Why is a primary key useful?"
+   ]
+  },
+  {
+   "lecture": "l10",
+   "page": 30,
+   "title": "Activity 1 — predict the output (10 min)",
+   "lines": [
+    "Without running it, predict the output:",
+    "`x = 4 print(x + 3) print(x * 2)`",
+    "Then run the code and compare."
+   ]
+  },
+  {
+   "lecture": "l10",
+   "page": 30,
+   "title": "Activity 2 — engineering task (20 min)",
+   "lines": [
+    "Write a short program that stores three sensor readings in a list and prints each reading.",
+    "Extension: calculate and display the average.",
+    "Work in pairs and explain each line."
+   ]
+  },
+  {
+   "lecture": "l10",
+   "page": 30,
+   "title": "Key points",
+   "lines": [
+    "• Write a program that displays your name and engineering programme.",
+    "• Store a length in metres and display it in centimetres.",
+    "• Ask the user for a temperature and convert it to Fahrenheit.",
+    "• Use if/else to classify a measurement as above or below a chosen limit.",
+    "• Create a list of three measurements and print each one using a loop."
+   ]
+  }
+ ],
+ "pages": [
+  {
+   "page_id": "l1",
+   "pages": [
+    {
+     "no": 1,
+     "global_no": 1,
+     "kind": "cover",
+     "title": "Introduction to Information Systems",
+     "sub": "",
+     "lines": 3
+    },
+    {
+     "no": 2,
+     "global_no": 2,
+     "kind": "slide",
+     "title": "Why are we studying Information Systems?",
+     "sub": "From using technology to understanding how information systems work",
+     "lines": 6
+    },
+    {
+     "no": 3,
+     "global_no": 3,
+     "kind": "outcomes",
+     "title": "By the end of this lecture, you should be able to…",
+     "sub": "Define an Information System (IS) and distinguish IS from Information Technology (IT).",
+     "lines": 7
+    },
+    {
+     "no": 4,
+     "global_no": 4,
+     "kind": "slide",
+     "title": "What is a System?",
+     "sub": "A foundation for understanding Information Systems",
+     "lines": 9
+    },
+    {
+     "no": 5,
+     "global_no": 5,
+     "kind": "slide",
+     "title": "Think of an Engineering System",
+     "sub": "The same system logic appears in both physical and information systems",
+     "lines": 10
+    },
+    {
+     "no": 6,
+     "global_no": 6,
+     "kind": "slide",
+     "title": "What is an Information System?",
+     "sub": "",
+     "lines": 3
+    },
+    {
+     "no": 7,
+     "global_no": 7,
+     "kind": "slide",
+     "title": "Information Systems vs. Information Technology",
+     "sub": "Information Systems (IS)",
+     "lines": 11
+    },
+    {
+     "no": 8,
+     "global_no": 8,
+     "kind": "slide",
+     "title": "The Five Major IS Resources",
+     "sub": "PEOPLE",
+     "lines": 11
+    },
+    {
+     "no": 9,
+     "global_no": 9,
+     "kind": "slide",
+     "title": "What does an Information System do?",
+     "sub": "1",
+     "lines": 13
+    },
+    {
+     "no": 10,
+     "global_no": 10,
+     "kind": "slide",
+     "title": "Why should an Engineer understand Information Systems?",
+     "sub": "Engineering work is increasingly connected to digital information and networked systems.",
+     "lines": 5
+    },
+    {
+     "no": 11,
+     "global_no": 11,
+     "kind": "slide",
+     "title": "Major Types of Information Systems",
+     "sub": "Operations Support Systems",
+     "lines": 11
+    },
+    {
+     "no": 12,
+     "global_no": 12,
+     "kind": "slide",
+     "title": "Operations Support Systems: Transaction Processing Systems (TPS)",
+     "sub": "",
+     "lines": 4
+    },
+    {
+     "no": 13,
+     "global_no": 13,
+     "kind": "slide",
+     "title": "Operations Support Systems: Transaction Processing Systems (TPS)",
+     "sub": "",
+     "lines": 5
+    },
+    {
+     "no": 14,
+     "global_no": 14,
+     "kind": "slide",
+     "title": "Operations Support Systems: Process Control Systems (PCS)",
+     "sub": "",
+     "lines": 3
+    },
+    {
+     "no": 15,
+     "global_no": 15,
+     "kind": "slide",
+     "title": "Operations Support Systems: Process Control Systems (PCS)",
+     "sub": "",
+     "lines": 4
+    },
+    {
+     "no": 16,
+     "global_no": 16,
+     "kind": "slide",
+     "title": "Management Support Systems: Management Information Systems (MIS)",
+     "sub": "",
+     "lines": 8
+    },
+    {
+     "no": 17,
+     "global_no": 17,
+     "kind": "slide",
+     "title": "Management Support Systems: Management Information Systems (MIS)",
+     "sub": "",
+     "lines": 1
+    },
+    {
+     "no": 18,
+     "global_no": 18,
+     "kind": "slide",
+     "title": "Information Systems in Engineering",
+     "sub": "Manufacturing: production monitoring, quality data, inventory and process control.",
+     "lines": 6
+    },
+    {
+     "no": 19,
+     "global_no": 19,
+     "kind": "slide",
+     "title": "Ethical Challenges in Information Technology",
+     "sub": "Privacy — who should have access to personal or organizational data?",
+     "lines": 6
+    },
+    {
+     "no": 20,
+     "global_no": 20,
+     "kind": "slide",
+     "title": "Lecture Summary",
+     "sub": "An Information System combines people, hardware, software, data, and networks.",
+     "lines": 6
+    },
+    {
+     "no": 21,
+     "global_no": 21,
+     "kind": "activity",
+     "title": "30-Minute Interaction & Practice",
+     "sub": "Move from concepts to examples",
+     "lines": 11
+    },
+    {
+     "no": 22,
+     "global_no": 22,
+     "kind": "slide",
+     "title": "Quick Practice: What Is the Information System?",
+     "sub": "University LMS",
+     "lines": 7
+    },
+    {
+     "no": 23,
+     "global_no": 23,
+     "kind": "slide",
+     "title": "Exit Ticket",
+     "sub": "Answer individually in 2–3 minutes",
+     "lines": 7
+    },
+    {
+     "no": 24,
+     "global_no": 24,
+     "kind": "slide",
+     "title": "Next Lecture",
+     "sub": "Computer Hardware & Software",
+     "lines": 3
+    }
+   ]
+  },
+  {
+   "page_id": "l2",
+   "pages": [
+    {
+     "no": 1,
+     "global_no": 25,
+     "kind": "cover",
+     "title": "Computer Hardware,",
+     "sub": "Software & Architecture",
+     "lines": 4
+    },
+    {
+     "no": 2,
+     "global_no": 26,
+     "kind": "outcomes",
+     "title": "By the end of this lecture, you should be able to…",
+     "sub": "Learning outcomes",
+     "lines": 9
+    },
+    {
+     "no": 3,
+     "global_no": 27,
+     "kind": "slide",
+     "title": "Why do engineers need to understand hardware & software?",
+     "sub": "From physical components to the software that makes engineering systems work",
+     "lines": 12
+    },
+    {
+     "no": 4,
+     "global_no": 28,
+     "kind": "slide",
+     "title": "What is a computer system?",
+     "sub": "A computer system is more than a CPU.",
+     "lines": 8
+    },
+    {
+     "no": 5,
+     "global_no": 29,
+     "kind": "slide",
+     "title": "A computer system: the main functional groups",
+     "sub": "Control coordinates and manages the system",
+     "lines": 19
+    },
+    {
+     "no": 6,
+     "global_no": 30,
+     "kind": "slide",
+     "title": "Computer architecture and computer organization",
+     "sub": "Architecture describes what the system supports; organization describes how it is built.",
+     "lines": 14
+    },
+    {
+     "no": 7,
+     "global_no": 31,
+     "kind": "slide",
+     "title": "The main components inside a computer",
+     "sub": "CPU",
+     "lines": 9
+    },
+    {
+     "no": 8,
+     "global_no": 32,
+     "kind": "slide",
+     "title": "Inside the CPU: the processing core",
+     "sub": "The CPU depends on memory, storage, input/output devices and software.",
+     "lines": 12
+    },
+    {
+     "no": 9,
+     "global_no": 33,
+     "kind": "slide",
+     "title": "Inside the CPU: Arithmetic Logic Unit (ALU)",
+     "sub": "The ALU performs arithmetic and logical operations required by instructions.",
+     "lines": 8
+    },
+    {
+     "no": 10,
+     "global_no": 34,
+     "kind": "slide",
+     "title": "Inside the CPU: Control Unit (CU)",
+     "sub": "Fetch → interpret/decode → control → execute",
+     "lines": 11
+    },
+    {
+     "no": 11,
+     "global_no": 35,
+     "kind": "slide",
+     "title": "Registers and cache: keeping information close",
+     "sub": "Both help the CPU access useful information quickly.",
+     "lines": 11
+    },
+    {
+     "no": 12,
+     "global_no": 36,
+     "kind": "slide",
+     "title": "The instruction cycle",
+     "sub": "The cycle repeats while a program runs.",
+     "lines": 10
+    },
+    {
+     "no": 13,
+     "global_no": 37,
+     "kind": "slide",
+     "title": "Buses: moving data and signals",
+     "sub": "A bus is a communication path inside a computer.",
+     "lines": 10
+    },
+    {
+     "no": 14,
+     "global_no": 38,
+     "kind": "slide",
+     "title": "Memory vs. storage",
+     "sub": "Think: active working space versus long-term retention.",
+     "lines": 12
+    },
+    {
+     "no": 15,
+     "global_no": 39,
+     "kind": "slide",
+     "title": "Memory hierarchy: speed, size and cost",
+     "sub": "In general, moving closer to the CPU means faster access and smaller capacity.",
+     "lines": 10
+    },
+    {
+     "no": 16,
+     "global_no": 40,
+     "kind": "slide",
+     "title": "Peripherals: input, output and communication",
+     "sub": "Peripherals connect a computer to users and the wider world.",
+     "lines": 10
+    },
+    {
+     "no": 17,
+     "global_no": 41,
+     "kind": "slide",
+     "title": "Computer systems: from PCs to specialized systems",
+     "sub": "Specialized and embedded computers are designed for a specific function.",
+     "lines": 10
+    },
+    {
+     "no": 18,
+     "global_no": 42,
+     "kind": "slide",
+     "title": "Specialized and embedded computers",
+     "sub": "An embedded computer is part of a larger product or system.",
+     "lines": 12
+    },
+    {
+     "no": 19,
+     "global_no": 43,
+     "kind": "slide",
+     "title": "What affects computer performance?",
+     "sub": "Performance depends on the whole system, not one specification alone.",
+     "lines": 10
+    },
+    {
+     "no": 20,
+     "global_no": 44,
+     "kind": "slide",
+     "title": "CPU cores and multicore processing",
+     "sub": "Example: a workstation may run a simulation while managing other tasks.",
+     "lines": 9
+    },
+    {
+     "no": 21,
+     "global_no": 45,
+     "kind": "slide",
+     "title": "RISC and CISC: two instruction-set approaches",
+     "sub": "The instruction set is part of computer architecture.",
+     "lines": 9
+    },
+    {
+     "no": 22,
+     "global_no": 46,
+     "kind": "slide",
+     "title": "What is software?",
+     "sub": "Software is a set of instructions that tells hardware what to do.",
+     "lines": 8
+    },
+    {
+     "no": 23,
+     "global_no": 47,
+     "kind": "slide",
+     "title": "Common application software",
+     "sub": "GENERAL PURPOSE",
+     "lines": 9
+    },
+    {
+     "no": 24,
+     "global_no": 48,
+     "kind": "slide",
+     "title": "Operating system: the manager of the computer",
+     "sub": "Applications normally rely on the operating system to access resources.",
+     "lines": 12
+    },
+    {
+     "no": 25,
+     "global_no": 49,
+     "kind": "slide",
+     "title": "Hardware + software = a working computer system",
+     "sub": "Example: an engineering simulation needs both capable hardware and suitable software.",
+     "lines": 13
+    },
+    {
+     "no": 26,
+     "global_no": 50,
+     "kind": "slide",
+     "title": "Programming languages: why engineers need them",
+     "sub": "Examples: data analysis, embedded systems, optimization and numerical calculations.",
+     "lines": 10
+    },
+    {
+     "no": 27,
+     "global_no": 51,
+     "kind": "slide",
+     "title": "Programming languages: from machine to high-level",
+     "sub": "MACHINE LANGUAGE",
+     "lines": 9
+    },
+    {
+     "no": 28,
+     "global_no": 52,
+     "kind": "slide",
+     "title": "How programs run: translation tools",
+     "sub": "COMPILER",
+     "lines": 9
+    },
+    {
+     "no": 29,
+     "global_no": 53,
+     "kind": "slide",
+     "title": "Python, C/C++ and MATLAB",
+     "sub": "PYTHON",
+     "lines": 9
+    },
+    {
+     "no": 30,
+     "global_no": 54,
+     "kind": "slide",
+     "title": "Engineering applications: design and automation",
+     "sub": "Hardware and software work together in engineering environments.",
+     "lines": 8
+    },
+    {
+     "no": 31,
+     "global_no": 55,
+     "kind": "slide",
+     "title": "Engineering applications: data and simulation",
+     "sub": "Choose resources based on the task, data size and performance needs.",
+     "lines": 10
+    },
+    {
+     "no": 32,
+     "global_no": 56,
+     "kind": "slide",
+     "title": "Worked example: a temperature-control system",
+     "sub": "Hardware collects and acts on signals; software defines the decision logic.",
+     "lines": 10
+    },
+    {
+     "no": 33,
+     "global_no": 57,
+     "kind": "activity",
+     "title": "30-minute interaction & practice",
+     "sub": "Discuss choices and explain your reasoning.",
+     "lines": 16
+    },
+    {
+     "no": 34,
+     "global_no": 58,
+     "kind": "activity",
+     "title": "Quick practice: choose the right resource",
+     "sub": "Answer individually, then compare with a partner.",
+     "lines": 8
+    },
+    {
+     "no": 35,
+     "global_no": 59,
+     "kind": "mcq",
+     "title": "Lecture 2 Review: Multiple Choice Questions — 1.1",
+     "sub": "Choose the best answer. Do not check the answer key until the end.",
+     "lines": 14
+    },
+    {
+     "no": 36,
+     "global_no": 60,
+     "kind": "mcq",
+     "title": "Lecture 2 Review: Multiple Choice Questions — 1.2",
+     "sub": "Choose the best answer. Do not check the answer key until the end.",
+     "lines": 14
+    },
+    {
+     "no": 37,
+     "global_no": 61,
+     "kind": "mcq",
+     "title": "Lecture 2 Review: Multiple Choice Questions — 2.1",
+     "sub": "Choose the best answer. Do not check the answer key until the end.",
+     "lines": 14
+    },
+    {
+     "no": 38,
+     "global_no": 62,
+     "kind": "mcq",
+     "title": "Lecture 2 Review: Multiple Choice Questions — 2.2",
+     "sub": "Choose the best answer. Do not check the answer key until the end.",
+     "lines": 14
+    },
+    {
+     "no": 39,
+     "global_no": 63,
+     "kind": "mcq",
+     "title": "Lecture 2 Review: Multiple Choice Questions — 3.1",
+     "sub": "Choose the best answer. Do not check the answer key until the end.",
+     "lines": 14
+    },
+    {
+     "no": 40,
+     "global_no": 64,
+     "kind": "mcq",
+     "title": "Lecture 2 Review: Multiple Choice Questions — 3.2",
+     "sub": "Choose the best answer. Do not check the answer key until the end.",
+     "lines": 14
+    },
+    {
+     "no": 41,
+     "global_no": 65,
+     "kind": "mcq",
+     "title": "Lecture 2 Review: Answer Key",
+     "sub": "Check your answers after completing all 12 questions.",
+     "lines": 17
+    },
+    {
+     "no": 42,
+     "global_no": 66,
+     "kind": "summary",
+     "title": "Lecture summary",
+     "sub": "Remember the relationships, not only the component names.",
+     "lines": 10
+    },
+    {
+     "no": 43,
+     "global_no": 67,
+     "kind": "exit",
+     "title": "Exit ticket & next lecture",
+     "sub": "One-minute individual reflection",
+     "lines": 10
+    }
+   ]
+  },
+  {
+   "page_id": "l3",
+   "pages": [
+    {
+     "no": 1,
+     "global_no": 68,
+     "kind": "cover",
+     "title": "Lecture : Data Resource Management",
+     "sub": "Date : 19 / 10 / 2026",
+     "lines": 3
+    },
+    {
+     "no": 2,
+     "global_no": 69,
+     "kind": "outcomes",
+     "title": "By the end of this lecture, you should be able to…",
+     "sub": "Learning outcomes",
+     "lines": 9
+    },
+    {
+     "no": 3,
+     "global_no": 70,
+     "kind": "slide",
+     "title": "Why do we study data resource management?",
+     "sub": "Data is valuable only when it can be trusted and used.",
+     "lines": 10
+    },
+    {
+     "no": 4,
+     "global_no": 71,
+     "kind": "slide",
+     "title": "What is data resource management?",
+     "sub": "",
+     "lines": 9
+    },
+    {
+     "no": 5,
+     "global_no": 72,
+     "kind": "slide",
+     "title": "From raw data to useful information",
+     "sub": "Reliable decisions depend on reliable data.",
+     "lines": 12
+    },
+    {
+     "no": 6,
+     "global_no": 73,
+     "kind": "slide",
+     "title": "Logical data elements: from small to large",
+     "sub": "These concepts form a useful data hierarchy.",
+     "lines": 10
+    },
+    {
+     "no": 7,
+     "global_no": 74,
+     "kind": "visual",
+     "title": "Visual guide: logical data elements",
+     "sub": "Characters, fields, records and files form progressively larger data collections.",
+     "lines": 2
+    },
+    {
+     "no": 8,
+     "global_no": 75,
+     "kind": "slide",
+     "title": "Example: an engineering measurement record",
+     "sub": "Good structure makes measurements easier to search and compare.",
+     "lines": 12
+    },
+    {
+     "no": 9,
+     "global_no": 76,
+     "kind": "slide",
+     "title": "Entities and attributes",
+     "sub": "An entity is the thing being described; attributes describe it.",
+     "lines": 16
+    },
+    {
+     "no": 10,
+     "global_no": 77,
+     "kind": "slide",
+     "title": "Relationships: how data connects",
+     "sub": "Relationships help avoid repeating the same facts in many places.",
+     "lines": 12
+    },
+    {
+     "no": 11,
+     "global_no": 78,
+     "kind": "visual",
+     "title": "Visual guide: entities and relationships",
+     "sub": "The example shows how entities and their data can be connected.",
+     "lines": 2
+    },
+    {
+     "no": 12,
+     "global_no": 79,
+     "kind": "slide",
+     "title": "What is a database?",
+     "sub": "A database is more than a folder of unrelated files.",
+     "lines": 10
+    },
+    {
+     "no": 13,
+     "global_no": 80,
+     "kind": "slide",
+     "title": "Traditional file processing",
+     "sub": "",
+     "lines": 10
+    },
+    {
+     "no": 14,
+     "global_no": 81,
+     "kind": "visual",
+     "title": "Visual guide: traditional file processing",
+     "sub": "",
+     "lines": 2
+    },
+    {
+     "no": 15,
+     "global_no": 82,
+     "kind": "slide",
+     "title": "Problems with separate files",
+     "sub": "These are key problems highlighted in the original course material.",
+     "lines": 10
+    },
+    {
+     "no": 16,
+     "global_no": 83,
+     "kind": "slide",
+     "title": "A database management approach",
+     "sub": "A database approach can improve integration, but still needs good design and governance.",
+     "lines": 9
+    },
+    {
+     "no": 17,
+     "global_no": 84,
+     "kind": "visual",
+     "title": "Visual guide: database management approach",
+     "sub": "A DBMS provides a shared interface between applications and the database.",
+     "lines": 2
+    },
+    {
+     "no": 18,
+     "global_no": 85,
+     "kind": "slide",
+     "title": "What is a DBMS?",
+     "sub": "A DBMS is the software layer between users/applications and the database.",
+     "lines": 10
+    },
+    {
+     "no": 19,
+     "global_no": 86,
+     "kind": "slide",
+     "title": "What can a DBMS help users do?",
+     "sub": "Different DBMS products provide different tools and features.",
+     "lines": 10
+    },
+    {
+     "no": 20,
+     "global_no": 87,
+     "kind": "slide",
+     "title": "Database query vs. report",
+     "sub": "Queries retrieve selected data; reports present results for people to review.",
+     "lines": 8
+    },
+    {
+     "no": 21,
+     "global_no": 88,
+     "kind": "slide",
+     "title": "A simple query: ask a clear question",
+     "sub": "Conceptual example; no database software is required",
+     "lines": 10
+    },
+    {
+     "no": 22,
+     "global_no": 89,
+     "kind": "slide",
+     "title": "Types of databases in the source material",
+     "sub": "The original material also introduces hypermedia databases.",
+     "lines": 8
+    },
+    {
+     "no": 23,
+     "global_no": 90,
+     "kind": "slide",
+     "title": "Hypermedia databases",
+     "sub": "The central idea is that data items can be connected through links.",
+     "lines": 6
+    },
+    {
+     "no": 24,
+     "global_no": 91,
+     "kind": "visual",
+     "title": "Visual guide: hypermedia database",
+     "sub": "Web technologies connect pages and multimedia through links.",
+     "lines": 2
+    },
+    {
+     "no": 25,
+     "global_no": 92,
+     "kind": "slide",
+     "title": "Data warehouse",
+     "sub": "",
+     "lines": 6
+    },
+    {
+     "no": 26,
+     "global_no": 93,
+     "kind": "slide",
+     "title": "Data marts and data mining",
+     "sub": "Patterns can support investigation; they do not automatically prove cause and effect.",
+     "lines": 8
+    },
+    {
+     "no": 27,
+     "global_no": 94,
+     "kind": "visual",
+     "title": "Visual guide: data warehouse and data marts",
+     "sub": "A central warehouse can supply focused data marts for different departments.",
+     "lines": 2
+    },
+    {
+     "no": 28,
+     "global_no": 95,
+     "kind": "slide",
+     "title": "Data mining: engineering examples",
+     "sub": "Results depend on data quality, suitable methods and careful interpretation.",
+     "lines": 10
+    },
+    {
+     "no": 29,
+     "global_no": 96,
+     "kind": "visual",
+     "title": "Visual guide: data mining process",
+     "sub": "Data is selected and prepared before patterns are interpreted as useful knowledge.",
+     "lines": 2
+    },
+    {
+     "no": 30,
+     "global_no": 97,
+     "kind": "slide",
+     "title": "Fundamental database structures",
+     "sub": "The original material also introduces multidimensional structures for analysis.",
+     "lines": 9
+    },
+    {
+     "no": 31,
+     "global_no": 98,
+     "kind": "slide",
+     "title": "Relational tables: rows and columns",
+     "sub": "A relational database may contain several linked tables.",
+     "lines": 11
+    },
+    {
+     "no": 32,
+     "global_no": 99,
+     "kind": "visual",
+     "title": "Visual guide: relational database",
+     "sub": "Relational data is represented in tables with fields and records.",
+     "lines": 2
+    },
+    {
+     "no": 33,
+     "global_no": 100,
+     "kind": "slide",
+     "title": "Primary keys and foreign keys",
+     "sub": "Keys help link records while keeping data organized.",
+     "lines": 8
+    },
+    {
+     "no": 34,
+     "global_no": 101,
+     "kind": "slide",
+     "title": "Example: connect sensors and measurements",
+     "sub": "Sensor_ID links each measurement to the sensor that produced it.",
+     "lines": 11
+    },
+    {
+     "no": 35,
+     "global_no": 102,
+     "kind": "slide",
+     "title": "Why relationships matter",
+     "sub": "This reduces duplication and helps maintain consistent information.",
+     "lines": 6
+    },
+    {
+     "no": 36,
+     "global_no": 103,
+     "kind": "slide",
+     "title": "Database development: start with the need",
+     "sub": "A good database starts with requirements, not with creating random tables.",
+     "lines": 7
+    },
+    {
+     "no": 37,
+     "global_no": 104,
+     "kind": "slide",
+     "title": "A simple database development process",
+     "sub": "Database administrators and designers help manage these activities.",
+     "lines": 10
+    },
+    {
+     "no": 38,
+     "global_no": 105,
+     "kind": "slide",
+     "title": "Data dictionary and metadata",
+     "sub": "Clear definitions help different users interpret data consistently.",
+     "lines": 7
+    },
+    {
+     "no": 39,
+     "global_no": 106,
+     "kind": "slide",
+     "title": "Logical vs. physical views",
+     "sub": "Designers often separate the information model from the details of physical storage.",
+     "lines": 7
+    },
+    {
+     "no": 40,
+     "global_no": 107,
+     "kind": "slide",
+     "title": "Data quality: accuracy and consistency",
+     "sub": "A database cannot make poor input data trustworthy by itself.",
+     "lines": 10
+    },
+    {
+     "no": 41,
+     "global_no": 108,
+     "kind": "slide",
+     "title": "Data protection and responsible access",
+     "sub": "Reliable management includes availability, accuracy and appropriate access.",
+     "lines": 11
+    },
+    {
+     "no": 42,
+     "global_no": 109,
+     "kind": "slide",
+     "title": "Worked example: maintenance database",
+     "sub": "Organized records can support maintenance planning and operational decisions.",
+     "lines": 14
+    },
+    {
+     "no": 43,
+     "global_no": 110,
+     "kind": "slide",
+     "title": "Data resource management: original definition",
+     "sub": "Data Resource Management",
+     "lines": 7
+    },
+    {
+     "no": 44,
+     "global_no": 111,
+     "kind": "slide",
+     "title": "Logical data elements: original definitions",
+     "sub": "Basic elements",
+     "lines": 10
+    },
+    {
+     "no": 45,
+     "global_no": 112,
+     "kind": "slide",
+     "title": "Traditional file processing: full definition",
+     "sub": "Traditional file processing",
+     "lines": 8
+    },
+    {
+     "no": 46,
+     "global_no": 113,
+     "kind": "slide",
+     "title": "Database management approach: source definition",
+     "sub": "The database approach is more than placing files in one location.",
+     "lines": 9
+    },
+    {
+     "no": 47,
+     "global_no": 114,
+     "kind": "slide",
+     "title": "DBMS software components and uses",
+     "sub": "A DBMS provides tools for defining, storing, retrieving, maintaining and using data.",
+     "lines": 17
+    },
+    {
+     "no": 48,
+     "global_no": 115,
+     "kind": "visual",
+     "title": "Visual guide: DBMS software components",
+     "sub": "The source groups common DBMS tools by their functions.",
+     "lines": 2
+    },
+    {
+     "no": 49,
+     "global_no": 116,
+     "kind": "slide",
+     "title": "Database interrogation, queries and reports",
+     "sub": "",
+     "lines": 11
+    },
+    {
+     "no": 50,
+     "global_no": 117,
+     "kind": "slide",
+     "title": "Database maintenance and application development",
+     "sub": "Databases must be updated, corrected and used by applications throughout their life.",
+     "lines": 11
+    },
+    {
+     "no": 51,
+     "global_no": 118,
+     "kind": "slide",
+     "title": "Database types: original definitions",
+     "sub": "Operational and distributed databases",
+     "lines": 7
+    },
+    {
+     "no": 52,
+     "global_no": 119,
+     "kind": "slide",
+     "title": "Data warehouse, data mart and data mining: definitions",
+     "sub": "",
+     "lines": 9
+    },
+    {
+     "no": 53,
+     "global_no": 120,
+     "kind": "slide",
+     "title": "Data mining uses",
+     "sub": "The original business examples are preserved alongside engineering examples.",
+     "lines": 14
+    },
+    {
+     "no": 54,
+     "global_no": 121,
+     "kind": "slide",
+     "title": "Database structures: hierarchical, network and relational",
+     "sub": "Hierarchical and network structures",
+     "lines": 8
+    },
+    {
+     "no": 55,
+     "global_no": 122,
+     "kind": "slide",
+     "title": "Database structures: multidimensional and object-oriented",
+     "sub": "Multidimensional structure",
+     "lines": 8
+    },
+    {
+     "no": 56,
+     "global_no": 123,
+     "kind": "visual",
+     "title": "Visual guide: multidimensional database",
+     "sub": "Multidimensional structures organize information across several dimensions.",
+     "lines": 2
+    },
+    {
+     "no": 57,
+     "global_no": 124,
+     "kind": "visual",
+     "title": "Visual guide: inheritance in an object-oriented database",
+     "sub": "A specialized object can inherit attributes and operations from a more general object.",
+     "lines": 2
+    },
+    {
+     "no": 58,
+     "global_no": 125,
+     "kind": "slide",
+     "title": "Evaluation of database structures",
+     "sub": "Source evaluation",
+     "lines": 10
+    },
+    {
+     "no": 59,
+     "global_no": 126,
+     "kind": "slide",
+     "title": "Database development: DBA, data dictionary and metadata",
+     "sub": "The source identifies responsibilities and definitions used during database development.",
+     "lines": 10
+    },
+    {
+     "no": 60,
+     "global_no": 127,
+     "kind": "slide",
+     "title": "Data planning, data modeling and ER diagrams",
+     "sub": "Planning and modeling define what the database should represent before it is built.",
+     "lines": 10
+    },
+    {
+     "no": 61,
+     "global_no": 128,
+     "kind": "visual",
+     "title": "Visual guide: entity-relationship diagram",
+     "sub": "The diagram shows entities and relationships before implementation.",
+     "lines": 2
+    },
+    {
+     "no": 62,
+     "global_no": 129,
+     "kind": "slide",
+     "title": "Logical and physical database views: source definitions",
+     "sub": "",
+     "lines": 8
+    },
+    {
+     "no": 63,
+     "global_no": 130,
+     "kind": "slide",
+     "title": "Hypermedia databases: web technologies in the source diagram",
+     "sub": "Web environment",
+     "lines": 12
+    },
+    {
+     "no": 64,
+     "global_no": 131,
+     "kind": "slide",
+     "title": "Data warehouse system: source architecture",
+     "sub": "Sources and data management",
+     "lines": 12
+    },
+    {
+     "no": 65,
+     "global_no": 132,
+     "kind": "slide",
+     "title": "Data mining: process from data to knowledge",
+     "sub": "Process stages",
+     "lines": 12
+    },
+    {
+     "no": 66,
+     "global_no": 133,
+     "kind": "slide",
+     "title": "Database development process: all five source steps",
+     "sub": "Steps 1–3",
+     "lines": 11
+    },
+    {
+     "no": 67,
+     "global_no": 134,
+     "kind": "visual",
+     "title": "Visual guide: database development process",
+     "sub": "",
+     "lines": 2
+    },
+    {
+     "no": 68,
+     "global_no": 135,
+     "kind": "slide",
+     "title": "Logical user views, schema and physical data views",
+     "sub": "Logical views and schema",
+     "lines": 9
+    },
+    {
+     "no": 69,
+     "global_no": 136,
+     "kind": "visual",
+     "title": "Visual guide: logical and physical views",
+     "sub": "Logical views describe data and relationships; physical views describe storage and access.",
+     "lines": 2
+    },
+    {
+     "no": 70,
+     "global_no": 137,
+     "kind": "activity",
+     "title": "30-minute Take-home",
+     "sub": "Be ready to explain your choices to the class.",
+     "lines": 8
+    },
+    {
+     "no": 71,
+     "global_no": 138,
+     "kind": "activity",
+     "title": "Quick practice: check your understanding",
+     "sub": "Answer individually, then compare with a partner.",
+     "lines": 9
+    },
+    {
+     "no": 72,
+     "global_no": 139,
+     "kind": "mcq",
+     "title": "Lecture 3 Review: Multiple Choice — 1.1",
+     "sub": "Choose the best answer. Check the answer key only after all questions.",
+     "lines": 14
+    },
+    {
+     "no": 73,
+     "global_no": 140,
+     "kind": "mcq",
+     "title": "Lecture 3 Review: Multiple Choice — 1.2",
+     "sub": "Choose the best answer. Check the answer key only after all questions.",
+     "lines": 14
+    },
+    {
+     "no": 74,
+     "global_no": 141,
+     "kind": "mcq",
+     "title": "Lecture 3 Review: Multiple Choice — 2.1",
+     "sub": "Choose the best answer. Check the answer key only after all questions.",
+     "lines": 14
+    },
+    {
+     "no": 75,
+     "global_no": 142,
+     "kind": "mcq",
+     "title": "Lecture 3 Review: Multiple Choice — 2.2",
+     "sub": "Choose the best answer. Check the answer key only after all questions.",
+     "lines": 14
+    },
+    {
+     "no": 76,
+     "global_no": 143,
+     "kind": "mcq",
+     "title": "Lecture 3 Review: Multiple Choice — 3.1",
+     "sub": "Choose the best answer. Check the answer key only after all questions.",
+     "lines": 14
+    },
+    {
+     "no": 77,
+     "global_no": 144,
+     "kind": "mcq",
+     "title": "Lecture 3 Review: Multiple Choice — 3.2",
+     "sub": "Choose the best answer. Check the answer key only after all questions.",
+     "lines": 14
+    },
+    {
+     "no": 78,
+     "global_no": 145,
+     "kind": "mcq",
+     "title": "Lecture 3 Review: Answer Key",
+     "sub": "Check your answers after completing all 12 questions.",
+     "lines": 17
+    },
+    {
+     "no": 79,
+     "global_no": 146,
+     "kind": "summary",
+     "title": "Lecture summary",
+     "sub": "Remember the concepts and how they connect.",
+     "lines": 10
+    },
+    {
+     "no": 80,
+     "global_no": 147,
+     "kind": "exit",
+     "title": "Exit ticket & next lecture",
+     "sub": "One-minute individual reflection",
+     "lines": 8
+    },
+    {
+     "no": 81,
+     "global_no": 148,
+     "kind": "slide",
+     "title": "Useful videos",
+     "sub": "• https://www.youtube.com/watch?v=PZVIV8wC4gM",
+     "lines": 5
+    },
+    {
+     "no": 82,
+     "global_no": 149,
+     "kind": "blank",
+     "title": "",
+     "sub": "",
+     "lines": 0
+    }
+   ]
+  },
+  {
+   "page_id": "num",
+   "pages": [
+    {
+     "no": 1,
+     "global_no": 150,
+     "kind": "cover",
+     "title": "Lecture : Binary Representation, ASCII Codes and",
+     "sub": "Number Systems",
+     "lines": 4
+    },
+    {
+     "no": 2,
+     "global_no": 151,
+     "kind": "outcomes",
+     "title": "Learning outcomes",
+     "sub": "By the end of the lecture:",
+     "lines": 6
+    },
+    {
+     "no": 3,
+     "global_no": 152,
+     "kind": "slide",
+     "title": "Why computers use binary",
+     "sub": "Digital circuits can reliably represent two states.",
+     "lines": 7
+    },
+    {
+     "no": 4,
+     "global_no": 153,
+     "kind": "slide",
+     "title": "Key terms: bit, byte and word",
+     "sub": "Terms describing digital information.",
+     "lines": 9
+    },
+    {
+     "no": 5,
+     "global_no": 154,
+     "kind": "slide",
+     "title": "What is a number system?",
+     "sub": "A number system uses symbols and rules to represent quantities.",
+     "lines": 10
+    },
+    {
+     "no": 6,
+     "global_no": 155,
+     "kind": "slide",
+     "title": "Decimal system (base 10)",
+     "sub": "Decimal uses digits 0 to 9.",
+     "lines": 7
+    },
+    {
+     "no": 7,
+     "global_no": 156,
+     "kind": "slide",
+     "title": "Binary system (base 2)",
+     "sub": "Binary uses only 0 and 1.",
+     "lines": 6
+    },
+    {
+     "no": 8,
+     "global_no": 157,
+     "kind": "slide",
+     "title": "Convert binary to decimal",
+     "sub": "Multiply each bit by its place value, then add.",
+     "lines": 10
+    },
+    {
+     "no": 9,
+     "global_no": 158,
+     "kind": "slide",
+     "title": "Convert decimal to binary",
+     "sub": "Use repeated division by 2 and record remainders.",
+     "lines": 10
+    },
+    {
+     "no": 10,
+     "global_no": 159,
+     "kind": "slide",
+     "title": "Decimal to binary: place values",
+     "sub": "Build the number using powers of 2.",
+     "lines": 9
+    },
+    {
+     "no": 11,
+     "global_no": 160,
+     "kind": "slide",
+     "title": "Binary counting",
+     "sub": "Binary uses the same counting principle as decimal, but only 0 and 1.",
+     "lines": 15
+    },
+    {
+     "no": 12,
+     "global_no": 161,
+     "kind": "slide",
+     "title": "Binary addition",
+     "sub": "Learn the four basic rules.",
+     "lines": 14
+    },
+    {
+     "no": 13,
+     "global_no": 162,
+     "kind": "slide",
+     "title": "Binary fractions",
+     "sub": "Bits to the right of the binary point represent fractions.",
+     "lines": 8
+    },
+    {
+     "no": 14,
+     "global_no": 163,
+     "kind": "slide",
+     "title": "Octal system (base 8)",
+     "sub": "Octal uses digits 0 to 7.",
+     "lines": 6
+    },
+    {
+     "no": 15,
+     "global_no": 164,
+     "kind": "slide",
+     "title": "Hexadecimal system (base 16)",
+     "sub": "Hexadecimal uses 16 symbols: 0–9 and A–F.",
+     "lines": 6
+    },
+    {
+     "no": 16,
+     "global_no": 165,
+     "kind": "slide",
+     "title": "Why use hexadecimal?",
+     "sub": "Hexadecimal is a compact way to write long binary patterns.",
+     "lines": 8
+    },
+    {
+     "no": 17,
+     "global_no": 166,
+     "kind": "slide",
+     "title": "Binary and hexadecimal conversion",
+     "sub": "Group binary digits into sets of four.",
+     "lines": 8
+    },
+    {
+     "no": 18,
+     "global_no": 167,
+     "kind": "slide",
+     "title": "Binary and octal conversion",
+     "sub": "Group binary digits into sets of three.",
+     "lines": 8
+    },
+    {
+     "no": 19,
+     "global_no": 168,
+     "kind": "slide",
+     "title": "Compare four number systems",
+     "sub": "The same quantity can be represented in different bases.",
+     "lines": 9
+    },
+    {
+     "no": 20,
+     "global_no": 169,
+     "kind": "slide",
+     "title": "What is character encoding?",
+     "sub": "Computers store text as numbers, so a shared code is needed.",
+     "lines": 6
+    },
+    {
+     "no": 21,
+     "global_no": 170,
+     "kind": "slide",
+     "title": "ASCII codes",
+     "sub": "ASCII means American Standard Code for Information Interchange.",
+     "lines": 7
+    },
+    {
+     "no": 22,
+     "global_no": 171,
+     "kind": "slide",
+     "title": "ASCII examples",
+     "sub": "Each standard character has a numeric code.",
+     "lines": 8
+    },
+    {
+     "no": 23,
+     "global_no": 172,
+     "kind": "slide",
+     "title": "ASCII in binary and hexadecimal",
+     "sub": "One code can be written in different number systems.",
+     "lines": 14
+    },
+    {
+     "no": 24,
+     "global_no": 173,
+     "kind": "slide",
+     "title": "Control and printable characters",
+     "sub": "Not every ASCII code creates a visible symbol.",
+     "lines": 10
+    },
+    {
+     "no": 25,
+     "global_no": 174,
+     "kind": "slide",
+     "title": "ASCII and Unicode",
+     "sub": "ASCII cannot represent every writing system.",
+     "lines": 7
+    },
+    {
+     "no": 26,
+     "global_no": 175,
+     "kind": "slide",
+     "title": "How text becomes stored data",
+     "sub": "A message is stored as a sequence of encoded character values.",
+     "lines": 8
+    },
+    {
+     "no": 27,
+     "global_no": 176,
+     "kind": "slide",
+     "title": "Unsigned binary integers",
+     "sub": "With n bits, an unsigned number represents 0 to 2ⁿ−1.",
+     "lines": 9
+    },
+    {
+     "no": 28,
+     "global_no": 177,
+     "kind": "slide",
+     "title": "Signed integers: introduction",
+     "sub": "Computers also need ways to represent negative numbers.",
+     "lines": 8
+    },
+    {
+     "no": 29,
+     "global_no": 178,
+     "kind": "slide",
+     "title": "Binary representation in engineering",
+     "sub": "Digital systems encode physical information as bit patterns.",
+     "lines": 7
+    },
+    {
+     "no": 30,
+     "global_no": 179,
+     "kind": "slide",
+     "title": "Common mistakes",
+     "sub": "Check the base and the meaning of the bits.",
+     "lines": 7
+    },
+    {
+     "no": 31,
+     "global_no": 180,
+     "kind": "activity",
+     "title": "30-minute guided practice",
+     "sub": "Work alone first, then compare answers with a partner.",
+     "lines": 14
+    },
+    {
+     "no": 32,
+     "global_no": 181,
+     "kind": "answers",
+     "title": "Practice answers — number systems",
+     "sub": "Use the answers to check your method.",
+     "lines": 11
+    },
+    {
+     "no": 33,
+     "global_no": 182,
+     "kind": "answers",
+     "title": "Practice answers — ASCII",
+     "sub": "Review any answer you missed.",
+     "lines": 10
+    },
+    {
+     "no": 34,
+     "global_no": 183,
+     "kind": "mcq",
+     "title": "Quick quiz (1)",
+     "sub": "Choose the best answer.",
+     "lines": 12
+    },
+    {
+     "no": 35,
+     "global_no": 184,
+     "kind": "mcq",
+     "title": "Quick quiz (2)",
+     "sub": "Choose the best answer.",
+     "lines": 11
+    },
+    {
+     "no": 36,
+     "global_no": 185,
+     "kind": "mcq",
+     "title": "Quiz answer key",
+     "sub": "Answers with short explanations.",
+     "lines": 9
+    },
+    {
+     "no": 37,
+     "global_no": 186,
+     "kind": "summary",
+     "title": "Lecture summary",
+     "sub": "Key ideas to remember.",
+     "lines": 7
+    },
+    {
+     "no": 38,
+     "global_no": 187,
+     "kind": "blank",
+     "title": "",
+     "sub": "",
+     "lines": 0
+    }
+   ]
+  },
+  {
+   "page_id": "l10",
+   "pages": [
+    {
+     "no": 1,
+     "global_no": 188,
+     "kind": "cover",
+     "title": "Introduction to Python for Engineers",
+     "sub": "",
+     "lines": 3
+    },
+    {
+     "no": 2,
+     "global_no": 189,
+     "kind": "outcomes",
+     "title": "By the end of this lecture, you should be able to…",
+     "sub": "Learning outcomes",
+     "lines": 8
+    },
+    {
+     "no": 3,
+     "global_no": 190,
+     "kind": "slide",
+     "title": "Why learn Python?",
+     "sub": "Python is one useful tool—not the only language engineers need.",
+     "lines": 12
+    },
+    {
+     "no": 4,
+     "global_no": 191,
+     "kind": "slide",
+     "title": "What is Python?",
+     "sub": "Today: understand the building blocks, not advanced programming.",
+     "lines": 10
+    },
+    {
+     "no": 5,
+     "global_no": 192,
+     "kind": "slide",
+     "title": "From problem to result",
+     "sub": "Programming involves testing and improving—not only writing code.",
+     "lines": 10
+    },
+    {
+     "no": 6,
+     "global_no": 193,
+     "kind": "slide",
+     "title": "Where can you write and run Python?",
+     "sub": "The exact tool may differ; the basic Python ideas stay the same.",
+     "lines": 9
+    },
+    {
+     "no": 7,
+     "global_no": 194,
+     "kind": "slide",
+     "title": "Your first Python program",
+     "sub": "A command that displays a message",
+     "lines": 6
+    },
+    {
+     "no": 8,
+     "global_no": 195,
+     "kind": "slide",
+     "title": "Reading Python syntax",
+     "sub": "Start with short programs that do one clear task.",
+     "lines": 10
+    },
+    {
+     "no": 9,
+     "global_no": 196,
+     "kind": "slide",
+     "title": "Comments: notes for people",
+     "sub": "Code",
+     "lines": 8
+    },
+    {
+     "no": 10,
+     "global_no": 197,
+     "kind": "slide",
+     "title": "Variables: giving values a name",
+     "sub": "Code temperature = 25 limit = 30 print(temperature) print(limit)",
+     "lines": 4
+    },
+    {
+     "no": 11,
+     "global_no": 198,
+     "kind": "slide",
+     "title": "Good variable names",
+     "sub": "Use letters, numbers and underscores; do not start a name with a number.",
+     "lines": 6
+    },
+    {
+     "no": 12,
+     "global_no": 199,
+     "kind": "slide",
+     "title": "Basic data types",
+     "sub": "A value's type affects what operations make sense.",
+     "lines": 14
+    },
+    {
+     "no": 13,
+     "global_no": 200,
+     "kind": "slide",
+     "title": "Basic arithmetic in Python",
+     "sub": "Python can perform calculations directly",
+     "lines": 8
+    },
+    {
+     "no": 14,
+     "global_no": 201,
+     "kind": "slide",
+     "title": "Useful arithmetic operators",
+     "sub": "",
+     "lines": 6
+    },
+    {
+     "no": 15,
+     "global_no": 202,
+     "kind": "slide",
+     "title": "Order of operations",
+     "sub": "Use parentheses when they make the intended calculation clearer.",
+     "lines": 8
+    },
+    {
+     "no": 16,
+     "global_no": 203,
+     "kind": "slide",
+     "title": "Getting input from the user",
+     "sub": "Code name = input(\"Enter your name: \") print(\"Hello\", name)",
+     "lines": 7
+    },
+    {
+     "no": 17,
+     "global_no": 204,
+     "kind": "slide",
+     "title": "Numbers entered by a user",
+     "sub": "Convert text input before doing arithmetic",
+     "lines": 6
+    },
+    {
+     "no": 18,
+     "global_no": 205,
+     "kind": "slide",
+     "title": "Worked example: Celsius to Fahrenheit",
+     "sub": "Code celsius = 25 fahrenheit = (celsius * 9 / 5) + 32 print(fahrenheit)",
+     "lines": 8
+    },
+    {
+     "no": 19,
+     "global_no": 206,
+     "kind": "slide",
+     "title": "Making decisions with if",
+     "sub": "Code temperature = 35 if temperature > 30:",
+     "lines": 6
+    },
+    {
+     "no": 20,
+     "global_no": 207,
+     "kind": "slide",
+     "title": "if, elif and else",
+     "sub": "Conditions commonly use >, <, >=, <=, == and !=.",
+     "lines": 7
+    },
+    {
+     "no": 21,
+     "global_no": 208,
+     "kind": "slide",
+     "title": "Comparison operators",
+     "sub": "A comparison produces True or False. One equals sign (=) assigns; two (==) compare.",
+     "lines": 6
+    },
+    {
+     "no": 22,
+     "global_no": 209,
+     "kind": "slide",
+     "title": "Loops: repeat a task",
+     "sub": "Code for reading in range(3):",
+     "lines": 8
+    },
+    {
+     "no": 23,
+     "global_no": 210,
+     "kind": "slide",
+     "title": "Understanding range()",
+     "sub": "Indentation shows which instructions belong to the loop.",
+     "lines": 12
+    },
+    {
+     "no": 24,
+     "global_no": 211,
+     "kind": "slide",
+     "title": "Lists: storing several measurements",
+     "sub": "Code temperatures = [21.5, 22.0, 22.8] print(temperatures[0]) print(len(temperatures))",
+     "lines": 5
+    },
+    {
+     "no": 25,
+     "global_no": 212,
+     "kind": "slide",
+     "title": "Processing each measurement",
+     "sub": "Code temperatures = [21.5, 22.0, 22.8] for t in temperatures:",
+     "lines": 6
+    },
+    {
+     "no": 26,
+     "global_no": 213,
+     "kind": "slide",
+     "title": "Functions: reusable instructions",
+     "sub": "Code def c_to_f(celsius):",
+     "lines": 5
+    },
+    {
+     "no": 27,
+     "global_no": 214,
+     "kind": "slide",
+     "title": "Common beginner errors",
+     "sub": "Read the error message, check the line, and test with a small example.",
+     "lines": 10
+    },
+    {
+     "no": 28,
+     "global_no": 215,
+     "kind": "slide",
+     "title": "How to debug a small program",
+     "sub": "A program that runs is not automatically a correct program.",
+     "lines": 10
+    },
+    {
+     "no": 29,
+     "global_no": 216,
+     "kind": "slide",
+     "title": "Mini engineering example: classify a temperature",
+     "sub": "Code temperature = 35 if temperature > 30:",
+     "lines": 9
+    },
+    {
+     "no": 30,
+     "global_no": 217,
+     "kind": "activity",
+     "title": "30-minute interaction & practice",
+     "sub": "Use an editor or notebook available to you.",
+     "lines": 10
+    },
+    {
+     "no": 31,
+     "global_no": 218,
+     "kind": "slide",
+     "title": "Home practice: small steps",
+     "sub": "Bring one program and one question to the next session.",
+     "lines": 8
+    },
+    {
+     "no": 32,
+     "global_no": 219,
+     "kind": "mcq",
+     "title": "Lecture 10 Review: Multiple Choice — 1.1",
+     "sub": "Choose the best answer. Check the answer key only after all questions.",
+     "lines": 14
+    },
+    {
+     "no": 33,
+     "global_no": 220,
+     "kind": "mcq",
+     "title": "Lecture 10 Review: Multiple Choice — 1.2",
+     "sub": "Choose the best answer. Check the answer key only after all questions.",
+     "lines": 14
+    },
+    {
+     "no": 34,
+     "global_no": 221,
+     "kind": "mcq",
+     "title": "Lecture 10 Review: Multiple Choice — 2.1",
+     "sub": "Choose the best answer. Check the answer key only after all questions.",
+     "lines": 14
+    },
+    {
+     "no": 35,
+     "global_no": 222,
+     "kind": "mcq",
+     "title": "Lecture 10 Review: Multiple Choice — 2.2",
+     "sub": "Choose the best answer. Check the answer key only after all questions.",
+     "lines": 14
+    },
+    {
+     "no": 36,
+     "global_no": 223,
+     "kind": "mcq",
+     "title": "Lecture 10 Review: Multiple Choice — 3.1",
+     "sub": "Choose the best answer. Check the answer key only after all questions.",
+     "lines": 14
+    },
+    {
+     "no": 37,
+     "global_no": 224,
+     "kind": "mcq",
+     "title": "Lecture 10 Review: Multiple Choice — 3.2",
+     "sub": "Choose the best answer. Check the answer key only after all questions.",
+     "lines": 14
+    },
+    {
+     "no": 38,
+     "global_no": 225,
+     "kind": "mcq",
+     "title": "Lecture 10 Review: Answer Key",
+     "sub": "Check your answers after completing all 12 questions.",
+     "lines": 17
+    },
+    {
+     "no": 39,
+     "global_no": 226,
+     "kind": "summary",
+     "title": "Lecture summary",
+     "sub": "Start small, run the code, inspect the result, and improve it.",
+     "lines": 9
+    },
+    {
+     "no": 40,
+     "global_no": 227,
+     "kind": "exit",
+     "title": "Exit ticket & next steps",
+     "sub": "One-minute individual reflection",
+     "lines": 11
+    }
+   ]
+  }
+ ],
+ "platform_questions": [
+  {
+   "id": "legacy-59",
+   "lecture": "cse013-intro",
+   "prompt": "نظام المعلومات (IS) هو:",
+   "options": [
+    "تجميع منظم من الناس والعتاد والبرمجيات والشبكات والبيانات",
+    "كمبيوتر فقط",
+    "تطبيق برمجي فقط",
+    "شبكة إنترنت فقط"
+   ],
+   "correct": 0,
+   "explanation": "IS = تجميع منظم من الناس والعتاد والبرمجيات وشبكات الاتصالات وموارد البيانات."
+  },
+  {
+   "id": "legacy-60",
+   "lecture": "cse013-intro",
+   "prompt": "الفرق بين IS و IT:",
+   "options": [
+    "IS إطار أوسع بيضم IT مع الناس والعمليات",
+    "IT أوسع من IS",
+    "هما نفس الشيء",
+    "IT بيضم الناس والعمليات"
+   ],
+   "correct": 0,
+   "explanation": "IS يشمل الناس والعمليات مع التقنية؛ IT هو التقنية نفسها (عتاد، برمجيات، شبكات)."
+  },
+  {
+   "id": "legacy-61",
+   "lecture": "cse013-intro",
+   "prompt": "من موارد IS الخمسة:",
+   "options": [
+    "الشبكات (Networks)",
+    "الأثاث",
+    "المباني",
+    "الزي الرسمي"
+   ],
+   "correct": 0,
+   "explanation": "الموارد الخمسة: People, Hardware, Software, Data, Networks."
+  },
+  {
+   "id": "legacy-62",
+   "lecture": "cse013-intro",
+   "prompt": "أنشطة النظام الأساسية:",
+   "options": [
+    "Input, Processing, Output, Feedback",
+    "Buy, Sell, Trade",
+    "Plan, Do, Check",
+    "Read, Write, Delete"
+   ],
+   "correct": 0,
+   "explanation": "النشاطات: الإدخال، المعالجة، المخرجات، والتغذية الراجعة والتحكم."
+  },
+  {
+   "id": "legacy-63",
+   "lecture": "cse013-intro",
+   "prompt": "مثال على TPS:",
+   "options": [
+    "الصرف من ATM",
+    "التحكم في حرارة مفاعل",
+    "تقرير المبيعات الشهري",
+    "نظام الملاحة"
+   ],
+   "correct": 0,
+   "explanation": "ATM نظام معالجة معاملات (TPS) — يتحقق من PIN ويصرف ويحدّث الرصيد."
+  },
+  {
+   "id": "legacy-64",
+   "lecture": "cse013-intro",
+   "prompt": "نظام التحكم في العمليات PCS بيregulated:",
+   "options": [
+    "متغيرات فيزيائية زي الحرارة والضغط والتدفق",
+    "الرواتب فقط",
+    "الجداول الدراسية",
+    "البريد الإلكتروني"
+   ],
+   "correct": 0,
+   "explanation": "PCS بتراقب وتنظم متغيرات فيزيائية في المنشآت الصناعية."
+  },
+  {
+   "id": "legacy-65",
+   "lecture": "cse013-intro",
+   "prompt": "مثال على MIS:",
+   "options": [
+    "SAP ERP",
+    "ATM",
+    "PLC",
+    "Wi-Fi router"
+   ],
+   "correct": 0,
+   "explanation": "SAP ERP من أشهر أمثلة نظم معلومات الإدارة (MIS)."
+  },
+  {
+   "id": "legacy-66",
+   "lecture": "cse013-intro",
+   "prompt": "في التسجيل الجامعي، وظيفة التحكم (Control) بتتمثل في:",
+   "options": [
+    "القواعد والفحوص اللي بتتحكم في عملية التسجيل",
+    "طباعة الجدول",
+    "تخزين البيانات",
+    "إدخال البيانات"
+   ],
+   "correct": 0,
+   "explanation": "التحكم = القواعد والفحوص اللي بتضمن سير العملية صح."
+  },
+  {
+   "id": "legacy-67",
+   "lecture": "cse013-intro",
+   "prompt": "تحدٍّ أخلاقي من تحديات IT:",
+   "options": [
+    "الخصوصية (Privacy)",
+    "سرعة الإنترنت",
+    "سعة التخزين",
+    "دقة الشاشة"
+   ],
+   "correct": 0,
+   "explanation": "التحديات: Privacy, Accuracy, Intellectual Property, Security, Responsible Use."
+  },
+  {
+   "id": "legacy-68",
+   "lecture": "cse013-intro",
+   "prompt": "المهندس محتاج يفهم IS لأن:",
+   "options": [
+    "قراراته بقت معتمدة على بيانات وبرامج وشبكات وهو بيشتغل جوه منظمات معتمدة عليها",
+    "عشان يبرمج",
+    "عشان يصلح الطابعات",
+    "عشان يصمم مواقع"
+   ],
+   "correct": 0,
+   "explanation": "المهندس بيستخدم IS في التصميم والتصنيع والصيانة وإدارة المشاريع واتخاذ القرار."
+  },
+  {
+   "id": "cse013-l1-q1",
+   "lecture": "cse013-intro",
+   "prompt": "Which sequence lists the typical activities of a system?",
+   "options": [
+    "Input, Processing, Output, Feedback and control",
+    "Storage, Output, Input, Networking",
+    "Output, Processing, Input, Storage",
+    "Input, Output, Storage, Programming"
+   ],
+   "correct": 0,
+   "explanation": "Typical system activities include: Input — capturing and assembling elements that enter the system; Processing — transforming inputs into outputs; Output — delivering the results to their destination; Feedback and control — monitoring performance and guiding the system. (IT_lecture_1_2026.pdf, p. 4)"
+  },
+  {
+   "id": "cse013-l1-q2",
+   "lecture": "cse013-intro",
+   "prompt": "In the engineering-system example, what is the INPUT?",
+   "options": [
+    "Sensor measurements",
+    "Controller / algorithm",
+    "Actuator / action",
+    "Measured response"
+   ],
+   "correct": 0,
+   "explanation": "INPUT: Sensor measurements. PROCESSING: Controller / algorithm. OUTPUT: Actuator / action. FEEDBACK: Measured response. (IT_lecture_1_2026.pdf, p. 5)"
+  },
+  {
+   "id": "cse013-l1-q3",
+   "lecture": "cse013-intro",
+   "prompt": "Which statement best describes Information Technology (IT)?",
+   "options": [
+    "Technology used to support information processing: hardware, software, networks and related technologies",
+    "The complete set of resources and activities used to deliver information",
+    "Only the people who use a system",
+    "Only the data stored in a database"
+   ],
+   "correct": 0,
+   "explanation": "IT is a major part of an information system—not the whole system. (IT_lecture_1_2026.pdf, p. 7)"
+  },
+  {
+   "id": "cse013-l1-q4",
+   "lecture": "cse013-intro",
+   "prompt": "How many major IS resources does the lecture identify?",
+   "options": [
+    "Three",
+    "Five",
+    "Seven",
+    "Ten"
+   ],
+   "correct": 1,
+   "explanation": "The Five Major IS Resources: PEOPLE — Users & specialists; HARDWARE — Physical devices; SOFTWARE — Instructions & programs; DATA — Facts & observations; NETWORKS — Communication resources. (IT_lecture_1_2026.pdf, p. 8)"
+  },
+  {
+   "id": "cse013-l1-q5",
+   "lecture": "cse013-intro",
+   "prompt": "What are the five activities an Information System performs?",
+   "options": [
+    "Input, Process, Output, Storage, Control",
+    "Input, Output, Storage, Control, Networking",
+    "Process, Output, Storage, Control, Design",
+    "Input, Process, Output, Storage, Programming"
+   ],
+   "correct": 0,
+   "explanation": "1 INPUT 2 PROCESS 3 OUTPUT 4 STORAGE 5 CONTROL. (IT_lecture_1_2026.pdf, p. 9)"
+  },
+  {
+   "id": "cse013-l1-q6",
+   "lecture": "cse013-intro",
+   "prompt": "Which of these is an Operations Support System?",
+   "options": [
+    "Transaction Processing Systems (TPS)",
+    "Management Information Systems (MIS)",
+    "Decision Support Systems (DSS)",
+    "Executive Information Systems (EIS)"
+   ],
+   "correct": 0,
+   "explanation": "Operations Support Systems: Transaction Processing Systems (TPS), Process Control Systems (PCS), Enterprise Collaboration Systems. (IT_lecture_1_2026.pdf, p. 11)"
+  },
+  {
+   "id": "cse013-l1-q7",
+   "lecture": "cse013-intro",
+   "prompt": "What does a Transaction Processing System (TPS) do?",
+   "options": [
+    "Collects, stores, modifies, and retrieves routine daily business transactions",
+    "Monitors and regulates physical variables like temperature, pressure, and flow rates",
+    "Supports executive long-term planning only",
+    "Designs mechanical parts"
+   ],
+   "correct": 0,
+   "explanation": "A Transaction Processing System (TPS) is a software-based information system that collects, stores, modifies, and retrieves routine daily business transactions. (IT_lecture_1_2026.pdf, p. 12)"
+  },
+  {
+   "id": "cse013-l1-q8",
+   "lecture": "cse013-intro",
+   "prompt": "What does a Process Control System (PCS) monitor and regulate?",
+   "options": [
+    "Physical variables like temperature, pressure, and flow rates",
+    "Student grades only",
+    "Website colour codes",
+    "Employee salaries only"
+   ],
+   "correct": 0,
+   "explanation": "A Process Control System (PCS) is an industrial automation network that monitors and regulates physical variables like temperature, pressure, and flow rates. (IT_lecture_1_2026.pdf, p. 14)"
+  },
+  {
+   "id": "cse013-l1-q9",
+   "lecture": "cse013-intro",
+   "prompt": "Which ethical challenge asks «who should have access to personal or organizational data?»",
+   "options": [
+    "Privacy",
+    "Accuracy",
+    "Intellectual property",
+    "Security"
+   ],
+   "correct": 0,
+   "explanation": "Privacy — who should have access to personal or organizational data? (IT_lecture_1_2026.pdf, p. 19)"
+  },
+  {
+   "id": "cse013-l1-q10",
+   "lecture": "cse013-intro",
+   "prompt": "Which of these is NOT one of the three Quick Practice examples?",
+   "options": [
+    "A computer mouse",
+    "University LMS",
+    "Smart Factory",
+    "Online Store"
+   ],
+   "correct": 0,
+   "explanation": "Quick Practice: What Is the Information System? University LMS, Smart Factory, Online Store. (IT_lecture_1_2026.pdf, p. 22)"
+  }
+ ]
+}
