@@ -57,3 +57,21 @@ dialog{width:min(560px,calc(100vw - 32px));max-height:88vh;padding:0;border:1px 
 .data-table tbody tr:last-child td{border-bottom:0}
 .data-table td a{color:var(--brand);text-decoration:none;font-weight:800}
 .data-table td.tiny{font-size:.74rem;max-width:260px}
+
+/* Complete subject summary — rendered from the source-faithful Markdown */
+.full-summary-md{font-size:.95rem;line-height:1.95}
+.full-summary-md h1,.full-summary-md h2,.full-summary-md h3,.full-summary-md h4{margin:1.5em 0 .5em;line-height:1.35}
+.full-summary-md h1{font-size:1.5rem}
+.full-summary-md h2{font-size:1.28rem}
+.full-summary-md h3{font-size:1.12rem}
+.full-summary-md h4{font-size:1rem;color:var(--brand)}
+.full-summary-md ul,.full-summary-md ol{padding-inline-start:1.4rem;margin:.4rem 0 1rem}
+.full-summary-md li{margin:.2rem 0}
+.full-summary-md p{margin:.5rem 0}
+.full-summary-md code{background:var(--surface-2);padding:.1rem .32rem;border-radius:4px;font-size:.88em}
+.full-summary-md table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.86rem;display:block;overflow-x:auto}
+.full-summary-md th,.full-summary-md td{border:1px solid var(--line);padding:.5rem .65rem;text-align:start;vertical-align:top}
+.full-summary-md th{background:var(--surface-2)}
+.full-summary-md hr{border:0;border-top:1px solid var(--line);margin:1.6rem 0}
+.full-summary-md a{color:var(--brand)}
+.full-summary-md blockquote{border-inline-start:3px solid var(--brand);padding-inline-start:.8rem;color:var(--muted)}
