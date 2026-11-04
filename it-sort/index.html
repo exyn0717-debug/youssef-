@@ -187,21 +187,45 @@ footer .wrap{display:flex;gap:14px;justify-content:space-between;flex-wrap:wrap;
 
 
 /* ---------- language toggle ---------- */
-.lang-strip{max-width:var(--max);margin:14px auto 0;padding:14px 16px;display:flex;gap:14px;align-items:center;
-  justify-content:space-between;flex-wrap:wrap;border:1px solid var(--line);border-radius:14px;
-  background:linear-gradient(135deg,var(--brand-tint),transparent 70%),var(--surface)}
-.lang-strip .ls-txt{display:grid;gap:2px;min-width:260px}
-.lang-strip b{font-size:.95rem}
-.lang-strip span{font-size:.82rem;color:var(--muted)}
-.lang-big{background:var(--brand);color:#fff;border:1px solid var(--brand);padding:9px 16px;border-radius:10px;
-  font-weight:800;font-size:.88rem;display:inline-flex;gap:7px;align-items:center;cursor:pointer;white-space:nowrap}
-.lang-big:hover{background:var(--brand-strong)}
+.lang-strip{max-width:var(--max);margin:16px auto 0;padding:0;display:flex;gap:0;align-items:stretch;
+  justify-content:space-between;flex-wrap:wrap;border:1px solid var(--line);border-radius:18px;overflow:hidden;
+  background:linear-gradient(120deg,color-mix(in srgb,var(--brand) 9%,var(--surface)),var(--surface) 55%);
+  box-shadow:var(--shadow-sm)}
+.lang-strip .ls-ic{display:grid;place-items:center;padding:0 18px;background:color-mix(in srgb,var(--brand) 12%,transparent);
+  color:var(--brand);flex:none}
+.lang-strip .ls-ic svg{width:26px;height:26px}
+.lang-strip .ls-txt{display:grid;gap:3px;padding:14px 4px 14px 0;flex:1 1 320px;min-width:240px}
+html[dir=rtl] .lang-strip .ls-txt{padding:14px 0 14px 4px}
+.lang-strip b{font-size:.95rem;display:flex;align-items:center;gap:8px}
+.lang-strip b .tag{font-size:.66rem;font-weight:900;letter-spacing:.04em;padding:2px 7px;border-radius:999px;
+  background:var(--brand);color:#fff;text-transform:uppercase}
+.lang-strip .ls-sub{font-size:.82rem;color:var(--muted);line-height:1.6}
+
+/* pill switch (AR | EN) */
+.lang-switch{display:inline-flex;align-items:center;gap:0;background:var(--surface-2);border:1px solid var(--line);
+  border-radius:999px;padding:4px;margin:12px 14px;position:relative;flex:none}
+.lang-switch button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.85rem;font-weight:800;
+  padding:8px 18px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;
+  transition:color .18s ease,background .18s ease,transform .18s ease;white-space:nowrap;min-width:84px;justify-content:center}
+.lang-switch button:hover{color:var(--ink)}
+.lang-switch button[aria-pressed="true"]{background:var(--brand);color:#fff;box-shadow:0 2px 10px color-mix(in srgb,var(--brand) 45%,transparent)}
+.lang-switch button[aria-pressed="true"]:hover{color:#fff;transform:translateY(-1px)}
+.lang-switch .flag{font-size:.95rem;line-height:1}
+
+/* old big button kept for tests/back-compat */
+.lang-big{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .lang-tool.on{background:var(--brand);color:#fff;border-color:var(--brand)}
 .ar-col{direction:rtl;text-align:start;font-family:Cairo,system-ui,sans-serif}
 .opt-txt{display:block}
 .opt-alt{display:block;font-size:.8rem;color:var(--muted);margin-top:3px}
-html[dir=ltr] .lang-strip .ls-txt{text-align:left}
-@media(max-width:720px){.lang-strip{flex-direction:column;align-items:stretch}.lang-big{justify-content:center}}
+@media(max-width:720px){
+  .lang-strip{flex-direction:column;align-items:stretch}
+  .lang-strip .ls-ic{display:none}
+  .lang-strip .ls-txt{padding:14px 16px 0}
+  .lang-switch{margin:12px 16px 14px;align-self:stretch}
+  .lang-switch button{flex:1}
+}
+@media print{.lang-strip{display:none !important}}
 </style>
 </head>
 <body>
@@ -211,7 +235,7 @@ html[dir=ltr] .lang-strip .ls-txt{text-align:left}
   <div class="top-in">
     <a class="brand" href="#top">
       <span class="mark">IT</span>
-      <span><b>CSE013</b><small>فرز مستقل · 5 ملفات</small></span>
+      <span><b>CSE013</b><small id="brandSub">فرز مستقل · 5 ملفات</small></span>
     </a>
     <nav class="top-nav" aria-label="أقسام الصفحة" id="topNav">
       <a href="#lectures" data-ar="المحاضرات" data-en="Lectures">المحاضرات</a>
@@ -222,7 +246,7 @@ html[dir=ltr] .lang-strip .ls-txt{text-align:left}
       <a href="#sources" data-ar="الملفات" data-en="Files">الملفات</a>
     </nav>
     <div class="tools">
-      <button class="tool lang-tool" id="langBtn" type="button" aria-pressed="false">🌐 <span>English</span></button>
+      <button class="tool lang-tool" id="langBtn" type="button" aria-pressed="false" title="تبديل لغة المحتوى / Toggle content language">🌐 <span id="langBtnLabel">English</span></button>
       <button class="tool" id="printBtn" type="button">🖨️ <span data-ar="طباعة / PDF" data-en="Print / PDF">طباعة / PDF</span></button>
       <button class="tool" id="expQ" type="button">⬇️ <span data-ar="CSV" data-en="CSV">CSV</span></button>
       <a class="tool" href="files/IT-lecture-1-2026.pdf" target="_blank" rel="noopener">ملفات PDF ↗</a>
@@ -231,9 +255,14 @@ html[dir=ltr] .lang-strip .ls-txt{text-align:left}
 </header>
 
 <div class="lang-strip" id="langStrip">
+  <div class="ls-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18"/></svg></div>
   <div class="ls-txt">
-    <b id="lsTitle">المحتوى كله بالإنجليزي زي ملفات الـPDF</b>
-    <span id="lsSub">اضغط الزر لتحويل الشرح والأسئلة والأنشطة إلى العربية في نفس الصفحة — والترقيم والمصادر تفضل زي ما هي.</span>
+    <b id="lsTitle">لغة المحتوى <span class="tag" id="lsTag">English</span></b>
+    <span class="ls-sub" id="lsSub">اضغط «العربي» لتحويل الشرح والأسئلة والأنشطة في نفس الصفحة — الترقيم والمصادر تفضل زي ما هي.</span>
+  </div>
+  <div class="lang-switch" role="group" aria-label="لغة المحتوى / Content language">
+    <button type="button" id="langBtnAr" data-lang="ar" aria-pressed="true"><span class="flag">🇪🇬</span> عربي</button>
+    <button type="button" id="langBtnEn" data-lang="en" aria-pressed="false"><span class="flag">🇬🇧</span> English</button>
   </div>
   <button class="btn lang-big" id="langBtn2" type="button">🌐 <span>ترجمة المحتوى للعربي</span></button>
 </div>
@@ -702,6 +731,8 @@ document.addEventListener('click',function(e){
     Array.prototype.forEach.call(document.querySelectorAll('[data-pagefilter]'),function(x){x.classList.toggle('on',x===c);});
     filterPages();return;
   }
+  var lb=e.target.closest('[data-lang]');
+  if(lb){setLang(lb.dataset.lang);return;}
   if(e.target.closest('#langBtn')||e.target.closest('#langBtn2')){setLang(isEN()?'ar':'en');return;}
   if(e.target.closest('#themeBtn')){applyTheme(document.documentElement.classList.contains('light')?'dark':'light');}
   if(e.target.closest('#printBtn')){window.print();}
@@ -731,19 +762,33 @@ function localizeSummary(){
     if(!sp.dataset.en){sp.dataset.en=sp.innerHTML;}
     if(en){sp.innerHTML=sp.dataset.en;sp.setAttribute('dir','ltr');}
     else{
-      var txt=sp.dataset.en.replace(/<[^>]+>/g,'').replace(/&amp;/g,'&').trim();
-      var hit=null;
-      for(var lid in TR.pages){
-        for(var n=0;n<TR.pages[lid].length;n++){
-          if(TR.pages[lid][n][0]===txt){hit=TR.pages[lid][n][0];}
-        }
-      }
-      // try page-title lookup by scanning the page list
-      if(!hit){hit=findPageTitle(txt);}
+      var txt=sp.dataset.en.replace(/<[^>]+>/g,'').replace(/&amp;/g,'&').replace(/&quot;/g,'"').replace(/&nbsp;/g,' ').trim();
+      var hit=lookupAr(txt);
       if(hit){sp.innerHTML=esc(hit);sp.removeAttribute('dir');}
       else{sp.innerHTML=sp.dataset.en;}
     }
   }
+}
+function lookupAr(txt){
+  var p=findPageTitle(txt);
+  if(p)return p;
+  for(var i=0;i<QLIST.length;i++){
+    if((QLIST[i].stem||'').trim()===txt){
+      var t=qT(QLIST[i].gid);
+      if(t&&t[0])return t[0];
+    }
+  }
+  for(var l=0;l<ORDER.length;l++){
+    var lid=ORDER[l];
+    var list=ACT.filter(function(x){return x.lecture===lid;});
+    for(var k=0;k<list.length;k++){
+      if((list[k].title||'').trim()===txt){
+        var ta=aT(lid,k);
+        if(ta&&ta[0])return ta[0];
+      }
+    }
+  }
+  return null;
 }
 function findPageTitle(enTitle){
   for(var b=0;b<DATA.pages.length;b++){
@@ -769,13 +814,20 @@ function applyLang(){
   var en=isEN();
   document.documentElement.lang=en?'en':'ar';
   document.documentElement.dir=en?'ltr':'rtl';
-  var b1=el('langBtn'),b2=el('langBtn2'),t1=el('lsTitle'),t2=el('lsSub');
-  if(b1){b1.innerHTML='🌐 <span>'+(en?'العربية':'English')+'</span>';b1.setAttribute('aria-pressed',en?'true':'false');b1.classList.toggle('on',en);}
+  var b1=el('langBtn'),b2=el('langBtn2'),t1=el('lsTitle'),t2=el('lsSub'),tag=el('lsTag');
+  var pillAr=el('langBtnAr'),pillEn=el('langBtnEn'),lbl=el('langBtnLabel');
+  if(b1){b1.setAttribute('aria-pressed',en?'true':'false');b1.classList.toggle('on',en);}
+  if(lbl)lbl.textContent=en?'عربي':'English';
   if(b2){b2.innerHTML='🌐 <span>'+(en?'Translate to Arabic':'ترجمة المحتوى للعربي')+'</span>';}
-  if(t1)t1.textContent=en?'Content is the original English from the PDFs':'المحتوى كله بالإنجليزي زي ملفات الـPDF';
+  if(pillAr)pillAr.setAttribute('aria-pressed',en?'false':'true');
+  if(pillEn)pillEn.setAttribute('aria-pressed',en?'true':'false');
+  if(tag)tag.textContent=en?'English':'العربية';
+  if(t1)t1.childNodes[0].nodeValue=(en?'Content language ':'لغة المحتوى ');
+  var bk=el('brandSub');
+  if(bk)bk.textContent=en?'Standalone index · 5 files':'فرز مستقل · 5 ملفات';
   localizeSummary();
-  if(t2)t2.textContent=en?'One click switches the explanations, questions and activities to Arabic in this same page — numbering and sources stay exactly the same.':
-    'اضغط الزر لتحويل الشرح والأسئلة والأنشطة إلى العربية في نفس الصفحة — والترقيم والمصادر تفضل زي ما هي.';
+  if(t2)t2.textContent=en?'Pick «عربي» to read the explanations, questions and activities in Arabic on this same page — numbering and sources stay identical.':
+    'اضغط «العربي» لتحويل الشرح والأسئلة والأنشطة في نفس الصفحة — الترقيم والمصادر تفضل زي ما هي.';
   var pair=document.querySelectorAll('[data-ar][data-en]');
   var phs=document.querySelectorAll('[data-ph-ar]');
   for(var z=0;z<phs.length;z++){phs[z].placeholder=phs[z].dataset[en?'phEn':'phAr'];}
