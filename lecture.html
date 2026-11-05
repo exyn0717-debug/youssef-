@@ -7,7 +7,7 @@
 <meta name="description" content="ENG YOUSSEF — واجهة موحّدة لأي محاضرة: ملخص، طبقات/محتويات، شرح خطوة بخطوة، اختبار قصير، وملفات أصلية.">
 <title>ENG YOUSSEF | واجهة المحاضرة</title>
 <link rel="icon" href="assets/favicon.png" type="image/png">
-<link rel="stylesheet" href="app.css?v=3.8.0">
+<link rel="stylesheet" href="app.css?v=3.9.0">
 <script src="vendor/purify.min.js" defer></script>
 <style>
 /* ------------------------------------------------------------------
@@ -418,13 +418,19 @@ function applyChrome(){
 
 /* --------------------------- قراءة بيانات المنصة --------------------------- */
 async function loadData(){
- const res=await fetch('index.html?v=3.8.0',{cache:'force-cache'});
+ const res=await fetch('index.html?v=3.9.0',{cache:'force-cache'});
  if(!res.ok)throw new Error('HTTP '+res.status);
  const text=await res.text();
  const m=text.match(/<script id="method-data" type="application\/json">([\s\S]*?)<\/script>/);
  if(!m)throw new Error('method-data not found');
  const d=JSON.parse(m[1]);
  if(!d||!Array.isArray(d.lectures))throw new Error('bad data');
+ /* محتوى المحاضرات صار ملفًا منفصلًا يُحمَّل عند الطلب (كان مدمجًا داخل index.html) */
+ try{
+  const cRes=await fetch('content/lecture-content.json',{cache:'force-cache'});
+  if(cRes.ok){const map=await cRes.json();
+   d.lectures=d.lectures.map(l=>({...l,content:l.content||map[l.id]||null}));}
+ }catch(e){/* يبقى المحتوى المدمج إن وُجد */ }
  return d;
 }
 
@@ -432,8 +438,18 @@ async function loadData(){
 function subjectOf(l){return DATA.subjects.find(s=>s.id===l.subject_id)||{};}
 function englishMaterial(sid){return !!sid&&(DATA?.subjects||[]).some(s=>s.id===sid&&s.material_lang==='en');}
 const enAttr=sid=>englishMaterial(sid)?' dir="ltr" lang="en" translate="no"':'';
-function field(o,base){const en=englishMaterial(o?.subject_id||o?.id);return en?(o[base+'_en']||o[base+'_ar']||o[base]||''):(o[base+'_ar']||o[base]||'');}
-function fileTitle(f){const src=(DATA?.sources?.files||{})[f.id];return (englishMaterial(f.subject_id)&&src?.title_en)||f.title||f.original_name||'';}
+/* الاسم حسب لغة الواجهة (وليس لغة ملفات المادة) */
+function field(o,base){
+ if(!o)return '';
+ const pair=lang==='en'?['_en','_ar']:['_ar','_en'];
+ for(const suffix of pair){const v=o[base+suffix];if(typeof v==='string'&&v.trim())return v;}
+ return o[base]||'';
+}
+function fileTitle(f){
+ const src=(DATA?.sources?.files||{})[f.id];
+ if(lang==='en')return (src?.title_en||f.title_en||f.original_name||f.title||'').trim();
+ return (src?.title_ar||f.title||src?.title_en||f.original_name||'').trim();
+}
 const hasAr=v=>/[\u0600-\u06FF]/.test(JSON.stringify(v));
 function englishFlat(v){if(!Array.isArray(v))return [];const out=[],seen=new Set();for(const g of v)if(Array.isArray(g)&&g.length&&g.every(x=>!hasAr(x)))for(const x of g){const k=JSON.stringify(x);if(!seen.has(k)){seen.add(k);out.push(x);}}for(const g of v)if(Array.isArray(g))for(const x of g)if(!hasAr(x)){const k=JSON.stringify(x);if(!seen.has(k)){seen.add(k);out.push(x);}}return out;}
 function origArr(v){const base=Array.isArray(v)?(v[0]||[]):[];return englishMaterial(activeLecture()?.subject_id)?englishFlat(v):base;}
