@@ -418,7 +418,7 @@ function applyChrome(){
 
 /* --------------------------- قراءة بيانات المنصة --------------------------- */
 async function loadData(){
- const res=await fetch('index.html?v=3.9.0',{cache:'force-cache'});
+ const res=await fetch('index.html?v=3.9.1',{cache:'force-cache'});
  if(!res.ok)throw new Error('HTTP '+res.status);
  const text=await res.text();
  const m=text.match(/<script id="method-data" type="application\/json">([\s\S]*?)<\/script>/);
@@ -465,9 +465,15 @@ const enOpts=q=>(q&&Array.isArray(q.options_en)&&q.options_en.length)?q.options_
 const arOpts=q=>{if(!q)return [];if(Array.isArray(q.options_ar)&&q.options_ar.length===enOpts(q).length)return q.options_ar;return Array.isArray(q.options)&&q.options.some(isArabicText)?q.options:[];};
 const qHasAr=q=>!!q&&(!!arText(q)||arOpts(q).length>0);
 const useAr=q=>contentLang==='ar'&&qHasAr(q);
-function qText(q,base){if(useAr(q)){const a=arText(q,base);if(a)return a;}return (englishMaterial(q.subject_id)&&q[base+'_en'])||q[base]||'';}
+/* سؤال عربي الأصل مع ترجمة إنجليزية مخزّنة في *_en: عند طلب «en» نعرضها */
+const enShown=q=>!!q&&contentLang==='en'&&!!q.prompt_en&&isArabicText(q.prompt||'');
+const qDirAttr=q=>useAr(q)?' dir="rtl" lang="ar"':enShown(q)?' dir="ltr" lang="en"':enAttr(q.subject_id);
+function qText(q,base){if(!q)return '';if(useAr(q)){const a=arText(q,base);if(a)return a;}if(enShown(q)&&q[base+'_en'])return q[base+'_en'];return (englishMaterial(q.subject_id)&&q[base+'_en'])||q[base]||'';}
 function qOptions(q){const base=(englishMaterial(q.subject_id)&&Array.isArray(q.options_en)&&q.options_en.length)?q.options_en:(Array.isArray(q.options)?q.options:[]);
-  if(useAr(q)){const a=arOpts(q);if(a.length===base.length)return a;}return Array.isArray(base)?base:[];}
+  if(!q)return Array.isArray(base)?base:[];
+  if(useAr(q)){const a=arOpts(q);if(a.length===base.length)return a;}
+  if(enShown(q)&&Array.isArray(q.options_en)&&q.options_en.length===base.length)return q.options_en;
+  return Array.isArray(base)?base:[];}
 function langBtn(q){if(!qHasAr(q))return '';const ar=useAr(q);
   return `<button type="button" class="lp-lang-btn" data-action="content-lang" data-value="${ar?'en':'ar'}" aria-pressed="${ar?'true':'false'}" title="${ar?'Show the English original':'اعرض النسخة العربية'}">${ar?'English':'عربي'}</button>`;}
 function lectureFiles(){
@@ -606,7 +612,7 @@ function renderQuiz(){
    return `<button class="lp-opt${cls}" type="button"${useAr(q)?' dir="rtl" lang="ar"':enAttr(q.subject_id)} data-action="opt" data-i="${i}"${done?' disabled':''}>${h(o)}</button>`;
   }).join('');
   const fb=done?`<div class="lp-feedback ${Number(picked)===correct?'ok':'bad'}" id="lpFeedback">${h((Number(picked)===correct?u('quizCorrect'):u('quizWrong'))+(qText(q,'explanation')||u('quizNoFeedback')))}</div>`:`<div class="lp-feedback" id="lpFeedback" hidden></div>`;
-  inner=`<div class="lp-quiz-body"><h3${useAr(q)?' dir="rtl" lang="ar"':enAttr(q.subject_id)}>${h(qText(q,'prompt'))}</h3><div id="optsBox">${optHtml}</div>${fb}</div>
+  inner=`<div class="lp-quiz-body"><h3${qDirAttr(q)}>${h(qText(q,'prompt'))}</h3><div id="optsBox">${optHtml}</div>${fb}</div>
    <div class="lp-quiz-foot"><span class="lp-quiz-note" style="margin:0">${fmt(qi+1)} / ${fmt(qs.length)}</span><button class="lp-btn primary" type="button" data-action="quiz-next" id="nextQBtn">${h(qi===qs.length-1?u('quizResult'):u('quizNext'))}</button></div>`;
  }
  return `<section class="lp-section lp-alt" id="quiz"><div class="lp-wrap">
